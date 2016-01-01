@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>How to fix wrapping text underneath an image | BookOfZeus</title>
+	<meta name="description" content="Two easy ways to fix any text underneath any images" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/how-to-fix-wrapping-text-underneath-an-image" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,65 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>How to fix wrapping text underneath an image</h1>
+		<h6>Posted on Saturday September 22, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>Web articles and blog are all over the place now. Within all these blogs, many articles are written with lots of information and images. Many of them display images within text to illustrate what they are talking about but in most cases the alignment of these images and text is not perfectly aligned. One of the common case is when the text of the article is displayed bellow an image. If you are one of them that does not like this and you would like to know how to fix this, read this.</p>
+
+<p>For example, the current HTML has the image we need and text that describes it.</p>
+
+<pre>
+&lt;section class="classname"&gt;
+ &lt;h2&gt;Monk&lt;/h2&gt;
+ &lt;figure&gt;
+  &lt;img src="d3monk150.jpg" /&gt;
+  &lt;figcaption&gt;
+   &lt;h3&gt;Diablo 3 Monk&lt;/h3&gt;
+   &lt;p&gt;Monks are sacred warriors who channel divine power through sheer force of will. Healing waves, mantras of protection and attacks empowered with holy might are all within their purview.Skilled monks deliver rapid-fire attacks unarmed or with a variety of well-balanced weapons. In combat, they emphasize high manoeuvrability over staying power, darting in and out of melees and avoiding protracted slugfests. Monks' attacks are primarily melee-focused. They can eliminate single foes with extreme damage, or deliver short-range area-of-effect assaults with waves of elemental power that emanate from palm strikes or crescent kicks.&lt;/p&gt;
+  &lt;/figcaption&gt;
+ &lt;/figure&gt;
+&lt;/section&gt;
+</pre>
+
+<h4>Solution #1</h4>
+
+<p>This one is very easy. The technique is to simply float left the image then add a margin to the left of the text. The only property you need to know is the width of the image (and add margin or padding if necessary).</p>
+
+<pre>
+section.fix1 img {
+ float: left;
+}
+section.fix1 figcaption {
+ margin-left: 180px;
+}
+</pre>
+
+<h4>Solution #2</h4>
+
+<p>This one is different from the previous one. This one actually float left both the image and the text. You need to know both of the image (and add margin or padding if necessary) and the width of the text.</p>
+
+<pre>
+section.fix img {
+ float: left;
+}
+section.fix figcaption {
+ float: left;
+ width: 410px;
+}
+</pre>
+
+<h4>My 2 cents</h4>
+<p>Both solution will work, I personally prefer the first one since the only width I have to measure with the image one (for the margin-left). This way, I can readjust the width of the wrapper and everything will work properly.</p>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

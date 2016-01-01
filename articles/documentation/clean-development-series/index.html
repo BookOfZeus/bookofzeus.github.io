@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clean Development Series | BookOfZeus</title>
+	<meta name="description" content="Clean Development Series - Dirty Code and Rewrite dilemma" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/documentation/clean-development-series" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" class="selected">Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="documentation" href="/articles/documentation/">documentation</a>
+</article>
+
+<article>
+	<header>
+		<h1>Clean Development Series</h1>
+		<h6>Posted on Sunday December 02, 2012 / by Adam Culp</h6>
+	</header>
+
+	<h2><a name="part1">Clean Development Series: Part 1, Dirty Code (cause/effect)</a></h2>
+
+<p>Lately I have been talking about clean application development, and how developers can do a better job of it. Due to the strong focus on this I decided to write some content from my latest talks into a series of blog posts. Enabling everyone to reap the benefits of the subject matter, and allow attendees of my talks to refresh the content covered at one of the events I spoke at.</p>
+<p>Whether we’re experienced developers or newcomers, we’ve all seen code that could/should have been done better. Many times it’s even code we ourselves wrote and revisited later for one reason or another. I, for one, have seen my share of code written by a <q>past me</q> and wondered what on earth I was thinking when I wrote that. Of course there has also been times I was hired to fix another developers code, and it can be scary too.</p>
+<div><a href="http://www.geekyboy.com/wp-content/uploads/2012/10/bush-is-shocked.jpg"><img width="338" height="230" alt="" src="http://www.geekyboy.com/wp-content/uploads/2012/10/bush-is-shocked.jpg" title="bush-is-shocked" class="wp-image-473 "></a><p class="wp-caption-text">The code is pretty dirty if this is your reaction!</p></div>
+<h3>Side effects of dirty code</h3>
+<ul>
+<li><strong>Time waster</strong> &ndash; The more dirty code we have, the longer it takes us to code. Have you ever noticed that most of our time coding is spent reading code in other parts of our application? This means that if we spend extra time sifting through dirty code, it takes us longer to actually write new code.</li>
+<li><strong>Breeds more dirty code</strong> &ndash; Also, we tend to care less about our code if we know there is already dirty code in the application. This causes us to write more dirty code, because who will notice in any way?</li>
+<li><strong>Causes bugs</strong> &ndash; It’s a fact that dirty code causes bugs. (See a future section <q>How to spot dirty code</q> for more clarity.) When we lose track of what our application is doing, and have trouble spotting problems, it simply leads to more problems.</li>
+<li><strong>Excessive debugging</strong> &ndash; I often ask my audience if they are good at debugging, and usually end up with a strong showing of hands from developers who feel they are good at debugging. But if they wrote clean code doesn’t it make sense that they would need less debugging experience, and therefore would NOT be good at it?</li>
+<li><strong>Procrastination</strong> &ndash; We all do it. We dread working with dirty code so much that we avoid it. We make excuses to tell our customers, and we find other <q>more important</q> things that need to be done first. I have even witnessed developers actually hiding from customers and taking on other projects to avoid a really bad codebase.</li>
+<li><strong>Technical debt</strong> &ndash; This is the most dangerous effect of dirty code. Think of this as buying things on credit. As you buy more and more the credit line grows and grows. At some point a choice needs to be made. Either you need to pay it off, or you go bankrupt. With applications this means you either fix the dirty code, or go through the added expense of a rewrite.</li>
+<li><strong>Financial loss</strong> &ndash; If your application has even a little bit of technical debt it causes development to slow down more and more over time. If development slows down it can lead to your competition developing new features and applications faster than you can. This is especially true if your application becomes stagnant and others continue to build. A customer base can be very fickle and will leave surprisingly fast.</li>
+<li><strong>Company killer</strong> &ndash; In today’s lightning fast market place it is not hard to see how the above events can quickly kill a company. Remember when MySpace was big? I am sure we can all think of others.</li>
+</ul>
+<p><a href="http://www.geekyboy.com/wp-content/uploads/2012/10/named-hurricane-fran.gif"><img width="300" height="240" alt="" src="http://www.geekyboy.com/wp-content/uploads/2012/10/named-hurricane-fran-300x240.gif" title="named-hurricane-fran" class="size-medium wp-image-489 aligncenter"></a></p>
+<h3>Causes of dirty code (the perfect storm)</h3>
+<ul>
+<li><strong>Too easy</strong> &ndash; Although it is easier in the long run to write clean code, we have all fallen into temptation to write dirty code to get something done quickly. It is very easy to be drawn in.</li>
+<li><strong>Short deadlines</strong> &ndash; Customers are often a developers worst enemy. They are demanding, and salespeople have been known to over-promise on new functionality and short time-lines to meet that demand. This places a development staff under tremendous pressure to meet those promises, and it is usually the code that suffers.</li>
+<li><strong>Laziness</strong> &ndash; Yes, unfortunately there are times when we all get lazy. (Some more than others.) I won’t dwell here.</li>
+<li><strong>Lack of <q>how-to</q></strong> &ndash; A brief look at code we’ve written in the past is a great way to see how far we have advanced. As a consultant I often receive requests from customers to enhance applications I have built in the past, and I get plenty of opportunities to marvel at past coding methods I used when I didn’t know any better. No matter how far I come, or how much I learn, this still holds true on a regular basis.</li>
+<li><strong>Coupling</strong> &ndash; Many will recognize the term <q>coupling</q> and realize we are talking about OOP. This is a method of helping use stay DRY (don’t repeat yourself) and making code reusable. So, why is it bad? That question is far too large to cover in this post, so I will make a note to cover it more later, but tight coupling is bad and loose coupling is good. Feel free to search on your own to see what I mean.</li>
+<li><strong>Impatient boss</strong> &ndash; It never fails, even if we still have plenty of time left on our project deadlines we still hear the dreaded <q>Is it done yet?</q> from business. It’s their job to ask, so don’t let it burn into you. The faster they get it, the faster they can sell it. But it leads to dirty code as developers strive to please.</li>
+<li><strong>Bored of same ol’ app</strong> &ndash; Most large applications take 6 months or longer to build, and this can lead to some long periods of working on the same module or functionality. Eventually developers can tend to get bored, and will try to get things finished quickly for an opportunity to work on something new and exciting.</li>
+<li><strong>Intend to return for clean-up later</strong> &ndash; While in a rush to meet deadlines or to move on to more exciting tasks it is common for developers to complete things in a dirty manner with the intention of returning in the future to clean up and refactor. Usually this never happens due to new projects and more deadlines, causing the old mess to be forgotten.</li>
+</ul>
+<p>As you can see from this first post in the series, dirty code is dangerously easy to create and can carry disastrous outcomes. I hope this post helps some to spot these pitfalls a bit easier, and make it easier to avoid them. Please return for future installments as I attempt to highlight more areas to help us all perform clean development, and write better applications.</p>
+
+<h2><a name="part2">Clean Development Series: Part 2, Dirty Code (why we do it)</a></h2>
+
+<p>Lately I have been talking about clean application development, and how developers can do a better job of it. Due to the strong focus on this I decided to write some content from my latest talks into a series of blog posts. Enabling everyone to reap the benefits of the subject matter, and allow attendees of my talks to refresh the content covered at one of the events I spoke at.</p>
+<p><a href="http://www.geekyboy.com/wp-content/uploads/2012/10/why_rdax_300x300.jpg"><img width="240" height="240" alt="" src="http://www.geekyboy.com/wp-content/uploads/2012/10/why_rdax_300x300.jpg" title="why_rdax_300x300" class="aligncenter  wp-image-522"></a></p>
+<p>In <a href="#part1" title="Clean Development Series: Part 1, Dirty Code (cause/effect)">Part 1</a> of this series I discussed the causes and effects of dirty code, and how disastrous it can be for us and/or our employer. I think it’s easy to see how the terrible effects caused by writing dirty code is not desirable. Most of us try to avoid wasting time, introducing bugs, increasing technical debt, causing our companies to lose money, and looking for a new job because our employer went out of business. So if we don’t like these things, <strong>why do we write dirty code in the first place?</strong> It is our own fault after all, but it’s not something we consciously do…most of the time. Let’s take a look at a sample scenario, and see how we sometimes get ourselves in this type of situation:</p>
+<h3>New Job and a Simple Request</h3>
+<p>We start a new job, of perhaps we are approached by our supervisor with a request. We know how it works. The boss mentions how wonderful it would be if the application was able to do some sort of functionality, and asks if it’s possible. Of course in our haste to please and impress we say, <q>Of course</q>, and head off to our lair to perform our magic. We sit down behind the keyboard and already have an excellent idea of how to build the new functionality our boss was asking for. What do we do first?</p>
+<h3>The Preparation</h3>
+<p>Do we write unit tests? No. Do we document the requirements? No. Perhaps we at least write down some sort of decision making flow chart? No. So we at least have an idea of standards we will use and follow? No. Well, maybe we download a framework, or figure out what functions we already have rather than recreating the wheel? No say.</p>
+<h3>Execution</h3>
+<p>What actually happens is pretty mystical. Like a maestro ready to conduct an elegant symphony we go back to our desk, fire up our favorite IDE or editor capable of helping us create the best code imaginable by man. These tools have built in auto complete, connectors to version control, able to link to ticket and bug tracking systems, debuggers, project file management, structure tree display, code inspectors, refactor modules, and even direct connections to hosting and command line tools. We can now create true masterpieces of intellectual property.</p>
+<p>But we don’t have any time for all of those bells and whistles today. We are excited and in a hurry to prove that our boss made the right decision by hiring us. So instead of using these awesome tools at our disposal we code the entire thing in very short order, and then spend a few minutes to do some functional testing and ensure it doesn’t blow up on us while we demo it.</p>
+<h3>Presentation</h3>
+<p>Barely able to contain ourselves we rush into our bosses office to announce we have completed the functionality he requested. Our excitement is quickly contagious and our boss looks on wide-eyed as we demo our accomplishment. He is a little surprised we were able to finish it so quickly, and thanks us for our hard work.</p>
+<p>Then, faster than we can think of what we will have for lunch, our boss immediately thinks of some sort of enhancement to the item we just completed. He quickly outlines how it could work and what it could bring the company. In the excitement of the moment, and our newly found feelings of accomplishment, we tell our boss it’s a small task and we should be able to get it done pretty fast.</p>
+<p>We head back to our desk feeling the afterglow of the moment, feeling like we saved the world as well as earned our keep at this new employer. Once again we have a task to accomplish.</p>
+<h3>Second Iteration</h3>
+<p>True to form we perform exactly as well on this second task assigned to us. In our haste to please we ignore best practices, testing, and standards as we quickly complete the new request. Upon completion, the meeting and presentation go pretty much like the first, and ends with yet another task.</p>
+<h3>More of the Same</h3>
+<p>This cycle continues over and over again, and we continue to perform admirably. Our boss seems to be a wealth of knowledge and ideas, and we continue to turn these ideas into application at an astounding rate. However, with each iteration there are more bugs, more overlap between one functionality and the next, and more <q>gotcha</q> moments as we try to demo the newly created functionality. We are starting to struggle with the code base a bit as our technical debt has been steadily increasing little by little.</p>
+<h3>Longer Time frames</h3>
+<p>Of course we are smart, and realize very fast that those little <q>gotcha</q> moments as we demo to our boss are taking a toll on his trust of our ability. We quickly realize we need to test a little better before presenting the functionality. This requires some time to complete so we start to pad our time estimates a bit to compensate. But with each task this time frame grows longer and longer, and soon these time estimates become a week, a month, two months, a quarter, then six months.</p>
+<h3>Unstable</h3>
+<p>By now our code has become so unstable we fear it, and are tripping over quick decisions made months ago. There are no unit tests, no standard functional tests, no documented regression tests. Our code is just layer upon layer of classes and functions that are so tightly coupled we constantly trip over them. A change in one place causes things to break in 4 other places. We have not even sat down and set a coding standard, let alone done any documentation of the application.</p>
+<p>It’s at this point that every time someone makes a request our first answer is <q>6 months</q>. However, we know in our mind that there is no way we can get it done in that time frame. But marketing needed some sort of answer and there is no way they would settle for a number larger than 6 months.</p>
+<h3>Danger</h3>
+<p>We’ve dug a hole of technical debt over time by not using best practices, and we are in a danger area. Our once pleased boss is questioning every choice and estimate we make. Perhaps he is forgiving a little because he realizes we have worked so hard up to now, and we have earned some <q>professional credit</q> to this point. We realize that action needs to happen…and happen fast.</p>
+<h3>Time to Pay</h3>
+<p>As with all debt, whether it is financial or technical, we must eventually pay it off somehow. With financial debt we either pay it off by making payment arrangements, or we go bankrupt. Technical debt is similar. With technical debt we can either refactor bit by painful bit (making payments), or we can do a full rewrite of the application (go bankrupt). Of course we could also leave the company and therefore leave the mess for someone else to clean up, but lets assume we are responsible developers and feel obligated to do the right thing.</p>
+<h3>Summary</h3>
+<p>I am sure most of us have played a part in the story above, and can nod our heads in understanding. Hopefully most of us have learned from the experience and no longer do it. (Yeah, right.) Those who have not had the luxury of making these mistakes should take heed of the story and learn from these common mistakes. The story above IS NOT how to do things.</p>
+<p><strong>IMPORTANT:</strong> Our employers hire us to be professionals. By following the sequence above we set the standard ourselves, in a bad way. Please do things the right way, and be the professional you were hired to be.</p>
+<p>Throughout this series I will continue to outline ways to avoid making these mistakes, and how we can accomplish <q>Clean Development</q>. I hope you found this breakdown helpful, and learned from it.</p>
+
+<h2><a name="part3">Clean Development Series: Part 3, Dirty Code (how to spot/smell it)</a></h2>
+
+<p>Lately I have been talking about clean application development, and how developers can do a better job of it. Due to the strong focus on this I decided to write some content from my latest talks into a series of blog posts. Enabling everyone to reap the benefits of the subject matter, and allow attendees of my talks to refresh the content covered at one of the events I spoke at.</p>
+<p>In <a href="#part1" title="Clean Development Series: Part 1, Dirty Code (cause/effect)">part 1</a> of this series we discussed some causes of dirty code, and then talked about the things that dirty code can cause. In <a href="#part2" title="Clean Development Series: Part 2, Dirty Code (why we do it)">part 2</a> we followed that by giving a possible scenario of how developers get caught in a situation where they end up with dirty code. Now in this part we will cover how to spot dirty code, and some possible situations that can be a bad <q>smell</q> and highlight potential problems.</p>
+<p>Most experienced developers, and development <q>how to</q> books, have come to associate <q>smells</q> to help find dirty code. Meaning that most dirty code can be found by looking for certain clues/smells, which like a bad odor can tell us something rotten is nearby. When something smells we usually are forced to deal with the problem. (If milk smells bad we throw it out.) The same is true of smells in our code. Below are some common stenches we may encounter to help point out problems.</p>
+<div><a href="http://www.geekyboy.com/wp-content/uploads/2012/10/smells.jpg"><img width="300" height="241" alt="" src="http://www.geekyboy.com/wp-content/uploads/2012/10/smells-300x241.jpg" title="smells" class="size-medium wp-image-490"></a><p class="wp-caption-text">Dirty things smell. So does dirty code.</p></div>
+<h3>How to spot <q>common</q> dirty code</h3>
+<p>NOTE: All of the items below are not necessarily dirty code, but are merely indications that something may be wrong and require more investigation.</p>
+<ul>
+<li><strong>Incomplete error handling</strong> &ndash; While the lack of good error handling doesn’t automatically mean the code is dirty, it is usually a good sign that the developer did not care enough to complete things. It’s only reasonable to think this carelessness probably washed over to other areas. End-users should never see <q>raw</q> error messages, and developers should be alerted to errors.</li>
+<li><strong>Memory leaks</strong> &ndash; If PHP faces a memory limitation it is usually a good sign there is bad code lurking under the hood. We kick off an application and it is churning along, then BAM the browser goes all white. There is no indication of a problem, except we get no results when something was expected. Error reporting was turned on (in development), but returned nothing. This is typical of hitting a memory limit. In <strong>most</strong> cases this means memory was being used frivolously and not returned…poor coding. (Do not confuse this with the need to build large files or handle large chunks of data, though these can also be handled in a different manner in many cases.)</li>
+<li><strong>Race conditions</strong> &ndash; Though this is rare, it is always a pain when it happens. There are many ways this can be caused. A simple explanation is the application execute, and expect an answer to be returned. However, the script continues along trying to use the return prior to it being ready. Perhaps the script is creating a file on the file-system, and tries to access the file before the file-system has finished creating it. The script failed, and when we check the file appeared to be there. So what happened? Or maybe we do a few AJAX calls back-to-back and our script is not sure which answer came first since AJAX doesn’t always return the results in the same order they were called.</li>
+<li><strong>Inconsistent naming conventions</strong> &ndash; Whether it’s a class, a function, or a variable, we should ensure our application is consistent in naming convention. If we use StudlyCaps for the class name, do it everywhere. If we are using camelCase for functions, do it consistently. The same can be said for variableNames, that should use the same convention throughout the entire application to ensure those who follow behind us will be able to read our code. This will also help in certain situations where we may have named a function and a variable by a similar name. The convention will help us figure out what it actually is. Also we should ensure that our names are descriptive and meaningful, so we can pretty much tell what is happening simply by looking at the name. Doesn’t the function name ‘getFinanceCharge()’ make more sense than ‘charge()’?</li>
+<li><strong>Inconsistent coding standard</strong> &ndash; Coding standards can encompass many areas, and there are a few different standards available (PEAR, Zend, PSR-2, etc.) for those who are not currently following one. (I will talk more about this in later parts.) The important thing is that we have a coding standard in place, and that our team is also using it on the same projects. There is nothing worse than starting to work on a new project and discovering that 3 different developers were working on it and they all used their own flavor of coding standard. We spend most of our time reading code versus writing code. A coding standard makes reading that much easier when it is consistent. For instance, putting the opening curly braces for a function on a new line throughout an entire class does make it easier to scroll through and pick out the functions starting point, if done consistently.</li>
+<li><strong>Un-initialized variables</strong> &ndash; By allowing our application to run without initialized variables we are opening ourselves up to problems. In a loop an unset variable will retain the previous value it had from a previous iteration, causing our application to act in an inaccurate manner. This could also cause security issues where the application freely uses a variable that may have been set wrong early on, then did not initialize it again for later use.</li>
+<li><strong>Code lacks clear purpose</strong> &ndash; If we look at our code and say, <q>Huh?</q>, it is usually a good sign that this <q>smell</q> is strong. Code within an application should be clear on what it is doing, rather than like a large puzzle to be solved. Often this is caused by poor planning, and <q>flying by the seat of our pants</q>, as we build the application.</li>
+<li><strong>Large classes</strong> &ndash; Often if a class is very large it is usually because we have stuffed too many things into it. Perhaps we have combined two or more different types of things into it and we should have actually created other objects out of them. If a class is very long, and we find ourselves sifting through method names to figure out the one we need, we should start planning to break it up into more objects.</li>
+<li><strong>Functions do too much</strong> &ndash; (more than one thing) A function should be <q>single minded</q> and do only <strong>one thing</strong>. For me this is a difficult one I often find myself fighting internally with, and often need to return to a function and refactor to break out new functions. But that’s OK. We should often refactor to simplify our code. This one goes hand in hand with unit testing (covered later), which should only test one thing. In order to make functions testable, and single minded, they should inherently be short. How short? We should be able to look at a function and immediately see that it does pretty much what we expected. Nothing fancy, or hard to follow. Functions should be short, to the point, and easy to understand at a glance. If a function is 100, 50 or even 30 lines long, how can we possibly tell what it is doing at a glance?</li>
+<li><strong>Long parameter list</strong> &ndash; Referring back to the previous item, if a function/method is truly doing only one thing how many parameters do we really need? Long parameter lists are usually caused by trying to keep our application DRY (Don’t Repeat Yourself). We are working on a new part of our application and realize that we can reuse a function we created earlier, but it will require another bit of info to perform this new task. So we add another parameter to the list and alter the function to multi-task. Before we know it our list of parameters has grown to be 4, 5, maybe even 6. (I won’t go larger than that, because nobody should.) I would challenge that if a function’s parameter list is longer than 2 it is doing more than one thing and should be broken down into smaller functions. Agreed?</li>
+<li><strong>Globals used</strong> &ndash; I will only say this once…Globals are dangerous, and should not be used. In a situation where we feel a Global must be used, we need to find another way…period! There are huge security risks, inconsistencies to be accounted for, not to mention it takes longer to code by using them. Remember, where do we spend most of our coding time? Yes, we spend most of our time reading code. If we need to track down a Global, it is hard to truly comprehend the amount of time we will spend tracking down where the Global may have been set. Imagine someone taking over an application from another developer who used Globals! Ouch!</li>
+<li><strong>Too many comments</strong> &ndash; Yeah, yeah, everyone says that commenting code is good. So why do I feel it is a <q>smell</q>? I feel it can be a bad smell if our code is so complex that we need to explain it. If our functions/methods are only doing one thing, they tend to be small. And if we add well named variables and functions to a small amount of code doesn’t that mean the code can be <q>self documenting</q>? Instead of adding a comment, doesn’t it make more sense to simplify the code to be drop-dead simple and self documenting?</li>
+<li><strong>Notices, Warnings, Fatal Errors</strong> &ndash; When I take over a project the first thing I do is turn on full error reporting and try to use the application. This is the best way to see how <q>responsible</q> the previous developer was, and will usually give a fast indication on what size of mess I got myself into. Developers should ALWAYS code with error reporting turn ON for their development environments. If I see a bunch of notices and errors I know there is no way the previous developer was doing this, and that means there are probably errors that were never fixed.</li>
+<li><strong>Switch statements</strong> &ndash; A switch statement is not really a bad coding practice, but it could be a missed opportunity to use polymorphism. I have seen many applications in the past where the developer used switch statements in far too many places, and this made the application far less dynamic. If polymorphism had been used instead and broken down into functions it would have made the application far more flexible. A switch statement is also a sure sign we will need to return to the application at some point and edit the code when the customer requests that another criteria be added to the application. Properly done that can be alleviated.</li>
+<li><strong>Temporary variables</strong> &ndash; We have all done it, and will continue to do it. Developers will use a temporary variable to carry a value for later use by the application. It is unavoidable in some places, but it can also be over-used and can lead to memory leaks if not handled properly. Temporary variable usage should be limited, and only used when absolutely necessary.</li>
+<li><strong>No unit tests</strong> &ndash; Lack of unit tests are a sure sign that a developer was in a hurry. It is also a sure sign that every line of code was not necessarily analyzed to ensure it functioned as expected. It is also a good <q>smell</q> to highlight other potential issues, such as long functions, or functions that do too much, or large classes. Unit testing, done properly, tests only one thing and ensures that we pay closer attention to our classes and functions in order to make unit testing work best. If there are no tests it means we can get away with more, and be lazy.</li>
+</ul>
+<p>While these are not the only <q>smells</q> that may be encountered, they are the most common indicators that ugly and spoiled things lurk inside. Like a spoiled package of meat, you don’t need to open the package to know something is very wrong. We should always analyze our code to look for these and other smells, then fix them quickly. Remember, one bad apple will ruin a bunch if left unattended. Don’t let these bad apples infect the rest of the code. Fix them, take them out before they multiply, <strong>leave the code better than when you arrived</strong>.</p>
+<p>As I have said many times, we read code more than we write code. By eliminating smells we ensure that our reading, or other developers reading, of the code goes faster and enables creation of new code to be faster. Not to mention how this affects our reputation. If you write dirty code please believe that other developers WILL talk about you, and it can determine what jobs you get hired for in the future. So please, write clean code and clean up old code.</p>
+
+<h2><a name="part4">Clean Development Series: Part 4, Rewrite dilemma</a></h2>
+
+<p>Lately I have been talking about clean application development, and how developers can do a better job of it. Due to the strong focus on this I decided to write some content from my latest talks into a series of blog posts. Enabling everyone to reap the benefits of the subject matter, and allow attendees of my talks to refresh the content covered at one of the events I spoke at.</p>
+<p>In <a href="#part1" title="Clean Development Series: Part 1, Dirty Code (cause/effect)">part 1</a> of this series we discussed reasons for creating dirty code, and the things that dirty code can cause. We followed with <a href="#part2" title="Clean Development Series: Part 2, Dirty Code (why we do it)">part 2</a> by giving a possible scenario of how developers get caught in a situation and start writing dirty code. Then, in <a href="#part3" title="Clean Development Series: Part 3, Dirty Code (how to spot/smell it)">part 3</a> we covered <q>smells</q> that hint to dirty code, and some possible situations that can be a bad <q>smell</q> highlighting potential problems. So, what happens when our code carries many of the bad situation covered in the first 3 parts?</p>
+<p>Code that made us proud at one time has become an embarrassment we try to hide, and hide from. In <a href="#part2" title="Clean Development Series: Part 2, Dirty Code (why we do it)">part 2</a> the developer was very happy with his work in the beginning, and so was his boss. They were able to complete requests quickly, and everyone was happy to have such fast turn-around on new features. Then, little by little the problems of the application started to grow. The bugs began popping out, a change in one place leads to multiple problems in other areas, and time estimates start growing to compensate as the developers are forced to pad them for the unknown. As things become worse the developers tend to care less and less about the code, and this lack of caring shows in newly created code as problems continue to mount.</p>
+<p>Many times the first signs of surrender come when the boss asks if hiring more developers will help get things done faster. It’s an honest question, and makes perfect sense on paper. If it takes two or three developers six months to create a new feature surely twice as many could do it in half the time. So the boss instructs us to start a search for more developers to hire, and we spend two or three months (or more) of our <q>spare</q> time searching, evaluating, and interviewing candidates until we finally manage to find a couple. After all, more resources equal more output…right?</p>
+<p><a href="http://www.geekyboy.com/wp-content/uploads/2012/11/surrender.jpg"><img width="300" height="231" alt="" src="http://www.geekyboy.com/wp-content/uploads/2012/11/surrender-300x231.jpg" title="surrender" class="aligncenter size-medium wp-image-548"></a><br>
+Needless to say we go through a few developers, because all of them are not able to grasp the mess we’ve created. Others just leave for greener pastures rather than try to figure things out. Then a couple, either due to desperation or being hard workers, manage to stick around and get to work. But for some strange reason the time-lines never seem to improve, and it still takes a long time to introduce new features.</p>
+<p>The boss is very confused, and not happy, because he thought more resources would allow development to get done faster. He even went to his boss and asked for permission to augment the team, and fought a good fight to get his way. Meanwhile the developers, seeing the writing on the wall, start scurrying to provide answers for failing to meet expectation. Technical debt has caught up to them, and it’s time to pay it off.</p>
+<p>We talked briefly in <a name="part1" title="Clean Development Series: Part 1, Dirty Code (cause/effect)">part 1</a> about <q>technical debt</q>, and explained it was similar to buying things on credit. Using credit to buy things means the debt continues to grow and grow, until we’re forced to deal with it. Either we pay it off, or we go bankrupt and start fresh. In relation to coding, if we continue to develop poorly taking the <q>short way</q>, our technical debt continues to climb with each bad thing we do. Eventually we find ourselves in a situation where we either repair the code through refactoring, or we rewrite the application entirely and start fresh.</p>
+<p>Unfortunately the first reaction to a poorly written application is usually a resounding <q>rewrite</q>. Developers feel like a weight is lifted from their shoulders, as the manager hears a distant <q>cha-ching</q> sounds of money slipping away. The old application took months, maybe even years, to build and cost a HUGE amount of money. Developers, hosting, tools, sales, customer support, and the hidden costs of insurance/rent/utilities/furniture to keep it all running add up. In the managers mind a rewrite means it must all be duplicated, and that’s not far from the truth when we consider the salaries of an entire development team for the time it will take to rewrite the whole application.</p>
+<h3>Challenging sale</h3>
+<p>In the past there has been times when I inherited an application full of dirty code and recommended a rewrite to the client. On the surface it seemed like a good idea, and a win/win situation for both me and the client. It allowed me to make a little more money, because a rewrite take longer than simply doing updates or creating some new functionality. It also meant I could create the application <q>my way</q>. Because if it was built using my favorite framework, with my coding standards, and unit tests, it would be so much easier for me to work with.</p>
+<p>The customer would benefit from a <q>better</q> application, pay for less time on future enhancements because it was <q>better</q>, and might even get some performance gains with less bugs from the application. The downside of course is that it costs the customer a much larger sum of money, and much longer time period, to have a rewrite done.</p>
+<h3>The rewrite</h3>
+<p>After much debate the developers may eventually win, and the manager will allow the rewrite. But only if the team is divided so part will be dedicated to building the new vision while the rest will support the old application. It only makes sense the developers who have been there the longest should develop the new application, since they understand the business better. (Even though they were the ones who created most of the bad code to start with.) The newly split up developer teams start working.</p>
+<p><a href="http://www.geekyboy.com/wp-content/uploads/2012/11/Writing-College-Essays.jpg"><img width="300" height="225" alt="Rewrite" src="http://www.geekyboy.com/wp-content/uploads/2012/11/Writing-College-Essays-300x225.jpg" title="Rewrite" class="aligncenter size-medium wp-image-576"></a></p>
+<p>As the <q>experienced</q> team starts the new application the other team continues to fix bugs, and develops new features in the old application. It happens this way because business must continue to make money and service customers who continually need new functionality, or they will leave. Which causes endless scope creep for the team developing the new application. Not only are they attempting to build a new application, but they must also keep pace with new features added to the old application as well as incorporate any bug fixes and/or changes to the business logic. We start to see how difficult the task of rewriting becomes.</p>
+<p>Rewriting started with the best intentions as everything is planned ahead of time, code written in an organized way, and perhaps unit test are even written. But as time moves on, and the scope continues to creep, the business side of the company starts to become impatient. The developers start to hear, <q>Is it done yet?</q>, and under mounting pressure to speed things up they fall back into the bad practices used in the old application. Before long the new application starts to suffer the same technical debt issues, and the downward spiral drags on. Ultimately the developers end up in the same position of apologizing for padded time-lines, unpredictable bugs, and cascading errors.</p>
+<p>Usually by the time this entire process plays out there has been a change of developers, and maybe none of the originals are still around. The current team is now faced with two similar applications that both contain dirty code full of smells, and may not even have tests. They are now faced with the same choices of the previous team…to rewrite or refactor. And if they refactor, which application do they refactor?</p>
+<p>Meanwhile the company, waiting for the new application, has been dragging its feet on some new features. Or perhaps have been promising the new application to their customers and building expectation. This costs the company money in lost revenue from lack of features, lost customers who went elsewhere to get the new features, and higher costs for the extra developers required for a dual-application path. Eventually, if left unmonitored, companies cannot recover and go out of business from scenarios like this.</p>
+<h3>Refactor instead</h3>
+<p>On the other hand, what if we fought the urge to push a rewrite? If the current application is working and already contains all the business logic needed, but has a very dirty code base, why should the customer endure the loss of time and money for a rewrite? Plus, if we are new to the application and don’t really know all of the business logic, why should we endure the headaches and heated meetings while we discover every little nuance of a new application.</p>
+<p>Now don’t get me wrong. I realize there are some circumstances where a rewrite is absolutely necessary. Perhaps the framework the application uses has had a major upgrade, or perhaps the application business logic is undergoing a large overhaul, or maybe the code is just…that…bad! Yes, there are times a rewrite is inevitable, and simply MUST happen. What I am introducing here is the idea that many times when we do a rewrite it may have actually been better for the customer, and maybe us as well, if we had simply performed refactoring as we went.</p>
+<p><a href="http://www.geekyboy.com/wp-content/uploads/2012/11/evo_refactor.jpg"><img width="400" height="260" alt="Refactor" src="http://www.geekyboy.com/wp-content/uploads/2012/11/evo_refactor.jpg" title="evo_refactor" class="aligncenter size-full wp-image-578"></a></p>
+<p>What I have come to realize as a much better solution than the rewrite story above is to follow some of the steps, but take a different turn. What I mean is that I still split the team up, but rather than instructing one team to build a new application I dub them as the <q>refactor team</q>. Their job is to start refactoring the code one module at a time. First they write unit tests, if there weren’t any. Then they start performing scheduled refactors. Meanwhile the other team starts following the new coding standards and styles, and writing unit tests as they continue to do bug fixes and adding enhancements.</p>
+<p>Of course these two teams need to be closely monitored, and must communicate very often to ensure they are not stepping on each other. IT IS VITAL that everything be managed carefully, and that the teams are communicating open and often. Did I mention that communication is important, and it must happen often?</p>
+<p>Sure there will be times when commits clash, and code will need to be altered using pair programming. However, the cost of time and money will be greatly reduced from a full rewrite. Not to mention it will help bring the development team closer together in the process.</p>
+<p>After the initial modules are refactored in this manner it may be beneficial to rotate some members around on each team. This will ensure that team members on both sides of the fence do not become bored, or fall into bad habits.</p>
+<h3>In closing</h3>
+<p>Remember, I am not saying one way is better than another in every circumstance. It’s really a judgement call on which method is used to deal with the technical debt of the application we are working on. However, I hope this post has helped highlight that a rewrite is not always the best solution. Sometimes the best approach is to plan a series of refactors to recover the application from the junk pile. We must carefully analyze the entire picture and determine if a rewrite is a <q>must</q>, or is it a <q>nice to have</q>. Then we can honestly create a full list of pros and cons to more fully gain the big picture, and use that list to sell what we believe to be the best solution.</p>
+<p>It may very well save the company from being a <q>used to be</q>, and instead make it a <q>will be</q>.</p>
+					
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

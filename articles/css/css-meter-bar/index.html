@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>CSS Meter Bar | BookOfZeus</title>
+	<meta name="description" content="Create a nice and slick Meter Bar using CSS only" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/css-meter-bar" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,147 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>CSS Meter Bar</h1>
+		<h6>Posted on Thursday May 03, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<style>
+div.meterbar {
+	margin: 20px auto;
+	height: 25px;
+	width: 350px;
+}
+div.meterbar div {
+	display: block;
+	float:left;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+div.meterbar div.first {
+	background: #D6923C;
+	-webkit-box-shadow: -5px 0px 8px 2px #D6923C;
+	-moz-box-shadow: -5px 0px 8px 2px #D6923C;
+	box-shadow: -5px 0px 8px 2px #D6923C;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 0px;
+	-moz-border-radius-bottomleft: 8px;
+	-webkit-border-radius: 8px 0px 0px 8px;
+	border-radius: 8px 0px 0px 8px;
+	width:140px;
+	z-index:10;
+}
+div.meterbar div.middle {
+	background: #B7C33D;
+	-webkit-box-shadow: 0px 0px 8px 2px #B7C33D;
+	-moz-box-shadow: 0px 0px 8px 2px #B7C33D;
+	box-shadow: 0px 0px 8px 2px #B7C33D;
+	width:120px;
+	z-index:5;
+}
+div.meterbar div.last{
+	background: #009FD5;
+	-webkit-box-shadow: 5px 0px 8px 2px #009FD5;
+	-moz-box-shadow: 5px 0px 8px 2px #009FD5;
+	box-shadow: 5px 0px 8px 2px #009FD5;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 0px;
+	-webkit-border-radius: 0px 8px 8px 0px;
+	border-radius: 0px 8px 8px 0px;
+	width:30px;
+	z-index:10;
+}
+</style>
+<p>Meter bar are often use to display any we need to the end user. Unfortunately, most of these meter bar are using images and, to be honest, this can easily be accomplished only using CSS.</p>
+
+<p>The concept is very simple. A main <code>div</code> will be used to wrap all the elements and each of these elements will be use to display the progression.</p>
+
+<p>Let's create the wrapper including the common properties for each progressions</p>
+<pre>
+div.bar {
+  height: 25px;
+}
+div.bar div {
+  display: block;
+  float:left;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+</pre>
+
+<p>For this example I created three (3) progressions. Orange first, Yellow then Blue. Because I added a <em>box-shadow</em>, I had to <q>tweek</q> a little the CSS to make sure the three elements shows up correctly.</p>
+<pre>
+div.bar div.first {
+  background: #D6923C;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-radius: 8px 0px 0px 8px;
+  border-radius: 8px 0px 0px 8px;
+  -webkit-box-shadow: -5px 0px 8px 2px #D6923C;
+  -moz-box-shadow: -5px 0px 8px 2px #D6923C;
+  box-shadow: -5px 0px 8px 2px #D6923C;
+  width: 140px;
+  z-index: 10;
+}
+div.bar div.middle {
+  background: #B7C33D;
+  -webkit-box-shadow: 0px 0px 8px 2px #B7C33D;
+  -moz-box-shadow: 0px 0px 8px 2px #B7C33D;
+  box-shadow: 0px 0px 8px 2px #B7C33D;
+  width: 120px;
+  z-index: 5;
+}
+div.bar div.last{
+  background: #009FD5;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 8px 8px 0px;
+  -webkit-box-shadow: 5px 0px 8px 2px #009FD5;
+  -moz-box-shadow: 5px 0px 8px 2px #009FD5;
+  box-shadow: 5px 0px 8px 2px #009FD5;
+  width: 30px;
+  z-index: 10;
+}
+</pre>
+
+<h4>The HTML</h4>
+<pre>
+&lt;div class="bar"&gt;
+    &lt;div class="first"&gt;&lt;/div&gt;
+    &lt;div class="middle"&gt;&lt;/div&gt;
+    &lt;div class="last"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+<h4>Demo:</h4>
+<center>
+<div class="meterbar">
+    <div class="first"></div>
+    <div class="middle"></div>
+    <div class="last"></div>
+</div>
+</center>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

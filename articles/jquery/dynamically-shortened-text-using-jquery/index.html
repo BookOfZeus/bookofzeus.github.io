@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Dynamically shortened Text using jQuery | BookOfZeus</title>
+	<meta name="description" content="How can you shortened text or paragraph dynamically using jQuery." />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/dynamically-shortened-text-using-jquery" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -79,7 +79,7 @@
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
@@ -124,58 +124,65 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Dynamically shortened Text using jQuery</h1>
+		<h6>Posted on Saturday March 23, 2013 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>You ever read long, almost never ending paragraphs without thinking <q>seriously, this should be shorter or I should be able to shrink this!</q>?</p>
+
+<p>For those who thinks this or saying: <q>I can do this?</q>, there's a very simple solution for this using jQuery.</p>
+
+<h4>The HTML</h4>
+<p>Let start with a simple text (lorem ipsum) that look like this:</p>
+
+<pre>
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum laoreet, nunc eget laoreet sagittis,&lt;p/p&gt;
+&lt;p&gt;quam ligula sodales orci, congue imperdiet eros tortor ac lectus. Duis eget nisl orci. Aliquam mattis purus non mauris blandit id luctus felis convallis.&lt;/p&gt;
+&lt;p&gt;Integer varius egestas vestibulum. Nullam a dolor arcu, ac tempor elit. Donec.&lt;p/p&gt;
+</pre>
+
+<h4>CSS</h4>
+<p>Let create a basic style, sorry I won't do this for you.</p>
+<pre>
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  color: blue;
+  cursor: pointer;
+}
+p {
+  margin: 1em 0;
+}
+</pre>
+
+<h4>jQuery Code</h4>
+<p>Now, the fun part. This will take the text and turn it into: <q>Lorem ipsum dolor ... more</q>. The "more" will be clickable and the text will automatically expand. In this case, I use only the first 20 characters: <q>$('#more').text().substr(0, 20)</q>, if you need more, simply change the number from 20 to the one you like.</p>
+
+<pre>
+$(document).ready(function() {
+  var orgContent = $('#more').html();
+  var txtContent = $('#more').text().substr(0, 20) + ' ... &lt;a id="morelink"&gt;more&lt;/a&gt;';
+  $('#more').html(txtContent);
+  $("body").on("click", '#morelink', function(){
+    $('#more').html(orgContent);
+    $('&lt;a id="lesslink"&gt;less&lt;/a&gt;').appendTo('#more p:last-child');
+  });
+  $("body").on("click", '#lesslink', function(){
+    $('#more').html(txtContent);
+  });
+});
+</pre>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Using SetEnvIf in .htaccess with sub-domain | BookOfZeus</title>
+	<meta name="description" content="Use SetEnvIf to simplify your .htaccess rules using multi sub-domain" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/apache/using-setenvif-in-htaccess-with-sub-domain" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,13 +63,13 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
 			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
 		
-			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+			<li class="item"><a href="/articles/apache/" title="Apache" class="selected">Apache</a></li>
 		
 			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
 		
@@ -124,58 +124,49 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="apache" href="/articles/apache/">apache</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Using SetEnvIf in .htaccess with sub-domain</h1>
+		<h6>Posted on Monday March 12, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>Here's a quick hint on how to easily  use the <code>SetEnvIf</code> in .htaccess with multiple sub-domain.</p>
+
+<p>If you use sub-domain for languages or you using sub-domain to differentiate mobile versus non-mobile version of your site, you can simply use the <code>SetEnvIf</code> and then use it in your code.</p>
+
+<p>Let say you have a multi-language website setup like this:</p>
+<ul>
+ <li>www.domain.com</li>
+ <li>en.domain.com</li>
+ <li>fr.domain.com</li>
+ <li>es.domain.com</li>
+</ul>
+
+<p>The idea here is to assign an variable to the apache environment and then pass it to the script or using the environment variables if available.</p>
+
+<pre>
+RewriteEngine On
+RewriteBase /
+
+SetEnvIf Host ^www\. lang=en
+SetEnvIf Host ^en\. lang=en
+SetEnvIf Host ^fr\. lang=fr
+SetEnvIf Host ^es\. lang=es
+
+# other rules ...
+RewriteRule ^([a-z0-9_\-]+)/?$ index.php?lang=%{ENV:lang}&amp;page=$1 [L,NC,QSA]
+</pre>
+
+<p>The <code>%{ENV:lang}</code> will be read from the <code>SetEnvIf</code> (from the sub-domain) and set the correct language you will get from <code>$_GET['lang'];</code> (in your PHP code - assuming it's PHP)</p>
+
+<p>This way, any of the sub-domain will be dynamically loaded without creating rules over and over for sub-domain. I also added a rule that prevent loading images or JavaScript as page.</p>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Memcached vs Redis | BookOfZeus</title>
+	<meta name="description" content="Compare and see the difference between Memcached vs Redis" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/optimization/memcached-vs-redis" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -89,7 +89,7 @@
 		
 			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
 		
-			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+			<li class="item"><a href="/articles/optimization/" title="Optimization" class="selected">Optimization</a></li>
 		
 			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
 		
@@ -124,58 +124,77 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="optimization" href="/articles/optimization/">optimization</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Memcached vs Redis</h1>
+		<h6>Posted on Saturday June 22, 2013 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<h4>What is Memcached?</h4>
+
+<p>Free and open source, high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load.</p>
+
+<p>Memcached is an in-memory key-value store for small chunks of arbitrary data (strings, objects) from results of database calls, API calls, or page rendering.</p>
+
+<p>Memcached is simple yet powerful. Its simple design promotes quick deployment, ease of development, and solves many problems facing large data caches. Its API is available for most popular languages.</p>
+
+<h4>What is Redis?</h4>
+<p>Redis is an open source, BSD licensed, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.</p>
+
+<hr>
+
+<p>They seem similar but, in fact, they are different.</p>
+
+<p>Memcached and Redis are both key/value storage system. Both of these system handle data directly in memory (RAM).
+
+<h4>Storage type</h4>
+
+<p>Memcached stores variables in it's memory. Which mean, it retreive any information directly from the servers memory. Redis on the other than, is like a database that resides in memory. It executes (read and write) a key/value pair from its database to return the resultset. All data resides in memory.</p>
+
+<h4>Read/Write</h4>
+
+<p>Memcached is very good to handle high traffic websites. It can read lots of information at a time and give you back a great response time (lower the better). Redis can also handle high traffic on read but also can handle heavy writes as well.</p>
+
+<h4>Data Structure</h4>
+
+<p>Memcached uses string and integer as data structure. Everything you save can be either one or the other. With integer, the only data manipulation you can do is adding or subtracting them. If you need to save arrays or objects, you will have to serialize them first and then save them. To read them back, you will need to unserialize.</p>
+
+<p>Redis has a stronger data structures. It can handle strings, integer as well but also can handle binary-safe strings, lists of binary-safe strings, sets of binary-safe strings and sorted sets.</p>
+
+<h4>Persistent</h4>
+
+<p>If you are using Memcached and you restarts the server or the server crash, none of the data you saved will be available. You will have to start all over.</p>
+
+<p>Redis, on the other than, can handle persistent data. At any time if you want to save/store the data, you simply have to tell to the server to save it and that's it!
+
+<h4>Installation/Configuration:</h4>
+
+<p>Both of these system are easy to install. The only difference is Redis provides a bit more configuration options if you need to optimize.</p>
+
+<h4>Simplicity</h4>
+
+<p>If you simply want to save a key/value pair or you don't really care about losing data in case of a server crash, Memcached if more memory efficient.</p>
+
+<h4>Key Length</h4>
+
+<p>Memcached key length has a maximum of 250 bytes whereas Redis key length has a maximum of 2 GiB.
+
+<h4>Security</h4>
+
+<p>There is no security built into Memcached nor Redis. Both of these systems needs to be accessed by trusted clients inside trusted environments.</p>
+
+<h4>Replication</h4>
+
+<p>Memcached does not supports replication. Redis supports replication using a master and multiple slaves.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

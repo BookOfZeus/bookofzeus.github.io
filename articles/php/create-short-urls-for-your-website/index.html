@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Create short urls for your website | BookOfZeus</title>
+	<meta name="description" content="How to create and redirect simple short url for your website" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/php/create-short-urls-for-your-website" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -91,7 +91,7 @@
 		
 			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
 		
-			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+			<li class="item"><a href="/articles/php/" title="PHP" class="selected">PHP</a></li>
 		
 			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
 		
@@ -124,58 +124,126 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="php" href="/articles/php/">php</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Create short urls for your website</h1>
+		<h6>Posted on Saturday October 01, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>On September 12st, Dbugger from <a href="http://stackoverflow.com/questions/7498410/short-url-system-how-to-redirect-the-custom-urls" title="Short URL system: How to redirect the Custom URLs" rel="nofollow">StackOverFlow</a> asked how to redirect short/custom URLs to create tinyurl-like service for my company. The solution was easy to share since I already implemented this solution for my site. Here's in details how I did it.</p>
+
+<h4>Create and setup the sub-domain/domain</h4>
+<p>You can either register a new domain (like Google do, goo.gl) or create a sub-domain. In this article, will use the <code>go.domain.com</code> example. For either solution, you will have to point this domain/sub-domain DNS to your server.</p>
+
+<h4>Setup folder and VirtualHost</h4>
+
+<p>Once the DNS is setup, this new domain or sub-domain will have to point to a different web root other than the main one.
+This will simplify your code, avoid redirect rules if you have some on your current website and many more.</p>
+
+<pre>
+sudo mkdir -p /usr/local/apache/htdocs/shorturl_html/
+</pre>
+
+<p>Let's create the entry in the apache2.conf or httpd.conf (or any other if you have any)</p>
+<pre>
+&lt;VirtualHost *:80&gt;
+  DocumentRoot "/usr/local/apache/htdocs/shorturl_html/"
+  ServerName go.domain.com
+  ServerAlias go.domain.com
+  &lt;Directory "/usr/local/apache/htdocs/shorturl_html/"&gt;
+    allow from all
+    Options +Indexes
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</pre>
+
+<h4>The Database</h4>
+<p>Let's create the table we will use to create all the URLs we need to be shorten.</p>
+<pre>
+CREATE TABLE `short_urls` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) NOT NULL DEFAULT '',
+  `short_url` varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `short_url` (`short_url`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+</pre>
+<p>Example URLs:</p>
+<pre>
+INSERT INTO short_urls SET url = 'http://www.domain.com/page/section/', short_url = '3A4ra';
+</pre>
+
+<h4>The Code</h4>
+<p>Now that the DNS, the folder and virtual host are setup, let's see how the code works.</p>
+
+<h5>.htaccess</h5>
+<p>Here's the code you need to put in your <code>/usr/local/apache/htdocs/shorturl_html/.htaccess</code></p>
+<pre>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !^index\.php
+RewriteRule ^([a-z0-9\-]+)(\/?)$ index.php?code=$1 [L,NC,QSA]
+</pre>
+<p class="note">*note: You can also put these rules in the VirtualHost configuration</p>
+
+<h5>PHP Code</h5>
+<pre>
+
+header("Expires: 0");
+header("Cache-Control: no-cache, must-revalidate, post-check=0, pre-check=0");
+header("Pragma: no-cache");
+
+define('BASE_LINK', 'http://www.domain.com/');
+
+if(!isset($_GET['code'])) {
+	$_GET['code'] = '';
+}
+
+# Validate the code
+if(ctype_alnum($_GET['code'])) {
+
+  // Memcached logic here (view note)
+
+  $DB = new PDO('mysql:host=myserver;dbname=mydatabase', 'myuser', 'mypass', array(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => TRUE));
+  $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+  $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $sql = "SELECT `url` FROM `short_urls` WHERE `short_url` = '" . $_GET['code'] . "'";
+  $stmt = $DB->query($sql);
+  if($DB->errorCode() != '00000') {
+    // Log error if you need using $DB->errorCode());
+  }
+  $data = $stmt->fetch(PDO::FETCH_ASSOC);
+  if(!$data) {
+    $link = BASE_LINK;
+  }
+  else {
+    $link = $data['url'];
+  }
+}
+else {
+  $link = BASE_LINK;
+}
+
+# Redirect
+header('Location: ' . $link, TRUE, 301);
+header("Connection: close");
+die();
+</pre>
+
+<p class="note">I recommend to use a caching method, such as MemCached. This way, you will not query the database over and over. Visit <a href="http://www.bookofzeus.com/articles/validate-if-an-ip-is-banned-using-memcached/" title="Validate if an IP is banned using memcached" class="nw">Validate if an IP is banned using memcached</a> to view an example.</p>
+
+<h4>Conclusion</h4>
+<p>The short url <code>http://go.domain.com/3A4ra</code> will redirect to: <code>http://www.domain.com/page/section/</code>.</p>
+<p>Here's a simple solution for your own URL shortening service.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

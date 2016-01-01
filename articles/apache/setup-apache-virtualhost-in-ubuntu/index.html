@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Setup Apache VirtualHost in Ubuntu | BookOfZeus</title>
+	<meta name="description" content="Setup multiple domains using the Apache VirtualHost in Ubuntu" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/apache/setup-apache-virtualhost-in-ubuntu" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,13 +63,13 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
 			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
 		
-			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+			<li class="item"><a href="/articles/apache/" title="Apache" class="selected">Apache</a></li>
 		
 			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
 		
@@ -124,58 +124,149 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="apache" href="/articles/apache/">apache</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Setup Apache VirtualHost in Ubuntu</h1>
+		<h6>Posted on Sunday February 19, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>If you run multiple sites (including multiple domains) on the same hosting plan, you will have to setup each of them before using them, otherwise all the domains will go the same place.</p>
+
+<p>Here's a quick solution to efficiently maintain all these domains and easily enable or disable some in case of emergency.</p>
+
+<p>For this article we will use three (3) domains:</p>
+<ul>
+ <li>domain1.com</li>
+ <li>domain2.com</li>
+ <li>domain2.net</li>
+</ul>
+
+<p>The ".com" domains has nothing in common and the ".net" domain belongs to domain2.com. The "domain1.com" belongs to you and the "domain2.com" and "domain2.net" belongs to a friend.</p>
+
+<h4>Preparing the folder directory</h4>
+<p>Let's create the directory structure. Let's create the structure for the "domain1.com". Because this domain belongs to you, you can use the default webroot <code>/var/www/</code> or <code>/usr/local/httpd/</code>.</p>
+
+<pre>
+sudo -p mkdir /var/www/domain1.com/public_html/
+chown myuser:myuser 755 /var/www/domain1.com/
+</pre>
+
+<p>Now, let's create the account for the second domain.</p>
+<pre>
+bookofzeus@ubuntu:~$ sudo adduser domain1
+</pre>
+
+<p>This will display something like:</p>
+<pre>
+[sudo] password for bookofzeus:
+Adding user `domain2' ...
+Adding new group `domain2' (1001) ...
+Adding new user `domain2' (1001) with group `domain2' ...
+Creating home directory `/home/domain2' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for domain2
+Enter the new value, or press ENTER for the default
+	Full Name []: John Doe
+	Room Number []:
+	Work Phone []:
+	Home Phone []:
+	Other []:
+Is the information correct? [Y/n] y
+</pre>
+<p>This will create the account and the folder structure for the user.</p>
+<p>Now, let's create the public_html where the website files will be uploaded.</p>
+<pre>
+sudo mkdir -p /home/domain2/{public_html,private,logs}
+</pre>
+
+<p>Let's give the permissions:</p>
+<pre>
+sudo chown -R domain2:domain2 /home/domain2/
+</pre>
+<p>This will create the basic structure:</p>
+<pre>
+bookofzeus@ubuntu:/home/domain2$ ll
+total 12
+drwxr-xr-x 2 domain2 domain2 4096 2012-02-20 07:46 logs
+drwxr-xr-x 2 domain2 domain2 4096 2012-02-20 07:46 private
+drwxr-xr-x 2 domain2 domain2 4096 2012-02-20 07:46 public_html
+</pre>
+
+<h4>Setup the VirtualHost</h4>
+<p>Now the directory structure is created, we can setup the VirtualHost.</p>
+<p>Make sure the <code>sites-enabled</code> is in the apache configuration. If not, you need to add it to the file.</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+<p>And add the following line:</p>
+<pre>
+# Include the virtual host configurations:
+Include sites-enabled/
+</pre>
+<p>Now, let's create the configuration file for both domains. Let's create the first domain (domain1.com).</p>
+<pre>
+vi /etc/apache2/sites-available/domain1.conf
+</pre>
+
+<p>and use the following config:</p>
+<pre>
+&lt;VirtualHost *:80&gt;
+ DocumentRoot "/var/www/domain1.com/"
+ ServerName domain1.com
+ ServerAlias domain1.com www.domain1.com
+ &lt;Directory "/var/www/domain1.com/"&gt;
+  allow from all
+  Options +Indexes
+ &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</pre>
+<p>Same idea for the domain2 (.com and .net)</p>
+<pre>
+vi /etc/apache2/sites-available/domain2.conf
+</pre>
+<p>and use the following config:</p>
+<pre>
+&lt;VirtualHost *:80&gt;
+ DocumentRoot "/home/domain2/public_html/"
+ ServerName domain2.com
+ ServerAlias domain2.com www.domain2.com domain2.net www.domain2.net
+
+ LogLevel warn
+ ErrorLog  /home/domain2/logs/error.log
+ CustomLog /home/domain2/logs/access.log combined
+
+ &lt;Directory "/home/domain2/public_html/"&gt;
+  allow from all
+  Options +Indexes
+ &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</pre>
+
+<p class="note">You notice the <code>ServerAlias</code> use both .com and .net domains and the <code>ServerName</code> use only the .com. Very important not to mix both.</p>
+
+<p>Now that both configuration is created, let's enable them.</p>
+<pre>
+ln -s /etc/apache2/sites-available/domain1.conf /etc/apache2/sites-enabled/
+ln -s /etc/apache2/sites-available/domain2.conf /etc/apache2/sites-enabled/
+</pre>
+
+<p>By creating the symbolic link, you can easily enable (create a symlink) or disable (delete the symlink) the website.</p>
+<p>Now, re-start the web server:</p>
+<pre>
+/etc/init.d/apache2 restart
+</pre>
+<p>If everything went well, when you go to the domain1.com you will see your website and when you go to the domain2.com or domain2.net you will see the other website.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>CakePHP and Dreamweaver opening ctp files | BookOfZeus</title>
+	<meta name="description" content="How to open cakephp extension (.ctp) files with Dreamweaver" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/documentation/cakephp-and-dreamweaver-opening-ctp-files" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -73,7 +73,7 @@
 		
 			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
 		
-			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+			<li class="item"><a href="/articles/documentation/" title="Documentation" class="selected">Documentation</a></li>
 		
 			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
 		
@@ -124,58 +124,48 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="documentation" href="/articles/documentation/">documentation</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>CakePHP and Dreamweaver opening ctp files</h1>
+		<h6>Posted on Friday September 02, 2011 / by Adam Culp</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>I have been working with some web designers recently who do not have a lot of PHP coding experience, but fully understand HTML and CSS in code view using Dreamweaver. So, to help them transition projects to using PHP, or more to the point using the CakePHP framework, I have been making preparations to move in that direction.</p>
+<p>The hurdle, after setting up the base site using the framework, was to get .ctp files rendering in Dreamweaver. (Their editor of choice.)  Initially Dreamweaver does not understand what the ctp file extension is, and how should it syntax highlight the code.  So we help Dreamweaver out by editing a few of its configuration files. (Note: I only have Dreamweaver CS3, otherwise known as version 9, so I am not sure how it affects later versions of Dreamweaver.  Hopefully future versions of Dreamweaver may already understand the ctp file extension.)</p>
+<p><span class="bold">First</span>, we edit a Dreamweaver base configuration file located at <code>"C:\Program Files\Adobe\Adobe Dreamweaver CS3\configuration\Extensions.txt"</code> and alter 2 lines by adding the CTP file extension as follows:</p>
+
+<pre>
+...,INC,JAVA,EDML,MASTER,CTP:All Documents
+</pre>
+
+<p>The very first line should look as above at the end.</p>
+<pre>
+PHP,PHP3,PHP4,PHP5,TPL,CTP:PHP Files
+</pre>
+
+<p>The PHP Files line, which was line 16 for me, should look as above.</p>
+
+<p><span class="bold">Second</span>, we do the exact same thing to the user configuration file located at <code>"C:\Documents and Settings\{user}\Application Data\Adobe\Dreamweaver 9\Configuration\Extensions.txt"</code>. I am not sure why we need to edit the same file in both locations, but that is what is required. (One would think that editing the user configuration file would be enough since it should cascade over the base configuration, but it does not work that way.)</p>
+
+<p>For Windows 7, there is an additional file that needs to be updated the same way at <code>"C:\Users\\AppData\Roaming\Adobe\Dreamweaver 9\Configuration\Extensions.txt"</code>. (Note: For later versions of Dreamweaver there is another folder level under Configuration called "en_US" that contains the Extensions.txt file.)</p>
+
+<p>Fourth, we now need to push Dreamweaver to what type of file ctp is, and how should it be rendered. We do this by editing another configuration file located at <code>"C:\Program Files\Adobe\Adobe Dreamweaver CS3\configuration\DocumentTypes\MMDocumentTypes.xml"</code>. What we are looking for is around the 75th line where it reads <code>"servermodel=PHP MySQL"</code>.</p>
+
+<pre>
+winfileextension="php,php3,php4,php5,ctp"
+macfileextension="php,php3,php4,php5.ctp"
+</pre>
+
+<p>Add the ctp extension to the comma separated list as shown above.</p>
+<p>Your done! But first you must check one more thing. After you start Dreamweaver, open the "Edit->Preferences" and look at the "File Types/Editors". Make sure that ".ctp" is not in the list to "Open in code view", otherwise Dreamweaver will not allow you to use Design View with ctp files. (Note: Design View is not truly useful since Dreamweaver will still not use the Layout file. But you can still assign "Design Time" styles to render views.)</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

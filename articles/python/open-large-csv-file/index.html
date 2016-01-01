@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Open large CSV file | BookOfZeus</title>
+	<meta name="description" content="Use Python to open large CSV files using the csv.reader" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/python/open-large-csv-file" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -93,7 +93,7 @@
 		
 			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
 		
-			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+			<li class="item"><a href="/articles/python/" title="Python" class="selected">Python</a></li>
 		
 			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
 		
@@ -124,58 +124,77 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="python" href="/articles/python/">python</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Open large CSV file</h1>
+		<h6>Posted on Friday December 05, 2014 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>Opening large CSV files can be sometimes hard to do. All development languages can import or read CSV files but it might requires some coding or huge memory allocation.</p>
+
+<p>This is why I love Python! I had to parse a very bad formated 5.6 Gig CSV file. For this article I will not put the 5.6 Gig file but instead, here's what we will work with.</p>
+
+<pre>
+first_name,last_name,phone,address,city,zip,first_appearance
+Clark,Kent,2195550001,"344 Clinton Street, Apartment 3D",Metropolis,11111,"April 18, 1938"
+Peter Benjamin,Parker,5185550002,"137 Chrystie Street","New York",22222,"1962"
+Bruce,Wayne,2125550003,"1007 Mountain Drive","Gotham City",10001,"May 1939"
+...
+</pre>
+
+<p>To import or read CSV files we need to first import the csv module.</p>
+
+<pre>
+import csv
+</pre>
+
+<p>This will allow you to use the <q>reader</q> function that wlil parse the CSV file properly.</p>
+
+<pre>
+data = csv.reader(open("myfile.csv", "rb"))
+</pre>
+
+<p>Then, we simply need to loop through the data to read them.</p>
+
+<pre>
+for row in data:
+</pre>
+
+<p>Let say, we need need to import the first name, the address and the zip code. We will need to use the index of the array corresponding to the fields from the CSV file.</p>
+
+<p>Here's the full script:</p>
+
+<pre>
+import csv
+data = csv.reader(open("myfile.csv", "r"))
+for row in data:
+	print row[0],
+	print ",",
+	print row[3],
+	print ",",
+	print row[5]
+</pre>
+
+<p>This will output:</p>
+<code><pre>
+Clark , 344 Clinton Street, Apartment 3D , 11111
+Peter Benjamin , 137 Chrystie Street , 22222
+Bruce , 1007 Mountain Drive , 10001
+</pre></code>
+
+<p>Now, to simply output this to another file, simply use this command:</p>
+
+<pre>
+python myScript.py &gt; anotherfile.csv
+</pre>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

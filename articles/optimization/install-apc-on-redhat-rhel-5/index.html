@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Install APC on RedHat RHEL 5 | BookOfZeus</title>
+	<meta name="description" content="How to install alternative PHP cache on RedHat RHEL 5" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/optimization/install-apc-on-redhat-rhel-5" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -89,7 +89,7 @@
 		
 			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
 		
-			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+			<li class="item"><a href="/articles/optimization/" title="Optimization" class="selected">Optimization</a></li>
 		
 			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
 		
@@ -124,58 +124,70 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="optimization" href="/articles/optimization/">optimization</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Install APC on RedHat RHEL 5</h1>
+		<h6>Posted on Monday October 31, 2011 / by Adam Culp</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>After attending php|tek 2009 I decided it was finally time for me to play with APC, and at least install it on a server to see what all of the excitement is about. After all, if it is good enough for Facebook it must be pretty beneficial, right?</p>
+<p>According to the documentation the following command is what it takes to install:</p>
+<pre>
+pecl install apc
+</pre>
+<p>However, then I tried this I quickly received an error stating "phpize: command not found". So after a little searching I discovered that I needed to install php-devel.i386 to enable pear to install packages. (You may also need to install autoconf, automake and libtool to do phpize. I must have already had them installed.)</p>
+<pre>
+sudo yum install php-devel.i386
+</pre>
+
+<p class="note">I used sudo, but you can also use su to change to the root user and then run the command as root.</p>
+<p>Now after installing that, which also installed a couple of dependencies and updated a couple of other applications, I figured I would be all set. To the contrary I tried the install apc command again and I received one prompt asking:</p>
+<pre>
+Use apxs to set compile flags (if using APC with Apache)? [yes]:
+</pre>
+
+<p>I received a new error after answering "yes" :</p>
+<pre>
+Sorry, I was not able to successfully run APXS.  Possible reasons:
+
+1.  Perl is not installed;
+2.  Apache was not compiled with DSO support (--enable-module=so);
+3.  'apxs' is not in your path.  Try to use --with-apxs=/path/to/apxs
+The output of apxs follows
+/tmp/tmpArfGXr/APC-3.0.10/configure: line 3196: apxs: command not found
+configure: error: Aborting
+ERROR: `/tmp/tmpArfGXr/APC-3.0.10/configure --enable-apc-mmap=yes
+--with-apxs' failed
+</pre>
+
+<p>After a few minutes of searching I found a post somewhere that informed me that httpd-devel.i386 also needed to be installed.</p>
+<pre>
+sudo yum install httpd-devel.i386
+</pre>
+
+<p>Once the package installed, along with a few more dependencies and updates, I was then ready to try again. This time all went well, and APC was installed.</p>
+<p>One final step was to activate it in the php.ini file. I added the following:</p>
+<pre>
+extension=apc.so
+apc.enabled = On
+</pre>
+
+<p>Next I was ready to restart Apache and see APC in action:</p>
+<pre>
+sudo /etc/init.d/httpd restart
+</pre>
+
+<p>After creating a quick phpinfo() call I could now see that the APC module was indeed active. Once I copied the apc.php file that comes with the APC install files into a web accessible directory (preferably password protected) I was clearly able to see stats associated with APC.</p>
+<p>There is much more you can do with APC settings, etc. However, that is another story for another time. Here are a couple of links to help get you started though.</p>
+				
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Create an easy box reflect with webkit | BookOfZeus</title>
+	<meta name="description" content="Create an neat box reflection using -webkit-box-reflect" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/create-an-easy-box-reflect-with-webkit" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,53 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Create an easy box reflect with webkit</h1>
+		<h6>Posted on Wednesday May 16, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<style>
+div#boxReflect {
+	height: 650px;
+}
+div#boxReflect img {
+	-webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
+}
+</style>
+<p>Image reflection is a cool effect when you want to display images. Before CSS3, this was a painful process to do, specially if you have lots of image to show. This is now a just memories from the past.</p>
+
+<p><em>Webkit</em> now introduce a new feature call <code>-webkit-box-reflect</code>. This new CSS code will automatically creates an image reflection. The negative point is, only Webkit supports it.</p>
+
+<h4>CSS Code</h4>
+<pre>
+div#boxReflect {
+  height: 650px;
+}
+div#boxReflect img {
+  -webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
+}
+</pre>
+
+<h4>HTML</h4>
+<pre>
+&lt;div id="boxReflect"&gt;
+  &lt;img src="http://www.bookofzeus.com/download/tron-legacy-racing-poster.jpg" width="300" height="429" alt="Tron Poster CSS3 Box Reflect" /&gt;
+&lt;/div&gt;
+</pre>
+
+<h5>Demo</h5>
+<div id="boxReflect">
+  <img src="/download/tron-legacy-racing-poster.jpg" width="300" height="429" alt="Tron Poster CSS3 Box Reflect" />
+</div>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

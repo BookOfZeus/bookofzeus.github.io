@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Structure Expansion For tables and divs using jQuery | BookOfZeus</title>
+	<meta name="description" content="How to expand structures using jQuery in tables or divs." />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/structure-expansion-for-tables-and-divs-using-jquery" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
+</article>
+
+<article>
+	<header>
+		<h1>Structure Expansion For tables and divs using jQuery</h1>
+		<h6>Posted on Tuesday March 20, 2012 / by Yelvy Buitrago</h6>
+	</header>
+
+	<p>In the last few years industry has frowned upon using tables. After all in the beginning of web development we didn't have the luxury of these great browser tools and wonderful CSS. So most UI design was merged right into the structure of the page. But tables still hold an important role in our UI world. <span class="bold">The key note to consider is if your design is completely data driven then it might be beneficial to use tables. </span></p>
+
+<p>This article is dedicated to show how jQuery can give you the ability to use a table structure and expand its sibling rows. This example shows you the power behind the ability to climb the DOM structure to get your target.</p>
+
+<p>The <code>slideDown()</code> and <code>slideUp()</code> methods are the same you would use in any div manipulation.
+What we try to illustrate here is the ability to catch the users radio click and travel up the DOM to access the next row.</p>
+
+<p>This code illustrates the row slidedown/slideup magic.</p>  
+
+<h4>jQuery Snippet of Code</h4>
+<pre>
+$('.col-input input').change(function() {
+  if($(this).attr('checked')) {
+    $(this).parent().parent().next().children(":first").slideDown("fast");			
+    return;
+  }
+  $(this).parent().parent().next().children(":first").slideUp("fast"); 
+});
+</pre>
+
+<h4>HTML Snippet of a table row.</h4>
+<pre>
+&lt;tr&gt;		     
+&lt;td class="col-input"&gt;&lt;input type="checkbox" >&lt;/td&gt;
+&lt;td class="col-qty" >020&lt;/td&gt;
+&lt;/tr&gt;
+</pre>
+
+<h4>CSS</h4>
+<pre>
+body { background: #fff; font: normal normal 12px verdana,sans-serif;  color:#000 }
+
+/* Tabular Data Section */
+#tableSection { clear: both; width: 70%; padding-top: 20px }
+.col-input { width: 25px;}
+.col-qty  { width: 60px;}
+#studentTbl { background-color: #D3D3D3; border:1px solid #D3D3D3; border-collapse:collapse }
+#studentTbl th, #studentTbl td {border:1px solid #C4C4C4; padding: 4px; font-weight: bold; text-align: center; } 
+#studentTbl th { background-color: #DB8A39; color: #fff;}
+.row-drops .fields { float: left; padding: 10px 15px; width: 100% }
+.row-drops .fields label { display: block; margin-left: 2px }
+
+/* expanded light brown table row. */
+.exp-row {display: none;} 
+.col-qty, .col-qty { background-color: #d9ecfd !important }
+.hdr .col-qty { background-color: #0b72d1 !important }
+
+/* jquery alternating color rows */
+#studentTbl tr.r1 { background-color: #E1E1E1 }
+#studentTbl tr.r2 { background-color: #FCEFE3 }
+#studentTbl tr.r3 { background-color: #fff;}
+#studentTbl tr.r4 { background-color: #FCEFE3 }
+
+.childinfobox {width: 140px; float: left; font-weight: normal; text-align: left; border:1px solid #C4C4C4; padding: 5px; margin-right: 10px;}
+.childpic {width: 100px; float: right; border:1px solid #C4C4C4; padding: 5px; margin-right: 40px;}
+.childinfobox label {display: block; font-weight: bold; color: #0b72d1; margin-bottom: 5px; }
+.childinfobox ul{list-style:none} 
+.childinfobox .crit label {display: inline; font-weight: normal; color: #000;}
+.childinfobox .crit span {text-align: right; color: #00A82C; font-weight: bold; }
+.flrt {float: right;}
+
+/*style for the article */
+.boldme {font-weight: bold;}
+.redbold {color:#F90E0E; font-weight: bold; }
+#articleSection h3 { color: #1509F4; font-weight: bold; }
+#domsection {margin-left: 20px;}
+</pre>
+
+<h4>Javascript</h4>
+<pre>
+$(window).unload( function () {
+  $('.col-input input').attr('checked', false); } 
+);
+$(document).ready(function() {
+  var classNames = { 0: 'r1', 1: 'r2', 2: 'r3', 3: 'r4'};
+  $('table.striped tbody tr').not('[th]').each(function(index) {
+    $(this).addClass(classNames[index % 4]);
+  });
+  $('.col-input input').change(function() {
+    if($(this).attr('checked')) {
+      $(this).parent().parent().next().children(":first").slideDown("fast");			
+      return;
+    }
+    $(this).parent().parent().next().children(":first").slideUp("fast"); 
+  });
+});
+</pre>
+
+<h4>HTML</h4>
+<pre>
+&lt;div id="tableSection"&gt;
+  &lt;table id="studentTbl" cellpadding="0" celllspacing="0" width="100%" class="striped"&gt;
+    &lt;thead&gt;	 
+    &lt;tr class="hdr"&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th class="col-qty"&gt;Student ID&lt;/th&gt;
+      &lt;th&gt;First Name&lt;/th&gt;
+      &lt;th&gt;Last Name&lt;/th&gt;
+      &lt;th&gt;Teacher's Name&lt;/th&gt;
+      &lt;th&gt;Grade&lt;/th&gt;
+      &lt;th&gt;Parent/Guardian&lt;/th&gt;	
+      &lt;th&gt;Contact Number&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td class="col-input"&gt;&lt;input type="checkbox"&gt;&lt;/td&gt;
+      &lt;td class="col-qty"&gt;020&lt;/td&gt;
+      &lt;td&gt;Lucy&lt;/td&gt;
+      &lt;td&gt;Stewart&lt;/td&gt;
+      &lt;td&gt;Mrs. Familia&lt;/td&gt;
+      &lt;td&gt;K&lt;/td&gt;
+      &lt;td&gt;Suzzy Stewart&lt;/td&gt;
+      &lt;td&gt;999-898-9090&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="8" class="row-drops exp-row"&gt;
+        &lt;div class="fields"&gt; 
+        &lt;div class="childinfobox"&gt;
+          &lt;label&gt;Personality Criteria&lt;/label&gt; 
+          Lucy is a quiet little girl.  Loves group activities and tends to be shy in large groups.
+          Skills she excels at are mostly spelling and reading. 
+        &lt;/div&gt;	
+        &lt;div class="childinfobox"&gt;
+          &lt;label&gt;Academic Grades&lt;/label&gt; 
+          &lt;ul class="crit"&gt;
+            &lt;li&gt;&lt;label&gt;Reading&lt;label&gt;&lt;span&gt;A&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;label&gt;Math&lt;label&gt;&lt;span&gt;B&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;label&gt;Sciene&lt;label&gt;&lt;span&gt;A&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;label&gt;History&lt;label&gt;&lt;span&gt;A&lt;/span&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;	
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class="col-input"&gt;&lt;input type="checkbox"&gt;&lt;/td&gt;
+      &lt;td class="col-qty"&gt;031&lt;/td&gt;
+      &lt;td&gt;Johnny&lt;/td&gt;
+      &lt;td&gt;Flerall&lt;/td&gt;
+      &lt;td&gt;Mrs. Rosental&lt;/td&gt;
+      &lt;td&gt;1st&lt;/td&gt;
+      &lt;td&gt;Grace Flerall&lt;/td&gt;
+      &lt;td&gt;999-598-5590&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="8" class="row-drops exp-row"&gt;
+        Johnny's content would go here	  
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td class="col-input"&gt;&lt;input type="checkbox"&gt;&lt;/td&gt;
+      &lt;td class="col-qty"&gt;121&lt;/td&gt;
+      &lt;td&gt;Mirtha&lt;/td&gt;
+      &lt;td&gt;Sacon&lt;/td&gt;
+      &lt;td&gt;Mrs. Moore&lt;/td&gt;
+      &lt;td&gt;3rd&lt;/td&gt;
+      &lt;td&gt;Gloria Sacon&lt;/td&gt;
+      &lt;td&gt;999-598-1120&lt;/td&gt;
+    &lt;/tr&gt;	
+    &lt;tr&gt;
+      &lt;td colspan="8" class="row-drops exp-row"&gt;Mirtha's content would go here&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</pre>
+
+
+<ul>
+  <li>In the Table you have a class in the td named <span class="redbold">col-input</span>.</li>
+  <li>2. When the user clicks, jQuery in  (line 1) detects the click of the input field in the td: <span class="redbold">$('.col-input input').change</span></li>
+  <li>3. Then in <span class="redbold">line 2</span> it checks to see if the user has clicked.</li>
+  <li>4. If the user clicks then it goes in on <span class="redbold">line 3</span> and bascially does its climbing up the DOM latter. </li>
+</ul>
+
+<h4>Using this code:</h4>
+<pre>
+$(this).parent().parent().next().children(":first").slideUp("fast");
+</pre>
+<p>
+  <code>$(this)</code>  -- is the input field
+</p>
+<p>
+  <code>.parent</code>  -- moves up and detects the td the input is in.
+</p>
+<p>
+  <code>.parent</code>  -- moves up from the td to its parent to the tr.
+</p>
+<p>
+  <code>.next</code>    -- now that you have made it to the tr level calling the next() method tells your code to find the tr's sibling the next tr.
+</p>
+<p>
+  <code>.children(":first")</code>  -- once you have made it to the sibling tr you grab its first child.
+</p>
+<p>
+  <code>.slideDown("fast")</code>  -- And last tell it to slide that child the td down.
+</p>
+
+<p>This gives you the dynamic ability to capture any radio click and drop the next row that was checked.</p>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

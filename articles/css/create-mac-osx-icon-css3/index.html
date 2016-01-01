@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Create Mac OSX Icon CSS3 | BookOfZeus</title>
+	<meta name="description" content="How to create a realistic MAC OSX Icon using CSS3" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/create-mac-osx-icon-css3" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,83 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Create Mac OSX Icon CSS3</h1>
+		<h6>Posted on Wednesday November 02, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<style>
+.icon { background: #90C7DE; width: 256px; height: 256px; border-radius: 38px; overflow:hidden; border: solid 6px #666; position: relative; -webkit-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2); -moz-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2); box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2); z-index: 10; }
+.icon .gloss { background: #56ABCB; height: 144px; width: 100%; overflow: hidden; position: relative; z-index: 5; -webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, .3); -moz-box-shadow: 0px 0px 10px rgba(255, 255, 255, .3); box-shadow: 0px 0px 10px rgba(255, 255, 255, .3);  border-top-right-radius: 170px 20px; border-top-left-radius: 170px 20px; border-bottom-right-radius: 40px; border-bottom-left-radius: 40px; position: absolute; bottom: 0px; }
+.icon .text { font: bold 200px Tahoma; text-align:center; z-index: 200; position: relative; color: white; }
+</style>
+<p>Icons are great for identifying a product or anchor links. Often these icons are created using a graphic tool, such as Photoshop or GIMP and saved in a JPEG or PNG format. </p>
+<p>This can be painful for the designer to update if a mistake is made or simply you want to change the theme of your website.</p>
+<p>Here's a quick way to create these MAC OSX icons using CSS</p>
+
+<pre>
+.icon {
+  background: #90C7DE;
+  width: 256px;
+  height: 256px;
+  border-radius: 38px;
+  overflow:hidden;
+  border: solid 6px #666;
+  position: relative;
+  -webkit-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2);
+  box-shadow: 1px 2px 10px 1px rgba(0, 0, 0, .2);
+  z-index: 10;
+}
+.icon .gloss {
+  background: #56ABCB;
+  height: 144px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  -webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, .3);
+  -moz-box-shadow: 0px 0px 10px rgba(255, 255, 255, .3);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, .3);
+  border-top-right-radius: 170px 20px;
+  border-top-left-radius: 170px 20px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  position: absolute;
+  bottom: 0px;
+}
+.icon .text {
+  font: bold 200px Tahoma;
+  text-align:center;
+  z-index: 200;
+  position: relative;
+  color: white;
+}
+</pre>
+
+<h4>HTML</h4>
+<pre>
+&lt;div class="icon"&gt;
+  &lt;div class="gloss"&gt;&lt;/div&gt;
+  &lt;div class="text"&gt;in&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>Here's an example of a MAC OSX Icon for LinkedIn:</p>
+<center>
+	<div class="icon">
+	 <div class="gloss"></div>
+	 <div class="text">in</div>
+	</div>
+</center>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

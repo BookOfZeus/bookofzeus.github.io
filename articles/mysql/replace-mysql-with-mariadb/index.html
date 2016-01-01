@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Replace MySQL with MariaDB | BookOfZeus</title>
+	<meta name="description" content="Quick guide to replace MySQL and install MariaDB on linux" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/mysql/replace-mysql-with-mariadb" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -87,7 +87,7 @@
 		
 			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
 		
-			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+			<li class="item"><a href="/articles/mysql/" title="MySQL" class="selected">MySQL</a></li>
 		
 			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
 		
@@ -124,58 +124,116 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="mysql" href="/articles/mysql/">mysql</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Replace MySQL with MariaDB</h1>
+		<h6>Posted on Sunday June 30, 2013 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>It think it's time for a change. I don't know if you got the news but <a href="https://blog.mariadb.org/mysql-man-pages-silently-relicensed-away-from-gpl/" title="" rel="nofollow">MySQL man pages silently relicensed away from GPL</a>.</p>
+
+<p>So what about switching to a better, optimize and faster solution? Yes, I am talking about MariaDB!</p>
+
+<p>Before you start, you have to know which version you want between 10.0.x and 5.5. The major difference is MariaDB 10.0 has more features than 5.5:</p>
+
+<ul>
+ <li>Multi-source Replication</li>
+ <li>NoSQL Cassandra Storage Engine</li>
+ <li>Engine Independent Statistics</li>
+ <li>SHOW EXPLAIN of a running thread</li>
+ <li>InnoDB Improvements</li>
+ <li>Performance Schema Improvements</li>
+</ul>
+
+<p>The full list is available at: <u>http://www.skysql.com/blogs/max-mether/mysql-56-vs-mariadb-100</u></p>
+
+<h4>Prepare the installation</h4>
+<pre>
+sudo apt-get install python-software-properties
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+</pre>
+
+<h5>For 10.0</h5>
+<pre>
+sudo add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/10.0/ubuntu precise main
+</pre>
+
+<h5>For 5.5</h5>
+<pre>
+sudo add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/5.5/ubuntu precise main
+</pre>
+
+<p>You can change the source and version at: <u>https://downloads.mariadb.org/mariadb/repositories/</u></p>
+
+<p class="note">If you install version 10.0 you will probably need to recompile the PHP with MariaDB to use the latest version. Otherwise, you will see a notice like this:</p>
+<pre>
+---Warning: mysqli::mysqli() [mysqli.mysqli]: Headers and client library minor version mismatch.
+</pre>
+
+<p>You can also create a custom MariaDB sources.list file. To do so, copy and paste the following into a file under <q>/etc/apt/sources.list.d/</q>
+(we suggest naming the file MariaDB.list or something similar), or add it to the bottom of your /etc/apt/sources.list file.<p>
+
+<pre>
+# MariaDB 5.5 repository list - created 2013-06-24 12:18 UTC
+# http://mariadb.org/mariadb/repositories/
+deb http://ftp.osuosl.org/pub/mariadb/repo/5.5/ubuntu precise main
+deb-src http://ftp.osuosl.org/pub/mariadb/repo/5.5/ubuntu precise main
+</pre>
+
+<h4>Now, let's install it.</h4>
+<pre>
+sudo apt-get update
+sudo apt-get install mariadb-server mariadb-client libmariadbclient-dev libmariadbd-dev
+</pre>
+
+<p>The service should start automatically, if it does not you can run it manually:</p>
+<pre>
+sudo /etc/init.d/mysql start
+</pre>
+
+<h4>Test the install</h4>
+<pre>
+service mysql status
+ * /usr/bin/mysqladmin  Ver 9.1 Distrib 10.0.3-MariaDB, for debian-linux-gnu on i686
+Copyright (c) 2000, 2013, Oracle, Monty Program Ab and others.
+
+Server version		10.0.3-MariaDB-1~precise-log
+Protocol version	10
+Connection		Localhost via UNIX socket
+UNIX socket		/var/run/mysqld/mysqld.sock
+Uptime:			1 hour 2 min 7 sec
+
+Threads: 1  Questions: 118  Slow queries: 0  Opens: 103  Flush tables: 2  Open tables: 79  Queries per second avg: 0.031
+</pre>
+
+<p>Then when you type:</p>
+<pre>
+mysql
+</pre>
+
+<p>You should see:</p>
+<pre>
+mysql
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 44
+Server version: 10.0.3-MariaDB-1~precise-log mariadb.org binary distribution
+
+Copyright (c) 2000, 2013, Oracle, Monty Program Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+</pre>
+
+<p>That's it!</p>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

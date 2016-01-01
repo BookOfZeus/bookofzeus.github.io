@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>CSS @Font-Face: which website to choose? | BookOfZeus</title>
+	<meta name="description" content="Compare and choose which @Font-Face provider you use and find the best for you" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/css-font-face-which-website-to-choose" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,150 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>CSS @Font-Face: which website to choose?</h1>
+		<h6>Posted on Thursday July 12, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>I wrote an article, back in April 2012, on how to <a href="http://www.bookofzeus.com/articles/enhance-your-website-with-font-face/" title="enhance your website with @Font-Face">enhance your website with @Font-Face</a> using the Google font library.</p>
+
+<p>A little while after, I wanted to change the font and I couldn't find one I liked from the library so I started to search for other websites that provides the same service and hopefully, get one I like. Here's the highlights of my research.</p>
+
+<h4>Google Web Fonts</h4>
+
+<p>Google made a very easy interface to select any fonts you like, and use. Simply go to <a href="http://www.google.com/webfonts/" rel="nofollow" title="Google Web Fonts">http://www.google.com/webfonts/</a> and select a font, preview and use it!</p>
+
+<h4>Usage</h4>
+<pre>
+&lt;link href='http://fonts.googleapis.com/css?family=Devonshire' rel='stylesheet' type='text/css'&gt;
+</pre>
+
+<pre>
+h1 {
+  font-family: "Devonshire", Arial, serif;
+  font-weight: 400;
+}
+</pre>
+
+<p>What I like about Google Web Font:</p>
+<ul>
+ <li>Free solution from Google</li>
+ <li>Quick set up</li>
+ <li>No JavaScript dependency (if you choose the non-JavaScript method)</li>
+ <li>No need to think about font licensing</li>
+ <li>Can be used as CSS or CSS import or JavaScript</li>
+ <li>Support added for mobile devices like iPhone, iPad, iPod, android etc...</li>
+</ul>
+
+<p>What I don't like about Google Web Font:</p>
+<ul>
+ <li>Small number of fonts to choose from. (just for now, I hope)</li>
+</ul>
+
+
+<h4>TYPEKIT</h4>
+
+<p>Typekit, an Adobe company, provides font library using JavaScript and a yearly subscription service.</p>
+
+<h4>Usage</h4>
+<pre>
+&lt;head&gt;
+  &lt;script type="text/javascript" src="http://use.typekit.com/typekitid.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript"&gt;try{Typekit.load();}catch(e){}&lt;/script&gt;
+&lt;/head&gt;
+</pre>
+
+<pre>
+h1 {
+  font-family: "museo-sans-1", "museo-sans-2", sans-serif;
+}
+</pre>
+
+<p>What I like about Typekit</p>
+<ul>
+ <li>Good font library</li>
+ <li>Good font customization options</li>
+ <li>Mobile devices compatible</li>
+</ul>
+
+<p>What I don't like about Typekit</p>
+<ul>
+ <li>JavaScript dependency</li>
+ <li>Yearly subscription</li>
+ <li>Limited page views per month (specially if you have lots of traffic)</li>
+ <li>No free account</li>
+</ul>
+
+
+<h4>Fonts.com</h4>
+<p>The Fonts.com&trade; store from Monotype Imaging offers more than 150,000 font products for you to preview, purchase and download. You can also learn about new typeface releases and discover typographic tips and techniques.</p>
+
+<h4>Usage</h4>
+<pre>
+&lt;script type="text/javascript" src="http://fast.fonts.com/jsapi/31f2a333-540b-409f-ab46-cd941e2d8d1b.js"&gt;&lt;/script&gt;
+</pre>
+
+<pre>
+h1 {
+  font-family:'Brush Script W01 Medium';
+}
+</pre>
+
+<p>What I like about Fonts.com</p>
+<ul>
+ <li>Hude font library</li>
+ <li>Free account</li>
+ <li>Customize your account/month pricing</li>
+ <li>Mobile devices compatible</li>
+</ul>
+
+<p>What I don't like about  Fonts.com</p>
+<ul>
+ <li>Expensive if you have lots of traffic</li>
+ <li>Limited fonts for the free account</li>
+ <li>JavaScript dependency (for free account)</li>
+</ul>
+
+<h4>FontDeck</h4>
+
+<p>FontDeck is standards compliant, accessible and uses a pure CSS @Font-Face solution. No JavaScript required.</p>
+
+<h4>Usage</h4>
+<pre>
+&lt;link rel="stylesheet" href="http://f.fontdeck.com/s/css/D8Fz3XWt+VC0VDejQHe7Mks5Qzc/yopmail.com/21632.css" type="text/css" /&gt;
+</pre>
+
+<pre>
+div {
+  font-family:"Ronsard Crystal Light", "Arial Black", Arial, Verdana, sans-serif;
+}
+</pre>
+
+<p>What I like about FontDeck</p>
+<ul>
+ <li>Nice font library</li>
+ <li>Free account</li>
+ <li>Free for the first 1,000,000 page views</li>
+ <li>No JavaScript library required</li>
+ <li>Mobile devices compatible</li>
+</ul>
+
+<p>What I don't like about FontDeck</p>
+<ul>
+ <li>You pay PER font PER year</li>
+ <li>Pay after 1,000,001 page views</li>
+ <li>Free account limited to the first 20 visitors</li>
+</ul>
+
+<p>I still believe the Google Web Font is the best solution if you don't want to spend lots of money. I am sure eventually, they will add more fonts to their library.</p>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3 Forms with gradient and box-shadow properties | BookOfZeus</title>
+	<meta name="description" content="How to make all your forms neat and pretty using CSS3" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/css3-forms-with-gradient-and-box-shadow-properties" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
+</article>
+
+<article>
+	<header>
+		<h1>CSS3 Forms with gradient and box-shadow properties</h1>
+		<h6>Posted on Thursday August 18, 2011 / by Eric Potvin</h6>
+	</header>
+
+	<style>
+
+input.css3form,  textarea.css3form  { background-color: #eee;	background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #fff), color-stop(100%, #efefef)); background: -moz-linear-gradient(top, #fff, #efefef); border-radius: 3px; -webkit-border-radius: 3px 3px 3px 3px; -moz-border-radius: 3px 3px 3px 3px;	box-shadow: 0px 1px 3px rgba(0,0,0,0.7); -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.7); -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.7);	border: solid 1px #efefef; padding: 3px 8px ; text-shadow: 0px 1px 1px white;	display: block; margin: 9px; }
+input.css3form:focus, textarea.css3form:focus { box-shadow: 0px 1px 8px #F48004; -webkit-box-shadow: 0px 1px 8px #F48004; -moz-box-shadow: 0px 1px 8px #F48004; }
+input.roundbutton { background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #fff), color-stop(100%, #efefef)); background: -moz-linear-gradient(top, #fff, #efefef); border-radius: 8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; box-shadow: 0px 1px 3px rgba(0,0,0,0.7); -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.7); -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.7); border: solid 2px white; padding: 10px 18px; cursor: pointer; margin: 8px; }
+input.roundbutton:hover { background: -webkit-gradient(linear, center top, center bottom, color-stop(100%, #eee), color-stop(0%, #ccc)); background: -moz-linear-gradient(top, #ccc, #eee); box-shadow: 0px 1px 8px #F48004; -webkit-box-shadow: 0px 1px 8px #F48004; -moz-box-shadow: 0px 1px 8px #F48004; -webkit-border-radius: 8px; -moz-border-radius: 8px; border: solid 2px white; padding: 10px 18px; cursor: pointer; margin: 8px; }
+label.css3formlabels { margin-left: 8px; }
+#css3boxshawdow { width: 200px; padding: 2px 6px; }
+#css3boxshawdow:hover { box-shadow: 0px 1px 8px #F48004; -webkit-box-shadow: 0px 1px 8px #F48004; -moz-box-shadow: 0px 1px 8px #F48004; padding: 2px 6px; }
+#gradient { background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #ccc), color-stop(100%, #fff)); background: -moz-linear-gradient(top, #ccc, #fff); margin: 10px 0px; display: block; padding: 1px 3px; }
+#nogradient { margin: 10px 0px; display: block; padding: 1px 3px; }
+</style>
+<p>One of the neat additions to CSS3 is the ability to create wonderful css3 box-shadows and gradients without having to utilize any images. This is a great enhancement since it creates a faster load time and less server hits making the user experience to the user more pleasant. Please note the Gradient and box shadow techniques shown in this article are not supported by IE8 or older.</p>
+
+<h2>Gradient Effect</h2>
+<p>
+	Notice the difference in the one input field with the gradient affect from the one without one.<br/>
+	<input name="nogradient" id="nogradient" type="text" />
+	<input name="gradient" id="gradient" type="text" />
+</p>
+<h3>Code:</h3>
+<pre>
+#gradient {
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #ccc), color-stop(100%, #fff));
+  background: -moz-linear-gradient(top, #ccc, #fff);
+}
+</pre>
+
+<h4>Explanation:</h4>
+<p>Supported by FF3.6+, Safari 2+ and Google Chrome gradients are now a great tool to use to bring out your site presentation. Same applies for the gradient property in this case. You use -webkit-gradient for Safari and -moz-linear-gradient for Firefox.</p>
+
+<h2>Box Shadow Effect</h2>
+<p>
+	Hover over the input field and you have your css3 box shadow affect.<br/>
+	<input name="css3boxshawdow" id="css3boxshawdow" type="text"/>
+</p>
+
+<h3>Code:</h3>
+<pre>
+#css3boxshawdow {
+  width: 200px;
+}
+#css3boxshawdow:hover {
+  box-shadow: 0px 1px 8px #F48004;
+  -webkit-box-shadow: 0px 1px 8px #F48004;
+  -moz-box-shadow: 0px 1px 8px #F48004;
+}
+</pre>
+
+
+
+<h4>Explanation:</h4>
+<p>The box-shadow property is supported in IE9+, Firefox 4, Chrome, and Opera. For support for Safari at the moment use property <em>-webkit-box-shadow:</em>. For support for Firefox at the moment use property <em>-moz-box-shadow:</em>.
+</p>
+
+
+<h2>Full CSS</h2>
+<pre>
+input.css3form,  textarea.css3form  {
+  background-color: #eee;
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #fff), color-stop(100%, #efefef));
+  background: -moz-linear-gradient(top, #fff, #efefef);
+  border-radius: 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+  border: solid 1px #efefef;
+  padding: 3px 8px ;
+  text-shadow: 0px 1px 1px white;
+  display: block;
+  margin: 9px;
+}
+input.css3form:focus, textarea.css3form:focus {
+  box-shadow: 0px 1px 8px #F48004;
+  -webkit-box-shadow: 0px 1px 8px #F48004;
+  -moz-box-shadow: 0px 1px 8px #F48004;
+}
+input.roundbutton {
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #fff), color-stop(100%, #efefef));
+  background: -moz-linear-gradient(top, #fff, #efefef);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+  border: solid 2px white;
+  padding: 10px 18px;
+  cursor: pointer;
+  margin: 8px;
+}
+input.roundbutton:hover {
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(100%, #eee), color-stop(0%, #ccc));
+  background: -moz-linear-gradient(top, #ccc, #eee);
+  box-shadow: 0px 1px 8px #F48004;
+  -webkit-box-shadow: 0px 1px 8px #F48004;
+  -moz-box-shadow: 0px 1px 8px #F48004;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: solid 2px white;
+  padding: 10px 18px;
+  cursor: pointer;
+  margin: 8px;
+}
+label.css3formlabels {
+  margin-left: 8px;
+}
+#css3boxshawdow {
+  width: 200px;
+  padding: 2px 6px;
+}
+#css3boxshawdow:hover {
+  box-shadow: 0px 1px 8px #F48004;
+  -webkit-box-shadow: 0px 1px 8px #F48004;
+  -moz-box-shadow: 0px 1px 8px #F48004;
+  padding: 2px 6px;
+}
+#gradient {
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #ccc), color-stop(100%, #efefef));
+  background: -moz-linear-gradient(top, #ccc, #efefef);
+  margin: 10px 0px;
+  display: block;
+  padding: 1px 3px;
+}
+#nogradient {
+  margin: 10px 0px;
+  display: block;
+  padding: 1px 3px;
+}
+</pre>
+
+
+<h2>Final Result</h2>
+<p>Below is the techniques we just displayed above all together in one form to display how nicely your forms can be enhanced.<br/>
+
+<form action="#" id="myform" method="get">
+  <label for="fname" class="css3formlabels">Name</label><input name="fname" id="fname" type="text" size="25" class="css3form" />
+  <label for="email" class="css3formlabels">Email</label><input name="email" id="email" type="text" size="25" class="css3form" />
+  <label for="msg" class="css3formlabels">Message</label><textarea rows="10" cols="37" name="msg" id="msg" class="css3form"></textarea>
+  <input type="button" value="Click Me" class="roundbutton" />
+</form>
+</p>
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

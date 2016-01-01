@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Top 5 jQuery tips for your site | BookOfZeus</title>
+	<meta name="description" content="Tips for your site that will help improve the way you use jQuery." />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/top-5-jquery-tips-for-your-site" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -79,7 +79,7 @@
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
@@ -124,58 +124,169 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Top 5 jQuery tips for your site</h1>
+		<h6>Posted on Monday June 06, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<h3>Load the framework from Google Code</h3>
+
+<p>Google is hosting several JavaScript libraries. The advantages of using Google are simple:</p>
+<ul>
+   <li>Save bandwidth</li>
+    <li>Loads the library very quickly</li>
+    <li>It must already be cached from a different sites</li>
+</ul>
+
+<pre>
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"; type="text/javascript"&gt;&lt;/script&gt;
+</pre>
+
+
+<h3>Keep DOM manipulation to a minimum</h3>
+<p>When you need to concatenate strings, do not use the DOM each time you loop through records or array. Operation such as .append() or .prepend() can be costly and can slow down your script. To improve performance, simply create a temporary variable and concatenate the results to it.</p>
+
+<p>For example:</p>
+<pre>
+var list = $('input:checkbox:checked'); // we have over 100
+var len = list.length;
+
+for (i=0; i &lt; len; ++i){
+    $('#result').append(list[i].value);
+}
+</pre>
+
+<p>Can be optimized by doing:</p>
+
+<pre>
+var list = $('input:checkbox:checked');
+var len = list.length;
+var result = '';
+for (i=0; i &lt; len; ++i){
+    result += list[i].value;
+}  
+$('#result').html(result);
+</pre>
+
+<h3>Use IDs instead of classes wherever possible</h3>
+<p>The fastest way to select an item in jQuery is to use the ID selector ($('#id')) which is mapped directly to a native JavaScript method, getElementById(). For example, we have this code sample:</p>
+
+<pre>
+&lt;div id="content"&gt;
+    &lt;div id="wrapperLeft"&gt;
+        &lt;h1&gt;Page Title&lt;/h1&gt;
+        &lt;h4&gt;Article Title&lt;/h4&gt;
+        &lt;p&gt;
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue enim, imperdiet sed dignissim non, rutrum at orci.
+            Etiam pharetra mi sit amet erat consequat a tincidunt neque accumsan. Cras ut est ligula, vitae cursus purus. Cras non velit leo.
+            Mauris sit amet ipsum tortor. Nulla justo orci, auctor in egestas sed, varius tempor ligula.
+            Nam pretium neque at dui consectetur et tempor nulla tristique.
+        &lt;/p&gt;
+        &lt;p&gt;
+            Sed rhoncus, massa vel dapibus dignissim, mauris nulla consequat nibh, suscipit molestie nisl urna nec mi.
+            Ut a leo eget dolor scelerisque blandit ut facilisis mi.
+            In et justo in leo vestibulum malesuada sed sed augue. Integer magna nibh, auctor rhoncus porttitor quis, egestas at lorem.
+            Vestibulum magna neque, consectetur ut adipiscing suscipit, luctus quis ligula. Nunc id leo ac nulla semper placerat.
+        &lt;/p&gt;
+        &lt;div&gt;
+            &lt;h6&gt;Send your comment&lt;/h6&gt;
+            &lt;form&gt;
+                Name: &lt;input type="text"&gt;
+                Comment: &lt;textarea&gt;&lt;/textarea&gt;
+                &lt;input type="submit" class="sendComment"&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="wrapperRight"&gt;
+        &lt;h6&gt;Signup for our newsletter&lt;/h6&gt;
+        &lt;form&gt;
+            Name: &lt;input type="text"&gt;
+            email: &lt;input type="text"&gt;
+            &lt;input type="submit" class="newsletter"&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>In this case, we will have to call the submit button this way:</p>
+<pre>
+$('#content #wrapperLeft .sendComment');
+</pre>
+
+<p>To fix this, simply use a unique ID for each button and then call then with their respective id.</p>
+<pre>
+$('#sendComment');
+</pre>
+
+<h3>Use For Instead of Each</h3>
+<p>Native JavaScript functions are always faster than any custom or jQuery functions. However, it is easier to use these custom functions when looping through an XML or jSon object. If you can, always use the native loops (for, while, do while). Here's some benchmark using native and jQuery .each function.</p>
+
+<pre>
+var array = new Array ();  
+for (var i=0; i&lt;10000; ++i) {  
+    array[i] = 0;  
+}  
+</pre>
+
+<h4>Using the for loop:</h4>
+<pre>
+console.time('native');  
+var len = array.length;  
+for (var i=0;i&lt;len; ++i) {  
+    array[i] = i;
+}  
+console.timeEnd('native');  
+</pre>
+
+<p>Result: 0ms</p>
+
+<h4>Using .each function</h4>
+<pre>
+console.time('jquery');  
+$.each (array, function (i) {  
+    array[i] = i;  
+});  
+console.timeEnd('jquery');  
+</pre>
+<p>Result: 3ms</p>
+
+
+<h3>Do not call selector over and over and over and over ...</h3>
+
+<pre>
+$('div.message').css('color', 'red');
+$('div.message').css('font', 'red');
+$('div.message').css('background-color', '#eee');
+$('div.message').css('font-size', '16px');
+$('div.message').css('font-weight' : 'bold');
+$('div.message').css('text-align' : 'center');
+$('div.message').html('Your name is required');
+$('div.message').fadeIn('fast');
+</pre>
+
+<p>Instead write:</p>
+<pre>
+$('div.message')
+    .css({
+        'color', 'red',
+        'font', 'red',
+        'background-color', '#eee',
+        'font-size', '16px',
+        'font-weight' : 'bold',
+        'text-align' : 'center',
+    })
+    .html('Your name is required')
+    .fadeIn('fast');
+</pre>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

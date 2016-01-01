@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Create a Postcard with PHP | BookOfZeus</title>
+	<meta name="description" content="How to create a customized postcard with PHP and GD" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/php/create-a-postcard-with-php" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -91,7 +91,7 @@
 		
 			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
 		
-			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+			<li class="item"><a href="/articles/php/" title="PHP" class="selected">PHP</a></li>
 		
 			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
 		
@@ -124,58 +124,98 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="php" href="/articles/php/">php</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Create a Postcard with PHP</h1>
+		<h6>Posted on Sunday November 27, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>Postcard are very popular for birthday, holidays or simply say something nice to someone we like.</p>
+<p>Many website allows you to send a postcard to your friend of family member but at what price?</p>
+<p>Some sites requires the name and the email of the recipient and also yours as well! When you read carefully their terms and conditions, you can read something like:</p>
+<p class="note">By sending a postcard, we (the website) allow to send unsolicited emails, bulk mail, spam or other materials to users of the site or any other individual or entity.</p>
+<p>or</p>
+<p class="note">your Email will be provided or sent at a third party.</p>
+<p>Here's a quick PHP script that will allow to create your own custom postcard without all the spams.</p>
+
+<h4>Requirement:</h4>
+<p>This script requires some files:</p>
+<ul>
+ <li>The font: <a href="/download/otto.ttf" title="otto.ttf font">otto.ttf</a></li>
+ <li>The base template image: <a href="http://www.bookofzeus.com/download/postcard-template.jpg" title="postcard-template.jpg" class="nw">postcard-template.jpg</a></li>
+ <li>A sample image: <a href="http://www.bookofzeus.com/download/paris.jpg" title="paris.jpg font" class="nw">paris.jpg</a></li>
+</ul>
+
+<h4>The Code:</h4>
+<pre>
+
+$sourceImage = '/path/to/postcard-template.jpg';
+$uploadedImage = '/path/to/paris.jpg';
+$mime = '';
+$font = '/path/to/otto.ttf';
+$message = "Trip To Paris!\namazing!!\nsee you soon, love\nxxx";
+
+function CroppedThumbnail($source, $width, $height, &amp;$mime) {
+  $data = getimagesize($source);
+  $sourceWidth = $data[0];
+  $sourceHeight = $data[1];
+  $mime = $data['mime'];
+  $image = imagecreatefromjpeg($source);
+  $sourceRatio = $sourceWidth/$sourceHeight;
+  if (($width/$height) > $sourceRatio) {
+    $newHeight = $width/$sourceRatio;
+    $newWidth = $width;
+  }
+  else {
+    $newWidth = $height*$sourceRatio;
+    $newHeight = $height;
+  }
+  $croppedImage = imagecreatetruecolor(round($newWidth), round($newHeight));
+  imagecopyresampled($croppedImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $sourceWidth, $sourceHeight);
+  $thumb = imagecreatetruecolor($width, $height);
+  imagecopyresampled($thumb, $croppedImage, 0, 0, (($newWidth/2)-($width/2)), (($newHeight/2)-($height/2)), $width, $height, $width, $height);
+  imagedestroy($croppedImage);
+  imagedestroy($image);
+  return $thumb;
+}
+
+// Create the cropped image first
+$newThumb = CroppedThumbnail($uploadedImage,240,315, $mime);
+switch($mime) {
+  case 'image/gif':
+    $image = imagecreatefromgif($sourceImage);
+    break;
+  case 'image/jpeg':
+    $image = imagecreatefromjpeg($sourceImage);
+    break;
+  case 'image/png':
+    $image = imagecreatefrompng($sourceImage);
+    break;
+  default:
+    // error or stop script
+    break;
+}
+
+imagettftext($image, 40, -1, 320, 180, imagecolorallocate($image, 50, 50, 50), $font, $message);
+imagecopy($image, $newThumb, 30, 40, 0, 0, 240, 315);
+header('Content-Type: image/jpeg');
+imagejpeg($image);
+imagedestroy($image);
+</pre>
+
+<h4>Result:</h4>
+	<p>This will output something like:
+	<img src="http://www.bookofzeus.com/download/postcard.jpg" alt="postcard final" width="640" height="406" class="autofit" />
+</p>
+	
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

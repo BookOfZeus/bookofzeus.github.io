@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Install a LAMP (Apache, PHP, Mysql) On Ubuntu | BookOfZeus</title>
+	<meta name="description" content="This guide will help you to install a local LAMP web server" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/linux/install-a-lamp-apache-php-mysql-on-ubuntu" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -81,7 +81,7 @@
 		
 			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
 		
-			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
 		
 			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
 		
@@ -124,58 +124,142 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="linux" href="/articles/linux/">linux</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Install a LAMP (Apache, PHP, Mysql) On Ubuntu</h1>
+		<h6>Posted on Monday April 18, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>This guide will help you to install a local web server using Apache, MySQL and PHP on Ubuntu.</p>
+
+<h3>Install apache2:</h3>
+<pre>
+sudo aptitude install apache2
+</pre>
+
+<p>Edit the <span class="bold">/etc/apache2/httpd.conf</span> to setup your ServerName</p>
+<pre>
+ServerName &lt;myhostname&gt;
+</pre>
+
+<p>Start apache2 and test:</p>
+<pre>
+sudo /etc/init.d/apache2 start
+</pre>
+
+<p>* If everything is OK you should see an ordinary HTML page when you type: http://localhost in your Firefox browser</p>
+Stop apache to install other component:
+<pre>
+sudo /etc/init.d/apache2 stop
+</pre>
+
+<h3>Let's install PHP</h3>
+<pre>
+sudo aptitude install php5 libapache2-mod-php5
+</pre>
+
+<p>Restart Apache</p>
+<pre>
+sudo /etc/init.d/apache2 start
+</pre>
+
+<p>To test the PHP installation, create a dummy file in <code>/var/www/</code></p>
+<pre>
+&lt;?php
+    //file: test.php
+    phpinfo();
+?&gt;
+</pre>
+
+
+<h3>PDO (PHP Data Objects)</h3>
+<p>If PDO (PHP Data Objects) is not installed, this is how to install it:</p>
+<p>First, install some needed modules:</p>
+<pre>
+sudo aptitude install php5-dev libmysqlclient15-dev
+</pre>
+<p class="note">libmysqlclient15-dev is needed by PDO mysql driver</p>
+
+<p>Next, install the PHP pear:</p>
+<pre>
+sudo aptitude install php-pear
+</pre>
+
+<p>Then, you can install the PDO itself an the database specific driver, for example mysql driver:</p>
+<pre>
+pecl install pdo
+pecl install pdo_mysql
+</pre>
+
+<p>Check the <code>php.ini</code>: open the <code>/etc/php5/apache2/php.ini</code> and add check if these following lines are there</p>
+<pre>
+extension=pdo.so
+extension=pdo_mysql.so
+</pre>
+<p>if not installed, you can simply add it</p>
+
+<p>And don't forget to restart your web server.</p>
+<pre>
+sudo /etc/init.d/apache2 restart
+</pre>
+
+<h3>Install MySQL</h3>
+<p>MySQL:</p>
+<pre>
+sudo aptitude install mysql-server
+</pre>
+
+<p>Set your root password</p>
+<pre>
+mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('mypass');
+</pre>
+
+<p>Try running it</p>
+<pre>
+mysql -uroot -p
+</pre>
+<p class="note">your password will be asked!</p>
+
+<p>Now let's install mysql with apache</p>
+<pre>
+sudo aptitude install libapache2-mod-auth-mysql php5-mysql
+</pre>
+
+<h4>Set the default engine</h4>
+<p>If you like to set the default engine to innodb or myisam you can easily change it using the <q>default-storage-engine</q> option in the <q>/etc/mysql/my.cnf</q> file.</p>
+
+<pre>
+default-storage-engine = innodb
+</pre>
+
+<p>Restart MySQL</p>
+<pre>
+/etc/init.d/mysql restart
+</pre>
+
+<p>Restart apache and test</p>
+<pre>
+sudo /etc/init.d/apache2 restart
+</pre>
+<p class="note">(optional) you can setup your /etc/mysql/my.cnf file regarding your needs</p>
+
+<p>
+<span class="bold">Installation done! enjoy!</span>
+</p>
+
+<p>Once everything is installed, you might need some useful PHP extensions like:</p>
+<pre>
+sudo aptitude install php5-cli php5-curl php5-gd php5-imap php5-mcrypt
+</pre>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

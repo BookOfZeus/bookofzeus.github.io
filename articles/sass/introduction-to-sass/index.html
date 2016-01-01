@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to SASS | BookOfZeus</title>
+	<meta name="description" content="Quick introduction to learn SASS and install SASS in Ubuntu" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/sass/introduction-to-sass" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" class="selected">Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="sass" href="/articles/sass/">sass</a>
+</article>
+
+<article>
+	<header>
+		<h1>Introduction to SASS</h1>
+		<h6>Posted on Saturday July 13, 2013 / by Justin Navarro</h6>
+	</header>
+
+	
+<h4>What is SASS?</h4>
+<p>SASS (Syntactically Awesome Stylesheets) is an extension of CSS that adds power and elegance to the basic language. It allows you to use variables, nested rules, [[mixins, inline imports, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly, particularly with the help of the Compass style library.</p>
+
+<p>In short, SASS is a CSS preprocessor, like LESS and Stylus, that combines CSS and Ruby and it compiles your files to CSS on each save.</p>
+
+<p>Here are some helpful links</p>
+<ul>
+  <li><a href="http://sass-lang.com/" rel="nofollow" title="SASS Website">SASS Website</a></li>
+  <li><a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html" rel="nofollow" title="">SASS References</a></li>
+</ul>
+
+<h4>What is Compass?</h4>
+<p>Compass is a framework that works along side of SASS to help speed up the coding process. For instance, Compass can help in CSS3 browser prefixes and basic styling techniques so you don't have to create or download any additional plugins or external files.</p>
+<ul>
+  <li><a href="http://compass-style.org/" rel="nofollow" title="SASS Website">Compass Site</a></li>
+</ul>
+<p>In order to use you will need to install Ruby, SASS, and Compass on your computer. </p>
+
+<h4>Installing Ruby</h4>
+<h5>For Windows:</h5>
+<p>Go to Ruby site and download the latest version of Ruby.</p>
+<h5>For Ubuntu</h5>
+<pre>
+sudo apt-get install ruby-full build-essential
+sudo apt-get install rubygems
+sudo gem install compass
+sudo gem install sass
+</pre>
+
+<p>Before you can code in SASS you will have to tell SASS to watch your files so it can be compiled to CSS. Browsers do not read SASS files so it is necessary to tell SASS to watch and compile your files. There are two ways to tell SASS to watch your files:</p>
+<ul>
+  <li>Through command prompt</li>
+  <li>Through a GUI program like koala-app.com</li>
+</ul>
+
+<h5>Using the Command Prompt</h5>
+<p>Open Ruby Command Prompt by:</p>
+<ul>
+  <li>Go to the Start Menu</li>
+  <li>Click on All Programs</li>
+  <li>Click on Ruby</li>
+  <li>Click on Start Command Prompt with Ruby</li>
+</ul>
+
+<h4>Create a Site Folder</h4>
+<p>Optional - If you don't have a site folder to store all your site files, you can use Compass to create one for you in the command prompt by typing</p>
+<pre>
+compass create '/path/to/file'
+</pre>
+<p>For instance, if I wanted to create a site folder called sass-rocks on my desktop then I would type:</p>
+<pre>
+compass create C:\Users\MyUser\Desktop\sass-rocks
+</pre>
+<p>Compass will generate the site folder and inside you will see the following:</p>
+<pre>
+.sass-cache
+sass folder with some sass files
+stylesheets folder with some css files
+config.rg
+</pre>
+
+<h4>Get SASS to watch your files</h4>
+<p>The first thing you should do is change your directory in the command prompt to your site folder.</p>
+<pre>
+cd '/path/to/file'
+</pre>
+<p>For instance, if I wanted to change the directory to a my site folder, sass-rocks, on the desktop</p>
+<pre>
+cd C:\Users\MyUser\Desktop\sass-rocks
+</pre>
+<p>Next is to write the command for SASS to watch your files. In my site folder, sass-rocks, I have a sass folder for all my sass files and a css folder for my css files. So I will write</p>
+<pre>
+sass --watch sass/:css/ --style compressed
+</pre>
+
+<p>The code above tells sass to watch my sass folder and compile to the css folder whenever I save something in the sass folder. NOTE - You could specify what you want to watch down to the file name but you would want to watch the whole folder just in case you create new sass files that you would want compiled.</p>
+<p>You may have noticed, in the code above, the --style compressed command. That command tells SASS how to compile my CSS. There are four ways SASS can compile CSS into: </p>
+
+<h5>Nested</h5>
+<pre>
+#main {
+ color: #fff;
+ background-color: #000; }
+ #main p {
+   width: 10em; }
+.huge {
+ font-size: 10em;
+ font-weight: bold;
+ text-decoration: underline; }
+</pre>
+
+<h5>Expanded</h5>
+<pre>
+#main {
+ color: #fff;
+ background-color: #000;
+}
+#main p {
+ width: 10em;
+}
+.huge {
+ font-size: 10em;
+ font-weight: bold;
+ text-decoration: underline;
+}
+</pre>
+<h5>Compressed</h5>
+<pre>#main{color:#fff;background-color:#000}#main p{width:10em}.huge{font-size:10em;font-weight:bold;text-decoration:underline}</pre>
+
+<h5>Compact</h5>
+<pre>
+#main { color: #fff; background-color: #000; }
+#main p { width: 10em; }
+.huge { font-size: 10em; font-weight: bold; text-decoration: underline; }
+</pre>
+
+<p>When you are finished working and want to stop SASS from watching your files, go to your command prompt and press 'Ctrl + C'.</p>
+
+<h4>Using a GUI</h4>
+<p>There are a few GUI programs out there you can use to compile your SASS files so you don't have to type the commands in the command prompt. One of them is called Koala. You can visit <a href="http://koala-app.com/" rel="nofollow">http://koala-app.com/</a> and download the program. All the information you need are in the Koala App websites.</p>
+
+<h4>Creating your first SASS file</h4>
+<p>You can create a SASS file like any other file you create in your code editor. When you save the file, save it with the extension '.sass' or '.scss'. It is recommended that you use '.scss' extension. The difference between the two are listed below.</p>
+<p>There are a few editors that doesn't recognize the SASS syntax. For instance, if you are using Sublime Text, you would notice when you type in your new SASS file that there are no syntax coloring. Fortunately, you can download that syntax in Sublime Text:</p>
+<ul>
+ <li>Press Ctrl + Shift + P</li>
+ <li>Type Install Package</li>
+ <li>Type SASS</li>
+ <li>Press enter</li>
+ <li>Notice on the bottom left of Sublime Text it shows the installation progress</li>
+ <li>You may have to restart Sublime Text</li>
+</ul>
+
+<h4>SASS vs SCSS Extension</h4>
+<p>SASS was created roughly 5 years ago. When it first came out, it used the '.sass' extension and you coded it more like Ruby. Which means:</p>
+<ul>
+ <li>No brackets</li>
+ <li>No semi-colons</li>
+ <li>No colons</li>
+ <li>'.sass' recognizes syntax through indents</li>
+ <li>It doesn't have all the features of CSS</li>
+</ul>
+<p>The '.scss' extension is the third verison of SASS. Unlike the other verisons of SASS, you can write SASS (with the '.scss') exactly how you will write a CSS file. The '.scss' (Sassy CSS) extension was created to make it easier to learn SASS.</p>
+<p>While writing a '.sass' extension makes your code easier to read and more concised, the '.scss' is more expressive, modular, and easier to learn for CSS devs. </p>
+
+<h4>Comments</h4>
+
+<p>There are two ways to write comments in SASS.</p>
+<p>The multi-line comment</p>
+<pre>
+/* comments */
+</pre>
+<p>The double slash single-line comment</p>
+<pre>
+// comment
+</pre>
+
+<p>However, SASS treats comments a little differently than what you might expect. First off, the multi-line comment is valid in CSS comment. So if you make any multi-line comments in SASS then they will appear in the CSS file. But single-line comment is not a valid CSS comment. So SASS will not compile single-line comments to CSS, meaning you will only see them in SASS. So if you want to make comments in SASS and don't want others to see them in the CSS file, then use single-line comments.</p>
+
+<h4>Errors</h4>
+<p>From time to time, we all make mistakes in our code. It is normal. But what happens when you make a mistake in SASS? How will that look like in the CSS or browser?</p>
+<p>You will see something like this in the browser</p>
+<pre>
+Syntax error: Invalid CSS after "...d-column-color" : expected ":", was "rgba(0,0,...)"
+on line 9 of...
+</pre>
+<p>And your CSS file will be filled with a bunch of grey text that says 'error' along with whats written above. Don't fret. Just read the error to find out whats wrong and fix it. Once its fixed, everything will be normal again. </p>
+
+<h4>Managing Multiple SASS Files</h4>
+<p>Like CSS, you can have multiple SASS files for one site. However, SASS takes it one step further by giving you the option to compile several SASS files into one CSS file.</p>
+<p>Let's say I have four SASS files:</p>
+<ul>
+ <li>main.scss</li>
+ <li>fonts.scss</li>
+ <li>mobile.scss</li>
+ <li>tablet.scss</li>
+</ul>
+
+<p>I want fonts.scss, mobile.scss, and tablet.scss to merge into main.scss during the compiling process to become main.css. Meaning all the code from fonts.scss, mobile.scss, and tablet.scss will be in the main.css including the code from main.scss.</p>
+<p>In the main.scss file, you need to add the '@import'. For this instance, I will write</p>
+<pre>
+@import 'fonts', 'mobile', tablet;
+</pre>
+
+<p>Notice that the SASS version of '@import' is slightly different from the CSS version. In the SASS version, you don't have to add the 'url()', you can import multiple files on one line, and you don't have to write the extension of the SASS files you are importing.</p>
+
+<p>Right now, if I compile my main.scss file, it will compile four CSS files. To get SASS to compile one CSS file, I would have to rename the three SASS files, I am importing, to have an underscore in front of the file name. So my SASS files will become:</p>
+<ul>
+ <li>main.scss</li>
+ <li>_fonts.scss</li>
+ <li>_mobile.scss</li>
+ <li>_tablet.scss</li>
+</ul>
+
+<p>Now if I compile my SASS files, I will get one CSS file. </p>
+
+<h4>Using Compass</h4>
+<p>As mentioned before, Compass is a framework that works together with SASS. A lot of things you use normally, like prefixes, can be called from Compass so you don't have to write the whole thing yourself. For instance, lets say you want to write some CSS but you have to write all the prefixes so they can be viewed in each browser. That means you have to write the same CSS up to FIVE TIMES! And what if you have to make edits? You will have to edit those five CSS properties everytime. Wouldn't it be better to only write it once? Compass can help with that.</p>
+
+<p class="note">'So how do I use it?'</p>
+
+<p>Since we are on the topic of prefixes, let's start there. In your main SASS file, you will have to '@import' Compass. Its best that you place the '@import' for Compass on the very first line since browsers read code from top to bottom.</p>
+<pre>
+@import 'compass/css3';
+</pre>
+<p>Next, you will have to write some SASS. Let's say I want to create a header with a border radius of 15px.</p>
+<pre>
+header {
+   @include border-radius(15px);
+}
+</pre>
+
+<p>Your CSS will look like:</p>
+<pre>
+header {
+ -webkit-border-radius: 15px;
+ -moz-border-radius: 15px;
+ -ms-border-radius: 15px;
+ -o-border-radius: 15px;
+ border-radius: 15px;
+}
+</pre>
+
+<p>Compass also has a CSS reset like normalise and some basic styling that you may find useful. To find out more, check out their reference guide here </p>
+
+<h4>Nesting in SASS</h4>
+<p>SASS likes to avoid repetition. One way to avoid repetition and having to rewrite a lot of code is to nest selectors, IDs, and classes within each other. Notice the usage of '&' with ':first-child' - means there are no spaces between the parent and that child becoming a parent selector.</p>
+
+<h5>In SASS</h5>
+<pre>
+ul {
+   margin: 10px;
+   min-height: 10px;
+   padding: 0;
+   width: 100%;
+   img {
+     width: 30px;
+   }
+   &amp;:first-child {
+     display: none;
+   }
+ }
+</pre>
+<h5>In CSS</h5>
+<pre>
+ul {
+    margin: 10px;
+    min-height: 10px;
+    padding: 0;
+    width: 100%;
+}
+ul img {
+    width: 30px;
+}
+ul:first-child {
+    display: none;
+}
+</pre>
+
+<p>You can also nest CSS properties</p>
+
+<h5>In SASS</h5>
+<pre>
+#text {
+    color: black;
+    font: {
+        family: arial;
+        size: 14px;
+        weight: normal;
+     }
+     border: {
+        color: red;
+        size: 1px;
+        style: solid;
+     }
+     text-align: center;
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+#text {
+    color: black;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: normal;
+    border-color: red;
+    border-size: 1px;
+    border-style: solid;
+    text-align: center;
+}
+</pre>
+
+<h5>@extend SASS</h5>
+<p>'@extend' extends one ID, class, or selector CSS styles with another. In CSS, multiple IDs, classes, and selectors sharing one CSS are separated by commas. You will recognize it in CSS as</p>
+<pre>
+header, nav {
+   /* CSS Styles */
+}
+</pre>
+
+<p>To write that in SASS, you could follow the same method as CSS and separate with a comma.</p>
+<pre>
+header, nav {
+  // SASS Styles
+}
+</pre>
+<p>Or, you can use the @extend method</p>
+<pre>
+header {
+   // SASS Styles
+}
+
+nav {
+   @extend header;
+}
+</pre>
+
+<p>The reason the '@extend' exists is because you can still add SASS styles specific to <q>nav</q> while extending the <q>header</q> styles.</p>
+<pre>
+header {
+   // SASS Styles
+}
+
+nav {
+   @extend header;
+   // Nav only SASS Styles
+}
+</pre>
+
+<h4>Variables in SASS</h4>
+<p>If you are using the same color or value in multiples places, or need to do some math then use variables. SASS supports variables and basic math operations.</p>
+<p>To write a variable, you will need a '$' and the variable name. The variable name can be anything you want as long as it starts with a letter or underscore.</p>
+<p>Lets say I want to create a variable called height and have it equal to 200px.</p>
+<pre>
+$height: 200px;
+
+article {
+   height: $height;
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+article {
+   height: 200px;
+}
+</pre>
+
+<h4>Global vs Local Variables</h4>
+<p>Local variables can only be used within your property, ID, class, or mixin and are placed inside the curly brackets where you want to use the variable in.</p>
+<pre>
+header {
+   $full: 100%;
+   color: #000;
+   height: 150px;
+   width: $full;
+   img {
+     width: $full;
+   }
+}
+</pre>
+
+<p>Global variables can be used anywhere in your code and are placed at the beginning of your code or on a separate SASS file.</p>
+<pre>
+$full: 100%;
+
+header {
+   color: #000;
+   height: 150px;
+   width: $full;
+   img {
+     width: $full;
+   }
+}
+article {
+   height: $full;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: $full;
+}
+</pre>
+
+<p>If you have a global and local variable with the same variable name, the local variable will be treated as a global variable and the last variable read by SASS will be used.</p>
+<pre>
+$full: red;
+
+article {
+   $full: 100%;
+   height: $full;
+}
+header {
+   color: $full;
+}
+</pre>
+
+<h5>In CSS</h5>
+<pre>
+article {
+   height: 100%;
+}
+header {
+   color: 100%;
+}
+</pre>
+
+<h4>Interpolation #{}</h4>
+<p>There are certain situations, when writing a variable, that can confuse SASS during compiling and it will create an error. Like placing variable in a string, no spaces between the variable and the next word, or writing a variable next to a class, ID or property. Under the conditions you will want to write your variable as</p>
+<pre>
+ #{$var-name}
+</pre>
+
+<p>Lets say I want to create a variable with a relative path of my site folder for all the images I am going to call in my SASS file.</p>
+<pre>
+$path: '../images/';
+
+body {
+   background: url('#{$path}bgImg.jpg');
+}
+</pre>
+
+<h5>In CSS</h5>
+<pre>
+body {
+   background: url('../images/bgImg.jpg');
+}
+</pre>
+
+<h4>Variables and Math</h4>
+<p>You can use basic math (add, subtract, multiply, and division) with variables. Lets say I have two containers that are floating left inside a parent container with a width of 1000px. I want the left container to be wider so it'll contain the main content and the right container to be more like a sidebar. Instead of doing the math myself to make both child containers fit the width of 1000px from its parent container, I could have SASS do the math for me.</p>
+
+<p>One way to do so is</p>
+<pre>
+$mainWidth: 1000px;
+$contentArea: 726px;
+#parentContainer {
+   width: $mainWidth;
+   #leftContainer {
+       width: $contentArea;
+   }
+   #rightContainer {
+       width: $mainWidth - $contentArea;
+   }
+}
+</pre>
+
+<p>In CSS, This works because no matter how many times I change the value of $contentArea, SASS will create the difference for me for #rightContainer.</p>
+<pre>
+#parentContainer {
+   width: 1000px;
+}
+#parentContainer #leftContainer {
+   width: 726px;
+}
+#parentContainer #rightContainer {
+   width: 264px;
+}
+</pre>
+
+<h4>Mixins in SASS</h4>
+<p>Mixins are similar to variables but mixins can contain full CSS rules.</p>
+<p>Lets say I wanted to create a button that I will use multiple times throughout my site for links and submit buttons. Instead of coding the button multiple times in the CSS, I will create a mixin and call it throughout my SASS so the actual code for the button is only written once.</p>
+<p>Somewhere in my SASS file or in a separate SASS file, I will begin by writing the mixin. To start off you have to write '@mixin' and the mixin name followed by the curly braces. I'll be naming my mixin, button.</p>
+<pre>
+@mixin button { }
+</pre>
+<p>Then add all the code between the curly braces just like how you will normally write CSS and SASS.</p>
+<pre>
+@mixin button {
+ border: 1px solid #000;
+ display: block;
+ font-size: 1em;
+ padding: .75em 0;
+ text-align: center;
+ text-decoration: none;
+ width: 240px;
+}
+</pre>
+<p>Finally, call the mixin by using @include. I will include the button to my <q>a</q> for the links on my site. Notice you will have call the mixin name with the @include.</p>
+<pre>
+a {
+   @include button;
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+a {
+ border: 1px solid #000;
+ display: block;
+ font-size: 1em;
+ padding: .75em 0;
+ text-align: center;
+ text-decoration: none;
+ width: 240px;
+}
+</pre>
+
+<h4>Arguments</h4>
+<p>Arguments are basically variables in mixins and are defined when you include the mixin. Multiple variables and arguments are separated by a comma.</p>
+<pre>
+@mixin pretty-border($color, $width) {
+   border: {
+     color: $color;
+     width: $width;
+     style: dashed;
+   }
+}
+
+p {
+   @include pretty-border(#900, 3px);
+}
+</pre>
+
+<h5>In CSS</h5>
+<pre>
+p {
+ border-color: #900;
+ border-width: 3px;
+ border-style: dashed;
+}
+</pre>
+<p>Mixins can also specify default values for their arguments. If you have a default value for a variable then you don't need to pass that argument in the '@include'.</p>
+<pre>
+@mixin pretty-border($color, $width: 3px) {
+   border: {
+     color: $color;
+     width: $width;
+     style: dashed;
+   }
+}
+
+p {
+   @include pretty-border(#900);
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+p {
+ border-color: #900;
+ border-width: 3px;
+ border-style: dashed;
+}
+</pre>
+
+<p>When writing the variables in the mixin, the variables without a default value has to come before the variables with a default value otherwise you will get an error.</p>
+
+<h5>This is wrong</h5>
+<pre>
+@mixin button($size: 100px, $value) { }
+</pre>
+
+<h5>This is right</h5>
+<pre>
+@mixin button($value, $size: 100px) { }
+</pre>
+
+<p>Also, when defining your arguments in the '@include', it has to be in the same order as how you written it in the '@mixin'.</p>
+<pre>
+@mixin button($value, $size: 100px) { }
+
+@include button(arial, 100px);
+</pre>
+
+<p>If you do not want to write the arguments in the '@include' the same order as in the '@mixin' then you will get an error unless you specify by writing the variables in the '@include'.</p>
+<pre>
+@mixin button($value, $size: 100px) { }
+
+@include button($size: 100px, $value: arial);
+</pre>
+
+<h4>Loops in SASS</h4>
+<h5>@For</h5>
+<p>'@for' repeatedly outputs a set of styles. For each repetition, a counter variable is used to adjust the output. There are two ways to write a for loop in SASS</p>
+<pre>
+@for $i from 1 through 2 {
+    // Styling
+}
+</pre>
+<p>or</p>
+<pre>
+@for $i from 1 to 2 {
+    // Styling
+}
+</pre>
+<p>The only difference between the two are the words 'through' and 'to'.</p>
+<p>The word 'through' means the loop range includes the start and end values, in this case, 1 and 2. Meaning if you ran the code above with the word 'through' then you will get two instances from that loop.</p>
+<p>The word 'to' means the loop range runs up to but not including the end value, in this case, 2. Meaning if you ran the code above with the word 'to' then you will get one instance from that loop.</p>
+<p>To write the styling that goes between the curly braces, you must remember to place the counter variable. Let say I want a loop of two instances with a width that increases on each instance.</p>
+<pre>
+@for $i from 1 through 2 {
+   .item-#{$i} { width: 10px * $i }
+}
+</pre>
+<p>or</p>
+<pre>
+@for $i from 1 to 3 {
+   .item-#{$i} { width: 10px * $i }
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+.item-1 {
+  width: 10px;
+}
+
+.item-2 {
+  width: 20px;
+}
+</pre>
+
+<h5>@each</h5>
+<p>'@each' is similar to writing an array where you have a variable that has multiple definitions in a list. There will be a loop for each definition listed and each definition would output into the instance. Meaning, if you have a list of five words in a variable then your loop will run five times and each instance will contain one of those five words.</p>
+<p>For instance, I am creating a social icon section in the footer. I will need an icon for Facebook, Twitter, Google+, and Youtube. I want the user to be able to click on it each icon and follow my social shenanigans.</p>
+<p>There are two ways to write an @each. My variable will be $social for the list of icons. The first step is to write the @each, variable, and the list.</p>
+<pre>
+@each $social in facebook, twitter, google, youtube {
+
+}
+</pre>
+<p>Inside the curly braces, I will write my CSS styles that will be looped for each social icon. Notice I have a variable, $social, in the class name and in the image name.</p>
+<pre>
+@each $social in facebook, twitter, google, youtube {
+  .#{$social} {
+     background: url('../images/#{$social}.png');
+  }
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+.facebook {
+ background: url("../images/facebook.png");
+}
+
+.twitter {
+  background: url("../images/twitter.png");
+}
+
+.google {
+  background: url("../images/google.png");
+}
+
+.youtube {
+  background: url("../images/youtube.png");
+}
+</pre>
+
+<p>Another way to write the '@each' is to put the list of my social media into another variable called $icons, and call $icons in the line with $social. Either way gives the same results.</p>
+<pre>
+$icons: (facebook, twitter, google, youtube);
+@each $social in $icons {
+  .#{$social} {
+     background: url('../images/#{$social}.png');
+  }
+}
+</pre>
+
+<h5>@while</h5>
+<p>'@while' is similar to '@for' where it will repeatedly outputs the styles until the statement equals false.</p>
+<p>First, I have to create a counter variable.</p>
+<pre>
+$i: 6;
+</pre>
+<p>Next I will have to create an '@while' statement. My '@while' statement says to create a loop as long as my counter variable is greater than 0.</p>
+<pre>
+$i: 6;
+
+@while $i > 0 { }
+</pre>
+<p>Finally you will have to write the output styles. Notice the '$i: $i - 2;'. That and '$i > 0' tells SASS how many loops to create.</p>
+<pre>
+$i: 6;
+
+@while $i > 0 {
+   .item-#{$i} { width: 2em * $i }
+   $i: $i - 2;
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+.item-6 {
+  width: 12em;
+}
+
+.item-4 {
+  width: 8em;
+}
+
+.item-2 {
+  width: 4em;
+}
+</pre>
+
+<h4>If/else in SASS</h4>
+<h5>@if</h5>
+<p>'@if' is a condition that uses styles nested beneath it if the condiiton returns anything other than false or null.</p>
+<pre>
+p {
+   @if 1 + 1 == 2 { border: 1px solid;  }
+   @if 5 &lt; 3      { border: 2px dotted; }
+   @if null       { border: 3px double; }
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+p {
+ border: 1px solid;
+}
+</pre>
+<p>You can also use '@if' in mixins. Lets say I have a background color on the <q>body</q> and I want the text color to change based on the background color options I give. I will give my background color a default value of white.</p>
+<pre>
+@mixin color($bg: white) {
+   background: $bg;
+   @if $bg == white {
+     color: #000;
+   }
+   @if $bg == black {
+     color: #fff;
+   }
+   @if $bg == #ddd {
+     color: #888;
+   }
+}
+</pre>
+<p>Now when I call the mixin with '@include' and I don't call an argument then my default background color will white and my text is black.</p>
+<pre>
+body {
+   @include color;
+}
+</pre>
+<p>If I decide to call an argument with my '@include' then I could use one of the other two color options I gave. So I call the argument with a black background color</p>
+<pre>
+body {
+   @include color(black);
+}
+</pre>
+<p>I will get this in CSS</p>
+<pre>s
+body {
+   background: black;
+   color: #fff;
+}
+</pre>
+
+<h5>@else if</h5>
+<p>If you have more than one conditions in your statement then '@else if' can be followed by the initial '@if'.</p>
+<p>Lets say I have a parent container that has two children containers that are floating left with a width of 50% if the width of the parent container is greater than or equal to 1000px. If the parent container is less than 1000px, then the two children containers float will be set to none and width will be set to 100%.</p>
+<pre>
+$width: 1000px;
+
+.parent {
+   width: $width;
+   @if $width >= 1000px {
+     .children {
+       float: left;
+       width: 50%;
+     }
+   }
+   @else if @width &lt; 1000px {
+     .child {
+       float: none;
+       width: 100%;
+     }
+   }
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+.parent {
+  width: 1000px;
+}
+
+.parent .children {
+  float: left;
+  width: 50%;
+}
+</pre>
+
+<h5>@else</h5>
+<p>The @else is used when all the @if are not meant. There can be multiple @if but only one @else.</p>
+<p>I want to create a triangle. For my triangle, I want to be able to control the size, color, and the direction of the tip. In order to do so, I would need to create a mixin. My width and height needs to be set at zero since I control the size of the triangle through the border.</p>
+<pre>
+@mixin triangle($size, $color, $dir: left) {
+   height: 0;
+   width: 0;
+   @if $dir == up {
+     border-left: $size solid transparent;
+     border-right: $size solid transparent;
+     border-bottom: $size solid $color;
+   }
+   @else if $dir == right {
+     border-top: $size solid transparent;
+     border-bottom: $size solid transparent;
+     border-left: $size solid $color;
+   }
+   @else if $dir == down {
+     border-left: $size solid transparent;
+     border-right: $size solid transparent;
+     border-top: $size solid $color;
+   }
+   @else {
+     border-bottom: $size solid transparent;
+     border-top: $size solid transparent;
+     border-right: $size solid $color;
+   }
+}
+</pre>
+<p>If I was to call this mixin's direction with 'up' then it would place the given style. If I don't, then SASS would move down my condition to match the direction with what I called in the '@include'. If it cant match the two then it would place the styles in '@else'.</p>
+<pre>
+#triangleContainer {
+   @include triangle(60px, blue);
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+#triangleContainer {
+   height: 0;
+   width: 0;
+   border-bottom: 60px solid transparent;
+   border-top: 60px solid transparent;
+   border-right: 60px solid blue;
+}
+</pre>
+
+<h4>Functions in SASS</h4>
+<p>Functions are similar to mixins as you can create reusable code but functions only return a single value.</p>
+<h5>Built-in Functions</h5>
+<p>SASS has a bunch of functions built-in already. To see the list of built-in functions, go here.</p>
+<p>The list of built-in functions can be a little confusing but don't worry. The built-in functions list are divided into categories like rgb, hsl, opacity, etc. Each function shows the function name and the function's variable in parenthesis with a brief description below.</p>
+<pre>
+function-name($function-variable)
+description
+</pre>
+<p>Read down the list and see if there are anything you may want to use. You might recognize a few functions like rgba() and rgb() if you ever used them in CSS.</p>
+<p>To use these functions, all you have to do is call them in your SASS file. For instance, I will use rgba() and put in the red, green, blue, and alpha values.</p>
+<pre>
+p {
+   color: rgba(0,0,0,0.5);
+}
+</pre>
+<p>But what if you don't know the red, green, and blue values? SASS can convert your hexadecimal colors to rgb values. So you can write it like</p>
+<pre>
+p {
+   color: rgba(#000,0.5)
+}
+</pre>
+<p>Another built-in function you may be interested in are lighten() and darken(). You can use these functions to lighten or darken your colors without having to find a new hexadecimal. Both of these functions require a '$color' and a '$amount'.</p>
+<pre>
+#beer {
+  background-color: darken(#eee, 20%);
+  color: lighten(#000, 70%);
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+#beer {
+  background-color: #bbbbbb;
+  color: #b3b3b3;
+}
+</pre>
+
+<h5>Creating Functions</h5>
+<p>As great as it is to have a bunch of functions already built into SASS, sometimes you have to create your own functions. When creating a function you will need the '@function' to define a function, @return to return data, and math.</p>
+<p>Are you completely use to pixels? Are ems completely foreign to you? Guess what? You can build a function that can convert your pixels into ems.</p>
+<p>To create this I am going to use</p>
+<pre>
+target / context = result
+</pre>
+<p>The ratio above is used by many front-end devs to calculate things like font sizes. To start, I'm going to need the '@function' and a function name. I'm going to name this function 'pxtoem'.</p>
+<pre>
+@function pxtoem() {
+
+}
+</pre>
+<p>Next, I will add my variables. I am going to name my variables based off the ratio above.</p>
+<pre>
+@function pxtoem($target, $context) {
+
+}
+</pre>
+<p>Finally, I will need the '@return' to return my result and some math.</p>
+<pre>
+@function pxtoem($target, $context) {
+   @return ($target/$context)+0em;
+}
+</pre>
+<p>The '$target' is the size you want yo'ur element to be. The '$context' is the based size which can be anything you want but it is usually 16px because thats the default browser font size. The function will divide '$target' and '$context' and add it to '0em' giving you the result.</p>
+<p>To call this function, all you need to do is write the function name, your target size, and your context size. Don't write your values with the word 'px'.</p>
+<pre>
+p {
+   font-size: pxtoem(18, 16);
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+p {
+   font-size: 1.125em;
+}
+</pre>
+<p>What if your based size will always be 16 and/or you are tired of writing the based size with the target size? Simple. SASS functions accept arguments.</p>
+<pre>
+@function pxtoem($target, $context: 16) {
+   @return ($target/$context)+0em;
+}
+</pre>
+<p>In the code above, I gave '$context' a default value of 16. Now you don't have to write the based size everytime.</p>
+<pre>
+p {
+   font-size: pxtoem(18);
+}
+</pre>
+<h5>In CSS</h5>
+<pre>
+p {
+   font-size: 1.125em;
+}
+</pre>
+<p>If you think writing 'pxtoem($value)' is still too much, then you can change the function name and/or create a snippet in your code editor. </p>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

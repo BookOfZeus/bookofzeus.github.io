@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Create better jQuery plugins | BookOfZeus</title>
+	<meta name="description" content="Tips on how to create better, reliable and easy to use jQuery Plugins." />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/create-better-jquery-plugins" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -79,7 +79,7 @@
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
@@ -124,58 +124,85 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Create better jQuery plugins</h1>
+		<h6>Posted on Wednesday April 18, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>jQuery, used by the major companies and the top websites, is pretty much the standard in the <q>I want to make things cool and easy</q>.</p>
+
+<p>Most of the time we create simple script that do whatever we need but we have to think about the big picture. In this case, we have to create more robust script that will last longer ... such as jQuery Plugins.</p>
+
+<p>Now, when you create jQuery you have to think on what and how you can do it! Here's some tips you have to learn and remember everything you create your plugins.</p>
+
+<h4>Always return a value</h4>
+<p>If your script does not return a specific value, you can either return true or false or return the current object.</p>
+<pre>
+// JS code
+  return true;
+}
+</pre>
+<p>or returning the object</p>
+<pre>
+// JS code
+  return this;
+}
+</pre>
+<p>On the first example, you make sure nothing after the return is executed and stop your script and on the second example you can do something like this:</p>
+<pre>
+$("#item").plugin().fadeIn();
+</pre>
+
+<h4>Use clean and simple code</h4>
+<p>By using clean and simple code, you will make your plugin very easy to maintain and very easy to update. If your plugin requires a lot of parameters or function calls, you might have a problem here. Try to take advantage of the DOM, the HTML5 tags and the class or ID attributes without overloading your code. Example:</p>
+
+<pre>
+&lt;article id="uniqueName"&gt;
+  &lt;div&gt;My content&lt;/div&gt;
+&lt;/article&gt;
+</pre>
+<p>Then simply call your plugin like this:</p>
+<pre>
+$("article#uniqueName").myPlugin();
+</pre>
+
+<h4>Use unique non-reserved name</h4>
+<p>jQuery has a big plugin library. Before naming your plugin, make sure it is not already taken and also don't use reserved words like: <em>css</em> or <em>fadeIn</em>.</p>
+
+<h4>HTML5 data attributes</h4>
+<p>HTML5 brings a new set of attributes: the data type. This can be very power full and take advantage of it. Example:</p>
+<pre>
+&lt;article id="uniqueName" data-id="1" data-label="Label"&gt;
+  // some code
+&lt;/section&gt;
+</pre>
+<p>These data attributes can be accessed using the <code>.data</code> method. Example:</p>
+<pre>
+$('#id').data("id").
+</pre>
+
+<h4>Document, document, and document</h4>
+<p>When writing a plugin, make sure you write documentation. Not all the users of your plugin is an experimented developer. Here's some tips to write your documentations:</p>
+<ul>
+ <li>What exactly your plugin do</li>
+ <li>Easy to understand</li>
+ <li>If you have parameters, give details explanations</li>
+ <li>Plenty of examples</li>
+ <li>Write for unexperienced users</li>
+ <li>Make an Offline documentation</li>
+</ul>
+
+<h4>Test, test, and test again</h4>
+<p>Remember to test your plugin over and over, using a different Internet Browser each time.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

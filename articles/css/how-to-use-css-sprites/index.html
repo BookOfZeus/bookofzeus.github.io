@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>How to use CSS Sprites | BookOfZeus</title>
+	<meta name="description" content="Why CSS Sprites are important and why you should use them" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/how-to-use-css-sprites" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,100 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>How to use CSS Sprites</h1>
+		<h6>Posted on Thursday August 04, 2011 / by Eric Potvin</h6>
 	</header>
+
+	<style>
+#sample a { height:32px; width: 32px;display:inline-block; }
+#sampleDigg { background: url('/download/boz.jpg') no-repeat -616px -251px; display: block; border: solid 1px #ddd; }
+#sampleDiggWrong { background: url('/download/boz.jpg') no-repeat -584px -205px; display: block; border: solid 1px #ddd; }
+</style>
+<p>Remember back in the days when we had to pre-load images using JavaScript because we used different images when we "onmouseover" menus? Well that time is long gone now. That can be easily completed by using only CSS!</p>
+<p>The technique, also commonly called Sprites, is simply to use one big (optimized) image that stores multiples images positioned next to each other. Then, by using CSS, you set the position of where the image is in the background-position property.</p>
+
+<h2>Why using Sprites?</h2>
+<ul>
+ <li>No more JavaScript: no more pre-loading;</li>
+ <li>Better optimization: once the image is loaded in cache, the browser reuse the same image over and over;</li>
+ <li>Less number of requests to the server: no need to load tons of images, only need to load one;</li>
+ <li>Easy to update: only one file to update;</li>
+ <li>Smaller size: One image will take less space on the hard drive then more than 10 (including the physical space and the block space, and also no meta-data repeated);</li>
+ <li>No lag between image switch: if you using :hover, the image will load instantly;</li>
+</ul>
+
+<h2>What do you have to keep in mind when you use sprites?</h2>
+<ul>
+ <li>The CSS file will be a little bit heavier;</li>
+ <li>The positioning of all images might be tricky at first;</li>
+ <li>If you don't align all the images correctly, you will see image conflict on your site;</li>
+ <li>All left aligned images should be on the right in your image;</li>
+ <li>All right aligned images should be on the left in your image;</li>
+ <li>Be careful when you use the repeat, repeat-x, repeat-y and background-position: top right; background-position: bottom left;</li>
+</ul>
+
+<h3>Here's a simple example using this website image</h3>
+<p>We will create a "Digg" button. </p>
+<p>
+	Using the this site image, we find out the location of the digg button.
+	<img src="http://www.bookofzeus.com/download/boz.jpg" title="book of zeus css sprites images" class="autofit" alt="book of zeus css sprites images" width="537" height="350" />
+</p>
+
+<h4>Let's build the CSS:</h4>
+
+<p>The idea is to update the X and Y position based on the location of where the image is located. The easy part with this, is you know right away if the position you entered is good. For example:</p>
+
+<pre>
+#sample a {
+  height:32px; width: 32px;display:inline-block;
+}
+#sampleDigg {
+  background: url('/download/boz.png') no-repeat -616px -251px;
+  display: block;
+  border: solid 1px #ddd;
+}
+#sampleDiggWrong {
+  background: url('/download/boz.png') no-repeat -584px -205px;
+  display: block;
+  border: solid 1px #ddd;
+}
+</pre>
+
+<h4>Why negative coordinates?</h4>
+<p>Think sprites images as a X/Y Graph. The top left corner is 0,0. Therefore, if you move the picture to the right and bottom, you are moving the images to the left and up. Which means updated the coordinates negatively.</p>
+
+<h4>Let's build the HTML</h4>
+<pre>
+&lt;a href="#link" id="sampleDigg"&gt;&lt;/a&gt;
+&lt;br /&gt;
+&lt;a href="#link" id="sampleDiggWrong"&gt;&lt;/a&gt;
+</pre>
+
+<h4>Here's the output</h4>
+<div id="sample">
 	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
+		<a id="sampleDigg"></a>
+		<br /><br />
+		<a id="sampleDiggWrong"></a>
 	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+</div>
+
+<p>As you can see, the coordinates on the second image are wrong. Therefore, easy see visually see errors on the page.</p>
+
+<h4>Posterize your image</h4>
+<p>A simple trick most designer do when creating a CSS Sprite image, is to posterize it. <q>Posterization of an image entails conversion of a continuous gradation of tone to several regions of fewer tones, with abrupt changes from one tone to another.</q>. This can benefit you to get a smaller image without loosing quality.</p>
+
+<h3>Conclusion</h3>
+<p>At first, Sprites will required a little bit of patience. Don't worry, you will get use to it.</p>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Anchors CSS Attribute Selector | BookOfZeus</title>
+	<meta name="description" content="Use the CSS Attribute Selector to add an icon on your links" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/anchors-css-attribute-selector" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,59 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Anchors CSS Attribute Selector</h1>
+		<h6>Posted on Tuesday January 17, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<style>
+.democss a { display: block; height: 25px; padding-left: 25px; color:#333; font: bold 15px Tahoma; text-decoration: none; background: url(/download/anchors-sprites.png) no-repeat; }
+.democss a[href$='.pdf'] { background-position: 0px -0x; }
+.democss a[href$='.xml'] { background-position: 0px -24px; }
+.democss a[href$='.zip'] { background-position: 0px -48px; }
+.democss a[href$='.vcard'] { background-position: 0px -76px; }
+</style>
+<p>Icons are usually a great indicator of what an action do. For example a little printer icon to print a page or a little PDF icon to download a PDF file.</p>
+
+<p>This practice is used commonly but if you have plenty, it can be hard to maintain if you don't organize your images and code correctly.</p>
+
+<p>Here's a quick spinet of code that will help you create easily action links without the overloading your anchors with CSS</p>
+
+<h4>CSS:</h4>
+
+<pre>
+a {
+ display: block;
+ height: 25px;
+ padding-left: 25px;
+ color:#333;
+ font: bold 15px Tahoma;
+ text-decoration: none;
+ background: url(http://www.bookofzeus.com/download/anchors-sprites.png) no-repeat;
+}
+a[href$='.pdf'] { background-position: 0px 0px; }
+a[href$='.xml'] { background-position: 0px -24px; }
+a[href$='.zip'] { background-position: 0px -48px; }
+a[href$='.vcard'] { background-position: 0px -76px; }
+</pre>
+
+<p>What <code>a[href$='.pdf']</code> means? It simply means for each <code>a</code> tag that has an <code>href</code> ending (because of the <code>$</code>) with <code>extension</code> will use the CSS code within the curly braces.</p>
+
+<p>This way, every file <span class="bold">ending</span> with a specific file extension will use the icon. Here's more information about the <a href="http://www.w3.org/TR/selectors/" title="selectors" rel="nofollow" class="nw">selectors</a></p>
+
+<h4>Demo:</h4>
+<p class="democss">
+<a href="http://www.bookofzeus.com/pdf/file-type-css-attribute-selector.pdf" title="download pdf">PDF File</a>
+<a href="http://www.bookofzeus.com/rss/latest.xml" title="rss feed">XML File</a>
+</p>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

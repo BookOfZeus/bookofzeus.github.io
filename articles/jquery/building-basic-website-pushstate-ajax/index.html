@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Building a basic website with pushstate and ajax | BookOfZeus</title>
+	<meta name="description" content="How to build an easy website in LAMP with PHP, Ajax and pushstate" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/building-basic-website-pushstate-ajax" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -79,7 +79,7 @@
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
@@ -124,58 +124,121 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Building a basic website with pushstate and ajax</h1>
+		<h6>Posted on Saturday February 16, 2013 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>Last week someone asked me about the <a href="http://www.bookofzeus.com/articles/quick-introduction-pushstate-with-ajax/">pushstate with Ajax</a> and how come when the user refresh the website, a 404 Page not found, shows up. With very specific details, he told me what he needed and how his site should work, so William, here's an answer for you.</p>
+
+<p>First of all, when you when you using the <q>pushstate</q>, you are injecting a URL in the browser without loading the page. So if the user wants to refresh the page, that actual page does not really exists. To fix this, you simply needs to use this in your .htaccess:</p>
+
+<p>In other words, you have to redirect everything to your index.html page. Make sure the file or folder does not exists (for example: JPGs, CSS Files, etc..) otherwise, all your images, css and other files will go to the index.html. Then in your JavaScript you can simply trigger the page load when the browser reloads the page.</p>
+
+<p>Here's a simple solution:</p>
+
+<h4>HTML</h4>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;MySite: Welcome&lt;/title&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="/site.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;header&gt;
+  &lt;h1&gt;My Site: Where everything is awesome&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;a href="/"&gt;Home&lt;/a&gt;
+  &lt;a href="/about/"&gt;About&lt;/a&gt;
+  &lt;a href="/contact/"&gt;Contact Us&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;article&gt;
+  &lt;p&gt;Welcome to our site!&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;footer&gt;
+  copyright &copy; 2013
+&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h4>Javascript</h4>
+<pre>
+window.onpopstate = function(event) {
+  getContent();
+};
+function getContent(u) {
+  $.ajax({
+    data: {href: u},
+    success: function(result) {
+      $("p").html(result.content);
+      $("h1").html(result.header);
+      document.title = result.title;
+    }
+  });
+}
+$(document).ready(function() {
+  $.ajaxSetup ({  
+    cache: false,
+    dataType: 'json',
+    type: 'POST',
+    url: "/load.php"
+  }); 
+  $('nav a').click(function(e) {
+    var href = $(this).attr("href");
+    history.pushState('', '', href);
+    getContent(href);
+    e.preventDefault();
+  });
+
+  getContent(window.location.pathname);
+
+});
+</pre>
+
+<h4>PHP</h4>
+<p>Now in your PHP you simple have to get the "href" request variable.
+
+<pre>
+// here you can put your security or replace unwanted characters.
+$href = str_replace('/', '', $_REQUEST['href']);
+
+// Your custom function to get the HTML template from your CMS
+$content = getContent($href); 
+
+echo json_encode($content);
+</pre>
+
+
+<h4>.htaccess</h4>
+<p>Now the important part. This will allow you to refresh the page without getting the 404.</p>
+<pre>
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !index  
+RewriteRule (.*) index.html [NC,QSA,L]
+</pre>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

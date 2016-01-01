@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Make Cartoon Images with ImageMagick | BookOfZeus</title>
+	<meta name="description" content="Create or convert any images into a cartoon using ImageMagick" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/linux/make-cartoon-images-with-imagemagick" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -81,7 +81,7 @@
 		
 			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
 		
-			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
 		
 			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
 		
@@ -124,58 +124,140 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="linux" href="/articles/linux/">linux</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Make Cartoon Images with ImageMagick</h1>
+		<h6>Posted on Monday January 30, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>Have you ever wanted to convert an image of yourself into a cartoon?</p>
+
+<p>Here's a simple shell script that allow you convert any images to a cartoon image.</p>
+
+<h4>Requirement:</h4>
+<ul>
+ <li><a href="http://www.imagemagick.org/" class="nw" title="ImageMagick" rel="nofollow">ImageMagick</a></li>
+</ul>
+
+<h4>The script:</h4>
+<pre>
+#!/bin/bash
+
+# Functions
+howto() {
+	this=$(basename $(type $0 | awk '{print $3}'))
+	echo -e "Cartoonify version 1.0\nUsage: $this [-v] input.jpg output.jpg\n"
+}
+error() {
+	echo $1
+	exit 1
+}
+
+# check if params is set
+if [ $# -eq 0 ]; then
+	howto
+	exit 1
+fi
+
+# check if convert exists
+command -v convert &amp;>/dev/null || error "ImageMagick is not installed"
+
+#check if version is ok
+version=`convert -list configure | grep 'LIB_VERSION_NUMBER' | awk '{print $2}' | sed -s 's/,//g'`
+if [ "$version" -ge "6686" ]; then
+	exit 1;
+fi
+
+# valitate input
+if [ "$1" == "-v" ]; then
+	debug=1
+	input=$2
+	output=$3
+else
+	debug=0
+	input=$1
+	output=$2
+fi
+
+# validate if input file exists
+if [ ! -f "$input" ]; then
+	echo "Cannnot find file $input"
+fi
+
+convolution=0.70
+dx="-$convolution,0,$convolution,-$convolution,0,$convolution,-$convolution,0,$convolution"
+dy="$convolution,$convolution,$convolution,0,0,0,-$convolution,-$convolution,-$convolution"
+
+tmpA1="/tmp/tempfile_cartoon_1_$$.img"
+tmpB1="/tmp/tempfile_cartoon_1_$$.cache"
+tmpA2="/tmp/tempfile_cartoon_2_$$.img"
+tmpB2="/tmp/tempfile_cartoon_2_$$.cache"
+tmpA3="/tmp/tempfile_cartoon_3_$$.img"
+tmpB3="/tmp/tempfile_cartoon_3_$$.cache"
+
+if [ $debug -eq 1 ]; then
+	echo "Converting $input to $output"
+	echo -n "."
+fi
+convert -quiet -regard-warnings "$input" -colorspace RGB +repage "$tmpA1"
+
+if [ $debug -eq 1 ]; then
+	echo -n "."
+fi
+convert \( $tmpA1 -median 2 \) \( -size 1x256 gradient: -rotate 90 -fx "floor(u*10+0.5)/10" \) -clut $tmpA2
+
+if [ $debug -eq 1 ]; then
+	echo -n "."
+fi
+convert \( $tmpA1 -colorspace gray -median 2 \) \
+	\( -clone 0 -bias 50% -convolve "$dx" -solarize 50% \) \
+	\( -clone 0 -bias 50% -convolve "$dy" -solarize 50% \) \
+	\( -clone 1 -clone 1 -compose multiply -composite -gamma 2 \) \
+	\( -clone 2 -clone 2 -compose multiply -composite -gamma 2 \) \
+	-delete 0-2 -compose plus -composite -threshold 75% $tmpA3
+
+if [ $debug -eq 1 ]; then
+	echo "."
+fi
+convert $tmpA2 $tmpA3 -compose multiply -composite $output
+
+if [ $debug -eq 1 ]; then
+	echo "Conversion completed"
+	echo "Removing temporary files"
+fi
+rm -rf /tmp/tempfile_cartoon*
+</pre>
+
+<p>Save this script to a file. Example: <code>cartoon.sh</code></p>
+
+<p>Make sure the file is executable:</p>
+<pre>
+chmod +x cartoon.sh
+</pre>
+
+<h4>Usage:</h4>
+<pre>
+cartoonify.sh source.jpg destination.jpg
+</pre>
+<p>You can put the <code>-v</code> if you want the debug mode.</p>
+<pre>
+cartoonify.sh -v source.jpg destination.jpg
+</pre>
+
+<p>This will convert this image:</p>
+<img src="http://www.bookofzeus.com/download/lion.jpg" alt="Lion" width="434" height="341" />
+
+<p>to:</p>
+<img src="http://www.bookofzeus.com/download/lion-cartoon.jpg" alt="Lion Cartoon" width="434" height="341" />
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Live edit your content without form | BookOfZeus</title>
+	<meta name="description" content="Live edit your content without refreshing your web page and without using a form" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/html/live-edit-your-content-without-form" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -75,7 +75,7 @@
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
-			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+			<li class="item"><a href="/articles/html/" title="HTML" class="selected">HTML</a></li>
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
@@ -124,58 +124,112 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="html" href="/articles/html/">html</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Live edit your content without form</h1>
+		<h6>Posted on Friday September 14, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>Would it be awesome to edit any text on a web page without entering in an <q>edit</q> mode (which implies also to refresh the page)?</p>
+
+<p>Now it is possible and it is actually very simple by using the HTML attribute <code>contenteditable</code>. This live edit concept makes all your content editable and it is smart enough to process different type of tags as well. If you put the <code>contenteditable</code> on a <code>UL</code> you will end up creating a list whereas if you use the tag on a <code>P</code> you will simply edit text.</p>
+
+<p><code>contenteditable</code> has 3 possible values.</p>
+
+<ul>
+  <li>contenteditable="true": The content is editable</li>
+  <li>contenteditable="false": The content is not editable</li>
+  <li>contenteditable="inherit": Will inherit of its parent; This is the default value</li>
+</ul>
+
+<p>Browser Compatibility (source: http://caniuse.com/#feat=contenteditable)</p>
+
+<ul>
+  <li>IE: Since version 7</li>
+  <li>Firefox: Since version 12</li>
+  <li>Chrome: Since version 20</li>
+  <li>Safari: Since version 5.1</li>
+  <li>Opera: Since version 12</li>
+  <li>iOS Safari: Since version 5</li>
+  <li>Android Browser: Since version 3</li>
+  <li>Blackberry Browser: Since version 7</li>
+</ul>
+
+<p>Now, let's it make this feature more interesting. As mentioned previously, it would be great to edit the content and be able to save it to a database. Let's use this HTML document:</p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;editable&lt;/title&gt;
+  &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script src="/download/live-edit.js"&gt;&lt;/script&gt;
+  &lt;style type="text/css"&gt;
+  div {
+   border: solid 1px #ddd;
+   height: 200px;
+   padding: 10px;
+   width: 400px;
+  }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Live Edit&lt;/h1&gt;
+
+&lt;div contenteditable="true" data-id="1"&gt;
+  My Content
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>Now let's edit the <q>live-edit.js</q>. In this one, we simply have to handle how the <q>blur</q> event will react when the user focus out of the tag. Then call the ajax call to save the info.</p>
+
+<pre>
+$(document).ready(function() {
+  $('body').on('blur',"div[contenteditable=true]",function() {
+    $.ajax({
+      type: 'POST',
+      url: 'save.php',
+      data: {
+        content: $.trim($(this).text()),
+        id: $(this).data('id')
+      },
+      success: function(msg) {
+        // handle the output
+      }
+    });
+  });
+});
+</pre>
+
+<p>Now in your <q>save.php</q> file you simply have to save to the database.</p>
+
+<pre>
+if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest') {
+  die();
+}
+// sanitize the $_POST, save to the database and output a result.
+</pre>
+
+<p>There you go, you have a nice and clean solution about editing data without refreshing any contents.</p>
+
+<h4>Demo</h4>
+
+<p contenteditable="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum porttitor purus, in auctor nulla fringilla eu. Cras placerat, sem ac lobortis bibendum, magna urna aliquam orci, at sodales dui turpis sit amet velit. Nullam ut libero vitae metus tempus feugiat. Sed sagittis aliquet dolor. Pellentesque a tellus neque. Suspendisse lorem felis, ultrices vel blandit posuere, pharetra in mi. Vestibulum eget adipiscing leo. Suspendisse potenti. Aenean mi arcu, tempus nec mattis at, iaculis ac felis. Donec sem diam, aliquet ut congue quis, bibendum eget nunc. Proin pellentesque elit quis mauris placerat sed gravida risus ultricies. Donec faucibus fermentum venenatis. Nam mi nunc, luctus nec tincidunt ac, tempor eget risus.</p>
+
+<p class="note">The ajax feature has been disable for the demo</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>PHP headers with AJAX | BookOfZeus</title>
+	<meta name="description" content="Using PHP headers with AJAX for jSon, PHP or HTML output" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/php/php-headers-with-ajax" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -91,7 +91,7 @@
 		
 			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
 		
-			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+			<li class="item"><a href="/articles/php/" title="PHP" class="selected">PHP</a></li>
 		
 			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
 		
@@ -124,58 +124,47 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="php" href="/articles/php/">php</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>PHP headers with AJAX</h1>
+		<h6>Posted on Friday July 22, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>When creating an Ajax request you might have to set the headers to provide the correct information to be sent to the browser.</p>
+
+<p>Here's the most common way to force the headers when executing an AJAX request:</p>
+
+<h3>Common headers</h3>
+
+<pre>
+header("Expires: 0");
+header("Cache-Control: no-cache, must-revalidate, post-check=0, pre-check=0");
+header("Pragma: no-cache");
+</pre>
+
+<h4>For jSon (JavaScript Object Nation)</h4>
+<pre>
+header('Content-type: application/json');
+</pre>
+
+<h4>For XML (Extensible Markup Language)</h4>
+<pre>
+header('Content-Type: text/xml');
+</pre>
+
+<h4>For HTML (Hypertext Markup Language)</h4>
+<pre>
+header('Content-Type: text/html');
+</pre>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

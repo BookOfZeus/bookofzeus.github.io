@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PHP Regular Expression | BookOfZeus</title>
+	<meta name="description" content="Learn how to use regular expression and how it works in PHP" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/php/php-regular-expression" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" class="selected">PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="php" href="/articles/php/">php</a>
+</article>
+
+<article>
+	<header>
+		<h1>PHP Regular Expression</h1>
+		<h6>Posted on Thursday September 15, 2011 / by Eric Potvin</h6>
+	</header>
+
+	
+<p>Regular expressions are a very powerful when you want to validate user inputs. They can find any kind of words or characters and identify errors very accurately. Although, because they are very worthy, they are sometimes quite hard to use.</p>
+<p>Here's some quick basics about regular expressions:</p>
+
+<h4>Operators</h4>
+<ul class="none">
+	<li><code>&#094;</code> The circumflex symbol marks the beginning of a pattern, although in some cases it can be omitted;</li>
+	<li><code>&#036;</code> Same as with the circumflex symbol, the dollar sign marks the end of a search pattern;</li>
+	<li><code>.</code> The period matches any single character;</li>
+	<li><code>?</code> It will match the preceding pattern zero or one times;</li>
+	<li><code>+</code> It will match the preceding pattern one or more times;</li>
+	<li><code>*</code> It will match the preceding pattern zero or more times;</li>
+	<li><code>&#124;</code> Boolean OR;</li>
+	<li><code>-</code> Matches a range of elements;</li>
+	<li><code>()</code> Groups a different pattern elements together;</li>
+	<li><code>&#091;&#093;</code> Matches any single character between the square brackets;</li>
+	<li><code>&#123;min, max&#125;</code> It is used to match exact character counts;</li>
+	<li><code>\d</code> Matches any single digit;</li>
+	<li><code>\D</code> Matches any single non digit character;</li>
+	<li><code>\w</code> Matches any alpha numeric character including underscore;</li>
+	<li><code>\W</code> Matches any non alpha numeric character excluding the underscore character;</li>
+	<li><code>\s</code> Matches whitespace character;</li>
+</ul>
+ 	
+<h4>Pattern Modifiers</h4>
+<ul class="none">
+	<li><code>i</code> Ignore case;</li>
+	<li><code>m</code> Multi-line mode;</li>
+	<li><code>S</code> Extra analysis of pattern;</li>
+	<li><code>u</code> Pattern is treated as UTF-8;</li>
+</ul>
+
+<h4>Regular Expression Matches</h4>
+<ul class="none">
+	<li><code>ab</code> Match if "ab" is present anywhere in the string;</li>
+	<li><code>^ab</code> Match if "ab" is present at the beginning of the string;</li>
+	<li><code>ab$</code> Match if "ab" is present at the end of the string;</li>
+	<li><code>ab/i</code> Makes a search in case insensitive mode;</li>
+	<li><code>^ab$</code> The string contains only the "ab";</li>
+	<li><code>ab*</code> Matches a string that has at least "a" and zero or more "b". eg: "a", "ab", "abbb", etc.;</li>
+	<li><code>ab+</code> Matches a string that has at least "a" and at least one "b". eg: "ab", "abbb", etc.;</li>
+	<li><code>ab?</code> There might be an "a", "b" or not;</li>
+	<li><code>a?b+$</code> A possible "a" followed by one or more "b" ending a string;</li>
+	<li><code>ab{2}</code> Matches a string that has an "a" followed by exactly two "b". eg: "abb";</li>
+	<li><code>ab{2,}</code> Matches a string that has an "a" and at least two "b". eg: "abb", "abbbb", etc.;</li>
+	<li><code>ab{3,5}</code> Matches a string that has an "a" and from three to five "b" ("abbb", "abbbb", etc.);</li>
+	<li><code>ab(cde)*</code> There is 0 or more "cde" after "ab";</li>
+	<li><code>ab&#124;cde</code> The string contains the "ab" or the "cde";</li>
+	<li><code>a.cde</code> Any character in place of the dot;</li>
+	<li><code>^.{5}$</code> A string with exactly 5 characters;</li>
+	<li><code>&#091;abc&#093;</code> There is an "a" or "b" or "c" in the string;</li>
+	<li><code>&#091;a-z&#093;</code> There are any lowercase letter in the string;</li>
+	<li><code>&#091;a-z&#093;+</code> One or more lowercase letters;</li>
+	<li><code>&#091;a-zA-Z&#093;</code> There are any lower OR uppercase letter in the string;</li>
+	<li><code>(a&#124;bc)de</code> A string that has either "ade" or "bcde";</li>
+	<li><code>&#091;0-9.-&#093;</code> Numbers, dot, or minus sign;</li>
+	<li><code>^&#091;a-zA-Z0-9_&#093;{1,}$</code> Any word of at least one letter, number or _ at the beginning of a string;</li>
+	<li><code>&#091;^A-Za-z0-9&#093;</code> Any symbol (not a number or a letter);</li>
+	<li><code>(&#091;A-Z&#093;{3}&#124;[0-9&#093;{4})</code> Matches 3 letters OR 4 numbers;</li>
+</ul>
+ 	
+
+<p>Let's see some examples:</p>
+<pre>
+
+define('REGEX_EMAIL', '/^&#091;^\W&#093;&#091;a-zA-Z0-9_-&#093;+(\.&#091;a-zA-Z0-9_-&#093;+)*\@&#091;a-zA-Z0-9-&#093;+(\.&#091;a-zA-Z0-9-&#093;+)*\.&#091;a-zA-Z&#093;&#123;2,6&#125;$/');
+define('REGEX_DOMAIN', '/^((&#091;a-zA-Z0-9-&#093;+)\.?)(&#091;a-zA-Z0-9-&#093;+)\.((&#091;a-zA-Z&#093;&#123;2,6&#125;)|(&#091;a-zA-Z&#093;&#123;2,3&#125;\.&#091;a-zA-Z&#093;&#123;2&#125;))$/');
+
+function isEmail($e) &#123;
+  return (bool)preg_match(REGEX_EMAIL, $e);
+&#125;
+
+function isDomain($d) &#123;
+  return (bool)preg_match(REGEX_DOMAIN, $d);
+&#125;
+
+function highlightWords($str, $word) &#123;
+  return preg_replace('/\b(' . $word . ')\b/i', '&lt;span class="bold"&gt;\1&lt;/span&gt;', $str);
+&#125;
+
+function validateAlpha($str) &#123;
+  return (bool)preg_match('/^&#091;A-Za-z0-9_\-\ &#093;+$/', $str);
+&#125;
+
+// Valid Email:
+var_dump(isEmail('john.doe@domain.tld')); // will output: bool(true)
+var_dump(isEmail('john_doe@do.main.tld')); // will output: bool(true)
+var_dump(isEmail('john-doe@do-main.tld')); // will output: bool(true)
+var_dump(isEmail('john@doe.main.tld')); // will output: bool(true)
+
+// Invalid Email:
+var_dump(isEmail('john@doe')); // will output: bool(false)
+
+// Domain
+var_dump(isDomain('domain.com')); // will output: bool(true)
+var_dump(isDomain('sub.domain.com')); // will output: bool(true)
+var_dump(isDomain('domain.co.uk')); // will output: bool(true)
+var_dump(isDomain('www.domain.co.uk')); // will output: bool(true)
+
+// Invalid Domain:
+var_dump(isEmail('johndoe.')); // will output: bool(false)
+
+// HighLight words
+echo highlightWords('Hi John, How are you?', 'John'); // will output: Hi &lt;span class="bold"&gt;John&lt;/span&gt;, How are you?
+
+// Validate letters, numbers
+var_dump(validateAlpha('abc123')); // will output: bool(true)
+var_dump(validateAlpha('0a.8@')); // will output: bool(false)
+</pre>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

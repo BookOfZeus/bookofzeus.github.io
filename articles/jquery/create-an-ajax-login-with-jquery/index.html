@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Create an Ajax Login with jQuery | BookOfZeus</title>
+	<meta name="description" content="Create a simple Ajax login form using jQuery without refreshing the page." />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/create-an-ajax-login-with-jquery" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -79,7 +79,7 @@
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
@@ -124,58 +124,127 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Create an Ajax Login with jQuery</h1>
+		<h6>Posted on Friday July 20, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>This modern Web 2.0 way to build forms improved drastically in the last few years. One of these <q>kinda cool</q> feature is the Ajax Login.</p>
+
+<p>This Ajax Login allows the user to shows without refreshing the web page any invalid username/password credential. Once, the credential are valid, you can either redirect to a specific page or simply fade everything in to display the user page.</p>
+
+<p class="note">One detail you have to take in consideration. This Ajax Login is prone to attacks since the ajax call is independent from the login page. You can fix this by adding a validation that allows the script to be executed from an ajax call and from your domain/ip only for example. In addition you can add a token generated in the front end saved to the user session and then use this token in the login script.</p>
+
+<p>In this demo, we will use a fade in login page effect (no redirection).</p>
+
+<h4>The Login Form</h4>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Login&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="/path/to/login.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;section&gt;
+  &lt;h1&gt;Login Form&lt;/h1&gt;
+  &lt;form&gt;
+    &lt;div&gt;
+      &lt;label for="user"&gt;Username: &lt;/label&gt;
+      &lt;input type="text" name="user" id="user" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="pass"&gt;Password: &lt;/label&gt;
+      &lt;input type="pass" name="pass" id="pass" /&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input type="button" id="login" name="login" value="Login" /&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;div id="message"&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h4>The Javascript/jQuery code</h4>
+<pre>
+$(document).ready(function() {
+  $("form input:button").click(function() {
+    $.ajax({
+      type: "POST",
+      url: 'login.php',
+      data: $('form').serialize(),
+      dataType: 'json',
+      success: function(data) {
+        $('section').fadeOut('fast', function() {
+          $('section').html('Welcome ' + data.name).fadeIn('fast', function() {
+            $('body').css({'backgroundColor': '#' + data.background});
+          });
+        });
+      },
+      statusCode: {
+        403: function(e) {
+          $("#message").html(e.responseText);
+        }
+      }
+    });
+    return false;
+  });
+});
+</pre>
+
+<h4>The PHP Code</h4>
+<pre>
+function cleanPost($val) {
+  if(!isset($_POST[$val])) {
+    $_POST[$val] = NULL;
+    return;
+  }
+  $_POST[$val] = trim(htmlentities($_POST[$val], ENT_QUOTES, 'UTF-8'));
+}
+
+function validateUser($u, $p) {
+  return $u == 'demo' &amp;&amp; $p = 'demo';
+}
+if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) &amp;&amp; $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
+  cleanPost('user');
+  cleanPost('pass');
+
+  if(validateUser($_POST['user'], $_POST['pass'])) {
+    $userPrefs = array(
+      'name' => 'John Doe',
+      'background' => 'FFE78D'
+    );
+    echo json_encode($userPrefs);
+  }
+  else {
+    header('HTTP/1.1 403 Forbidden');
+    echo 'Invalid login information provided';
+  }
+}
+else {
+  header('HTTP/1.1 404 Not Found');
+  echo '404 page not found!'; // well you will have to make it prettier!
+}
+</pre>
+
+<p>If you prefer to redirect to another page, simply use the modify the <q>success: function(data) { }</q> code to include the JavaScript redirect code to your user page.</p>
+
+<p class="note">As a reminder, don't forget to add your security and your user validation.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

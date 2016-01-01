@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Use custom @font-face in CSS3 | BookOfZeus</title>
+	<meta name="description" content="Use your face-font to your website without creating an image" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/use-custom-font-face-in-css3" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,62 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Use custom @font-face in CSS3</h1>
+		<h6>Posted on Friday November 11, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<style>
+@font-face  { font-family: 'squealer'; src: url('/download/squealer-webfont.eot'); src: url('/download/squealer-webfont.eot?iefix') format('eot'), url('/download/squealer-webfont.woff') format('woff'), url('/download/squealer-webfont.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+.sampleFont { font: normal 30px "squealer"; margin: 20px; display: block; }
+</style>
+<p>A great new feature in CSS3 is the ability to import your font to your website without creating an image. This allow the website to not use the default font like arial, tahoma or verdana which are native to most Internet browsers.</p>
+
+<p><code>@font-face</code> <code>url</code> or <code>src</code> will load the external site to download the required font and then use it.</p>
+
+<p>For example:</p>
+
+<pre>
+@font-face  {
+  font-family: 'squealer';
+  src: url('/path/to/font/squealer-webfont.eot');
+  src: url('/path/to/font/squealer-webfont.eot?iefix') format('eot'),
+  url('/path/to/font/squealer-webfont.woff') format('woff'),
+  url('/path/to/font/squealer-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+h1 { font: normal 50px "squealer"; }
+</pre>
+
+<p>and then use it</p>
+<pre>
+&lt;h1&gt;Use custom @font-face in CSS3&lt;/h1&gt;
+</pre>
+
+<h4>Demo</h4>
+<span class="sampleFont">Use custom @font-face in CSS3</span>
+
+<h4>Cross Browser Compatibility</h4>
+<p>Each browser supports different font formats:</p>
+<ul>
+	<li>Firefox supports Embedded Open Type (.eot) and TrueType (.ttf)</li>
+	<li>IE supports Embedded Open Type (.eot)</li>
+	<li>Safari supports OpenType (.otf), TrueType (.ttf), and Scalable Vector Graphics (.xvg)</li>
+</ul>
+
+<p class="note">note: using all types makes your site compatible with most users.</p>
+
+<p>This is an elegant solution for replacing images and make your site loads faster!</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Generate Guitar Chords with PHP | BookOfZeus</title>
+	<meta name="description" content="Simple script to generate an image of a Chords/Tabs using PHP" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/php/generate-guitar-chords-php" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -91,7 +91,7 @@
 		
 			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
 		
-			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+			<li class="item"><a href="/articles/php/" title="PHP" class="selected">PHP</a></li>
 		
 			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
 		
@@ -124,58 +124,94 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="php" href="/articles/php/">php</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Generate Guitar Chords with PHP</h1>
+		<h6>Posted on Tuesday November 08, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>Many sites provides guitar chords/tabs in a text format and these can be little hard to read sometimes. Here's a quick article on how to generate an image of a guitar chords in PHP.</p>
+
+<p>First, you will have to get these two files:</p>
+<ul>
+  <li><a href="http://code.google.com/p/ireader/downloads/detail?name=arial.ttf" title="arial.ttf" rel="nofollow">arial.ttf</a></li>
+  <li><a href="/download/guitar.jpg" title="guitar chord template" rel="nofollow">Guitar Template</a></li>
+</ul>
+
+<p>Then, create a PHP script (call it <code>chords.php</code>) with the following code:</p>
+
+<pre>
+
+define('IMAGE_EXT', '.jpg');
+define('PATH', './');
+
+function generateChords($chord, $filename) {
+  $imgfile = PATH . 'guitar.jpg';
+  $text = '.';
+  $font = PATH . 'arial.ttf';
+
+  $im = imagecreatefromjpeg($imgfile);
+  $x = imagesx($im);
+  $y = imagesy($im);
+  $fontsize = 100;
+  $white = imagecolorallocate($im, 0, 0, 0);
+
+  $chords = explode('-', $chord);
+  // chords[0] = e1 and chords[5] = e6
+
+  $minimum = min($chords);
+  imagettftext($im, 15, 0, 1, 32, $white, $font, $minimum);
+  $add = 0;
+  if($minimum &gt; 0) {
+    $add = 30;
+  }
+  // chords positions
+  $interval1 = ($chords[0] != 0 ? (25 + $add + (intval($chords[0]) - $minimum) * 30) : 0);
+  $interval2 = ($chords[1] != 0 ? (25 + $add + (intval($chords[1]) - $minimum) * 30) : 0);
+  $interval3 = ($chords[2] != 0 ? (25 + $add + (intval($chords[2]) - $minimum) * 30) : 0);
+  $interval4 = ($chords[3] != 0 ? (25 + $add + (intval($chords[3]) - $minimum) * 30) : 0);
+  $interval5 = ($chords[4] != 0 ? (25 + $add + (intval($chords[4]) - $minimum) * 30) : 0);
+  $interval6 = ($chords[5] != 0 ? (25 + $add + (intval($chords[5]) - $minimum) * 30) : 0);
+
+  // write to the image
+  imagettftext($im, $fontsize, 0, 01, $interval1, $white, $font, $text);
+  imagettftext($im, $fontsize, 0, 18, $interval2, $white, $font, $text);
+  imagettftext($im, $fontsize, 0, 36, $interval3, $white, $font, $text);
+  imagettftext($im, $fontsize, 0, 53, $interval4, $white, $font, $text);
+  imagettftext($im, $fontsize, 0, 70, $interval5, $white, $font, $text);
+  imagettftext($im, $fontsize, 0, 86, $interval6, $white, $font, $text);
+  imagejpeg($im, $filename);
+}
+
+if(!isset($_GET['chord']) || substr_count($_GET['chord'], '-') != 5) {
+  $_GET['chord'] = '0-0-0-0-0-0';
+}
+$filename = PATH . $_GET['chord'] . IMAGE_EXT;
+if(!file_exists($filename)) {
+  generateChords($_GET['chord'], $filename);
+}
+header('Content-type: image/jpeg');
+readfile($filename);
+ImageDestroy($im);
+</pre>
+
+<p>On your HTML page you simply call like this:</p>
+<pre>
+&lt;img src="chords.php?chord=1-3-3-1-1-1" alt="chord 1-3-3-1-1-1" width="125" height="306" /&gt;
+</pre>
+
+<p>This will output:</p>
+
+<img src="http://www.bookofzeus.com/download/guitarsample.jpg" alt="guitar chord template" width="125" height="306" />
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

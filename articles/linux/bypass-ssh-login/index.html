@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Bypass SSH login | BookOfZeus</title>
+	<meta name="description" content="Login to a development or a production server without entering a password" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/linux/bypass-ssh-login" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -81,7 +81,7 @@
 		
 			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
 		
-			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
 		
 			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
 		
@@ -124,58 +124,89 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="linux" href="/articles/linux/">linux</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Bypass SSH login</h1>
+		<h6>Posted on Friday December 02, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>If you are using SSH a lot (either to connect from your development environment or production environment) you will be prompted to enter your password:</p>
+<pre>
+user@server.com's password:
+</pre>
+
+<p>This can be annoying when you connect to these servers over and over. Here's a quick tip that will allow you not to enter your password every time you login and keep your connection between your computer and your server secure.</p>
+
+<h4>On your computer</h4>
+<pre>
+cd ~/.ssh
+</pre>
+
+<p>Then execute:</p>
+<pre>
+ssh-keygen -t dsa
+</pre>
+
+<p>For each question, simply press the enter key at every prompt. This will output something like (this may vary):</p>
+<pre>
+Generating public/private dsa key pair.
+Enter file in which to save the key (/home/user/.ssh/id_dsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/user/.ssh/id_dsa.
+Your public key has been saved in /home/user/.ssh/id_dsa.pub.
+The key fingerprint is:
+ad:98:43:13:c9:ea:66:8e:d0:d9:66:59:d8:3a:f7:29
+The key's randomart image is:
++--[ DSA 1024]----+
+|                 |
+|     . .         |
+|      +          |
+|     + . .       |
+|    o = S .      |
+| . + = + .       |
+|. o @ = .        |
+| . B oEo .       |
+|  . .  .o        |
++-----------------+
+</pre>
+
+<p>This produces two files: id_dsa.pub (public key) and id_dsa (private key)</p>
+<pre>
+user@computer:~/.ssh$ ll
+total 40
+-rw------- 1 user user  668 2011-11-29 13:26 id_dsa
+-rw-r--r-- 1 user user  604 2011-11-29 13:26 id_dsa.pub
+</pre>
+
+<h4>On your server</h4>
+<p>Edit the file <code>~/.ssh/authorized_keys</code>. Note: the file might not be there</p>
+<pre>
+vi ~/.ssh/authorized_keys
+</pre>
+
+<p>Copy the content from the public key (id_dsa.pub) in the <code>~/.ssh/authorized_keys</code> and change the permissions:</p>
+<pre>
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+</pre>
+<p>Logout of your server, and login again! the password is now gone!</p>
+
+<p>If by any bad luck you are getting this error:</p>
+<p class="note">Agent admitted failure to sign using the key.</p>
+<p>Simply, run:</p>
+<pre>
+ssh-add
+</pre>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

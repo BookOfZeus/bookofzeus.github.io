@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>iPhone String (NSString) comparisons in objective-c | BookOfZeus</title>
+	<meta name="description" content="How to compare NSString using isEqualToString method, caseInsensitiveCompare and compare method" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/mobile/iphone-string-nsstring-comparisons-in-objective-c" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -83,7 +83,7 @@
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
-			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+			<li class="item"><a href="/articles/mobile/" title="Mobile" class="selected">Mobile</a></li>
 		
 			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
 		
@@ -124,58 +124,75 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="mobile" href="/articles/mobile/">mobile</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>iPhone String (NSString) comparisons in objective-c</h1>
+		<h6>Posted on Tuesday June 14, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<h3>Use isEqualToString for string comparisons</h3>
+
+<p>While working on my last project, I encountered few problems regarding "strings". On the simulator, everything worked well, but once
+on the device, my app had a different behavior. I was using the basic double equals comparison:</p>
+
+<pre>
+if (MyObject.name != value1) {
+   // The rest of my code ...
+}
+</pre>
+
+<p>After spending few times on that issue, I realize I was comparing a NSString-typed property to a NSString variable. Therefore, I was supposed to use the "isEqualToString" comparison method instead of the double equal comparison:</p>
+
+<pre>
+if ([MyObject.name isEqualToString:value]) {
+   // The rest of my code ...
+}
+</pre>
+
+<p>In the iPhone Simulator (running on 10.6.2) this comparison returned false, but on the iPhone running 3.1.2 it returned true. </p>
+
+<p class="note">Never assume your result will be the same from simulator and the device.</p>
+
+
+
+<h3>The Compare Method</h3>
+<p>NSString object have a method called "compare". That method gives you the ability to get the difference between the two (2) strings:</p>
+<ul>
+    <li>both string are identical</li>
+    <li>the comparing string is in ascending sort order from the other string</li>
+    <li>the comparing string is in descending sort order from the other string</li>
+</ul>
+
+<p>Here's an example:</p>
+<pre>
+NSString *str = @"ubuntu";
+NSComparisonResult result = [str compare:@"apple"];
+
+switch (result) {
+	case NSOrderedAscending:
+		// Ascending code
+		break;
+	case NSOrderedSame:
+		// Same code
+		break;
+	case NSOrderedDescending:
+		// Descending code
+		break;
+	default:
+		break;
+}
+</pre>
+
+<p>You can also use the "caseInsensitiveCompare" if you like to compare these strings using case with case sensitivity.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Send an Email in Linux from the Shell with Attachment | BookOfZeus</title>
+	<meta name="description" content="Simple way to send emails from the command line in Linux" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/linux/send-an-email-in-linux-from-the-shell-with-attachment" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -81,7 +81,7 @@
 		
 			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
 		
-			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
 		
 			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
 		
@@ -124,58 +124,56 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="linux" href="/articles/linux/">linux</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Send an Email in Linux from the Shell with Attachment</h1>
+		<h6>Posted on Tuesday September 06, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>The "mail" command is commonly use to send email from the console without attachment. Here's a simple example of sending an email to "someone@domain.com" using "subject of the email" as the subject:</p>
+
+<pre>
+echo 'some message' | mail -s 'subject of the email' someone@domain.com
+</pre>
+
+<p>Let's CC someone else:</p>
+<pre>
+echo 'some message' | mail -s 'subject of the email' -c someoneelse@domain.com someone@domain.com
+</pre>
+
+<p>Now let's BCC someone else:</p>
+<pre>
+echo 'some message' | mail -s 'subject of the email' -c someoneelse@domain.com -b someoneimportant@domain.com someone@domain.com
+</pre>
+
+<p>If you already have your message save in a text file, you can use the following syntax:</p>
+<pre>
+mail -s 'subject' someone@domain.com &lt; /tmp/messagePlease
+</pre>
+
+<h2>Sending email with attachment from the shell</h2>
+
+<p>If you are looking to send email with attachment from the shell prompt, you will need to use the "mutt" tool. Mutt is a powerful text based program for reading electronic mail under Linux. Mutt requires a valid email server and a working mail transfer agent (sendmail, postfix) installed in order to successfully send emails.</p>
+<p>First, let's install mutt (if it's not installed)</p>
+<pre>
+sudo aptitude install mutt
+</pre>
+
+<p>Use the following syntax to send an email with an attachment:</p>
+<pre>
+echo "some message" | mutt -s "subject of the email" -a /home/user/my-file.bzip someone@domain.com
+</pre>
+
+<p class="note">The same parameters are used in mutt to CC or BCC someone.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

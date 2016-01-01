@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Improve performance and optimize your Website | BookOfZeus</title>
+	<meta name="description" content="Quick HTML, CSS, Javascript and Apache  tips on how optimize your website" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/optimization/improve-performance-optimize-website" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" class="selected">Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="optimization" href="/articles/optimization/">optimization</a>
+</article>
+
+<article>
+	<header>
+		<h1>Improve performance and optimize your Website</h1>
+		<h6>Posted on Saturday January 12, 2013 / by Eric Potvin</h6>
+	</header>
+
+	
+<style>
+.smile {
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATUlEQVQYlZ3QQQoAIAhE0X/BTtntvEDLaSOlpJuCIYKHpvB5BqCQ0SKteVLhi4ybAh8EpDtgh9bngYAkB8rV8x8tTRzfxUBvy35F1R43zcB6rPlo4VYAAAAASUVORK5CYII=) no-repeat;
+	height: 16px;
+	width: 16px;
+}
+</style>
+<p><q>... optimize front-end performance first, that's where 80% or more of the end-user response time is spent</q>. This is my favorite quote from Professor Steve Souders and he I will agree with him. So is there something we can do to improve the user experience and optimize the front-end to render pages even faster? Obviously, yes and here's some simple tips that will help you accomplish these issues and make your customers/visitors happy.</p>
+
+<h4>Minimize HTTP Requests</h4>
+
+<p>Minimizing the number of HTTP requests in your website is the first step of optimization. Why? Simply because most of the traffic you get might be new traffic, or this traffic does not know anything about your site. Just do the test and look at your Google Analytics and see for your self. So help your traffic, specially for the first time user or for those who does not save any cache, and minimize your HTTP request.</p>
+
+<p>The idea here is simple: reduce the number of requests means reducing the number of files the website loads.<p>
+
+<p>Most of these request comes from the CSS, images, JavaScript files. For example, having multiple CSS files like this:</p>
+
+<pre>
+&lt;link rel="stylesheet" type="text/css" href="/css/style.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="/css/main.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="/css/colors.css"&gt;
+</pre>
+
+<p>-or-</p>
+
+<pre>
+/* in the /css/main.css */
+@import url("/css/style.css");
+@import url("/css/colors.css");
+</pre>
+
+<p>Will create three (3) HTTP requests, by combining this into a single stylesheet file will only create one (1) HTTP request. This also applies to JavaScript files and images (CSS Sprites).</p>
+
+<h4>Minify/Optimize Code</h4>
+<p>A great technique to improve your loading time and, at the same time, save band-witch. This removes unnecessary characters, like spaces, new lines or tabs. This is a very common practice for JavaScript and CSS files. For examples, let's get this JavaScript code:</p>
+
+<pre>
+function urlencode(str) {
+  str = escape(str);
+  str = str.replace(/ /g, '%20');
+  str = str.replace(/\+/g, '%2B');
+  str = str.replace(/@/, '%40');
+  return str;
+}
+</pre>
+<p>Can be converted to: </p>
+
+<pre>
+function urlencode(str){str=escape(str);str=str.replace(/ /g,'%20');str=str.replace(/\+/g,'%2B');str=str.replace(/@/,'%40');return str;}
+</pre>
+
+<p>This applies also to CSS:</p>
+
+<pre>
+div.block {
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 20px solid #ddd;
+  -webkit-box-shadow: 0px 0px 20px #000;
+  -moz-box-shadow: 0px 0px 20px #000;
+  box-shadow: 0px 0px 20px #000;
+  display: none;
+  float: left;
+  font-size: 1.2em;
+  left: 50%;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  z-index: 9999;
+}
+</pre>
+
+<p>Will become:</p>
+
+<pre>
+div.block{background:#fff;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;border:20px solid #ddd;-webkit-box-shadow: 0px 0px 20px #000;-moz-box-shadow: 0px 0px 20px #000;box-shadow: 0px 0px 20px #000;display:none;float:left;font-size:1.2em;left:50%;padding:20px;position:fixed;top:50%;z-index:9999;}
+</pre>
+
+<p>What about HTML?</p>
+
+<p>You can also remove spaces, new lines or tabs in HTML as well. The only difference with JavaScript and CSS is HTML can be optimize by remove unnecessary tags. You don't need to put tags like <q>em</q> into an <q>h3</q> tag if you want this <q>h3</q> to become italic. Use CSS!</p>
+
+<pre>
+&lt;h3&gt;&lt;em&gt;Header 3&lt;/em&gt;&lt;/h3&gt;
+</pre>
+
+<p>Will become:</p>
+
+<pre>
+&lt;h3&gt;Header 3&lt;/h3&gt;
+</pre>
+
+<h4>Replace images with CSS</h4>
+
+<p>CSS can help to improve your loading time by replacing images. Webfonts, border radius, shadows, transition, transform and gradient are few examples where CSS replace images.</p>
+
+<p>Custom Webfonts can be great if you have a lot of images that contains stylish text. Webfonts are pretty small to load and minimal impact on your page load versus the images you will need to include in your page.</p>
+
+<ul>
+ <li><a href="http://www.google.com/webfonts" class="nw" rel="nofollow" title="WebFont">http://www.google.com/webfonts</a></li>
+</ul>
+
+<p>Border radius, shadows, transition, transform and gradient will maximize your loading time and also, because everything is in CSS, it is very easy to use and dynamically adapt to practically any HTML tags.</p>
+
+<ul>
+ <li><a href="http://www.colorzilla.com/gradient-editor" class="nw" rel="nofollow" title="colorzilla gradient">http://www.colorzilla.com/gradient-editor/</a></li>
+ <li><a href="http://www.css3generator.com/" class="nw" rel="nofollow" title="css3generator">http://css3generator.com/</a></li>
+</ul>
+
+<p>One other tool you can use is the Data URI. The data URI scheme is a URI scheme (Uniform Resource Identifier scheme) that provides a way to include data in-line in web pages as if they were external resources. Basically, they are generated images from text. The disadvantage of data URI are not yet supported across all major browsers.</p>
+
+<p>For example:</p>
+
+<pre>
+.smile {
+   background:url(
+    data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATUlEQVQYlZ3QQQoAIAhE0X/BTtntvEDLaSOlpJuCIYKHpvB5BqCQ0SKteVLhi4ybAh8EpDtgh9bngYAkB8rV8x8tTRzfxUBvy35F1R43zcB6rPlo4VYAAAAASUVORK5CYII=
+   ) no-repeat;
+}
+</pre>
+
+<p>This represent a smiley face!</p>
+
+<div class="smile"></div>
+
+<p>My favorite tool so far is: <a href="http://www.patternify.com" title="patternify" rel="nofollow" class="nw">http://www.patternify.com/</a></p>
+
+<h4>Optimize Images AKA CSS Sprites</h4>
+
+<p>I created an article about <a href="http://www.bookofzeus.com/articles/how-to-use-css-sprites/" title="css sprites">css sprites</a></p>
+
+<h4>Load your JavaScript and CSS using external sites</h4>
+
+<p>By using external JavaScript or CSS files, you improve your loading time since these files are cached by the browser. These files reduces the number of HTTP requests that are needed since they will be loaded from another websites (like Google for example). Because other websites use the same file, it will be already cached by the browser and therefore will load instantly on your site. In addition,  you don't have to maintain or update these files when a new version is launched.</p>
+<p>
+	<a href="https://developers.google.com/speed/libraries/devguide" class="nw" rel="nofollow" title="google dev guide">https://developers.google.com/speed/libraries/devguide</a>
+</p>
+<p>For example, loading the jQuery file:</p>
+
+<p>
+	<a href="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" class="nw" rel="nofollow" title="jquery lib">http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js</a>
+</p>
+
+<h4>Use Ajax Requests</h4>
+
+<p>If you need to update a label or display tiny amount of information on your page, don't refresh the entire web page. For example, you have a form that allow the user to enter his zip code to get the weather information. Then he press the submit button to get the weather for is region. Then, the request is sent to the server and retrieve the information and display the information. With Ajax, you will only send what you request and get the answers you need without loading the entire page. In this case, you will get back few bytes of data to display.</p>
+
+<h4>Optimization with Apache mod_expires</h4>
+
+<p>When the user will come to your site for the first time, he will execute many HTTP requests to get the contents. Now, if the user refresh the page or go to another page, you can force him to look at the browser cache first to make sure he is not requesting again the same file from your server. This applies to any components in your page like JavaScript, CSS, images etc...</p>
+
+<p>There's two (2) aspects you need to take in consideration when you set an expiration to any components.</p>
+
+<ul>
+ <li>Static: This will probably never expire. Because they are static and rarely changes, you can always rely on the cache. For example, image of the logo of the company.</li>
+ <li>Dynamic: As of the dynamic component, you will have to setup a reasonable expiration depending on how often the content changes. For example, an HTML page (can be updated daily) VS a CSS file (can be updated monthly).</li>
+</ul>
+
+<p>Here's an example on Expires headers in your .htaccess:</p>
+
+<pre>
+  ExpiresActive On
+  ExpiresDefault "access plus 5 days"
+
+  ExpiresByType text/html "access plus 2 days"
+
+  ExpiresByType text/css "access plus 1 month"
+</pre>
+
+<h4>Compress output data</h4>
+
+<p>Compressing content works the same way as compression files (zip or tar.gz). If you want to send to your friend few Megs of data, you compress it and your friends uncompress it and then reads the content. This works the same way for web pages.</p>
+
+<h5>mod_deflate</h5>
+
+<p>Make sure the header contains:</p>
+
+<pre>
+Accept-encoding: gzip, deflate
+</pre>
+
+<p>To enable output compression using <q>deflate</q> in Apache is very simple, simply add the <q>AddOutputFilterByType</q> command to your .htaccess or Apache configuration file:</p>
+
+<pre>
+# compress text, html, JavaScript, css, xml:
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/JavaScript
+AddOutputFilterByType DEFLATE application/x-javascript
+</pre>
+
+<p class="note">mod_deflate might not be installed by default</p>
+
+<h5>mod_gzip</h5>
+
+<p>Make sure the header contains:</p>
+
+<pre>
+Accept-encoding: gzip, deflate
+</pre>
+
+<p>To enable output compression using <q>gzip</q> in Apache is very simple, simply add the <q>mod_gzip</q> commands to your .htaccess or Apache configuration file:</p>
+
+<pre>
+&lt;IfModule mod_gzip.c&gt;
+  mod_gzip_on Yes
+  mod_gzip_dechunk Yes
+  mod_gzip_item_include file \.(html?|txt|css|js)$
+  mod_gzip_item_include handler ^cgi-script$ mod_gzip_item_include mime ^text/.*
+  mod_gzip_item_include mime ^application/x-javascript.*
+  mod_gzip_item_exclude mime ^image/.*
+  mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+&lt;/IfModule&gt;
+</pre>
+
+<p class="note">mod_gzip might not be installed by default</p>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

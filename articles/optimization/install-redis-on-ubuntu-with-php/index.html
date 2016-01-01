@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Install redis on Ubuntu with PHP | BookOfZeus</title>
+	<meta name="description" content="Guide to install redis server and client on Ubuntu with PHP" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/optimization/install-redis-on-ubuntu-with-php" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" class="selected">Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="optimization" href="/articles/optimization/">optimization</a>
+</article>
+
+<article>
+	<header>
+		<h1>Install redis on Ubuntu with PHP</h1>
+		<h6>Posted on Sunday December 16, 2012 / by Eric Potvin</h6>
+	</header>
+
+	
+<p>Isn't good to have traffic on your website? The more traffic the merrier right? Sometime we need a little help from tools to help our site be more responsive to the demand. One of these tools is Redis.</p>
+
+<p>Redis is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.</p>
+
+<p>Here's a simple tutorial on how to install Redis on Ubuntu.</p>
+
+<pre>
+sudo aptitude install redis-server
+</pre>
+
+<p>You will see something like this:</p>
+
+<pre>
+Setting up redis-server (2:2.2.12-1build1) ...
+Starting redis-server: redis-server.
+</pre>
+
+<p>You can always change the redis config file for your needs. To do so, simply edit the redis.conf file:</p>
+
+<pre>
+sudo /etc/init.d/redis-server stop
+sudo vi /etc/redis/redis.conf
+sudo /etc/init.d/redis-server start
+</pre>
+
+<p>Verifying installation.</p>
+<pre>
+redis-cli
+</pre>
+
+<p>this will prompt:</p>
+
+<pre>
+redis 127.0.0.1:6379&gt;
+</pre>
+
+<p>and type: <q>INFO</q></p>
+
+<pre>
+redis_version:2.2.12
+redis_git_sha1:00000000
+redis_git_dirty:0
+arch_bits:32
+multiplexing_api:epoll
+process_id:4376
+uptime_in_seconds:46
+uptime_in_days:0
+lru_clock:1245433
+used_cpu_sys:0.01
+used_cpu_user:0.00
+used_cpu_sys_children:0.00
+used_cpu_user_children:0.00
+connected_clients:1
+connected_slaves:0
+client_longest_output_list:0
+client_biggest_input_buf:0
+blocked_clients:0
+used_memory:547620
+used_memory_human:534.79K
+used_memory_rss:1187840
+mem_fragmentation_ratio:2.17
+use_tcmalloc:0
+loading:0
+aof_enabled:0
+changes_since_last_save:1
+bgsave_in_progress:0
+last_save_time:1354631602
+bgrewriteaof_in_progress:0
+total_connections_received:1
+total_commands_processed:1
+expired_keys:0
+evicted_keys:0
+keyspace_hits:0
+keyspace_misses:0
+hash_max_zipmap_entries:512
+hash_max_zipmap_value:64
+pubsub_channels:0
+pubsub_patterns:0
+vm_enabled:0
+role:master
+</pre>
+
+<h4>Installing PHP with Redis</h4>
+
+<p>Here you have 2 options. You can either go with a PHP solution or the compiled PHP module.</p>
+
+<h5>PHP Version</h5>
+
+<p>This one only requires the PHP library for Redis. Here's two of them:</p>
+
+<h6>Predis</h6>
+<p>Predis is a flexible and feature-complete PHP (>= 5.3) client library for the Redis key-value store.</p>
+
+<p>The library does not require any additional extension loaded in PHP but it can be optionally paired with the phpiredis C extension to lower the overhead of serializing and parsing the Redis protocol. Predis is also available in an asynchronous fashion through the experimental client provided by the Predis\Async library.</p>
+
+<p>For a list of frequently asked questions about Predis, see FAQ.md in the root of the repository. More details are available on the official wiki of the project.</p>
+
+<p>Main features</p>
+<ul>
+ <li>Wide range of Redis versions supported (from 1.2 to 2.6 and unstable) using server profiles.</li>
+ <li>Smart support for redis-cluster (Redis >= 3.0).</li>
+ <li>Client-side sharding via consistent hashing or custom distribution strategies.</li>
+ <li>Support for master / slave replication configurations (write on master, read from slaves).</li>
+ <li>Transparent key prefixing strategy capable of handling any command known that has keys in its arguments.</li>
+ <li>Command pipelining on single and aggregated connections.</li>
+ <li>Abstraction for Redis transactions (Redis >= 2.0) with support for CAS operations (Redis >= 2.2).</li>
+ <li>Abstraction for Lua scripting (Redis >= 2.6) capable of automatically switching between EVAL and EVALSHA.</li>
+ <li>Connections to Redis instances are lazily established upon the first call to a command by the client.</li>
+ <li>Ability to connect to Redis using TCP/IP or UNIX domain sockets with support for persistent connections.</li>
+ <li>Ability to specify alternative connection classes to use different types of network or protocol backends.</li>
+ <li>Flexible system to define and register your own set of commands or server profiles to client instances.</li>
+</ul>
+
+<p>Available at: <a href="https://github.com/nrk/predis" title="redis c client">https://github.com/nrk/predis</a></p>
+
+<h6>redisent</h6>
+<p>Redisent is a simple, no-nonsense interface to the Redis data structure store for modest developers. It is designed to flexible and tolerant of changes to the Redis protocol.</p>
+
+<p>Available at: <a href="https://github.com/jdp/redisent" title="redis client">https://github.com/jdp/redisent</a></p>
+
+
+<h4>Compiled version</h4>
+
+<p>The compiled version is available at https://github.com/nicolasff/phpredis.</p>
+<pre>
+cd /tmp && wget https://github.com/nicolasff/phpredis/archive/master.zip && unzip master.zip && cd phpredis-master/
+</pre>
+
+<p>Compiling shared PECL extensions.</p>
+<pre>
+phpize
+</pre>
+
+<p>If you would like phpredis to serialize your data using the igbinary library, run configure with --enable-redis-igbinary. </p>
+<pre>
+./configure [--enable-redis-igbinary]
+</pre>
+
+<p>Make it!</p>
+<pre>
+make
+</pre>
+
+<p>You will see something like this:</p>
+<pre>
+Build complete.
+Don't forget to run 'make test'.
+</pre>
+
+<p>Then make the package:<p>
+<pre>
+sudo make install
+</pre>
+
+<p>This will create the module file:<p>
+<pre>
+Installing shared extensions:     /usr/lib/php5/20090626+lfs/
+</pre>
+
+<p>Then add it to apache:</p>
+<pre>
+sudo vi /etc/php5/apache2/conf.d/redis.ini
+</pre>
+
+<p>And add this configuration:</p>
+<pre>
+; configuration for php PDO module
+extension=/path/to/php5/redis.so
+</pre>
+
+<p>Stop and start Apache:</p>
+<pre>
+sudo /etc/init.d/apache2 restart
+</pre>
+
+<p>Now, if you create a php file with the <q>phpinfo();</q> you will see something like:</p>
+<pre>
+redis
+Redis Support	enabled
+Redis Version 	2.2.2
+
+Registered save handlers 	files user memcache memcached redis
+</pre>
+
+<p>Then use it with PHP</p>
+
+<pre>
+$redis = new Redis();
+$redis-&gt;connect('127.0.0.1', 6379);
+if($redis-&gt;exists('key')) {
+  $redis-&gt;set('key', 'value');
+}
+$redis-&gt;get('key');
+</pre>
+
+<p>All the commands are available at: <a href="https://github.com/nicolasff/phpredis/blob/master/README.markdown#classes-and-methods" title="redis client">https://github.com/nicolasff/phpredis/blob/master/README.markdown#classes-and-methods</a></p>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

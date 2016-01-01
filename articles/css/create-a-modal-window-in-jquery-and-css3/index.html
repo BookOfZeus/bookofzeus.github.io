@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Create a modal window in jQuery and CSS3 | BookOfZeus</title>
+	<meta name="description" content="Create an elegant way to show messages or confirmation dialog to the user" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/create-a-modal-window-in-jquery-and-css3" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,151 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Create a modal window in jQuery and CSS3</h1>
+		<h6>Posted on Sunday September 18, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>Using the classic "alert" or "confirm" are not deprecated but are not just attractive anymore. Web 2.0 brought us a new way to make websites and messages more attractive to the user. </p>
+<p>In response to this, here's a quick way to make all your modal windows as pretty as possible using jQuery and CSS3.</p>
+
+<h4>HTML Code</h4>
+<pre>
+&lt;span class="modal info" title="Some information"&gt;info&lt;/span&gt;
+&lt;br /&gt;
+&lt;span class="modal confirm" title="Are you sure you want to delete this record?"&gt;confirm&lt;/span&gt;
+
+&lt;div id="modalWrapper"&gt;&lt;/div&gt;
+&lt;div id="modalBox"&gt;
+&lt;div class="modalContent"&gt;
+  &lt;div id="modalMessage"&gt;&lt;/div&gt;
+  &lt;div id="modalAction"&gt;
+    &lt;span class="button" id="buttonSubmit"&gt;Yes&lt;/span&gt;
+    &lt;span class="button" id="buttonCancel"&gt;No&lt;/span&gt;
+    &lt;span class="button" id="buttonClose"&gt;Close&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h4>CSS Code</h4>
+<pre>
+#modalWrapper {
+  width:100%;
+  height:100%;
+  background:#B2AF9E;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:3000;
+  display:none;
+  filter:alpha(opacity=80);
+  -moz-opacity:0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+}
+#modalBox {
+  width:500px;
+  background:#E7E3DA;
+  position:absolute;
+  z-index:5000;
+  display:none;
+  -webkit-box-shadow: 4px 4px 10px #422A20;
+  -moz-box-shadow: 4px 4px 10px #422A20;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+#modalBox .modalContent {
+  text-align:left;
+  padding:10px;
+  margin:10px;
+  color:#333;
+  font: normal 12px Tahoma;
+}
+#modalBox #modalAction {
+  text-align:center;
+}
+#modalBox #modalMessage {
+  display: block;
+  margin: 5px 0 25px 0;
+  clear: both;
+}
+span.button {
+  width:60px;
+  background-color: #422A20;
+  color: #fff;
+  margin: 0 10px;
+  padding: 5px 15px;
+  text-align:center;
+  text-decoration: none;
+  font: bold 12px Tahoma;
+  cursor: pointer;
+  -moz-border-radius: 6px;
+  -webkit-border-radius:6px;
+  text-shadow: 0 1px 1px #000;
+  -moz-box-shadow: 0 1px 3px #000;
+  -webkit-box-shadow: 0 1px 3px #000);
+}
+span.button:hover {
+  background: #EC7517;
+}
+span#buttonCancel {
+  background: #BE9E84;
+}
+span#buttonCancel:hover {
+  background: #aaa;
+}
+</pre>
+
+<h4>JavaScript Code</h4>
+<pre>
+$(document).ready(function () {
+  $('#buttonClose, #modalWrapper, #buttonCancel').click(function () {
+    $('#modalWrapper, #modalBox').fadeOut('fast');
+    return false;
+  });
+  $('#buttonSubmit').click(function() {
+    alert('You clicked "Yes"');
+    $('#modalWrapper, #modalBox').fadeOut('fast');
+    return false;
+  });
+  $('.modal').click(function() {
+    popup($(this));
+  });
+});
+
+function popup(element) {
+  var type = 'info';
+  var message = element.attr('title');
+  if(element.hasClass('confirm')) {
+    $('#buttonSubmit').show();
+    $('#buttonCancel').show();
+    $('#buttonClose').hide();
+  }
+  else {
+    $('#buttonSubmit').hide();
+    $('#buttonCancel').hide();
+    $('#buttonClose').show();
+  }
+  var maskHeight = $(document).height();
+  var maskWidth = $(window).width();
+  var modalTop =  (maskHeight/3) - ($('#modalBox').height());
+  var modalLeft = (maskWidth/2) - ($('#modalBox').width()/2);
+  $('#modalWrapper').css({ 'height':maskHeight + 'px', 'width':maskWidth + 'px' }).fadeIn(200, function() {
+    $('#modalMessage').html(message);
+    $('#modalBox').css({ 'top':modalTop + 'px', 'left':modalLeft + 'px' }).fadeIn(100);
+  });
+}
+</pre>
+<p>Now you have an elegant way to show messages or confirmation dialog to the user.</p>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

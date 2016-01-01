@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>How to install a new drive in Ubuntu | BookOfZeus</title>
+	<meta name="description" content="Install, format and prepare a new drive via command line in Ubuntu" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/linux/how-to-install-a-new-drive-in-ubuntu" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -81,7 +81,7 @@
 		
 			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
 		
-			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
 		
 			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
 		
@@ -124,58 +124,91 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="linux" href="/articles/linux/">linux</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>How to install a new drive in Ubuntu</h1>
+		<h6>Posted on Monday July 18, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>GParted is a fantastic tool to create new partition and format hard drive in Ubuntu. But if you need to install a remove drive without having access to any GUI or remote desktop access this can be hard to accomplish. Here&#039;s how to install a brand new (or shredded disk drive) using the command line in Ubuntu.</p>
+
+<h3>Setup the disk</h3>
+
+<h4>Find the disk</h4>
+
+<pre>
+sudo lshw -C disk
+</pre>
+
+<p>This should output something like:</p>
+<pre>
+*-disk
+    description: ATA Disk
+    product: ST9160412AS
+    vendor: Seagate
+    physical id: 0
+    bus info: scsi@0:0.0.0
+    <span>logical name: /dev/sdb</span>
+    version: D005
+    serial: 5VG71M1T
+    size: 149GiB (160GB)
+    capabilities: partitioned partitioned:dos
+    configuration: ansiversion=5 signature=000bbc87
+</pre>
+
+<h4>Prepare the disk</h4>
+<pre>
+sudo fdisk /dev/sdb
+</pre>
+
+<ul>
+    <li>First, add a new partition. Type "n" and press enter;</li>
+    <li>Then create a primary partition. Enter "p" and enter;</li>
+    <li>Since this will be the only partition on the drive, number 1. Enter "1" and enter;
+        <small>If it asks about the first cylinder, just type "1" and enter. (We are making 1 partition to use the whole disk, so it should start at the beginning.)</small>
+    </li>
+    <li>Now that the partition is entered, choose option "w" to write the partition table to the disk;</li>
+</ul>
+
+<p>You now have a partitioned hard drive that is ready to be formatted.</p>
+
+<h4>Format the disk</h4>
+<pre>
+sudo mkfs -t ext3 /dev/sdb1
+</pre>
+<p>** sdb1: since it&#039;s the first partition</p>
+
+<h3>Create A Mount Point</h3>
+
+<h4>Create folder</h4>
+<pre>
+sudo mkdir /media/newdisk
+</pre>
+
+<p>Now let&#039;s edit the fstab so Ubuntu recognize the disk the next time you reboot.</p>
+<pre>
+sudo vi /etc/fstab
+</pre>
+
+<p>Add this line to the end (for ext3 file system):</p>
+<pre>
+/dev/sdb1    /media/newdisk   ext3    defaults     0        2
+</pre>
+
+<p>You can now run "sudo mount -a" (or reboot the computer) to have the changes take effect.</p>
+
+<p>If you want to allow a specific user to access files on this new drive, you need to change the user ownership of the root directory of the new drive</p>
+<pre>
+sudo chown -R myuser:myuser /media/newdisk
+</pre>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

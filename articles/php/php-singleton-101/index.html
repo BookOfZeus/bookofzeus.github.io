@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>PHP Singleton 101 | BookOfZeus</title>
+	<meta name="description" content="Learn the basic, how does a singleton works and how it can be useful" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/php/php-singleton-101" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -91,7 +91,7 @@
 		
 			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
 		
-			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+			<li class="item"><a href="/articles/php/" title="PHP" class="selected">PHP</a></li>
 		
 			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
 		
@@ -124,58 +124,61 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="php" href="/articles/php/">php</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>PHP Singleton 101</h1>
+		<h6>Posted on Monday May 09, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>In software engineering, the singleton pattern is a design pattern used to implement only one instantiation of a class to one object. This pattern might not be used often but it might be very helpful in database classes for example. We do not need to connect to a database every time a script is called if we use a persistent connection.</p>
+
+<p>The singleton concept is simple: A class that can be instantiated only once. To achieve this, we cannot declare the constructor as public, but as private. Now, since a private method cannot be call from outside of the class, we need to create a static public method that as access to the constructor.</p>
+
+<p>The concept is not that hard to understand and neither to implement. Here's a sample code:</p>
+<pre>
+class SingleTon {
+
+    private static $instance = NULL;
+
+    private function __construct() {
+        // use my mysql_pconnect()
+    }
+
+    public function __destruct() {
+        // have some useful stuff here
+    }
+
+    public static function getInstance() {
+        if(!is_object(self::$instance)) {
+            self::$instance = new SingleTon();
+        }
+        return self::$instance;
+    }
+}
+</pre>
+
+<p>As you can see, the constructor is declared private. Therefore, you cannot to something like that: </p>
+<pre>
+$SingleTon = new SingleTon();
+</pre>
+
+<p>You will get something like:</p>
+<pre>
+Fatal error: Call to private SingleTon::__construct() from invalid context in /home/eric/test.php on line xx
+</pre>
+
+<p>In order to make it work, you simply needs to do it like that:</p>
+<pre>
+$SingleTon = SingleTon::getInstance();
+</pre>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

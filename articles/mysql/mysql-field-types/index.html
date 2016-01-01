@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MySQL Field Types | BookOfZeus</title>
+	<meta name="description" content="List of MySQL column types and their characteristics" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/mysql/mysql-field-types" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" class="selected">MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="mysql" href="/articles/mysql/">mysql</a>
+</article>
+
+<article>
+	<header>
+		<h1>MySQL Field Types</h1>
+		<h6>Posted on Thursday April 07, 2011 / by Eric Potvin</h6>
+	</header>
+
+	
+<p>MySQL supports a number of column types, which may be grouped into three main categories:</p>
+<ul>
+    <li>numeric types</li>
+    <li>date and time types</li>
+    <li>string (character) types</li>
+</ul>
+
+<p>This section first gives an overview of the types available and how much space (in bytes) they takes.</p>
+<p><em>For more information, please refer to the <a href="http://dev.mysql.com/doc/" title="MySQL Developers Documentation" rel="nofollow">MySQL manuals</a> for more details</em>.</p>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Range</th>
+        <th width="50">Size</th>
+    </tr>
+    <tr>
+        <td>TINYINT</td>
+        <td>The <span class="bold">signed</span> range is -128 to 127. The <span class="bold">unsigned</span> range is 0 to 255.</td>
+        <td>1 byte</td>
+    </tr>
+    <tr>
+        <td>SMALLINT</td>
+        <td>The <span class="bold">signed</span> range is -32,768 to 32,767. The <span class="bold">unsigned</span> range is 0 to 65,535</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>MEDIUMINT</td>
+        <td>The <span class="bold">signed</span> range is -8,388,608 to 8,388,607. The <span class="bold">unsigned</span> range is 0 to 16,777,215</td>
+        <td>3 bytes</td>
+    </tr>
+    <tr>
+        <td>INT or INTEGER</td>
+        <td>The <span class="bold">signed</span> range is -2,147,483,648 to 2,147,483,647. The <span class="bold">unsigned</span> range is 0 to 4,294,967,295</td>
+        <td>4 bytes</td>
+    </tr>
+    <tr>
+        <td>BIGINT</td>
+        <td>The <span class="bold">signed</span> range is -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. The <span class="bold">unsigned</span> range is 0 to 18,446,744,073,709,551,615</td>
+        <td>8 bytes</td>
+    </tr>
+    <tr>
+        <td>FLOAT<span>Cannot be unsigned</span></td>
+        <td>
+            Ranges are -3.402823466E+38 to -1.175494351E-38, 0 and 1.175494351E-38 to 3.402823466E+38.
+            If the number of Decimals is not set or &lt;= 24 it is a single-precision floating point number
+        </td>
+        <td>4 bytes</td>
+    </tr>
+    <tr>
+        <td>DOUBLE, DOUBLE PRECISION, REAL<span>Cannot be unsigned</span></td>
+        <td>
+            Ranges are -1.7976931348623157E+308 to -2.2250738585072014E-308,
+            0 and 2.2250738585072014E-308 to 1.7976931348623157E+308.
+            If the number of Decimals is not set or 25 &lt;= Decimals &lt;= 53 stands for a
+            double-precision floating point number
+        </td>
+        <td>8 bytes</td>
+    </tr>
+    <tr>
+        <td>DECIMAL, NUMERIC<span>Cannot be unsigned</span></td>
+        <td>Behaves like a CHAR column: "unpacked" means the number is stored as a string, using one character for each digit of the value. The decimal point, and, for negative numbers, the '-' sign is not counted in Length. If Decimals is 0, values will have no decimal point or fractional part. The maximum range of DECIMAL values is the same as for DOUBLE, but the actual range for a given DECIMAL column may be constrained by the choice of Length and Decimals. If Decimals is left out it's set to 0. If Length is left out it's set to 10. Note that in MySQL 3.22 the Length includes the sign and the decimal point</td>
+        <td>M + 2 bytes</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Format</th>
+        <th width="100">Zero Values</th>
+        <th width="50">Size</th>
+    </tr>
+    <tr>
+        <td>DATE</td>
+        <td>The supported range is '1000-01-01' to '9999-12-31'. MySQL displays DATE values in 'YYYY-MM-DD' format</td>
+        <td>0000-00-00</td>
+        <td>3 bytes</td>
+    </tr>
+    <tr>
+        <td>DATETIME</td>
+        <td>The supported range is '1000-01-01 00:00:00' to '9999-12-31 23:59:59'. MySQL displays DATETIME values in 'YYYY-MM-DD HH:MM:SS' format</td>
+        <td>0000-00-00 00:00:00</td>
+        <td>8 bytes</td>
+    </tr>
+    <tr>
+        <td>TIME</td>
+        <td>The range is '-838:59:59' to '838:59:59'. MySQL displays TIME values in 'HH:MM:SS' format, but allows you to assign values to TIME columns using either strings or numbers</td>
+        <td>00:00:00</td>
+        <td>3 bytes</td>
+    </tr>
+    <tr>
+         <td>TIMESTAMP</td>
+         <td>The range is '1970-01-01 00:00:00' to sometime in the year 2037. MySQL displays TIMESTAMP values in YYYYMMDDHHMMSS, YYMMDDHHMMSS, YYYYMMDD or YYMMDD format, depending on whether M is 14 (or missing), 12, 8 or 6, but allows you to assign values to TIMESTAMP columns using either strings or numbers. A TIMESTAMP column is useful for recording the date and time of an INSERT or UPDATE operation because it is automatically set to the date and time of the most recent operation if you don't give it a value yourself </td>
+         <td>0000000000</td>
+         <td>4 bytes</td>
+    </tr>
+    <tr>
+        <td>YEAR</td>
+        <td>The allowable values are 1901 to 2155, and 0000 in the 4 year format and 1970-2069 if you use the 2 digit format (70-69). MySQL displays YEAR values in YYYY format, but allows you to assign values to YEAR columns using either strings or numbers. (The YEAR type is new in MySQL 3.22.)</td>
+        <td>0000</td>
+        <td>1 byte</td>
+    </tr>
+</table>
+
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Range</th>
+        <th width="70">Size</th>
+    </tr>
+    <tr>
+        <td>CHAR</td>
+        <td>The range of Length is 1 to 255 characters. CHAR values are sorted and compared in case-insensitive fashion according to the default character set unless the BINARY keyword is given.</td>
+        <td>x bytes</td>
+    </tr>
+    <tr>
+        <td>VARCHAR</td>
+        <td>The range of Length is 1 to 255 characters. VARCHAR values are sorted and compared in case-insensitive fashion unless the BINARY keyword is given.</td>
+        <td>x+1 bytes</td>
+    </tr>
+    <tr>
+        <td>VARCHAR</td>
+        <td>The range of Length is > 255 characters. VARCHAR values are sorted and compared in case-insensitive fashion unless the BINARY keyword is given.</td>
+        <td>x+2 bytes</td>
+    </tr>
+    <tr>
+        <td>TINYBLOB, TINYTEXT</td>
+        <td>A BLOB or TEXT column with a maximum length of 255 (2^8 - 1) characters</td>
+        <td>x+1 bytes</td>
+    </tr>
+    <tr>
+        <td>BLOB, TEXT</td>
+        <td>A BLOB or TEXT column with a maximum length of 65535 (2^16 - 1) characters</td>
+        <td>x+2 bytes</td>
+    </tr>
+    <tr>
+        <td>MEDIUMBLOB, MEDIUMTEXT</td>
+        <td>A BLOB or TEXT column with a maximum length of 16777215 (2^24 - 1) characters</td>
+        <td>x+3 bytes</td>
+    </tr>
+    <tr>
+        <td>LONGBLOB, LONGTEXT</td>
+        <td>A BLOB or TEXT column with a maximum length of 4294967295 (2^32 - 1) characters</td>
+        <td>x+4 bytes</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Range</th>
+        <th width="150">Size</th>
+    </tr>
+    <tr>
+        <td>ENUM</td>
+        <td>A string object that can have only one value, chosen from the list of values 'value1', 'value2', ..., or NULL. An ENUM can have a maximum of 65535 distinct values.</td>
+        <td>1 or 2 bytes, depending on the number of enumeration values (65,535 values maximum)</td>
+    </tr>
+    <tr>
+        <td>SET</td>
+        <td>A string object that can have zero or more values, each of which must be chosen from the list of values 'value1', 'value2', ... A SET can have a maximum of 64 members</td>
+        <td>1, 2, 3, 4, or 8 bytes, depending on the number of set members (64 members maximum)</td>
+    </tr>
+</table>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Page not found 404 CSS3 | BookOfZeus</title>
+	<meta name="description" content="Make your 404 pages not found a little more funny and attractive" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/page-not-found-404-css3" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,49 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Page not found 404 CSS3</h1>
+		<h6>Posted on Monday November 14, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>The Page Not Found, commonly called 404, should provide directive and be friendly so the user that lands on it does not close the browser or simply go away from your site.</p>
+<p>Using the <code>rotate</code> CSS3 property, you can make simulate a visual broken page without using images</p>
+
+<pre>
+#menu { -webkit-transform: rotate(-1.8deg); -moz-transform: rotate(-1.8deg); }
+#tags { -webkit-transform: rotate(1deg); -moz-transform: rotate(1deg); }
+#logo { -webkit-transform: rotate(4deg); -moz-transform: rotate(4deg);  }
+#mainContent { -webkit-transform: rotate(-2deg); -moz-transform: rotate(-2deg); }
+
+#error404 .icon404 { -webkit-transform: rotate(12deg); -moz-transform: rotate(12deg); }
+#error404 .text { -webkit-transform: rotate(-10deg); -moz-transform: rotate(-10deg); }
+#error404 .text h1 { -webkit-transform: rotate(25deg); -moz-transform: rotate(25deg); }
+#error404 .text h2 { -webkit-transform: rotate(42deg); -moz-transform: rotate(42deg); margin-top: 20px; }
+#error404 .text h2 span { -webkit-transform: rotate(18deg); -moz-transform: rotate(18deg); }
+#error404 .text p { -webkit-transform: rotate(26deg); -moz-transform: rotate(26deg); }
+
+.footerTop { -webkit-transform: rotate(-9deg); -moz-transform: rotate(-9deg); margin-top: 80px;}
+
+#footer { -webkit-transform: rotate(3deg); -moz-transform: rotate(3deg);  }
+#footer #links { -webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); }
+#footer #feeds { -webkit-transform: rotate(5deg); -moz-transform: rotate(5deg); }
+#footer #social { -webkit-transform: rotate(6deg); -moz-transform: rotate(6deg); }
+#footer #newsletter { -webkit-transform: rotate(-6deg); -moz-transform: rotate(-6deg); }
+#footer #copyright { -webkit-transform: rotate(5deg); -moz-transform: rotate(5deg); }
+#footer #copyright p { -webkit-transform: rotate(-17deg); -moz-transform: rotate(-17deg); }
+</pre>
+
+<h4>Demo:</h4>
+<p>You can view the demo of this code at our actual <a href="/404" title="page nout found" rel="nofollow">404 page</a>.</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Add content dynamically by Scrolling using jQuery | BookOfZeus</title>
+	<meta name="description" content="Improve your loading time and user experience by loading your content dyncamically" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/add-content-dynamically-by-scrolling-using-jquery" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -79,7 +79,7 @@
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
@@ -124,58 +124,84 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Add content dynamically by Scrolling using jQuery</h1>
+		<h6>Posted on Saturday September 29, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>One of the new way to efficiently populate a web page is to dynamically load the content when the user reach the bottom of the page or as the user scroll down the page. Many website, like google reader or facebook, are using this technique and you might consider this concept if you have a website that generates lots of content.</p>
+
+<h4>The Concept</h4>
+
+<p>jQuery provides all the method we need in order to check where the scroll is located. Since we need the scroll to be at the bottom in order to add contents, we have to find out the position and then validates if we have to trigger the ajax call to load additional content.</p>
+
+<ul>
+ <li><code>$(window).scrollTop()</code>: This will give the current position of the top of the page in pixels</li>
+ <li><code>$(document).height()</code>: This will give the current height of the page in pixels</li>
+ <li><code>$(window).height()</code>: This will give the current height of the window in pixels</li>
+</ul>
+
+<p>Now to reach the bottom, we simply need to calculate if the top of the page equals to the height of the page minus the height of the current window. For example If the height of the page <code>$(document).height())</code> is 4000 pixels and the height of the window <code>$(window).height()</code> is 500 pixels, so when you reach the bottom of the page the top of the page <code>$(window).scrollTop()</code> will be 3500 pixels.</p>
+
+<p>Easy no? Let's see some code now.</p>
+
+<h4>HTML</h4>
+<pre>
+&lt;section&gt;
+  &lt;article&gt;
+    &lt;p&gt;some text ....&lt;/p&gt;
+    &lt;p&gt;some text ....&lt;/p&gt;
+    &lt;p&gt;some text ....&lt;/p&gt;
+    &lt;p&gt;some text ....&lt;/p&gt;
+    &lt;p&gt;some text ....&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;
+</pre>
+
+<h4>CSS</h4>
+<pre>
+article {
+  font-size: 13px;
+}
+div {
+  bottom: 10px;
+  display: none;
+  position: fixed;
+}
+section {
+  margin: 0 auto;
+  padding: 10px;
+  width: 350px;
+}
+</pre>
+
+<h4>Javascript</h4>
+<pre>
+$(window).scroll(function() {
+  if ($(window).scrollTop() == ($(document).height() - $(window).height())) {
+    $.ajax({
+      cache: false  
+      url: 'more.html',
+      beforeSend: function ( xhr ) {
+        $('div').show();
+      },
+      success: function(data) {
+        $('article').append(data);
+        $('div').fadeOut();
+      }
+    });
+  }
+});
+</pre>
+	
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

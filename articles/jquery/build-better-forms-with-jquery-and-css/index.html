@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Build better forms with jQuery and CSS | BookOfZeus</title>
+	<meta name="description" content="Create smart forms using jQuery, jQuery Validator and CSS" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/jquery/build-better-forms-with-jquery-and-css" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -79,7 +79,7 @@
 		
 			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
 		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+			<li class="item"><a href="/articles/jquery/" title="jQuery" class="selected">jQuery</a></li>
 		
 			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
@@ -124,58 +124,144 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="jquery" href="/articles/jquery/">jquery</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Build better forms with jQuery and CSS</h1>
+		<h6>Posted on Saturday September 08, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>Reloading a web form to display errors is something we had to do long time ago. Does your website still has a form that does not display errors right away? If so, it is time for a change.</p>
+
+<p>jQuery (and jQuery validation) provides all the tools you need to display any errors to the users. The concept is very simple, each field can be validated simply by using a "class". For example:</p>
+
+<pre>
+&lt;input /* ... */ class="email" /&gt;
+</pre>
+
+<p>This one will validate if a valid email is entered ni the input field and display right away if the email is valid or not without refreshing the page.</p>
+
+<h4>Requirements:</h4>
+
+<ul>
+  <li><a href="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" class="nw" rel="nofollow">https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js</a></li>
+  <li><a href="/download/jquery.validator.js">http://www.bookofzeus.com/download/jquery.validator.js</a></li>
+</ul>
+
+<p>Now that we have included the mandatory files, we have to build rules for our form. Let's create a simple form with an email field, first name, last name, 3 radio buttons and 1 (one) checkbox.</p>
+
+<pre>
+&lt;input type="text" name="email" id="email" maxlength="80" size="30" value="" class="required email" /&gt;
+&lt;input type="text" name="first" id="first" maxlength="30" size="30" value="" class="required" /&gt;
+&lt;input type="text" name="last" id="last" maxlength="30" size="30" value="" class="required" /&gt;
+
+&lt;input type="radio" name="browser" class="required" /&gt;Firefox
+&lt;input type="radio" name="browser" /&gt;Chrome
+&lt;input type="radio" name="browser" /&gt;Safari
+
+&lt;input type="checkbox" name="privacy" id="privacy" value="y" class="required" /&gt;
+</pre>
+
+<p>In this case, each fields are required and the email field has a <q>email</q> validation. The beauty of this validation is nothing else on the form is required to validate those fields. All the code is build in a separate JavaScript file.</p>
+
+<p>To start, we have to declare the validation of the form itself, otherwise nothing will work.</p>
+
+<pre>
+$("form").validate({
+  errorClass: "errorForm",
+  rules: { },
+  messages: { }
+});
+</pre>
+
+<p>That will take care of the <q>class="required"</q>. Automatically, the jQuery validator will handle these and put the message above or bellow (depending on how you want to display it). Now, let's add the <q>email</q> validation.</p>
+
+<pre>
+$(".email").each(function() {
+  $(this).rules("add", {
+    required: true,
+    email: true,
+    minlength: 8,
+    messages: {
+      required: "Please enter your email",
+    }
+  });
+});
+</pre>
+
+<p>Now, email has to be treated differently from other fields since it needs to make sure an email is entered. jQuery validator has all the code to validate the email, the only difference here is you have to tell him which field is an email.</p>
+
+<p>Now, that we have our main fields set-up, we have to create the JavaScript code that will handle the submit button. That button will simply call the validation (we created above) and return true or false.</p>
+
+<pre>
+var valid = $("form").valid();
+</pre>
+
+<p>This one will automatically show the errors on the page. Would it be nice to focus on the first error? Yes. In case of an error, it would be nice to focus on the field and not let the user search for it.</p>
+
+<pre>
+if(!valid) {
+  $('#' + $('input.errorForm:first').attr('id')).focus();
+  return false;
+}
+</pre>
+
+<h4>Make it look nice.</h4>
+
+<p>Now, remember we had a <q>errorClass: "errorForm"</q> predefine when we declared our validation? This is will tell the jQuery validator which class to use to display or change the fields (to make it more obvious to the user).</p>
+
+<pre>
+input.errorForm, select.errorForm {
+  background: #ffdede;
+  color: red;
+  border: solid 1px red;
+  /* and other declaration */
+}
+label.errorForm {
+  color: red;
+  font-size: 10px;
+  /* and other declaration */
+}
+</pre>
+
+<p>This way, the fields with errors are easy to find. jQuery validator has a great advantage, it is very customizable. Here's a example of <a href="http://www.bookofzeus.com/articles/jquery-validator-adding-a-no-space-validation/">adding a validation that does not allow spaces in the field.</a></p>
+
+<h4>The full scripts:</h4>
+
+<pre>
+$(document).ready(function() {
+  $("form").validate({
+    errorClass: "errorForm",
+    rules: { },
+    messages: { }
+  });
+  $(".email").each(function() {
+    $(this).rules("add", {
+      required: true,
+      email: true,
+      minlength: 8,
+      messages: {
+        required: "Please enter your email",
+      }
+    });
+  });
+  $('input[type=button]').click(function() {
+    var valid = $("form").valid();
+    if(!valid) {
+      var id = $('input.errorForm:first').attr('id');
+      $('#' + id).focus();
+      return false;
+    }
+    return true;
+  });
+});
+</pre>
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

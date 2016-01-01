@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learn CSS Media Queries | BookOfZeus</title>
+	<meta name="description" content="Learn the basics of Media Queries and Responsive Design Layout" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/learn-css-media-queries" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
+</article>
+
+<article>
+	<header>
+		<h1>Learn CSS Media Queries</h1>
+		<h6>Posted on Tuesday May 29, 2012 / by Eric Potvin</h6>
+	</header>
+
+	<style>
+article img{
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+}
+article img.old {
+	max-width: 390px;
+}
+article img.new {
+	max-width: 208px;
+}
+</style>
+<p>The new CSS features (mostly in CSS 3) significantly improved the way we code our pages, specially for mobile devices, TV and many more. One of these new features is the Media Queries, or also known as the Responsive Web Design. This Media Queries consists of types that have specific properties mobiles devices, TV, desktop monitors (and more) that limits the styles to be executed or not. By executing these sets of rules, the presentation of the web pages changes dynamically without changing any HTML code.</p>
+
+<h4>Here's a concept:</h4>
+
+<p>We have a website with this layout:</p>
+
+<img src="/download/media-queries-1.jpg" alt="old design layout" width="390" height="418" class="old" />
+
+<p>To something like this:</p>
+
+<img src="/download/media-queries-2.jpg" alt="responsive design layout" width="208" height="417" class="new" />
+
+<p>Before the arrival of Media Queries, we had to hard-code and create multiples versions of our websites (HTML and CSS files).
+Although, this was very easy to identify which CSS file goes with a specific media type or HTML code, you have to create, and duplicate CSS codes in multiples CSS files.</p>
+
+<p>By using Media Queries (and having the HTML that goes with it), you can now only use one CSS file and therefore, write smarter CSS. This way, maintaining your only HTML templates and only CSS files is very easy.</p>
+
+
+<h4>What is Media Queries?</h4>
+
+<p>A media query consists of a media type and zero or more expressions that check for the conditions of particular media features. A media query is a logical expression that is either true or false.
+
+A media query is true if the media type of the media query matches the media type of the device where the user agent is running (as defined in the "Applies to" line), and all expressions in the media query are true.</p>
+
+<p class="note">source: http://www.w3.org/TR/css3-mediaqueries/</p>
+
+<p>Media queries allow designers to build multiple layouts using the same HTML documents by selectively serving stylesheets based on the user agent's features, such as the browser window's size.</p>
+
+<p>Other parameters Media Queries deal with:</p>
+<ul>
+ <li>Orientation</li>
+ <li>Screen Resolution</li>
+ <li>Color</li>
+</ul>
+
+<h4>Media Queries features:</h4>
+
+<p>Media Queries provides lots of features that will allow you to easily distinguish the type of device the users are using. The features are:</p>
+
+<ul>
+ <li><em>width, min-width, max-width:</em> The <q>width</q> media feature describes the width of the targeted display area of the output device.</li>
+ <li><em>height, min-height, max-height:</em> The <q>height</q> media feature describes the height of the targeted display area of the output device.</li>
+ <li><em>device-width:</em> The <q>device-width</q> media feature describes the width of the rendering surface of the output device.</li>
+ <li><em>device-height:</em> The <q>device-height</q> media feature describes the height of the rendering surface of the output device.</li>
+ <li><em>orientation:</em> The <q>orientation</q> media feature is portrait when the value of the height media feature is greater than or equal to the value of the width media feature. By default orientation is landscape.</li>
+ <li><em>aspect-ratio, device-aspect-ratio:</em> The <q>aspect-ratio</q> or <q>device-aspect-ratio</q> media feature is defined as the ratio of the value of the width or device-width media feature to the value of the height or device-height media feature.</li>
+ <li><em>color:</em> The <q>aspect-ratio</q> media feature describes the number of bits per color component of the output device. If the device is not a color device, the value is zero.</li>
+ <li><em>color-index:</em> The <q>color-index</q> The <q>color-index</q> media feature describes the number of entries in the color lookup table of the output device. If the device does not use a color lookup table, the value is zero.</li>
+ <li><em>aspect-ratio, device-aspect-ratio:</em> The <q>aspect-ratio</q> or <q>device-aspect-ratio</q> feature is defined as the ratio of the value of the width or device-width media feature to the value of the height or device-height media feature.</li> <li><em>monochrome:</em> The <q>monochrome</q> media feature describes the number of bits per pixel in a monochrome frame buffer. If the device is not a monochrome device, the output device value will be 0.</li>
+ <li><em>resolution:</em> The <q>resolution</q> media feature describes the resolution of the output device, i.e. the density of the pixels. When querying devices with non-square pixels, in "min-resolution" queries the least-dense dimension must be compared to the specified value and in "max-resolution" queries the most-dense dimensions must be compared instead. A "resolution" (without a "min-" or "max-" prefix) query never matches a device with non-square pixels.</li>
+</ul>
+
+
+<h4>Breakpoints:</h4>
+<p>When you build your media queries you have to find out the breakpoints of your site. Obviously here you don't want to add all the possible resolutions but the most common or generic one. Where the screen stop and when it starts to optimize your design?
+
+<p>Here's a list of the most common or generic breakpoints that applies to the most popular devices and desktops.</p>
+<ul>
+ <li>1200px and more</li>
+ <li>960px</li>
+ <li>768px</li>
+ <li>600px</li>
+ <li>480px</li>
+ <li>320px or less</li>
+</ul>
+
+<h4>Examples</h4>
+
+<p>Here's a few examples of CSS media queries you can define in your CSS files.</p>
+
+<p>For small devices</p>
+<pre>
+@media only screen and (max-width: 480px) { /* CSS codes */ }
+</pre>
+
+<p>For iPad</p>
+<pre>
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) { /* CSS codes */ }
+</pre>
+
+<p>For devices in a portrait mode</p>
+<pre>
+@media screen and (orientation: portrait) { /* CSS codes */ }
+</pre>
+
+<p>To match the 16:9 aspect ratio</p>
+<pre>
+@media only screen and (device-aspect-ratio: 16/9) { /* CSS codes */ }
+</pre>
+
+<p>To print a document</p>
+<pre>
+@media print { /* CSS codes */ }
+</pre>
+
+
+<p>Now, you can create css codes that belongs to the right media queries without duplicating any of your CSS code.</p>
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

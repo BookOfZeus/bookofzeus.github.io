@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Verify if a dedicated server is really dedicated | BookOfZeus</title>
+	<meta name="description" content="Quick tips you can check and command your can run to verify your server" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/linux/verify-if-a-dedicated-server-is-really-dedicated" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -81,7 +81,7 @@
 		
 			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
 		
-			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
 		
 			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
 		
@@ -124,58 +124,83 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="linux" href="/articles/linux/">linux</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Verify if a dedicated server is really dedicated</h1>
+		<h6>Posted on Thursday November 24, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>You have doubts about your current hosting? You want to make sure your really have a dedicated server? Here's some quick tips you can check and command your can run to verify what your are really leasing.</p>
+
+<h4>Does the command <code>esxtop</code> works?</h4>
+<p>This tool is used to check performances on Virtual Machines</p>
+
+<h4>Check the network interfaces.</h4>
+<p>Run the command <code>ifconfig</code>. If you see something like this:</p>
+<pre>
+venet0    Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:127.0.0.1  P-t-P:127.0.0.1  Bcast:0.0.0.0  Mask:255.255.255.255
+          UP BROADCAST POINTOPOINT RUNNING NOARP  MTU:1500  Metric:1
+          RX packets:99999 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:99999 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:126223307 (120.3 MiB)  TX bytes:2897538 (2.7 MiB)
+
+venet0:0  Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:6x.xxx.xxx.xxx  P-t-P:6x.xxx.xxx.xxx  Bcast:6x.xxx.xxx.xxx  Mask:255.255.255.255
+          UP BROADCAST POINTOPOINT RUNNING NOARP  MTU:1400  Metric:1
+</pre>
+<p>you are probably have a VPS since venet0 is telling that this server is being an OpenVZ VPS. Note: This is not 100% fool proof, some VPS like Xen have an eth0.</p>
+
+<h4>Check devices/system:</h4>
+<p>Run <code>lspci</code> and <code>dmesg</code> as root. If you see something like:</p>
+<pre>
+VMWare SVGA device
+acd0: CDROM &lt;VMware Virtual IDE CDROM Drive/00000001&gt; at ata0-master UDMA33
+da0: &lt;VMware Virtual disk 1.0&gt; Fixed Direct Access SCSI-2 device
+</pre>
+
+<p>Then you are using a VPS.</p>
+
+<h4>Check if some files exists:</h4>
+<p>If it's a VPS running OpenVZ they'd have a file called <code>/proc/user_beancounters</code>. View <a href="http://wiki.openvz.org/Proc/user_beancounters" class="nw" rel="nofollow">http://wiki.openvz.org/Proc/user_beancounters</a> for more details.</p>
+<p>Look if <code>/proc/vz</code> or <code>/proc/vz/veinfo</code> exists (for OpenVZ) or <code>/proc/sys/xen</code>, <code>/sys/bus/xen</code> or <code>/proc/xen</code> (for Xen)</p>
+<p>Check if <code>/proc/self/status</code> has an <code>s_context</code> or <code>VxID</code> field.</p>
+<p>If one of these file exists, then you have a VPS.</p>
+
+<h4>IP lookup:</h4>
+<p>You could do a reverse IP lookup to check to see if any other websites are hosted on the same IP.</p>
+
+<h4>Check Memory:</h4>
+<p>Run <code>lspci</code> and look for RAM memory: <code>Qumranet, Inc. Virtio memory balloon</code>. Then you have a VPS.</p>
+
+<h4>Check The Computer Info:</h4>
+<p>By checking the computer information, you can find very quickly if you have a virtual processor or not.</p>
+<pre>
+grep 'model name' /proc/cpuinfo
+</pre>
+
+<p>If you have a virtual hosting, you might see something like:</p>
+<pre>
+model name      : QEMU Virtual CPU version 0.15.0
+</pre>
+
+<h4>Check The Computer Manufacturer:</h4>
+<p>By checking the computer manufacturer, you will now what kind of manufacturer you have.</p>
+<pre>
+dmidecode -t system | grep Manufac
+</pre>
+
+<p>Thanks to <a href="http://www.tummy.com/journals/users/jafo/" title="Sean Reifschneider" class="nw">Sean Reifschneider</a> for this info</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

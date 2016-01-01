@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Learn CSS basics | BookOfZeus</title>
+	<meta name="description" content="Learn the basics of CSS selectors, declarations and shorthand declarations" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/css/learn-css-basics" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -71,7 +71,7 @@
 		
 			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
 		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+			<li class="item"><a href="/articles/css/" title="CSS" class="selected">CSS</a></li>
 		
 			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
 		
@@ -124,58 +124,93 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="css" href="/articles/css/">css</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Learn CSS basics</h1>
+		<h6>Posted on Saturday May 19, 2012 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	<p>Writing CSS code should be like writing any programming languages or markup languages. It should be structured and easy to read, plain and simple. CSS is very simple and it has a basic structure:</p>
+
+<img src="/download/css-101.jpg" width="537" height="216" alt="CSS Basics 101" class="explain" />
+
+<h4>CSS 101: The Structure</h4>
+
+<h5>Selectors</h5>
+<p>The selector is the element that connect a specific HTML tag to a CSS style. In this example, the <em>HTML5 header tag</em> is used to change the font size, the alignment of any text and the width of the header.
+
+<h5>Type of selectors</h5>
+
+<p><span class="bold">Class Selectors:</span> The benefit of the class selector is that it can be connected to multiple HTML Tags. For example, you can to style the heading h3 tag and some divs to add a border. By using the <code>.</code> (dot) character, you can <q>dynamically</q> add a class to any, or selected, tags.</p>
+
+<pre>
+.borderBottom
+{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ddd;
+}
+</pre>
+
+<p>The, you can add <code>borderBottom</code> to any HTML tags like this:</p>
+<pre>
+&lt;div class="borderBottom"&gt;&lt;/div&gt;
+&lt;p class="borderBottom"&gt;&lt;/p&gt;
+</pre>
+
+<p><span class="bold">ID Selectors </span> works the same as the class selector, the difference is instead of using the <code>.</code> (dot) character it uses the <code>#</code> character. Also, any ID should be unique in the CSS, so make sure you name every selector wisely.</p>
+
+<pre>
+#borderHeading
+{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ddd;
+}
+</pre>
+
+<p><span class="bold">Descendant Selectors:</span> The descendant selector matches all HTML tags that are descendants or child of a specified HTML tags.</p>
+
+<pre>
+div span
+{
+  color: red;
+}
+</pre>
+
+<p>You notice the space between the <code>div</code> and the <code>span</code>? This way only <code>span</code> elements that are inside of a <code>div</code> will apply the style defined.</p>
+
+
+<h5>Declarations</h5>
+<p>
+A CSS style includes one or more declaration. A declaration contains a property, a value and in some case a unit. Each property is separated with a <code>:</code> (column) character and each declaration ends with a <code>;</code> (semi-colon) character. Example of property: <em>color</em>, <em>text-align</em>, <em>text-shadow</em> and <em>width</em>.
+
+
+<h4>CSS 102: Shorthand declarations</h4>
+
+<img src="/download/css-102.jpg" width="537" height="216" alt="CSS Basics 102"  class="explain" />
+
+<p>Some of these declarations can be merged or combined. This avoid multiple declaration and overloading the code. This simplify the readability of the CSS code.</p>
+
+<p>In the example above, using the <code>margin</code> will make the code easy to understand. In this case, since there's 2 values, zero (0) and auto, the margin-top and margin-bottom will use zero and the margin-left and margin-right will use auto. This code will be the same as this:</p>
+
+<pre>
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+</pre>
+
+<p>As you can see, way easier to read.</p>
+
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

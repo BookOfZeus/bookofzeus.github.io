@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Articles, Tutorials and Source Code | BookOfZeus</title>
-	<meta name="description" content="An online community for articles, tutorials and source code on the latest technology" />
+	<title>Calculating MySQL Database sizes in Linux | BookOfZeus</title>
+	<meta name="description" content="How to create a script that calculates folders and MySQL database sizes" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/mysql/calculating-mysql-database-sizes-in-linux" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
 	
 		<ul>
 		
@@ -87,7 +87,7 @@
 		
 			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
 		
-			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+			<li class="item"><a href="/articles/mysql/" title="MySQL" class="selected">MySQL</a></li>
 		
 			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
 		
@@ -124,58 +124,92 @@
 <!-- content -->
 
 <section>
-	<article>
-	<h1>Book Of Zeus</h1>
-	<p>Welcome to the book of zeus.</p>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="mysql" href="/articles/mysql/">mysql</a>
 </article>
 
 <article>
 	<header>
-		<h2>Latest Article</h2>
-		<h6>by Eric Potvin</h6>
+		<h1>Calculating MySQL Database sizes in Linux</h1>
+		<h6>Posted on Thursday May 05, 2011 / by Eric Potvin</h6>
 	</header>
-	<p>
-		<a href="/articles/android/import-android-library-project-android-studio" title="Import an Android Library Project in Android Studio" >Import an Android Library Project in Android Studio</a>
-		<br/>
-		Import an Android Library Project (.JAR file) in Android Studio
-	</p>
-	<footer>
-		<p>Added on Saturday, January 3rd, 2015</p>
-	</footer>
+
+	
+<p>Checking regularly if you still have space left on your hard drive(s) is a mandatory procedure and can be painful if this procedure is done manually. To create an automated script that sends email (for example) to someone telling how much space the web folder, how big is the database or how much space left on the hard drive can be very useful.</p>
+
+<p class="note">Run this as sudo or any user that has access to all the folder listed</p>
+
+<h4>MySQL Disk Usage:</h4>
+<p>List of Databases disk usage (without the table definition - so data and index data) assuming the path of the MySQL data folder is: <code>/var/lib/mysql</code></p>
+<pre>
+MyDatabase=`ls -l /var/lib/mysql/mydb/ | grep -v '.frm' | awk 'BEGIN { sum = 0 } { sum += $5 } END { print sum }'`
+MyDatabase2=`ls -l /var/lib/mysql/mydb2/ | grep -v '.frm' | awk 'BEGIN { sum = 0 } { sum += $5 } END { print sum }'`
+# etc...
+</pre>
+
+<p class="note">You can ommit the "grep -v '.frm'" if you want full database sizes (table definition, indexes and data)</p>
+<p>Now the total:</p>
+<pre>
+let sumDB=$MyDatabase+$MyDatabase2
+</pre>
+<p>or (if you include the .frm file)</p>
+<pre>
+sumDB=`du -sPb /var/lib/mysql/ | awk '{print $1}'`
+</pre>
+
+<h4>WWW Data Disk Usage:</h4>
+<p>List of the WWw data folder assuming the path of the WWW folder is: /var/www/</p>
+<pre>
+sumWWW=`du -sPb /var/www/ | awk '{print $1}'`
+</pre>
+
+<h4>Total Disk Usage:</h4>
+<pre>
+let sum=$TotalMysql+$sumWWW
+</pre>
+
+<h4>Space left on the disk:</h4>
+<pre>
+SpaceLeft=`df | egrep '^/dev/sda1' | awk '{print $4}'`
+</pre>
+
+<h4>Build the report</h4>
+<pre>
+Message="\nDisk usage (in bytes) @ `date`\nMySQL database - MyDatabase : $MyDatabase\nTotal MySQL: $TotalMysql\n\nWWW data: $sumWWW\n\nTota  l: $sum\n\nSpace Left: $SpaceLeft"
+</pre>
+
+<h4>Send it</h4>
+<pre>
+echo -e $Message | mail -s "Disk Usage" "admin@domain.com"
+</pre>
+
+
+<h3>Here's the full script:</h3>
+<pre>
+#!/bin/bash
+
+MyDatabase=`ls -l /var/lib/mysql/mydb/ | grep -v '.frm' | awk 'BEGIN { sum = 0 } { sum += $5 } END { print sum }'`
+MyDatabase2=`ls -l /var/lib/mysql/mydb2/ | grep -v '.frm' | awk 'BEGIN { sum = 0 } { sum += $5 } END { print sum }'`
+
+let sumDB=$MyDatabase+$MyDatabase2
+#or
+#sumDB=`du -sPb /var/lib/mysql/ | awk '{print $1}'`
+
+sumWWW=`du -sPb /var/www/ | awk '{print $1}'`
+let sum=$TotalMysql+$sumWWW
+
+SpaceLeft=`df | egrep '^/dev/sda1' | awk '{print $4}'`
+
+Message="\nDisk usage (in bytes) @ `date`\nMySQL database - MyDatabase : $MyDatabase\nTotal MySQL: $TotalMysql\n\nWWW data: $sumWWW\n\nTota  l: $sum\n\nSpace Left: $SpaceLeft"
+echo -e $Message | mail -s "Disk Usage" "admin@domain.com"
+
+</pre>
+
+<p>Make sure the script is executable and you are done!</p>
+
+
+
 </article>
-
-<article>
-	<header>
-		<h2>Top Article</h2>
-		<h6>by Eric Potvin</h6>
-	</header>
-	<p>
-		<a href="/articles/php/convert-simplexml-object-into-php-array/" title="Convert SimpleXML Object into PHP Array">Convert SimpleXML Object into PHP Array</a>
-		<br/>
-		Simple solution to convert an XML Object into a PHP Array.
-	</p>
-	<footer>
-		<p>Added on Saturday, June 25th 2011</p>
-	</footer>
-</article>
-
-<article>
-	<header>
-		<h2>Have something to share?</h2>
-	</header>
-	<p>You have an article you want to publish and you would like to share? Send it to us and we will be happy to publish it for you. Visit our <a href="/contribute/" title="Contribute">contribute section</a> for more information</p>
-</article>
-
-<article>
-	<header>
-		<h3>You have code to share?</h3>
-	</header>
-	<p>
-		We are currently building a code repository that will help you on any of your projects. If you have epic code that will help other developers on their projects, let us know!
-	</p>
-</article>
-
-
 
 	<footer> 
 

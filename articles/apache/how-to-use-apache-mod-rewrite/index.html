@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How to use Apache mod_rewrite | BookOfZeus</title>
+	<meta name="description" content="Make all your URLs SEO friendly and maximize your Web Site usability" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/apache/how-to-use-apache-mod-rewrite" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" class="selected">Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<div id="latest">
+		<h4>Good blog to read</h4>
+		<a href="http://customizeubuntu.com" class="nw">Customize Ubuntu</a><br/>
+		<a href="http://hardenubuntu.com" class="nw">Harden Ubuntu</a><br/>
+	</div>
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="apache" href="/articles/apache/">apache</a>
+</article>
+
+<article>
+	<header>
+		<h1>How to use Apache mod_rewrite</h1>
+		<h6>Posted on Saturday September 24, 2011 / by Eric Potvin</h6>
+	</header>
+
+	<p>Apache mod_rewrite make your website well organized and can significantly reduce your code. It is also known to be the SEO best friend or the guru of URL manipulation. In this article, you will learn the basics of mod_rewrite, how to use it and where to use it to maximize your Web Site usability.</p>
+
+<p>When to use Apache mod_rewrite:</p>
+<ul>
+  <li>Improve users usability;</li>
+  <li>Redirect bad requests;</li>
+  <li>Redirect moved web pages to a new location;</li>
+  <li>Optimize your SEO search results;</li>
+  <li>Duplicate search engine results links;</li>
+  <li>and many more;</li>
+</ul>
+
+<p class="note">Make sure "mod_rewrite" is <a href="http://www.bookofzeus.com/articles/how-to-install-mod-rewrite/" title="how to install mod_rewrite">installed</a>.</p>
+
+<h4>RewriteCond Operators / Patterns</h4>
+<ul class="none">
+  <li><code>&lt;</code> Is lexically lower;</li>
+  <li><code>&gt;</code> Is lexically greater;</li>
+  <li><code>=</code> Is lexically equal;</li>
+  <li><code>!</code> Is not;</li>
+  <li><code>-d</code> Is a Directory;</li>
+  <li><code>-f</code> Is a regular file;</li>
+  <li><code>-s</code> Is a regular file with a size greater than 0;</li>
+  <li><code>-l</code> Is a symbolic link;</li>
+  <li><code>-F</code> Is existing file via sub requests;</li>
+  <li><code>-U</code> Is existing URL via sub requests;</li>
+</ul>
+
+<h4>RewriteCond Flags</h4>
+<ul class="none">
+  <li><code>nocase or NC</code> Makes the test case-insensitive, A = a;</li>
+  <li><code>ornext or OR</code> Used to merge rules;</li>
+</ul>
+
+<h4>RewriteRule Flags</h4>
+<ul class="none">
+  <li><code>chain or C</code> Chained with next rule;</li>
+  <li><code>cookie or CO</code> Set a cookie: CO=NAME:VAL:domain[:lifetime[:path]];</li>
+  <li><code>env or E</code> Set environment variable: E=VARIABLE:VALUE;</li>
+  <li><code>forbidden or F</code> Force URL to be forbidden with HTTP response 403;</li>
+  <li><code>gone or G</code> Force URL to be gone with HTTP response 410;</li>
+  <li><code>last or L</code> Last rule. Stop the rewriting process here and don't apply any more rewrite rules;</li>
+  <li><code>next or N</code> Re-run the rewriting process starting again with the first rewriting rule (Be careful of infinite loop);</li>
+  <li><code>nosubreq or NS</code> Not for internal sub-requests;</li>
+  <li><code>proxy or P</code> Force proxy. mod_proxy must be enabled in order to use this flag;</li>
+  <li><code>passthrough or PT</code> Pass through to next handler;</li>
+  <li><code>qsappend or QSA</code> Query string append;</li>
+  <li><code>redirect or R</code> Force redirect with [=code]: 301 (moved permanently) or 302 (moved temporary);</li>
+  <li><code>skip or S</code> Skip next rule(s): S=num (where num = number greater than zero);</li>
+  <li><code>type or T</code> Force MIME type: T=MIME-type;</li>
+</ul>
+
+<h4>Regular Expressions</h4>
+<ul class="none">
+  <li><code>.</code> Any single character;</li>
+  <li><code>&#091;chars&#093;</code> One of the chars from the set;</li>
+  <li><code>&#091;^chars&#093;</code> Not any of the chars from the set;</li>
+  <li><code>(string1|string2)</code> string1 or string2;</li>
+</ul>
+
+<h4>Quantifiers</h4>
+<ul class="none">
+  <li><code>?</code> 0 or 1;</li>
+  <li><code>*</code> 0 to N (N is defined as a number greater than 1);</li>
+  <li><code>+</code> At least 1 to N (N is defined as a number greater than 1);</li>
+</ul>
+
+<h4>Grouping</h4>
+<ul class="none">
+  <li><code>(text)</code> Allow characters to be grouped and quantified;</li>
+</ul>
+
+<h4>Anchors</h4>
+<ul class="none">
+  <li><code>^</code> Start of line;</li>
+  <li><code>$</code> End of line;</li>
+</ul>
+
+<h4>Escape Special Characters</h4>
+<ul class="none">
+  <li><code>\char</code> Escape special characters for use in a string;</li>
+</ul>
+
+<h4 class="margin">Examples:</h4>
+
+<p>All examples below will work if you enable the mod Rewrite engine:</p>
+<pre>
+RewriteEngine On
+</pre>
+
+<p>You can also set a base location if you need:</p>
+<pre>
+RewriteBase /
+</pre>
+
+<h5>RewriteCond -f: if is a file</h5>
+<pre>
+RewriteCond %{REQUEST_FILENAME} !-f
+</pre>
+
+<h5>RewriteCond [OR]</h5>
+<pre>
+RewriteCond %{HTTP_HOST} ^www.domain.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www.domain.net$
+</pre>
+
+<h5>RewriteCond for a User Agent</h5>
+<pre>
+RewriteCond %{HTTP_USER_AGENT} ^FireFox
+</pre>
+
+<h5>Redirect a specific link to a specific file</h5>
+<pre>
+RewriteRule ^about(/?)$ /page/about.php [NC,QSA,L]
+</pre>
+
+<h5>Redirect a dynamic link to a specific file</h5>
+<pre>
+RewriteRule ^([a-z0-9\-]+)(/?)$ index.php?page=$1 [NC,QSA,L]
+</pre>
+
+<h5>Redirect a dynamic link (width sub folders) to a specific file</h5>
+<pre>
+RewriteRule ^([a-z\-]+)/([a-z0-9\-]+)$ index.php?category=$1&amp;subcategory=$2 [NC,QSA,L]
+</pre>
+
+<h5>Execute a site search</h5>
+<pre>
+RewriteRule ^search/([a-z0-9\-\+]+)(/?)$ index.php?q=$1 [NC,QSA,L]
+</pre>
+
+<h5>Redirect an image to another folder</h5>
+<pre>
+RewriteRule ^wallpaper/(.*)\.(jpg|png|jpeg|gif)$ /images/$1.$2 [L]
+</pre>
+
+<h5>Disabled user to access directly to the files folder</h5>
+<pre>
+RewriteRule ^files(/?)$ - [F]
+</pre>
+
+<h5>Redirect a subfolder to a folder</h5>
+<pre>
+RewriteCond %{HTTP_HOST} ^user\.domain\.com$
+RewriteRule ^/(.*) http://www.domain.com/$1 [R=301,L]
+</pre>
+
+<h5>Redirect to a file except specific files</h5>
+<pre>
+RewriteCond %{SCRIPT_FILENAME} !\/(login|register)\.php [NC]
+RewriteRule ^([a-z0-9\-]+)$ index.php?title=$1 [NC,QSA,L]
+</pre>
+
+<h5>Redirect non www to a www domain</h5>
+<pre>
+RewriteCond %{HTTP_HOST} !^www.domain.com [NC]
+RewriteRule (.*) http://www.domain.com/$1 [R=301,L]
+</pre>
+
+<h5>Check if a www domain is used</h5>
+<pre>
+RewriteCond %{HTTP_HOST} ^www\.domain\.com$
+RewriteRule ^([a-z]+)(/?)$ index.php?usewww=1 [NC,QSA,L]
+
+RewriteCond %{HTTP_HOST} ^domain\.com$
+RewriteRule ^([a-z]+)(/?)$ index.php?usewww=0 [NC,QSA,L]
+</pre>
+
+<h5>Redirect to a mobile site</h5>
+<pre>
+RewriteCond %{HTTP_USER_AGENT} "mobile|windows ce|blackberry|smartphone|iphone|android" [NC]
+RewriteCond %{HTTP_HOST} !^m.domain.com
+RewriteRule ^(.*)$ http://m.domain.com/$1 [R]
+</pre>
+
+<h5>Set variable</h5>
+<pre>
+SetEnvIf Host ^www\. page=www
+SetEnvIf Host ^m\. page=mobile
+rewriterule ^.*$ index.php?subdomain=%{ENV:page} [QSA,L]
+</pre>
+
+<h5>Block bad bots</h5>
+<pre>
+SetEnvIfNoCase User-Agent "^Wget" bad_bot
+SetEnvIfNoCase User-Agent "^EmailSiphon" bad_bot
+SetEnvIfNoCase User-Agent "^EmailWolf" bad_bot
+SetEnvIfNoCase User-Agent "^libwww-perl" bad_bot
+Deny from env=bad_bot
+</pre>
+
+<h5>Language redirect</h5>
+<pre>
+RewriteCond %{HTTP_HOST} ^([a-z]{2})\.domain\.com$  [NC]
+RewriteCond %1 !^www$ [NC]
+RewriteRule ^(.*)$ php.php?lang=%1 [NC,QSA,L]
+</pre>
+
+<h5>Ignoring CSS files</h5>
+<pre>
+RewriteCond %{REQUEST_URI} !^.*\.css.*$ [NC]
+</pre>
+
+<h5>Redirect specific type of files</h5>
+<pre>
+RewriteRule ^([a-z0-9\-_\.]+)\.(pdf|doc|ppt|zip|gif|jpg|png|wma)$ /media/$1.$2 [NC,L]
+</pre>
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

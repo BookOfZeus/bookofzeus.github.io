@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hard disk usage from command line on Linux | BookOfZeus</title>
-	<meta name="description" content="Check how much space left on your disk using a simple linux command line" />
+	<title>Things to do after installing Ubuntu | BookOfZeus</title>
+	<meta name="description" content="The most-dos to make Ubuntu better, more efficient and more productive" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/articles/linux/hard-disk-usage-from-command-line-on-linux" />
+	<link rel="canonical" href="http://bookofzeus.com/customize-ubuntu/install/things-to-do-after-installing-ubuntu" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -63,7 +63,7 @@
 		<button class="close-menu">Close Menu</button>
 		<ul>
 
-	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
 	
 		<ul>
 		
@@ -81,7 +81,7 @@
 		
 			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
 		
-			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
 		
 			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
 		
@@ -111,7 +111,7 @@
 	
 	</li>
 
-	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" class="selected">Customize Ubuntu</a>
 	
 		<ul>
 		
@@ -125,7 +125,7 @@
 		
 			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
 		
-			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" class="selected">Install</a></li>
 		
 			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
 		
@@ -158,41 +158,111 @@
 
 <section>
 	<article class="breadcrumbs">
-	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="linux" href="/articles/linux/">linux</a>
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="customize-ubuntu" href="/customize-ubuntu/">customize-ubuntu</a> &gt; <a title="install" href="/customize-ubuntu/install/">install</a>
 </article>
 
 <article>
 	<header>
-		<h1>Hard disk usage from command line on Linux</h1>
-		<h6>Posted on Wednesday September 28, 2011 / by Adam Culp</h6>
+		<h1>Things to do after installing Ubuntu</h1>
+		<h6>Posted on Saturday January 09, 2016 / by Eric Potvin</h6>
 	</header>
 
-	
-<p>From the command line I have found many great tools for system management, but really needed to dig into ways of tracking hard disk usage on Linux without the aid of GUI tools. Google to the rescue! I found a few places with great tips and hints on how to do this, but one article on Linux.com came in very handy. Here were my findings:</p>
-<p>The <code>df</code> utility displays the disk space usage on all mounted filesystems. The <code>-T</code> option prints the filesystem type as well. By default, <code>df</code> measures the size in 1K blocks, which could be a little difficult for a desktop user to decipher. Use the <code>-h</code> option to get more understandable output:</p>
+	<p>Ubuntu comes with apps and tools that might not be the best for your needs.</p>
 
+<p>This small guide will help you to make Ubuntu at the level you want.</p>
+
+
+<p>See our <a href="http://bookofzeus.github.io/customize-ubuntu/install/post-install-scripts/">Post install scripts</a> if you want to create an automated script.</p>
+
+<h3>Update</h3>
+<p>Let's make sure we have all the latest updates (not upgrades)</p>
 <pre>
-$ df -h -T
-Filesystem    Type    Size  Used Avail Use% Mounted on
-/dev/hda6     ext3     20G  9.3G  9.1G  51% /
-/dev/hda7 reiserfs     13G  2.1G   11G  17% /mnt/suse
-/dev/sda1     vfat    241M  152M   90M  63% /media/usbdisk
+sudo apt-get update
 </pre>
 
-<p>You can use the <code>du</code> command to determine which files or directories need to be deleted - or at least trimmed. A simple <code>du</code> will print usage for the present working directory and its subdirectories, along with the size of each directory.</p>
-<p>If you want the size of an particular directory, specify it with <code>du directoryname</code>. For instance, <code>du -h /home/bodhi/podcasts</code> will print the size of the podcasts directory in a more readable format than the kilobytes used by default. The <code>-c</code> option prints the grand total size of the directory at the end. The <code>-a</code> option also displays the file names along with directories and can be of use when you want to see a list of files in a particular directory. The <code>-s</code> option will display a summary, without showing all of the subdirectories.</p>
-
-<p>Running <code>du -ch | grep total</code> prints just one line with the total size of the directory. If there’s a particular type of file that you would like to be excluded while calculating a directory’s usage, specify it with the <code>--exclude=type</code> option. Here we’ll check the disk usage of the current directory, and display all file names with their disk usage, and then sort them numerically using the sort utility:</p>
-
+<h3>Default Editor</h3>
+<p>Setup your favorite editor (like VIM)</p>
 <pre>
-$ du -ah | sort -n
-4.2M    ./eweek.10.28.05.mp3
-4.5M    ./LQ-Podcast-101105.mp3
-4.8M    ./LQ-Podcast-110905.mp3
-19M     ./LQRadio-Episode3.mp3
-20M     ./LQRadio-Searls.mp3
-36M     ./LQRadio-HiserAndAdelstein.mp3
-197M    .
+sudo update-alternatives --config editor
+</pre>
+
+<h3>Auto Sudo</h3>
+<p>If you don't like to type your password everytime you run the sudo command, here's how to disable it:</p>
+<pre>
+sudo visudo
+</pre>
+<p>Add this line at the end:</p>
+<pre>
+MyUserName ALL=(ALL) NOPASSWD: ALL
+</pre>
+
+<h3>SSH keys</h3>
+<p>Generate your SSH keys</p>
+<pre>
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+cd .ssh
+ssh-keygen -t rsa
+</pre>
+
+<h3>Install Useful Apps</h3>
+<pre>
+sudo apt-get install vim git secure-delete
+sudo apt-get install flashplugin-installer
+sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip rar 
+</pre>
+
+<h3>Purge Unwanted Apps</h3>
+<pre>
+sudo apt-get purge empathy-common empathy*
+sudo apt-get purge transmission-* shotwell* totem*
+sudo apt-get purge account-plugin-* friends*
+sudo apt-get remove unity-webapps-common
+sudo apt-get purge thunderbird*
+sudo apt-get purge gnome-orca
+sudo apt-get purge gnomine gnome-sudoku gnome-mahjongg
+</pre>
+
+<h3>Fix slow connection in ssh</h3>
+<pre>
+sudo sed -i 's/GSSAPIAuthentication/#GSSAPIAuthentication/g' /etc/ssh/ssh_config
+sudo sed -i 's/GSSAPIDelegateCredentials/#GSSAPIDelegateCredentials/g' /etc/ssh/ssh_config
+</pre>
+
+<h3>Customize even more</h3>
+
+<p>Always use the location (full URL) entry</p>
+<pre>
+gsettings set org.gnome.nautilus.preferences always-use-location-entry true
+</pre>
+
+<p>Disable the HUD when pressing the ALT key</p>
+<pre>
+dconf write /org/compiz/profiles/unity/plugins/unityshell/show-launcher '""'
+dconf write /org/compiz/integrated/show-hud "['disable']"
+</pre>
+
+<p>Disable Features</p>
+<pre>
+gsettings set com.canonical.Unity.Lenses remote-content-search none
+gsettings set com.canonical.Unity.Lenses disabled-scopes "[]"
+</pre>
+
+<p>Install tweak tools</p>
+<pre>
+sudo apt-get install unity-tweak-tool gnome-tweak-tool
+</pre>
+
+<p>Disable security and privacy</p>
+<p>This is all done in the "System Settings" under the "Security and Privacy" tab.</p>
+
+<h3>Grive2</h3>
+<p>Please see our <a href="/articles/linux/install-grive2-ubuntu">How to install Grive2 in Ubuntu</a></p>
+
+<h3>Clean</h3>
+<pre>
+sudo apt-get autoremove
+sudo apt-get autoclean
 </pre>
 
 

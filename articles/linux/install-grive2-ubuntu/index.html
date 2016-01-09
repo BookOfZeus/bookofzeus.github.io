@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hard disk usage from command line on Linux | BookOfZeus</title>
-	<meta name="description" content="Check how much space left on your disk using a simple linux command line" />
+	<title>How to install Grive2 in Ubuntu | BookOfZeus</title>
+	<meta name="description" content="How to install Grive2 in Ubuntu and automatically backup your file" />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/articles/linux/hard-disk-usage-from-command-line-on-linux" />
+	<link rel="canonical" href="http://bookofzeus.com/articles/linux/install-grive2-ubuntu" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -163,37 +163,75 @@
 
 <article>
 	<header>
-		<h1>Hard disk usage from command line on Linux</h1>
-		<h6>Posted on Wednesday September 28, 2011 / by Adam Culp</h6>
+		<h1>How to install Grive2 in Ubuntu</h1>
+		<h6>Posted on Saturday January 09, 2016 / by Eric Potvin</h6>
 	</header>
 
-	
-<p>From the command line I have found many great tools for system management, but really needed to dig into ways of tracking hard disk usage on Linux without the aid of GUI tools. Google to the rescue! I found a few places with great tips and hints on how to do this, but one article on Linux.com came in very handy. Here were my findings:</p>
-<p>The <code>df</code> utility displays the disk space usage on all mounted filesystems. The <code>-T</code> option prints the filesystem type as well. By default, <code>df</code> measures the size in 1K blocks, which could be a little difficult for a desktop user to decipher. Use the <code>-h</code> option to get more understandable output:</p>
+	<p>Do you backup your files manually? or do you even backup your files?</p>
 
+<p>If you say yes to at least one of the question above, it's time to setup your backup.</p>
+
+<p>Google Drive provides functionality to backup your files on the Google Cloud. This can be done manually by opening Firefox or Chrome and manually uploading files.</p>
+
+<p>Now, if you do not want to manually, you need to install <a href="https://github.com/vitalif/grive2" target="_blank">Grive2</a>.</p>
+
+<p>Grive2 is a tool that will allow you to backup your files to Google Drive without login via an Internet browser.</p>
+
+<h3>Install Grive2</p>
+<p>First, let's add the Grive2 repository</p>
 <pre>
-$ df -h -T
-Filesystem    Type    Size  Used Avail Use% Mounted on
-/dev/hda6     ext3     20G  9.3G  9.1G  51% /
-/dev/hda7 reiserfs     13G  2.1G   11G  17% /mnt/suse
-/dev/sda1     vfat    241M  152M   90M  63% /media/usbdisk
+sudo add-apt-repository ppa:nilarimogard/webupd8
 </pre>
 
-<p>You can use the <code>du</code> command to determine which files or directories need to be deleted - or at least trimmed. A simple <code>du</code> will print usage for the present working directory and its subdirectories, along with the size of each directory.</p>
-<p>If you want the size of an particular directory, specify it with <code>du directoryname</code>. For instance, <code>du -h /home/bodhi/podcasts</code> will print the size of the podcasts directory in a more readable format than the kilobytes used by default. The <code>-c</code> option prints the grand total size of the directory at the end. The <code>-a</code> option also displays the file names along with directories and can be of use when you want to see a list of files in a particular directory. The <code>-s</code> option will display a summary, without showing all of the subdirectories.</p>
-
-<p>Running <code>du -ch | grep total</code> prints just one line with the total size of the directory. If there’s a particular type of file that you would like to be excluded while calculating a directory’s usage, specify it with the <code>--exclude=type</code> option. Here we’ll check the disk usage of the current directory, and display all file names with their disk usage, and then sort them numerically using the sort utility:</p>
-
+<p>Now, let's install it</p>
 <pre>
-$ du -ah | sort -n
-4.2M    ./eweek.10.28.05.mp3
-4.5M    ./LQ-Podcast-101105.mp3
-4.8M    ./LQ-Podcast-110905.mp3
-19M     ./LQRadio-Episode3.mp3
-20M     ./LQRadio-Searls.mp3
-36M     ./LQRadio-HiserAndAdelstein.mp3
-197M    .
+sudo apt-get update
+sudo apt-get install grive
 </pre>
+
+<h3>Setup your backup folder<h3>
+<p>You can either use an existing folder or create a new one, for example:</p>
+<pre>
+mkdir -p ~/backup
+cd ~/backup
+</pre>
+
+<p>Now, before you can start backup, you need to grant it permission to access your Google Drive:</p>
+<pre>
+grive -a
+</pre>
+
+<p>This will give you a Google URL that generates a unique token. This token is use to sync data between your computer and Google Drive.</p>
+
+<p>You should see something like (on the Internet browser) and you’ll be asked to give Grive permission to access your Google Drive and after clicking <q>Allow access</q>. One you allowed the access, you will see a private key or token:</p>
+<pre>
+Please copy this code, switch to your application and paste it there:
+[ MY_VERY_LONG_PRIVATE_KEY ]
+</pre>
+
+<p>Copy and paste the private key to the shell.</p>
+
+<h3>Backup</h3>
+<p>Every time you need to backup files, simply run:</p>
+<pre>
+grive
+</pre>
+
+<h3>Automated backup<h3>
+<p>If you want to automatically backup files, you can <a href="https://help.ubuntu.com/community/CronHowto" target="_blank">setup a cronjob</a>.
+This will allow to automatically run your backup.</p>
+
+<p>The important thing you have to make sure is you need to make sure you get the full path of the grive tool by running:</p>
+<pre>
+which grive
+</pre>
+
+
+
+
+
+
+
 
 
 

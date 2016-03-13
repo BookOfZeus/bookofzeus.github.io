@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monitoring Tools / Check Integrity Using Aide | BookOfZeus</title>
+	<meta name="description" content="Install useful check integrity using aide to help harden your Ubuntu server" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu/monitoring-tools/check-integrity-using-aide" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" >Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" class="selected">Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="harden-ubuntu" href="/harden-ubuntu/">harden-ubuntu</a> &gt; <a title="monitoring-tools" href="/harden-ubuntu/monitoring-tools/">monitoring-tools</a>
+</article>
+
+<article>
+	<header>
+		<h1>Monitoring Tools / Check Integrity Using Aide</h1>
+		<h6>Posted on Sunday March 13, 2016 / by Eric Potvin</h6>
+	</header>
+
+	<p>Aide is an integrity software that monitors app, or host-based intrusion detection system. This can be used to monitor unauthorized or unexpected changes made to the file-system on Ubuntu. AIDE can be run on-demand or automatically, like a cron job. </p>
+
+<h2>Installing AIDE</h2>
+
+<p>AIDE can be installed using this command:</p>
+<pre>
+sudo apt-get install aide
+</pre>
+
+<h4>Setup the database</h4>
+<p>To make sure the database is setup properly, you need to initialize it using this command:</p>
+<pre>
+sudo aideinit
+</pre>
+
+<p>You should see something like this:</p>
+<code><pre>
+### AIDE database at /var/lib/aide/aide.db.new initialized
+</pre></code>
+
+<p class="note">This might take some times!</p>
+
+<p>Make sure the new database is setup and itinialized properly:</p>
+<pre>
+cd /var/lib/aide/
+ls -lt
+</pre>
+<p>You should see something like this:</p>
+<code><pre>
+total 21988
+-rw------- 1 root root 11227321 Apr 12 16:25 aide.db
+-rw------- 1 root root 11227321 Apr 12 16:25 aide.db.new
+-rw-r--r-- 1 root root    49291 Apr 12 16:19 aide.conf.autogenerated
+</pre></code>
+
+<h3>configuration for Aide</h3>
+
+<p>You alwasy can modify the /etc/aide.conf file to personalized or change default settings.</p>
+<pre>
+sudo vi /etc/aide/aide.conf
+</pre>
+
+<p>The default checksums is way too much and can be minimzed to avoid unnecessary loads on the system. <q>sha512</q> should be fine by itself, but you can add one more just in case. For example,
+<code><pre>
+Checksums = sha512+crc32
+</pre></code>
+
+<h3>Database</h3>
+<p>Install the new generated database:</p>
+<code><pre>
+cp /var/lib/aide/aide.db.new /var/lib/aide/aide.db
+</pre></code>
+
+<h4>First run</h4>
+
+<p>Let's run it for the first time using the <q>--check</q>. This will build the initial database.</p>
+<pre>
+sudo aide -c /etc/aide/aide.conf --check
+</pre>
+
+<p>This will output a bunch of information. At the end, you should see:</p>
+<code><pre>
+### All files match AIDE database. Looks okay!
+</pre></code>
+
+<h4>Test AIDE</h4>
+
+<p>Let's test AIDE by creating a file in the <q>/usr/sbin/</q> folder.</p>
+<pre>
+touch /usr/sbin/aide-test-file.txt
+</pre>
+
+<h4>Run AIDE to detect the changes</h4>
+<p>Now, AIDE should detect the new file created previously.</p>
+<pre>
+sudo aide --check
+</pre>
+
+<h3>Updating the database</h3>
+
+<p>If you install new packages, update the system, or simply update an HTML file and want to make sure AIDE will save this information. You can run this command:</p>
+<pre>
+sudo aide --update
+</pre>
+
+<p>This will update the AIDE database. This is telling AIDE that the changes you made are <q>authorized</q> and are safe.</p>
+
+<p>Make sure you rename the database again so it update the new changes. I recommend to rename the file using a filename convention like this:</p>
+<code><pre>
+mv aide.db.gz aide.db.gz-Dec082013
+</pre></code>
+
+<h3>Using AIDE with cron</h3>
+
+<p>You can create your own script and automatically send you a report when AIDE is done.</p>
+<pre>
+cat /var/log/aide/chaide.sh
+</pre>
+
+<p>and paste the following code:</p>
+
+<code><pre>
+#!/bin/bash
+now=`date +%Y-%m-%d`
+filename="Aide-Report-$now.txt"
+/bin/echo "Aide Report for $now" &gt; /tmp/$filename
+/usr/sbin/aide --check &gt; /tmp/aide-check.txt
+/bin/cat /tmp/aide-check.txt &gt;&gt; /tmp/$filename
+/usr/bin/tail -n20 /tmp/aide-check.txt &gt;&gt; /tmp/$filename
+/bin/echo "--- End of report ---------------------------------------------------" &gt; /tmp/$filename
+/bin/mail -s"$filename $now" my-email@my-domain.com &lt; /tmp/$filename
+</pre></code>
+
+<p>Now, let's install this in the crontab.</p>
+<pre>
+sudo crontab -e
+</pre>
+<p>For example, if you like to run every day at 5 am, you can use this:</p>
+<code><pre>
+0 5 * * * /var/log/aide/chaide.sh
+</pre></code>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

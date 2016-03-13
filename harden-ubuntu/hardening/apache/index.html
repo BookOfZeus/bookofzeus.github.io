@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hardening / Apache | BookOfZeus</title>
+	<meta name="description" content="Hardening Ubuntu by securing and optimizing Apache" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu/hardening/apache" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" >Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" class="selected">Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="harden-ubuntu" href="/harden-ubuntu/">harden-ubuntu</a> &gt; <a title="hardening" href="/harden-ubuntu/hardening/">hardening</a>
+</article>
+
+<article>
+	<header>
+		<h1>Hardening / Apache</h1>
+		<h6>Posted on Sunday March 13, 2016 / by Eric Potvin</h6>
+	</header>
+
+	
+<h3>Clickjacking Attack</h3>
+
+<p>Clickjacking (User Interface redress attack, UI redress attack, UI redressing) is a malicious technique of tricking a Web user into clicking on something different from what the user perceives they are clicking on, thus potentially revealing confidential information or taking control of their computer while clicking on seemingly innocuous web pages.</p>
+
+<p>To prevent Clickjacking attacks, edit the <q>apache2.conf</q>:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>If you want to prevent sites other than your current site from framing your pages, add the following line:</p>
+<code><pre>
+&lt;IfModule mod_headers.c&gt;
+ Header always append X-Frame-Options SAMEORIGIN
+&lt;/IfModule&gt;
+</pre></code>
+
+<p>If you want to prevent all sites (including the one that you're protecting) from framing your site, add the following line instead:</p>
+<code><pre>
+&lt;IfModule mod_headers.c&gt;
+ Header always append X-FRAME-OPTIONS DENY
+&lt;/IfModule&gt;
+</pre></code>
+
+<mark>Do not add both lines. Either add the SAMEORIGIN line or the DENY line, not both.</mark>
+
+<h3>Disable ETAG</h3>
+
+<p>It allows remote attackers to obtain sensitive information like inode number, multipart MIME boundary and child process through Etag header.</p>
+
+<p>To secure etag, edit the <q>apache2.conf</q>:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>Add the following line:</p>
+<code><pre>
+FileETag None
+</pre></code>
+
+<h3>Disable Old Protocol</h3>
+
+<p>Old HTTP protocol, like HTTP 1.0 protocol, should be disable. HTTP 1.0 has security weakness related to session hijacking.<p>
+
+<p>To prevent Clickjacking attacks, edit the <q>apache2.conf</q>:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>You can disable it using mod_rewrite by only allowing HTTP 1.1:</p>
+
+<code><pre>
+RewriteEngine On
+RewriteCond %{THE_REQUEST} !HTTP/1\.1$
+RewriteRule .* - [F]
+</pre></code>
+
+<h3>Disable SSI</h3>
+
+<p>Server Side Include (SSI) has a potential risk in increasing load on the server. You should consider disable SSI by adding Includes in Options directive.</p>
+
+<p>SSI attack allows the exploitation of a web application by injecting scripts in HTML pages or executing codes remotely.</p>
+
+<p>To disable SSI, edit the <q>apache2.conf</q>:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>Search for Directory and add Includes in Options directive:</p>
+<code><pre>
+&lt;Directory /path/to/htdocs&gt;
+  Options -Indexes -Includes
+  Order allow,deny
+  Allow from all
+&lt;/Directory&gt;
+</pre></code>
+
+<h2>Disable CGI execution</h2>
+
+<p>CGI Execution should also be disabled. Similar to SSI, you can disable CGI Execution in the <q>apache2.conf</q> by adding the <q>-ExecCGI</q> option.</p>
+
+<code><pre>
+&lt;Directory /path/to/htdocs&gt;
+  Options -Indexes -Includes -ExecCGI
+  Order allow,deny
+  Allow from all
+&lt;/Directory&gt;
+</pre></code>
+
+<h3>Disable Trace HTTP Request</h3>
+
+<p>Trace method is enable by default Apache. This allow Cross Site Tracing attack and potentially giving an option to hacker to steal cookie information. This should be disable.</p>
+
+<p>To disable Trace method, edit the <q>apache2.conf</q>:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>Add or update the <q>TraceEnable</q> to <q>Off</q>:</p>
+<code><pre>
+TraceEnable off
+</pre></code>
+
+<h3>Disable Unnecessary Modules</h3>
+
+<h4>Confirm Minimal Built-in Modules</h4>
+
+<p>By default, Apache installation minimizes the number of modules that are compiled into the core.</p>
+
+<p>To make sure everything is properly installed, run the following command:</p>
+<pre>
+apache2 -l
+</pre>
+
+<p>The output should look like this:</p>
+<code><pre>
+core.c
+mod_log_config.c
+mod_logio.c
+prefork.c
+http_core.c
+mod_so.c
+</pre></code>
+
+<p>If you have more modules than the one listed above, verify each modules and uninstall them if necessary.</p>
+
+<p>Modules can be disabled by running the <q>a2dismod</q> command.</p>
+<pre>
+sudo a2dismod &lt;module&gt;
+</pre>
+
+<h5>Module List</h5>
+
+<p>Here's a list of modules you can disable if you don't use them.</p>
+
+<table>
+	<tr>
+		<th>Module</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>userdir</td>
+		<td>Mapping of requests to user-specific directories. i.e ~username in URL will get translated to a directory in the server.</td>
+	</tr>
+	<tr>
+		<td>include</td>
+		<td>Server Side Includes</td>
+	</tr>
+	<tr>
+		<td>autoindex</td>
+		<td>Displays directory listing when no index.html file is present</td>
+	</tr>
+	<tr>
+		<td>alias</td>
+		<td>Mapping of requests to different filesystem parts</td>
+	</tr>
+	<tr>
+		<td>status</td>
+		<td>Displays server stats</td>
+	</tr>
+	<tr>
+		<td>negotiation</td>
+		<td>Content negotiation</td>
+	</tr>
+	<tr>
+		<td>filter</td>
+		<td>Smart filtering of request</td>
+	</tr>
+	<tr>
+		<td>version</td>
+		<td>Handling version information in config files using IfVersion</td>
+	</tr>
+	<tr>
+		<td>as-is</td>
+		<td>as-is filetypes</td>
+	</tr>
+	<tr>
+		<td>auth_digest</td>
+		<td>This module provides encrypted authentication sessions. However, this module is rarely used and considered experimental. Alternate methods of encrypted authentication are recommended, such as SSL. If the above functionality is unnecessary, comment out the related module.</td>
+	</tr>
+	<tr>
+		<td>setenvif</td>
+		<td>Placing ENV vars on headers</td>
+	</tr>
+	<tr>
+		<td>authnz_ldap &amp; ldap</td>
+		<td>This module provides HTTP authentication via an LDAP directory</td>
+	</tr>
+	<tr>
+		<td>mime_magic</td>
+		<td>This module provides a second layer of MIME support that in most configurations is likely extraneous</td>
+	</tr>
+	<tr>
+		<td>dav_module &amp; dav_fs_module</td>
+		<td>WebDAV is an extension of the HTTP protocol that provides distributed and collaborative access to web content.  Due to a number of security concerns with WebDAV, its use is not recommended</td>
+	</tr>
+	<tr>
+		<td>info</td>
+		<td>This module creates a web page illustrating the configuration of the web server. This is an unnecessary security leak and should be disabled</td>
+	</tr>
+	<tr>
+		<td>speling</td>
+		<td>This module attempts to find a document match by allowing one misspelling in an otherwise failed request.  If the above functionality is unnecessary, comment out the related module</td>
+	</tr>
+	<tr>
+		<td>proxy, proxy_balancer, proxy_ftp, proxy_http &amp; proxy_connect</td>
+		<td>This module provides proxying support, allowing Apache to forward requests and serve as a gateway for other servers</td>
+	</tr>
+	<tr>
+		<td>cache, disk_cache, file_cache and mem_cache</td>
+		<td>This module allows Apache to cache data, optimizing access to frequently accessed content. However, not only is it an experimental module, but it also introduces potential security ﬂaws into the web server such as the possibility of circumventing Allow and Deny directives</td>
+	</tr>
+	<tr>
+		<td>ext_filter</td>
+		<td>Response passed through external program prior to client delivery</td>
+	</tr>
+	<tr>
+		<td>headers</td>
+		<td>HTTP Response/Request Header Customization</td>
+	</tr>
+	<tr>
+		<td>usertrack</td>
+		<td>User activity monitoring via cookies</td>
+	</tr>
+	<tr>
+		<td>vhost_alias</td>
+		<td>Dynamically configured mass virtual hosting</td>
+	</tr>
+	<tr>
+		<td>env</td>
+		<td>Clearing/setting of ENV vars</td>
+	</tr>
+	<tr>
+		<td>cgi</td>
+		<td>This module allows HTML to interact with the CGI web programming language</td>
+	</tr>
+	<tr>
+		<td>actions</td>
+		<td>Action triggering on requests</td>
+	</tr>
+	<tr>
+		<td>suexec</td>
+		<td>The suEXEC feature provides Apache users the ability to run CGI and SSI programs under user IDs different from the user ID of the calling web server
+	</tr>
+</table>
+
+<p>Example, you can run this command:</p>
+<pre>
+sudo a2dismod userdir include autoindex status negotiation version auth_digest authnz_ldap ldap dav_module dav_fs_module info speling proxy proxy_balancer proxy_ftp proxy_http proxy_connect cache disk_cache file_cache mem_cache usertrack vhost_alias cgi suexec
+</pre>
+
+<p>There might be more module installed, you can find out which one installed by running this command:</p>
+<pre>
+grep -r LoadModule /etc/apache2/mods-enabled/*
+</pre>
+
+<h3>Enable Logging</h3>
+
+<p>Apache allows you to log web activity. It is important to enable Apache logging because it provides crutial information that can help you to find out about your traffic.</p>
+
+<p>To enable logging, you need to include the mod_log_config module. There are three main logging-related directives available with Apache.</p>
+
+<ul>
+	<li><b>TransferLog:</b> Creating a log file.</li>
+	<li><b>LogFormat:</b> Specifying a custom format.</li>
+	<li><b>CustomLog:</b> Creating and formatting a log file.</li>
+</ul>
+
+<p>You can also setup web logs per virtual host:</p>
+<code><pre>
+&lt;VirtualHost *:80&gt;
+ DocumentRoot /path/to/www/
+ ServerName www.domain.com
+ DirectoryIndex index.php
+ ServerAlias domain.com
+ ErrorDocument 404 /404.php
+ ErrorLog /var/log/apache2/domain.com_error_log
+ CustomLog /var/log/apache2/domain.com_access_log combined
+&lt;/VirtualHost&gtl;
+</pre></code>
+
+<h3>Harden Configuration</h3>
+
+<h4>Disable Apache's Symbolic Links</h4>
+
+<p>Apache enables follows symlinks. It is recommended to turn it off using the FollowSymLinks Options directive.</p>
+<code><pre>
+&lt;Directory /path/to/www&gt;
+ Options -FollowSymLinks
+&lt;/Directory&gtl;
+</pre></code>
+
+<p>If you still need this feature, you can always enable it in your .htaccess for a specific website.</p>
+<code><pre>
+&lt;Directory /path/to/another_www&gt;
+ Options +FollowSymLinks
+&lt;/Directory&gtl;
+</pre></code>
+
+<h4>Limit Request Size</h4>
+
+<p>Apache has no limit on the total size of the HTTP request. This means, unlimited data can be sent on any requests to the Apache server. This will allow hackers to send large amount of data and therefore, you will be a victim of Denial of service attacks. To fix this, you can set a limit in the <q>LimitRequestBody</q> directive.</p>
+<p>You can set the value (in bytes) from 0 (which will be unlimited) to 2,147,483,647 (2GB).</p>
+
+<code><pre>
+&lt;Directory "/path/to/www/"&gt;
+ LimitRequestBody 512000
+&lt;/Directory&gt;
+</pre></code>
+
+
+<h4>Timeout value configuration</h4>
+
+<p>This directive allows you to set the amount of time the server will wait for certain events to complete before it fails. The default value is 300 secs. It is recommended to keep this value low on those sites which are subject to DDOS attacks.</p>
+
+<p>You can lower this to 45 seconds in your <q>apache2.conf</q>:</p>
+<code><pre>
+Timeout 45
+</pre></code>
+
+<h3>Hide Apache Information</h3>
+
+<p>The ServerTokens and ServerSignature directives determine the information the web server will display about the configuration. This will restricts information in page headers, showing minimal information. It is recommended to limit the information provided to the world.</p>
+
+<p>To fix this, edit the apache configuration:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>Add or update the following lines:</p>
+<code><pre>
+ServerTokens Prod
+ServerSignature Off
+&lt;IfModule mod_headers.c&gt;
+  Header unset Server
+  Header unset X-Powered-By
+&lt;/IfModule&gt;
+</pre></code>
+
+<p>If you still want to show some information, here are your options you can use:</p>
+<table>
+	<tr>
+		<th>ServerToken</th>
+		<th>Displays</th>
+	</tr>
+	<tr>
+		<td>Prod</td>
+		<td>Apache</td>
+	</tr>
+	<tr>
+		<td>Major</td>
+		<td>Apache/2</td>
+	</tr>
+	<tr>
+		<td>Minor</td>
+		<td>Apache/2.2</td>
+	</tr>
+	<tr>
+		<td>Min</td>
+		<td>Apache/2.2.17</td>
+	</tr>
+	<tr>
+		<td>OS</td>
+		<td>Apache/2.2.17 (Unix)</td>
+	</tr>
+	<tr>
+		<td>Full</td>
+		<td>Apache/2.2.17 (Unix) PHP/5.3.5</td>
+	</tr>
+</table>
+
+<h3>HTTP Request Methods</h3>
+
+<p>HTTP 1.1 protocol support many request methods which may not be required. Some of them have a potential risk. It is recommended to only enable the <q>GET, HEAD, POST</q> request methods.<p>
+
+<p>Default apache configuration support <q>OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT</q> method in HTTP 1.1 protocol.</p>
+
+<p>To fix this, edit the apache configuration:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>Look for the <q>Directory</q> and add following (inside the &lt;Directory&gt;):</p>
+
+<code><pre>
+&lt;LimitExcept GET POST HEAD&gt;
+ deny from all
+&lt;/LimitExcept&gt;
+</pre></code>
+
+<h5>Example</h5>
+<code><pre>
+&lt;Location /&gt;
+ Order allow,deny
+ Allow from all
+ &lt;LimitExcept HEAD POST GET&gt;
+  Deny from all
+ &lt;/LimitExcept&gt;
+&lt;/Location&gt;
+</pre></code>
+
+<h3>HTTPOnly Cookie</h3>
+
+<p>You can avoid most of the common attacks (like Cross Site Scripting, cookies attacks, cookies injections) by using <q>HttpOnly</q> and <q>Secure flag</q> in cookie. Without these, it is very easy to steal cookies information.</p>
+
+<p>To fix this, edit the apache configuration:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>And add this code:</p>
+<code><pre>
+&lt;IfModule mod_headers.c&gt;
+ Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+&lt;/IfModule&gt;
+</pre></code>
+
+<h3>ModSecurity</h3>
+
+<p>For complete detail on how to install ModSecurity, please visit:</p>
+
+<p class="note">http://www.thefanclub.co.za/how-to/how-install-apache2-modsecurity-and-modevasive-ubuntu-1204-lts-server</p>
+
+<h3>Protect Apache</h3>
+
+<h4>Run Apache as separate User and Group</h4>
+
+<p>Apache runs its process with a default user account and group. For many security reasons, it is recommended to run change this and let Apache runs with its own non-privileged account.</p>
+
+<p>For example, let's create the uesr and group: <q>webuser.</q></p>
+
+<h5>Create Apache User and Group:</h5>
+<pre>
+sudo groupadd webuser
+sudo useradd -d /var/www/ -g webuser -s /bin/nologin webuser
+</pre>
+
+<p>Make sure Apache knows this setting by editing the <q>etc/apache2/envvars</q>.</p>
+<pre>
+sudo vi etc/apache2/envvars
+</pre>
+
+<p>Edit the <q>User</q> and <q>Group</q> settings:</>
+<code><pre>
+User webuser
+Group webuser
+</pre></code>
+
+
+<h4>Restrict local access</h4>
+
+<p>It is safe to restrict the access to the Apache files and folders. You can restrict the access by executing the following command:</p>
+<pre>
+sudo chown -R 750 /etc/apache2/bin /etc/apache2/conf
+sudo chmod 511 /usr/sbin/apache2
+sudo chmod 750 /var/log/apache2/
+sudo chmod 750 /etc/apache2/conf/
+sudo chmod 640 /etc/apache2/conf/*
+sudo chgrp -R &lt;MyApacheUser&gt; /etc/apache2/conf
+</pre>
+
+<h3>Restrict Directories Access</h3>
+
+<p>It is important to restrict access to directories using the <q>Allow</q> and <q>Deny</q> options. The first thing to do is to secure the <q>/</q> folder.</p>
+
+<p>Here's how to secure the root directory. Now, open the <q>apache2.conf</q> file.</p>
+
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>And add the following lines:</p>
+<code><pre>
+&lt;Directory /&gt;
+ Options None
+ Order deny,allow
+ Deny from all
+&lt;/Directory&gt;
+</pre></code>
+
+<p>These options means:</p>
+<ul>
+	<li><b>None:</b> This option will not allow users to enable any optional features.</li>
+	<li><b>Order deny, allow:</b> This is the order in which the <q>Deny</q> and <q>Allow</q> directives will be processed. Here it will <q>deny</q> first and <q>allow</q> next.</li>
+	<li><b>Deny from all:</b> This will deny request from everybody to the root directory, nobody will be able to access root directory.</li>
+</ul>
+
+<p>Then restart apache:</p>
+<pre>
+sudo /etc/init.d/apache2 restart
+</pre>
+
+<h4>Disable Directory Listing</h4>
+
+<p>Apache list all the content of Document root directory in the absence of directory index file. To fix this, simply add this in your <q>apache2.conf</q> file.</p>
+<code><pre>
+&lt;Directory /var/www/html&gt;
+    Options -Indexes
+&lt;/Directory&gt;
+</pre></code>
+
+<h3>SSL Certificates</h3>
+
+<p>You can secure your all the communication by encrypting data using a SSL certificate. With a SSL certificates, Apache sends all this information in encrypted text.</p>
+
+<p>You can purchase SSl certificates from So many different SSL providers or you can create your own.</p>
+
+<pre>
+openssl genrsa -des3 -out mydomain.com.key 1024
+openssl req -new -key mydomain.com.key -out exmaple.csr
+openssl x509 -req -days 365 -in mydomain.com.com.csr -signkey mydomain.com.com.key -out mydomain.com.com.crt
+</pre>
+
+<p>After your certificate has been created and signed, you can add it to the Apache configuration.</p>
+
+<p>You will need to open the <q>/etc/apache2/sites-available/<q> file that belongs to your site:</p>
+<pre>
+sudo vi /etc/apache2/sites-available/mydomain.com.conf
+</pre>
+
+<p>And add the following code (might need some changes):</p>
+<code><pre>
+&lt;VirtualHost 1.1.1.1:443&gt;
+ SSLEngine on
+ SSLCertificateFile /path/to/certs/mydomain.com.crt
+ SSLCertificateKeyFile /path/to/certs/mydomain.com.key
+ SSLCertificateChainFile /path/to/certs/sf_bundle.crt
+ ServerAdmin admin@mydomain.com
+ ServerName mydomain.com
+ DocumentRoot /path/to/mydomain/www/
+ ErrorLog /var/log/www/mydomain.com-ssl-error_log
+ CustomLog /var/log/www/mydomain.com-ssl-access_log common
+&lt;/VirtualHost&gt;
+</pre></code>
+
+<p>Now, you can open your site using https.</p>
+
+<h3>XSS Protection</h3>
+
+<p>Cross Site Scripting (XSS) protection can be avoided in many browsers. You can force apply this protection for web application if it was disabled by the user.</p>
+
+<p>To fix this, edit the apache configuration:</p>
+<pre>
+sudo vi /etc/apache2/apache2.conf
+</pre>
+
+<p>And add the following line:</p>
+
+<code><pre>
+&lt;IfModule mod_headers.c&gt;
+ Header set X-XSS-Protection "1; mode=block"
+&lt;/IfModule&gt;
+</pre></code>
+
+<!-- -->
+
+<p>Restart Apache:</p>
+<pre>
+sudo /etc/init.d/apache2 restart
+</pre>
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

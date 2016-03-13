@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monitoring Tools / Apache | BookOfZeus</title>
+	<meta name="description" content="Optimize Apache on your Ubuntu server" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu/optimization/apache" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" class="selected">Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" >Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" class="selected">Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="harden-ubuntu" href="/harden-ubuntu/">harden-ubuntu</a> &gt; <a title="optimization" href="/harden-ubuntu/optimization/">optimization</a>
+</article>
+
+<article>
+	<header>
+		<h1>Monitoring Tools / Apache</h1>
+		<h6>Posted on Sunday March 13, 2016 / by Eric Potvin</h6>
+	</header>
+
+	
+<h2>MaxKeepAliveRequests and KeepAliveTimeout</h2>
+
+<p>Apache documentation using HTTP Keep Alive's can improve performance by as much as 50%. These two directives are important and should always be on. You can always change them to any value you desire. The default value of <q>MaxKeepAliveRequests</q> is 100 and the default value of <q>KeepAliveTimeout</q> is 15.</p>
+
+<p>The recommended value for <q>MaxKeepAliveRequests</q> can be between <b>50 and 75</b>.</p>
+<p>The recommended value for <q>KeepAliveTimeout</q> can be between <b>1 and 5</b>.</p>
+
+<h2>MaxClients</h2>
+
+<p>This directive allows you to set the limit on connections that will be served simultaneously. Every new connection will be queued up after this limit. It is available with Prefork and Worker both MPM. The default value of it is <b>256</b>.</p>
+
+<h2>LimitRequestFields</h2>
+<p>It helps us to set a limit on the number of HTTP request's header fields that will be accepted from the clients. Its default value is 100. It is recommended to lower this value if DDos attacks are occurring as a result of so many http request headers.</p>
+
+<h3>Example of optimization:</h3>
+<code><pre>
+Timeout 300
+KeepAlive On
+MaxKeepAliveRequests 100
+KeepAliveTimeout 15
+MinSpareServers 5
+MaxSpareServers 10
+StartServers 5
+MaxClients 150
+MaxRequestsPerChild 0
+</pre></code>
+
+
+<h3>Timeout</h3>
+<p>Usually this value doesn't require editing and a default of 300 is sufficient. Lowering the <q>Timeout</q> value will cause a long running script to terminate earlier than expected. On virtualized servers like VPS servers, lowering this value to 100 can help improve performance.</p>
+
+<h3>KeepAlive</h3>
+<p>This setting should be <q>On</q> unless the server is getting requests from hundreds of IPs at once. High volume and/or load balanced servers should have this setting disabled (Off) to increase connection throughput.</p>
+
+<h3>MaxKeepAliveRequests</h3>
+<p>This setting limits the number of requests allowed per persistent connection when KeepAlive is on. If it is set to 0, unlimited requests will be allowed. It is recommended to keep this value at 100 for virtualized accounts like VPS accounts. On dedicated servers it is recommended that this value be modified to 150.</p>
+
+<h3>KeepAliveTimeout</h3>
+<p>The number of seconds Apache will wait for another request before closing the connection. Setting this to a high value may cause performance problems in heavily loaded servers. The higher the timeout, the more server processes will be kept occupied waiting on connections with idle clients.</p>
+<p>It is recommended that this value be lowered to 5 on all servers.</p>
+
+<h3>MinSpareServers</h3>
+<p>This directive sets the desired minimum number of idle child server processes. An idle process is one which is not handling a request. If there are fewer spareservers idle then specified by this value, then the parent process creates new children at a maximum rate of 1 per second. Setting this parameter to a large number is almost always a bad idea.</p>
+
+<p>The recommended values for this setting are:</p>
+<code><pre>
+Virtualized server, ie VPS 5
+Dedicated server with 1-2GB RAM 10
+Dedicated server with 2-4GB RAM 20
+Dedicated server with 4+ GB RAM 25
+</pre></code>
+
+<h3>MaxSpareServers</h3>
+<p>The MaxSpareServers directive sets the desired maximum number of idle child server processes. An idle process is one which is not handling a request. If there are more than MaxSpareServers idle, then the parent process will kill off the excess processes.</p>
+<p>The MaxSpareServers value should be set as double the value that is set in MinSpareServers.</p>
+
+<h3>StartServers</h3>
+<p>This directivesets the number of child server processes created on startup. This value should mirror what is set in MinSpareServers.</p>
+
+<h3>MaxClients</h3>
+<p>This directive sets the limit on the number of simultaneous requests that will be served. Any connection attempts over the specified limit will be queued. Once a process is freed at the end of a different request, the queued connection will then be served.</p>
+<p>For virtualized servers such as VPS accounts, it is recommended to keep this value at 150. For all dedicated servers the recommended value for this setting is 250.</p>
+
+<h3>MaxRequestsPerChild</h3>
+<p>This directive sets the limit on the number of requests that an individual child server process will handle. After the number of requests reaches the value specified, the child process will die. When this value is set at 0, then the process will never expire.</p>
+<p>The recommended value for this setting are:</p>
+
+<code><pre>
+Virtualized server, ie VPS 300
+Dedicated server with 1-4GB RAM 500
+Dedicated server with 4+GB RAM 1000
+</pre></code>
+
+<p class="note">source: http://www.liquidweb.com/kb/apache-optimization/</p>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Harden Ubuntu | BookOfZeus</title>
+	<meta name="description" content="A guide to secure your ubuntu server" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" >Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article>
+	<h1>Harden Ubuntu</h1>
+</article>
+
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/backup/">Backup</a>
+		</h2>
+	</header>
+	<p>Backup! Do not forget about backup. This can save previous time!</p>
+
+	<footer>
+		<p>Number of articles: 0</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/disable-services/">Disabled Services</a>
+		</h2>
+	</header>
+	<p>Harden Ubuntu by disabling unnecessary services</p>
+
+	<footer>
+		<p>Number of articles: 16</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/hardening/">Hardening</a>
+		</h2>
+	</header>
+	<p>Hardening Ubuntu softwares and services</p>
+
+	<footer>
+		<p>Number of articles: 11</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/initial-setup/">Initial Setup</a>
+		</h2>
+	</header>
+	<p>Hardening Ubuntu Initial Setup - What are the first steps</p>
+
+	<footer>
+		<p>Number of articles: 5</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/monitoring-tools/">Monitoring Tools</a>
+		</h2>
+	</header>
+	<p>Use monitoring tools to figure out if something or someone do something illegal on your server</p>
+
+	<footer>
+		<p>Number of articles: 6</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/optimization/">Optimization</a>
+		</h2>
+	</header>
+	<p>Improve latency, optimize, speed up and improve number of request per seconds</p>
+
+	<footer>
+		<p>Number of articles: 5</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/server-setup/">Monitoring Tools / Varnish</a>
+		</h2>
+	</header>
+	<p>Setup your Ubuntu Server - How to setup your server</p>
+
+	<footer>
+		<p>Number of articles: 12</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/software/">Software</a>
+		</h2>
+	</header>
+	<p>Software - Install useful software to help harden your Ubuntu server</p>
+
+	<footer>
+		<p>Number of articles: 5</p>
+	</footer>
+</article>
+
+<article>
+	<header>
+		<h2>
+			<a href="/harden-ubuntu/useful-commands/">Useful Commands</a>
+		</h2>
+	</header>
+	<p>Useful commands you can use on your server</p>
+
+	<footer>
+		<p>Number of articles: 0</p>
+	</footer>
+</article>
+
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

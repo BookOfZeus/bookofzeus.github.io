@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Server Setup / Add Swap | BookOfZeus</title>
+	<meta name="description" content="Harden Ubuntu Add Swap - Add a swap file to your Ubuntu Server" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu/server-setup/add-swap" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" class="selected">Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="harden-ubuntu" href="/harden-ubuntu/">harden-ubuntu</a> &gt; <a title="server-setup" href="/harden-ubuntu/server-setup/">server-setup</a>
+</article>
+
+<article>
+	<header>
+		<h1>Server Setup / Add Swap</h1>
+		<h6>Posted on Sunday March 13, 2016 / by Eric Potvin</h6>
+	</header>
+
+	
+<p>Some <q>pre-installed</q> Ubuntu Server are not configured with SWAP. Linux swaps allow a system to harness more memory than was originally physically available</p>
+
+<h2>Check for SWAP space:</h2>
+
+<p>Let's check if a SWAP file exists and it's enabled before we create one.</p>
+<pre>
+sudo swapon -s
+</pre>
+
+<p>If there's no SWAP file, you should get a result like this:</p>
+<pre>
+Filename				Type		Size	Used	Priority
+</pre>
+
+<h2>Create and Enable the Swap File</h2>
+
+<p>Before we create the SWAP file, we need to find out how much we need. Here's a quick guide to help you.</p>
+
+<table>
+	<tr>
+		<th>RAM in your Server</th>
+		<th>Recommended swap space</th>
+	</tr>
+	<tr>
+		<td>2GB of RAM or less</td>
+		<td>2 times the amount of RAM</td>
+	</tr>
+	<tr>
+		<td>2GB to 8GB of RAM</td>
+		<td>Equal to the amount of RAM</td>
+	</tr>
+	<tr>
+		<td>8GB to 64GB of RAM</td>
+		<td>0.5 times the amount of RAM</td>
+	</tr>
+	<tr>
+		<td>64GB of RAM or more</td>
+		<td>4GB of swap space</td>
+	</tr>
+</table>	
+
+<p>To create the SWAP file, you will need to use the <q>dd</q> command:</p>
+<pre>
+sudo dd if=/dev/zero of=/swapfile bs=1024 count=512k
+</pre>
+
+<p>All of this means:</p>
+<code><pre>
+if=/dev/zero  : Read from /dev/zero file. /dev/zero is a special file in that provides as many null characters to build storage file called /swapfile1.
+of=/swapfile1 : Read from /dev/zero write stoage file to /swapfile1.
+bs=1024       : Read and write 1024 BYTES bytes at a time.
+count=524288  : Copy only 523288 BLOCKS input blocks.
+</pre></code>
+
+<p>Prepare the swap file by creating a linux swap area:</p>
+<pre>
+sudo mkswap /swapfile
+</pre>
+
+<p>The results display:</p>
+<code><pre>
+Setting up swapspace version 1, size = 524284 KiB
+no label, UUID=265d3e61-6e2b-4126-baba-6e6185e97b46
+</pre></code>
+
+<p>Activate the swap file:</p>
+<pre>
+sudo swapon /swapfile
+</pre>
+
+<p>Confirm that the swap partition exists.</p>
+
+<pre>
+$ sudo swapon -s
+</pre>
+
+<p>This will output something like:</p>
+<code><pre>
+Filename				Type		Size	Used	Priority
+/swapfile                               file		524284	0	-1
+</pre></code>
+
+<p>This will last until the server reboots. Before, rebooting the server. Let's create the entry in the fstab:</p>
+<pre>
+sudo vi /etc/fstab
+</pre>
+<p>and add the following line:</p>
+<pre>
+/swapfile       none    swap    sw      0       0
+</pre>
+
+<h2>Improve performance</h2>
+
+<p>Swappiness in the file should be set to 0. Skipping this step may cause both poor performance, whereas setting it to 0 will cause swap to act as an emergency buffer, preventing out-of-memory crashes. You can do this with the following commands:</p>
+
+<pre>
+echo 0 | sudo tee /proc/sys/vm/swappiness
+echo vm.swappiness = 0 | sudo tee -a /etc/sysctl.conf
+</pre>
+
+<h2>Secure SWAP</h2>
+
+<p>To prevent the file from being world-readable, you should set up the correct permissions on the swap file:</p>
+
+<pre>
+sudo chown root:root /swapfile
+sudo chmod 0600 /swapfile
+</pre>
+
+<p>Reboot to make sure the new swap gets activated properly at startup.</p>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

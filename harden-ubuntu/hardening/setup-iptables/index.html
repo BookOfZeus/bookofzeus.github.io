@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hardening / Setup Iptables | BookOfZeus</title>
+	<meta name="description" content="Hardening Ubuntu by setting up rules in IP Tables" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu/hardening/setup-iptables" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" >Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" class="selected">Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="harden-ubuntu" href="/harden-ubuntu/">harden-ubuntu</a> &gt; <a title="hardening" href="/harden-ubuntu/hardening/">hardening</a>
+</article>
+
+<article>
+	<header>
+		<h1>Hardening / Setup Iptables</h1>
+		<h6>Posted on Sunday March 13, 2016 / by Eric Potvin</h6>
+	</header>
+
+	
+<p>iptables is a user space application program that allows a system administrator to configure the tables provided by the Linux kernel firewall and the chains and rules it stores.</p>
+
+<p>There's is not really one iptables configuration you can use. IPTables can be set based on your preferences and your needs.</p>
+
+<p>Here some examples you can look and update based on your needs. Please note, you will need <q>sudo</q> in order to use IPTables.</p>
+
+<mark>Before you start, you can always setup these rules in the <u>/etc/ufw/before.rules</u> file.</mark>
+
+<h3>Limit Imcoming SSH Connections</h3>
+
+<p>The following example will drop incoming connections which make more than 5 connection attempts upon port 22 within 60 seconds:</p>
+
+<pre>
+iptables -I INPUT -p tcp --dport 22 -i eth0 -m state --state NEW -m recent --set
+iptables -I INPUT -p tcp --dport 22 -i eth0 -m state --state NEW -m recent --update --seconds 60 --hitcount 5 -j DROP
+</pre>
+
+<h3>Rate-limit Incoming SSH Port Connections</h3>
+<p>Both netfilter and pf provides rate-limit option to perform simple throttling on incoming connections on port the ssh port, by default 22 unless you changed it.</p>
+<p>The following example will drop any incoming connections which make more than 3 connection attempts on the ssh port within 15 seconds:</p>
+<pre>
+iptables -I INPUT -p tcp --dport ssh -i eth0 -m state --state NEW -m recent  --set
+iptables -I INPUT -p tcp --dport ssh -i eth0 -m state --state NEW -m recent  --update --seconds 15 --hitcount 3 -j DROP
+</pre>
+
+<h3>Use Port Knocking</h3>
+<p>Port knocking is a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports. Once a correct sequence of connection attempts is received, the firewall rules are dynamically modified to allow the host which sent the connection attempts to connect over specific port(s).</p>
+<pre>
+iptables -N stage1
+iptables -A stage1 -m recent --remove --name knock
+iptables -A stage1 -p tcp --dport 3456 -m recent --set --name knock2
+iptables
+iptables -N stage2
+iptables -A stage2 -m recent --remove --name knock2
+iptables -A stage2 -p tcp --dport 2345 -m recent --set --name heaven
+iptables
+iptables -N door
+iptables -A door -m recent --rcheck --seconds 5 --name knock2 -j stage2
+iptables -A door -m recent --rcheck --seconds 5 --name knock -j stage1
+iptables -A door -p tcp --dport 1234 -m recent --set --name knock
+iptables
+iptables -A INPUT -m --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -m recent --rcheck --seconds 5 --name heaven -j ACCEPT
+iptables -A INPUT -p tcp --syn -j doo
+</pre>
+
+<h3>Attempt to block portscans</h3>
+<p>Anyone who tried to portscan us is locked out for an entire day.</p>
+<pre>
+iptables -A INPUT   -m recent --name portscan --rcheck --seconds 86400 -j DROP
+iptables -A FORWARD -m recent --name portscan --rcheck --seconds 86400 -j DROP
+</pre>
+
+<p>Once the day has passed, remove them from the portscan list.</p>
+<pre>
+iptables -A INPUT   -m recent --name portscan --remove
+iptables -A FORWARD -m recent --name portscan --remove
+</pre>
+
+
+<p>These rules add scanners to the portscan list, and log the attempt.</p>
+<pre>
+iptables -A INPUT   -p tcp -m tcp --dport 139 -m recent --name portscan --set -j LOG --log-prefix "Portscan:"
+iptables -A INPUT   -p tcp -m tcp --dport 139 -m recent --name portscan --set -j DROP
+
+iptables -A FORWARD -p tcp -m tcp --dport 139 -m recent --name portscan --set -j LOG --log-prefix "Portscan:"
+iptables -A FORWARD -p tcp -m tcp --dport 139 -m recent --name portscan --set -j DROP
+</pre>
+
+<p>Force SYN packets check</p>
+<pre>
+iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
+</pre>
+
+<p>Drop all NULL packets</p>
+<pre>
+iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+</pre>
+
+<p>Drop ping</p>
+<pre>
+iptables -A OUTPUT -p icmp -o eth0 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type echo-reply -s 0/0 -i eth0 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type destination-unreachable -s 0/0 -i eth0 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type time-exceeded -s 0/0 -i eth0 -j ACCEPT
+iptables -A INPUT -p icmp -i eth0 -j DROP
+</pre>
+
+<p>To block an attackers ip address called 1.2.3.4, enter:</p>
+<pre>
+iptables -A INPUT -s 1.2.3.4 -j DROP
+iptables -A INPUT -s 192.168.0.0/24 -j DROP
+</pre>
+
+
+
+<h2>Sample Configuration</h2>
+<pre>
+# Accept traffic from internal interfaces
+iptables -A INPUT ! -i eth0 -j ACCEPT
+
+# Accept traffic with the ACK flag set
+iptables -A INPUT -p tcp -m tcp --tcp-flags ACK ACK -j ACCEPT
+
+# Allow incoming data that is part of a connection we established
+iptables -A INPUT -m state --state ESTABLISHED -j ACCEPT
+
+# Allow data that is related to existing connections
+iptables -A INPUT -m state --state RELATED -j ACCEPT
+
+# Accept responses to DNS queries
+iptables -A INPUT -p udp -m udp --dport 1024:65535 --sport 53 -j ACCEPT
+
+# Accept responses to our pings
+iptables -A INPUT -p icmp -m icmp --icmp-type echo-reply -j ACCEPT
+
+# Accept notifications of unreachable hosts
+iptables -A INPUT -p icmp -m icmp --icmp-type destination-unreachable -j ACCEPT
+
+# Accept notifications to reduce sending speed
+iptables -A INPUT -p icmp -m icmp --icmp-type source-quench -j ACCEPT
+
+# Accept notifications of lost packets
+iptables -A INPUT -p icmp -m icmp --icmp-type time-exceeded -j ACCEPT
+
+# Accept notifications of protocol problems
+iptables -A INPUT -p icmp -m icmp --icmp-type parameter-problem -j ACCEPT
+
+# Allow connections to our SSH server
+iptables -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
+
+# Respond to pings
+iptables -A INPUT -p icmp -m icmp --icmp-type echo-request -j ACCEPT
+
+# Allow connections to webserver
+iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+
+# Allow SSL connections to webserver
+iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+
+#Allow connections to SMTP server for mail delivery
+iptables -A INPUT -p tcp -m tcp --dport 25 -j ACCEPT
+</pre>
+
+<h2>Saving Rules</h2>
+
+<p>To save the IPTables rules, you need to use the <q>iptables-save</q> command:</p>
+<pre>
+iptables-save &gt; /root/my.active.firewall.rules
+</pre>
+
+<h2>Restore Rules</h2>
+<p>To restore rules, simply use the <q>iptables-restore</q> command:</p>
+<pre>
+iptables-restore < /root/my.active.firewall.rules
+</pre>
+
+<p>For more information about IPTables, please read : https://help.ubuntu.com/community/IptablesHowTo</p>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

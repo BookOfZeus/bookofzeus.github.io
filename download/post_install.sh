@@ -54,6 +54,14 @@ dconf write /org/compiz/integrated/show-hud "['disable']"
 gsettings set com.canonical.Unity.Lenses remote-content-search none
 gsettings set com.canonical.Unity.Lenses disabled-scopes "[]"
 
+# Gedit
+gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
+gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
+gsettings set org.gnome.gedit.preferences.editor highlight-current-line true
+gsettings set org.gnome.gedit.preferences.editor display-right-margin true
+gsettings set org.gnome.gedit.preferences.editor scheme "'oblivion'"
+gsettings set org.gnome.gedit.preferences.editor tabs-size 4
+
 # Install tweak tools
 
 sudo apt-get install unity-tweak-tool gnome-tweak-tool

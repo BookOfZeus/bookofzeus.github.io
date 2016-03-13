@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hardening / PHP | BookOfZeus</title>
+	<meta name="description" content="Hardening Ubuntu by securing and optimizing PHP" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu/hardening/php" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" >Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" class="selected">Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="harden-ubuntu" href="/harden-ubuntu/">harden-ubuntu</a> &gt; <a title="hardening" href="/harden-ubuntu/hardening/">hardening</a>
+</article>
+
+<article>
+	<header>
+		<h1>Hardening / PHP</h1>
+		<h6>Posted on Sunday March 13, 2016 / by Eric Potvin</h6>
+	</header>
+
+	<p>PHP's default configuration contains a set of rules and functionalities that can be used to help secure your web applications.</p>
+
+<h3>php.ini</h3>
+
+<p>All the settings are located in the <q>/etc/php5/apache2/php.ini</q>. First, let's open this file.</p>
+<pre>
+sudo vi /etc/php5/apache2/php.ini
+</pre>
+
+<h4>Safe Mode</h4>
+<p>Safe Mode should be <q>On</q>. It checks if functions in one file on the server that affect other files all have the same ownership.</p>
+<p>Safe mode will also restrict executables that may be run by scripts in the same way it restricts file and directory access. Safe mode can also be configured so that only executables in a certain directory can be run. This can help limit exposure of shell commands to certain scripts.</p>
+<code><pre>
+safe_mode = On
+safe_mode_gid = On
+sql.safe_mode=On
+</pre></code>
+
+<p>If you want to limit directories of included or executed files, you can update the following directives:</p>
+<code><pre>
+safe_mode_include_dir = /path/to/dir
+safe_mode_exec_dir = /path/to/exec/dir
+</pre></code>
+
+
+<h4>Disable Globals</h4>
+<p>Global variables are very unsave and needs to be set to <q>Off</q>.
+<code><pre>
+register_globals = Off
+</pre></code>
+
+<h4>Hide PHP Information</h4>
+<p>to restrict PHP information leakage disable expose_php.</p>
+<code><pre>
+expose_php = Off
+track_errors = Off
+html_errors = Off
+</pre></code>
+
+
+<h4>Hide errors</h4>
+<p>Hide all php errors, hackers will use information that your web server exposes in order to gain information. Error messages are the first information they can get to start their attacks.</p>
+<code><pre>
+display_errors = Off
+</pre></code>
+
+<h4>Disabling Functionality</h4>
+<p>There are some PHP functionality that are unsafe to use. Use un-wisely, they can harm your system and make your server vulnerable to attacks. By disabling these functions, you prevent users and attackers from utilizing these functions.</p>
+<code><pre>
+disable_functions = php_uname, getmyuid, getmypid, passthru, leak, listen, diskfreespace, tmpfile, link, ignore_user_abord, shell_exec, dl, set_time_limit, exec, system, highlight_file, source, show_source, fpaththru, virtual, posix_ctermid, posix_getcwd, posix_getegid, posix_geteuid, posix_getgid, posix_getgrgid, posix_getgrnam, posix_getgroups, posix_getlogin, posix_getpgid, posix_getpgrp, posix_getpid, posix, _getppid, posix_getpwnam, posix_getpwuid, posix_getrlimit, posix_getsid, posix_getuid, posix_isatty, posix_kill, posix_mkfifo, posix_setegid, posix_seteuid, posix_setgid, posix_setpgid, posix_setsid, posix_setuid, posix_times, posix_ttyname, posix_uname, proc_open, proc_close, proc_get_status, proc_nice, proc_terminate, phpinfo
+</pre></code>
+
+
+<h4>Disable Remote File Includes</h4>
+<p>By allowing remote file inclusion, hackers can include file remotely that can harm your system. It is recommended to disable this.</p>
+<code><pre>
+allow_url_fopen = Off
+allow_url_include = Off
+</pre></code>
+
+<h4>Restrict File Uploads</h4>
+<p>If you are not using the file uploads functionality, you should disable it. Uploading files is one technique hackers do to upload virues or trojans.</p>
+<code><pre>
+file_uploads = Off
+</pre></code>
+
+<p>If this function is essential for you, you should limit the maximum size and upload folder.</p>
+<code><pre>
+upload_tmp_dir = /var/php_tmp
+upload_max_filezize = 2M
+</pre></code>
+
+<h4>Resource Control</h4>
+<p>You can set maximum execution time of each php script, set maximum amount of time each script may spend parsing request data, and maximum amount of memory a script may consume.</p>
+<code><pre>
+max_execution_time =  10
+max_input_time = 30
+memory_limit = 40M
+</pre></code>
+
+
+<h4>Control POST Size</h4>
+<p>The HTTP POST request method is used when the client needs to send data to the Apache web server via a form for example. A basic attacks will attempt to send oversized POST requests to eat your system resources.</p>
+<p>You can limit the maximum size POST request that PHP will process.</p>
+<code><pre>
+post_max_size=1K
+</pre></code>
+
+
+<h4>Protect Sessions</h4>
+<p>Make sure the web server can read and write to the location you specify. You also need to make sure PHP writes cookies that can't be read from JavaScript. This will prevent Cross Site Scripting in your web applications.</p>
+<code><pre>
+session.cookie_httponly = 1
+</pre></code>
+
+<p>You can prevent users from accidentally publishing session information to an external users.</p>
+<code><pre>
+session.referer_check = mydomain.com
+</pre></code>
+
+<h4>magic_quotes_gpc</h4>
+<p><q>magic_quotes_gpc</q> should always be <q>Off</q>. You should always clean the data in your PHP code.</p>
+<code><pre>
+magic_quotes_gpc=Off
+</pre></code>
+
+<h3>suhosin</h3>
+
+<p>Suhosin is an advanced protection system for PHP installations. It was designed to protect servers and users from known and unknown flaws in PHP applications and the PHP core.</p>
+
+<h4>Install suhosin</h4>
+<pre>
+sudo apt-get install php5-suhosin
+</pre>
+
+<h4>Configure suhosin</h4>
+<p>To edit the suhosin, you need to opent the <q>suhosin.ini</q> located in <q>/etc/php5/conf.d</q>.</p>
+<pre>
+sudo vi /etc/php5/conf.d/suhosin.ini
+</pre>
+
+<h3>Enable suhosin</h3>
+<code><pre>
+extension=suhosin.so
+</pre></code>
+
+<h3>Disable session encryption</h3>
+<code><pre>
+suhosin.session.encrypt = Off
+</pre></code>
+
+<h3>Log all errors</h3>
+<code><pre>
+suhosin.log.syslog=511
+</pre></code>
+
+<h3>Max traversal</h3>
+<p>Set the maximal depth of paths, eg: <q>../../</q>.</p>
+<code><pre>
+suhosin.executor.include.max_traversal=4
+</pre></code>
+
+<h3>Disable eval</h3>
+<code><pre>
+suhosin.executor.disable_eval=On
+</pre></code>
+
+<h3>Disable /e modifier</h3>
+<code><pre>
+suhosin.executor.disable_emodifier=On
+</pre></code>
+
+<h3>Disallow newlines in Subject:, To: headers and double newlines in additional headers</h3>
+<code><pre>
+suhosin.mail.protect=2
+</pre></code>
+
+<h3>Recommend Settings</h3>
+<p>Silently fail all failed sql queries:</p>
+<code><pre>
+suhosin.sql.bailout_on_error=On
+</pre></code>
+
+<h3>Filtering Options</h3>
+<code><pre>
+suhosin.cookie.max_vars = 2048
+suhosin.get.max_array_index_length = 256
+suhosin.post.max_array_index_length = 256
+suhosin.post.max_totalname_length = 8192
+suhosin.post.max_vars = 2048
+suhosin.request.max_totalname_length = 8192
+suhosin.request.max_varname_length = 256
+</pre></code>
+
+<h4>Restart Apache</h4>
+<pre>
+sudo service apache2 restart
+</pre>
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

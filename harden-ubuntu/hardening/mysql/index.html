@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hardening / Mysql | BookOfZeus</title>
+	<meta name="description" content="Hardening Ubuntu by securing and optimizing MySQL" />
+	<meta name="author" content="BookOfZeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="BookOfZeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/harden-ubuntu/hardening/mysql" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/articles/" title="Articles" >Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongo/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/codebase/" title="CodeBase" >CodeBase</a>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" class="selected">Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Monitoring Tools / Varnish" >Monitoring Tools / Varnish</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" class="selected">Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+	<!--
+	<div id="latest">
+		<h4>Good blog to read</h4>
+	</div>
+	-->
+</aside>
+
+<!-- content -->
+
+<section>
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="harden-ubuntu" href="/harden-ubuntu/">harden-ubuntu</a> &gt; <a title="hardening" href="/harden-ubuntu/hardening/">hardening</a>
+</article>
+
+<article>
+	<header>
+		<h1>Hardening / Mysql</h1>
+		<h6>Posted on Sunday March 13, 2016 / by Eric Potvin</h6>
+	</header>
+
+	
+<p>Hardening MySQL does not only apply to back-end configuration. Before, we proceed to the hardening process, here's some important principles you need to know first.</p>
+<ul>
+	<li>Sanitise user/form data</li>
+	<li>Parameterize queries</li>
+	<li>Like any software keeping up to date is important</li>
+	<li>Understand password encryption. Salt passwords. Don't use md5 nor sha1</li>
+	<li>Having a policy to change passwords periodically is a good idea.</li>
+	<li>Always start with no privileges and add only the ones they need to preform their role.</li>
+</ul>
+
+<h3>Application Specific Users</h3>
+
+<p>It is recommended to isolated your MySQL users to their own databases. Each application that uses MySQL should have its own users with their limited privileges.</p>
+
+<p>For example, you have a database called <q>mydb</q>.</p>
+
+<p>We need to create a new that only belongs to this database. We can create the user using the <q>CREATE USER</q> command:</p>
+<pre>
+CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
+</pre>
+
+<p>Now, you need to setup the permissions (grant privileges) for this user on the <q>mydb</q> database.</p>
+<pre>
+GRANT SELECT,UPDATE,DELETE ON mydb.* TO 'myuser'@'localhost';
+</pre>
+
+<p>If you need to remove privileges (revoke), you can use this command:</p>
+<pre>
+REVOKE UPDATE ON mydb.* FROM 'myuser'@'localhost';
+</pre>
+
+<p>If you need to grant all privileges, you can use this command:</p>
+<pre>
+GRANT ALLUPDATE ON mydb.* FROM 'myuser'@'localhost';
+</pre>
+
+<p>When done, you must run the <q>flush privileges</q> command to make sure all privileges are applied. This command is used everytime you grant or revoke privileges.</p>
+<pre>
+FLUSH PRIVILEGES;
+</pre>
+
+<h3>Change Root Username</h3>
+
+<p>The default user when installing MySQL is <q>root</q>. This user has all privileges on everything. It is the easiest way for a hacker to login with this username and do some damage and steal information from your database.</p>
+
+<p>To make this a little harder for them, you can rename the <q>root</q> user to something else using a complex password.</p>
+
+<p>To rename the <q>root</q> user, use the <q>RENAME USER</q> command.</p>
+
+<pre>
+USE mysql
+UPDATE mysql.user set user = 'myuser' where user = 'root';
+</pre>
+
+<p>Then, change his password:</p>
+<pre>
+SET PASSWORD FOR 'my_new_user'@'%hostname' = PASSWORD('new_pass');
+</pre>
+
+<p>Don't forget to flush privileges:</p>
+<pre>
+FLUSH PRIVILEGES;
+</pre>
+
+<mark>IMPORTANT:</mark>
+<p>Make sure you erase these changes in your <q>~/.mysql_history</q>. This can be very easy from anyone who has access to figure out the new username and password.</p>
+
+<h3>Disable LOCAL INFILE</h3>
+
+<p>The <q>LOCAL INFILE</q> needs to be disable for security reason. It allow MySQL to read files form the local file system. This <q>technique</q> can be used by hackers in application to get local information like username and passwords.</p>
+
+<p>Example, let's read the <q>/etc/passwd</q>:</p>
+
+<pre>
+SELECT load_file("/etc/passwd");
+</pre>
+
+<p>To disable <q>LOCAL INFILE</q>, edit the <q>my.cnf</q>:p>
+
+<pre>
+sudo vi /etc/mysql/my.cnf
+</pre>
+
+<p>And change the value of the <q>local-infile</q> to <q>0</q>.</p>
+<code><pre>
+[mysqld]
+local-infile=0
+</pre></code>
+
+<h3>Disable Remote Access</h3>
+
+<p>Remote access needs to be disable if your don't need to access your MySQL database remotely. This will reduce the risk of an attack by forcing all MySQL connections to be allowed locally.
+
+<p>To restrict MySQL from opening a network socket, you need to add the following parameter in the <q>[mysqld]</q> section of the <q>/etc/mysql/my.cnf</q>.</p>
+<code><pre>
+bind-address=127.0.0.1
+</pre></code>
+
+<h3>Lower Privileges</h3>
+
+<h4>Lower system privileges</h4>
+
+<p>To protect your MySQL database, make sure that the MySQL file directory is owned by the <q>mysql</q> user and the <q>mysql</q> group.</p>
+<pre>
+sudo ls -l /var/lib/mysql
+</pre>
+
+<p>Also, make sure only the <q>mysql and/or root</q> users have access to the directory <q>/var/lib/mysql</q>.</p>
+
+<p>The mysql binaries files should be only owned by <q>mysql or root<q> users.</p>
+<pre>
+sudo ls -l /usr/bin/my*
+</pre>
+
+<h4>Lower database privileges</h4>
+
+<p>A privileges you need to be aware of is <q>SHOW DATABASES</q>. By default, this command can be used by everyone. It will show them all databases in your server.</p>
+
+<p>To disable this command, you need to enter the following parameter in your <q>/etc/my.cnf</q> under the <q>[mysqld]</q>.</q>
+<code><pre>
+[mysqld]
+skip-show-database
+</pre></code>
+
+<h3>Secure MySQL installation</h3>
+
+<p>The <q>mysql_secure_installation</q> will allow you secure the MySQL installation.</p>
+
+<p>It will cover the follwing topic:</p>
+<ul>
+	<li>Change the root password</li>
+	<li>Remove anonymous users</li>
+	<li>Disallow root login remotely</li>
+	<li>Remove test database and access to it</li>
+	<li>Reload privilege tables now<li>
+</ul>
+
+<pre>
+mysql_secure_installation
+</pre>
+
+<p>You should answer "Y" (for yes) to all of the remaining questions</p>
+
+<h3>Secure my.cnf</h3>
+
+<h4>Modify the permission of the config file</h4>
+
+<p>The configuration files should always only be owned by root. To change the permissions you can use the following commands:</p>
+<pre>
+sudo chown -R root:root /etc/mysql/
+sudo chmod 0644 /etc/mysql/my.cnf
+</pre>
+
+
+
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/articles/" title="Articles">Articles</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2016 BookOfZeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+/*
+$('.nw').click(function() { this.target = '_blank'; });
+*/
+</script>
+
+</body>
+</html>

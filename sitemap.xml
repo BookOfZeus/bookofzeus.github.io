@@ -1,0 +1,1572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>http://bookofzeus.com/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/android/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/documentation/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/git/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/html/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/javascript/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mobile/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mongo/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/optimization/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/python/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/sass/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/subversion/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/codebase/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/contribute/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/editor/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/flash-player/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/fonts/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/icons/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/indicator/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/install/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/keyboard-shortcuts/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/live-cd/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/packages/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/privacy/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/settings/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/themes/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/window/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/initial-setup/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/monitoring-tools/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/optimization/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/software/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/useful-commands/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/backup/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/install-grive2-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/about/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/privacy-policy/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/terms-of-conditions/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/android/build-android-application-without-eclipse/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/android/create-an-android-virtual-device/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/android/create-android-library-project/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/android/import-android-library-project-android-studio/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/android/setup-ubuntu-for-android-development/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/android/signing-your-android-applications/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/apache-redirecting-to-home-directory-using-userdir-module/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/block-bad-bots-and-spiders/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/change-apache-default-user/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/fix-permission-denied-on-lamp-when-saving-files-or-creating-folders/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/how-to-easily-disable-log-in-apache/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/how-to-install-mod-rewrite/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/how-to-use-apache-mod-rewrite/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/htaccess-security-and-performances-tips/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/setup-apache-virtualhost-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/apache/using-setenvif-in-htaccess-with-sub-domain/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/anchors-css-attribute-selector/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/animate-ellipsis-using-css3/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/animate-text-with-css3/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/create-a-modal-window-in-jquery-and-css3/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/create-a-sticky-note-with-css3/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/create-an-easy-box-reflect-with-webkit/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/create-css-arrows/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/create-mac-osx-icon-css3/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/create-modal-window-without-javascript/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css-font-face-which-website-to-choose/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css-menu-separator/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css-message-boxes/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css-meter-bar/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css-styling-textarea-give-notebook-notepad-look/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css-tooltip/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css3-animation/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css3-forms-with-gradient-and-box-shadow-properties/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css3-sliding-animations/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/css3-transition/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/enhance-your-website-with-font-face/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/how-to-fix-wrapping-text-underneath-an-image/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/how-to-use-css-sprites/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/ipad-3-media-query/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/layout-form-using-css/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/learn-css-basics/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/learn-css-media-queries/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/pacman-css3-and-jquery-animation/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/page-not-found-404-css3/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/quick-tips-css-shorthand-properties/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/reset-css-stylesheet/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/styling-html5-placeholder-using-css/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/use-css-icons-without-images/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/use-custom-font-face-in-css3/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/css/what-is-specificity-in-css/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/documentation/apache-htaccess-cheat-sheet/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/documentation/cakephp-and-dreamweaver-opening-ctp-files/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/documentation/clean-development-series/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/documentation/collections-of-cheat-sheet/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/documentation/css-and-html-best-practices/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/documentation/moving-to-a-responsive-design/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/git/gitignore-android-app-cheatsheet/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/html/build-a-fancy-countdown-with-html5/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/html/geolocation-introduction-with-html5/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/html/how-build-pages-minimal-html/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/html/live-edit-your-content-without-form/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/html/quick-guide-to-mobile-devices-meta-tags/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/html/simple-image-carousel-using-css3-and-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/javascript/create-a-modal-window-in-javascript-and-css/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/javascript/create-an-alias-to-document-getelementbyid-in-javascript/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/javascript/how-to-disabled-the-enter-key-in-javascript-in-a-web-form/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/javascript/input-form-field-javascript-events/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/javascript/iphone-detection-in-javascript/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/javascript/short-filename-with-extension-using-javascript/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/add-content-dynamically-by-scrolling-using-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/ajax-response-json-or-xml/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/build-better-forms-with-jquery-and-css/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/building-basic-website-pushstate-ajax/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/create-an-ajax-login-with-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/create-better-jquery-plugins/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/drag-and-drop-upload-files-using-ajax/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/dynamically-shortened-text-using-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/extend-your-own-jquery-code/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/font-resizing-with-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/indent-code-in-textarea-using-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/jquery-validator-adding-a-no-space-validation/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/jtexthighlighter-highlight-text-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/quick-introduction-pushstate-with-ajax/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/setting-cookies-with-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/simulate-the-anchor-click-with-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/structure-expansion-for-tables-and-divs-using-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/top-5-jquery-tips-for-your-site/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/jquery/understanding-easing-effect-jquery/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/bypass-ssh-login/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/change-the-default-crontab-editor/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/customized-folder-and-file-list-in-linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/delete-files-securely-in-linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/diff-files-from-two-folders/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/disable-overlay-scrollbars-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/find-hardware-specs-in-linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/get-ssl-running-on-apache-centos/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/get-your-external-ip-address-from-command-line/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/hard-disk-usage-from-command-line-on-linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/how-to-disable-vim-matching-parenthesis-highlighting/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/how-to-install-a-new-drive-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/html5-and-css3-syntax-color-in-vim/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/install-a-lamp-apache-php-mysql-on-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/install-vnc-server-and-vnc-client-on-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/installing-rpm-package-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/kill-all-process-in-one-step-in-linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/linux-backup-using-cron-to-local-directory/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/make-cartoon-images-with-imagemagick/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/mounting-hfs-on-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/my-vimrc/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/send-an-email-in-linux-from-the-shell-with-attachment/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/slow-ssh-connection/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/verify-if-a-dedicated-server-is-really-dedicated/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/linux/vpn-secure-environment-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mobile/iphone-string-nsstring-comparisons-in-objective-c/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mobile/redirect-iphone-or-android-to-a-mobile-website/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mobile/remove-uistatusbar-in-your-iphone-application/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mongo/install-mongodb-on-ubuntu-with-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/calculating-mysql-database-sizes-in-linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/count-the-number-of-occurrences-of-a-char-in-mysql/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/how-to-move-mysql-database-data-directory/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/joining-mysql-tables/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/mysql-field-types/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/mysql-load-data-infile-error-1148/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/replace-mysql-with-mariadb/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/save-last-mysql-command/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/secure-your-website-from-sql-injections/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/select-a-portion-from-a-mysql-blob-field/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/simple-automated-mysql-backup-databases-script/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/mysql/using-mysqldump-with-subqueries/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/optimization/how-to-install-memcached-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/optimization/improve-performance-optimize-website/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/optimization/install-apc-on-redhat-rhel-5/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/optimization/install-redis-on-ubuntu-with-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/optimization/install-scache-on-ubuntu-with-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/optimization/memcached-vs-redis/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/bitmasks-emulate-unix-permissions-in-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/catching-interruption-in-php-cron-jobs/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/clean-variables-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/convert-simplexml-object-into-php-array/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/create-a-postcard-with-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/create-short-urls-for-your-website/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/generate-guitar-chords-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/get-the-color-palette-for-an-image-using-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/how-to-detect-an-ajax-request-in-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/how-to-send-files-in-php-using-curl/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/multiple-cron-job-using-same-php-file/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/php-comparison-between-double-triple-equals-with-useful-functions/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/php-headers-with-ajax/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/php-ip-filtering/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/php-regular-expression/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/php-singleton-101/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/pixelate-images-using-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/simple-facebook-authentication-class-using-curl/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/smarty-modifier-filesize/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/validate-and-sanitize-email-address-in-php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/validate-if-an-ip-is-banned-using-memcached/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/php/validate-php-file-in-linux/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/python/open-large-csv-file/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/sass/introduction-to-sass/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/subversion/create-a-svn-repository-with-ubuntu-and-subversion/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/subversion/how-to-setup-an-svn-repository-on-apache-http-on-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/subversion/ignore-folder-in-subversion/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/subversion/organize-your-svn-repository/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/subversion/smart-grep-with-svn/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/articles/subversion/svn-merge-branch-with-trunk/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/editor/adding-folding-text-icon-gedit/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/always-show-location-nautilus/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/create-new-launcher-items-in-unity/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/creating-a-custom-launcher-in-unity/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/customize-application-menu-and-context-menu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/customized-folder-and-file/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/disable-the-drum-beat-sound-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/disable-unity-menu-bar/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/environment/remove-ubuntu-unity/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/flash-player/fix-adobe-flash-player-version-is-not-supported/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/fonts/change-fonts-and-size-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/fonts/install-mac-os-fonts-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/fonts/install-microsoft-fonts-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/fonts/installing-truetype-fonts-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/icons/hide-ubuntu-desktop-icons/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/indicator/indicator-dropbox/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/indicator/indicator-multiload/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/indicator/indicator-sensors/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/indicator/indicator-stickynotes/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/indicator/indicator-weather/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/install/post-install-scripts/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/install/things-to-do-after-installing-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/keyboard-shortcuts/disable-hud-when-pressing-alt-key/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/live-cd/tools-build-your-own-ubuntu-distro/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/live-cd/ubuntu-livecd/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/packages/custom-install-scripts/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/privacy/disabling-privacy-invasive-zeitgeist/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/settings/enable-numlock-on-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/settings/set-a-static-ip-on-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/themes/install-desktop-themes-in-ubuntu-11-10/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/window/change-or-move-the-window-buttons/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/customize-ubuntu/window/disable-overlay-scrollbars-in-ubuntu/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/initial-setup/create-new-user/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/initial-setup/disable-root-account/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/initial-setup/disable-shell-accounts/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/initial-setup/install-tools/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/initial-setup/system-updates/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/add-swap/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/disable-ipv6/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/fix-openssl-heartbleed/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/secure-console/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/secure-shared-memory/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/secure-tcp-wrapper/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/secure-tmp-var-tmp/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/server-stability/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/set-hostname-and-host/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/set-security-limits/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/server-setup/set-timezone/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-anacron/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-apport/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-atd/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-autofs/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-avahi/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-bluetooth/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-ctrl-alt-delete/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-cups/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-dovecot/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-modemmanager/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-nfs/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-snmp-server/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-telnet/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-whoopsie/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-wireless/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/disable-services/disable-zeitgeist/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/apache/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/apparmor/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/firewall/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/ip-spoofing/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/mysql/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/php/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/protect-ddos-attacks/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/setup-iptables/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/shellshock-bash-vulnerability/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/ssh/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/hardening/sysctl-conf/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/monitoring-tools/analyze-logs-with-logwatch/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/monitoring-tools/audit-security-with-tiger/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/monitoring-tools/auditd/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/monitoring-tools/check-integrity-using-aide/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/monitoring-tools/scan-open-ports/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/monitoring-tools/watch-logs/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/optimization/apache/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/optimization/apc/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/optimization/memcached/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/optimization/mysql/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/optimization/varnish/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/software/disable-compilers/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/software/install-breach-detector/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/software/install-fail2ban/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/software/install-psad-intrusion-detection/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/software/secure-postfix/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/useful-commands/ddos/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/useful-commands/other-tools/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/useful-commands/process-control/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/useful-commands/system-information/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://bookofzeus.com/harden-ubuntu/backup/setup-backup/</loc>
+  <lastmod>2016-05-20T03:16:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

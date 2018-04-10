@@ -21,14 +21,38 @@
 </url>
 
 <url>
-    <loc>http://bookofzeus.com/arduino/sensor-cheat-sheet/</loc>
-    <lastmod>2018-04-08 20:03:07-07:00</lastmod>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/</loc>
+    <lastmod>2018-04-09 22:40:38-07:00</lastmod>
     <priority>0.85</priority>
 </url>
 
 <url>
-    <loc>http://bookofzeus.com/arduino/sensor-cheat-sheet/electricity/</loc>
-    <lastmod>2018-04-08 20:08:13-07:00</lastmod>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/accelerometer/</loc>
+    <lastmod>2018-04-09 22:42:44-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/board/</loc>
+    <lastmod>2018-04-09 22:42:53-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/card-reader/</loc>
+    <lastmod>2018-04-09 22:42:51-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/electricity/</loc>
+    <lastmod>2018-04-09 22:42:50-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/gas/</loc>
+    <lastmod>2018-04-09 22:42:48-07:00</lastmod>
     <priority>0.7</priority>
 </url>
 

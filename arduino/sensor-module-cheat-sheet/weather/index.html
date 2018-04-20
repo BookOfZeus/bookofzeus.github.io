@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sensor and Module Cheat Sheet | BookOfZeus</title>
-	<meta name="description" content="What is this sensor? What is this module? What this sensor do? What can I build with Arduino sensors and module?" />
+	<title>Weather Sensor Cheat Sheet | BookOfZeus</title>
+	<meta name="description" content="Learn more about Arduino Weather Sensors." />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/arduino/sensor-module-cheat-sheet" />
+	<link rel="canonical" href="http://bookofzeus.com/arduino/sensor-module-cheat-sheet/weather" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -188,231 +188,79 @@
 
 <!-- content -->
 <section>
-	<article>
-	<h1>Sensor and Module Cheat Sheet</h1>
-</article>
-
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/accelerometer/">Accelerometer Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Monday April 09, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Accelerometer Sensors.</p>
-
+	<article class="breadcrumbs">
+	<a title="BookOfZeus" href="/">BookOfZeus</a> &gt; <a title="arduino" href="/arduino/">arduino</a> &gt; <a title="sensor-module-cheat-sheet" href="/arduino/sensor-module-cheat-sheet/">sensor-module-cheat-sheet</a>
 </article>
 
 <article>
 	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/board/">Board Module Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Monday April 09, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Board Module.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/button/">Button Module Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Tuesday April 10, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Button Module.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/card-reader/">Card Reader Module Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Sunday April 08, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Card Reader Module.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/collision/">Collision Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Tuesday April 10, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Collision Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/color/">Color Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Tuesday April 10, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Color Sensor.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/compass/">Compass Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Tuesday April 10, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Compass Sensor.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/data/">Data Module Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Tuesday April 10, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Data Module.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/gas/">Gas Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Sunday April 08, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Gas Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/led/">Led Sensor Cheat Sheet</a>
-		</h2>
+		<h1>Weather Sensor Cheat Sheet</h1>
 		<h6>Posted on Thursday April 19, 2018 by Eric Potvin</h6>
 	</header>
-	<p>Learn more about Arduino Led Sensors.</p>
 
+	<br/>
+
+<h2>Digital Barometric Pressure Sensor</h2>
+<p>
+    <img src="/media/arduino/digital-barometric-pressure-sensor.jpg" alt="Digital Barometric Pressure Sensor" />
+</p>
+
+<ul>
+    <li>Pressure range: 300~1100hPa</li>
+    <li>Power supply voltage:1.8V~3.6V (VDDA), 1.62V~3.6V (VDDD)</li>
+    <li>Low power consumption: 5A In standard mode</li>
+    <li>Standby current: 0.1A</li>
+</ul>
+
+
+<h2>Digital Thermal Sensor</h2>
+<p>
+    <img src="/media/arduino/digital-thermal-sensor.jpg" alt="Digital Thermal Sensor" />
+</p>
+
+<ul>
+    <li>Working voltage 3.3V-5V</li>
+    <li>Digital switching output (0 and 1)</li>
+</ul>
+
+
+<h2>Temperature and Humidity Sensor</h2>
+<p>
+    <img src="/media/arduino/temperature-&-humidity-sensor.jpg" alt="Temperature and Humidity Sensor" />
+</p>
+
+<ul>
+    <li>Working voltage: 3 V - 5.5 V</li>
+    <li>Signal output form: digital signal</li>
+    <li>Temperature measurement range: - 40 &deg;c to 80 &deg;c</li>
+    <li>Measuring accuracy: 0.5 &deg;c</li>
+    <li>The humidity measuring range: 0-100% RH</li>
+    <li>Measuring accuracy: 2% RH</li>
+</ul>
+
+
+<h2>High Precision Atmospheric Pressure Sensor</h2>
+<p>
+    <img src="/media/arduino/high-precision-atmospheric-pressure-sensor.jpg" alt="High Precision Atmospheric Pressure Sensor" />
+</p>
+
+<ul>
+    <li>Temperature with &plusmn;1.0&deg;C accuracy</li>
+    <li>Barometric pressure with ±1 hPa </li>
+</ul>
+
+<h2>Raindrops Controller Module Relay</h2>
+<p>
+    <img src="/media/arduino/raindrops-controller-module-relay.jpg" alt="Raindrops Controller Module Relay" />
+</p>
+
+<ul>
+    <li>Direct load control</li>
+    <li>Module supply: 12V :5-12mA quiescent current</li>
+</ul>
+
+	<br/><br/>
 </article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/light/">Light Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Saturday April 14, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Light Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/magnetic/">Magnetic Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Saturday April 14, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Magnetic Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/motion/">Motion Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Monday April 16, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Motion Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/potentiometer/">Potentiometer Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Monday April 16, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Potentiometer Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/power/">Power Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Sunday April 08, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Power Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/shield/">Shield Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Thursday April 19, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arudino Shield.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/sound/">Sounds Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Saturday April 14, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Sounds Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/time/">Time and Clock Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Saturday April 14, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Time and Clock Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/touch/">Touch Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Monday April 16, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Touch Sensors.</p>
-
-</article>
-
-<article>
-	<header>
-		<h2>
-			<a href="/arduino/sensor-module-cheat-sheet/weather/">Weather Sensor Cheat Sheet</a>
-		</h2>
-		<h6>Posted on Thursday April 19, 2018 by Eric Potvin</h6>
-	</header>
-	<p>Learn more about Arduino Weather Sensors.</p>
-
-</article>
-
 
 	<footer> 
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Weather Sensor Cheat Sheet | BookOfZeus</title>
-	<meta name="description" content="Learn more about Arduino Weather Sensors." />
+	<title>Input/Output Sensor Cheat Sheet | BookOfZeus</title>
+	<meta name="description" content="Learn more about Arduino Input/Output Sensors." />
 	<meta name="author" content="BookOfZeus" />
 	<meta name="robots" content="index, follow" />
 	<meta charset="utf-8" />
@@ -25,7 +25,7 @@
 
 	<link rel="image_src" href="/media/logo.png" />
 
-	<link rel="canonical" href="http://bookofzeus.com/arduino/sensor-module-cheat-sheet/weather" />
+	<link rel="canonical" href="http://bookofzeus.com/arduino/sensor-module-cheat-sheet/input-output" />
 	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
@@ -194,70 +194,27 @@
 
 <article>
 	<header>
-		<h1>Weather Sensor Cheat Sheet</h1>
-		<h6>Posted on Thursday April 19, 2018 by Eric Potvin</h6>
+		<h1>Input/Output Sensor Cheat Sheet</h1>
+		<h6>Posted on Saturday April 21, 2018 by Eric Potvin</h6>
 	</header>
 
 	<br/>
 
-<h2>Digital Barometric Pressure Sensor</h2>
+
+<h2>I/O I2C Port Interface</h2>
 <p>
-    <img src="/media/arduino/digital-barometric-pressure-sensor.jpg" alt="Digital Barometric Pressure Sensor" />
+    <img src="/media/arduino/io-i2c-port-interface.jpg" alt="I/O I2C Port Interface" />
 </p>
 
 <ul>
-    <li>Pressure range: 300~1100hPa</li>
-    <li>Power supply voltage:1.8V~3.6V (VDDA), 1.62V~3.6V (VDDD)</li>
-    <li>Low power consumption: 5A In standard mode</li>
-    <li>Standby current: 0.1A</li>
+    <li>Support cascading</li>
+    <li>Use at most 8 modules to extend 64 I/O at the same time</li>
+    <li>Every 2 seconds, make P0-P7 port output High level, Low level, and put 3 toggle switches to ON, the address of module is 0x27</li>
 </ul>
 
 
-<h2>Digital Thermal Sensor</h2>
-<p>
-    <img src="/media/arduino/digital-thermal-sensor.jpg" alt="Digital Thermal Sensor" />
-</p>
-
-<ul>
-    <li>Working voltage 3.3V-5V</li>
-    <li>Digital switching output (0 and 1)</li>
-</ul>
 
 
-<h2>Temperature and Humidity Sensor</h2>
-<p>
-    <img src="/media/arduino/temperature-humidity-sensor.jpg" alt="Temperature and Humidity Sensor" />
-</p>
-
-<ul>
-    <li>Working voltage: 3 V - 5.5 V</li>
-    <li>Signal output form: digital signal</li>
-    <li>Temperature measurement range: - 40 &deg;c to 80 &deg;c</li>
-    <li>Measuring accuracy: 0.5 &deg;c</li>
-    <li>The humidity measuring range: 0-100% RH</li>
-    <li>Measuring accuracy: 2% RH</li>
-</ul>
-
-
-<h2>High Precision Atmospheric Pressure Sensor</h2>
-<p>
-    <img src="/media/arduino/high-precision-atmospheric-pressure-sensor.jpg" alt="High Precision Atmospheric Pressure Sensor" />
-</p>
-
-<ul>
-    <li>Temperature with &plusmn;1.0&deg;C accuracy</li>
-    <li>Barometric pressure with ±1 hPa </li>
-</ul>
-
-<h2>Raindrops Controller Module Relay</h2>
-<p>
-    <img src="/media/arduino/raindrops-controller-module-relay.jpg" alt="Raindrops Controller Module Relay" />
-</p>
-
-<ul>
-    <li>Direct load control</li>
-    <li>Module supply: 12V :5-12mA quiescent current</li>
-</ul>
 
 	<br/><br/>
 </article>

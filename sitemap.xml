@@ -33,6 +33,12 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/bio/</loc>
+    <lastmod>2018-04-21 11:43:03-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/board/</loc>
     <lastmod>2018-04-09 22:42:53-07:00</lastmod>
     <priority>0.7</priority>
@@ -75,8 +81,20 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/display/</loc>
+    <lastmod>2018-04-21 10:12:23-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/gas/</loc>
     <lastmod>2018-04-09 22:42:48-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/input-output/</loc>
+    <lastmod>2018-04-21 12:19:57-07:00</lastmod>
     <priority>0.7</priority>
 </url>
 
@@ -129,6 +147,18 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/speed/</loc>
+    <lastmod>2018-04-21 11:10:31-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/tilt/</loc>
+    <lastmod>2018-04-21 10:20:48-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/time/</loc>
     <lastmod>2018-04-14 22:17:35-07:00</lastmod>
     <priority>0.7</priority>
@@ -137,6 +167,12 @@
 <url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/touch/</loc>
     <lastmod>2018-04-16 09:36:46-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/vibration/</loc>
+    <lastmod>2018-04-21 10:48:41-07:00</lastmod>
     <priority>0.7</priority>
 </url>
 

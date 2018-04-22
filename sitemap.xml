@@ -69,6 +69,12 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/communication/</loc>
+    <lastmod>2018-04-22 07:25:14-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/compass/</loc>
     <lastmod>2018-04-10 20:17:16-07:00</lastmod>
     <priority>0.7</priority>
@@ -93,8 +99,20 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/infrared/</loc>
+    <lastmod>2018-04-22 07:52:32-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/input-output/</loc>
     <lastmod>2018-04-21 12:19:57-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/joystick/</loc>
+    <lastmod>2018-04-22 07:21:01-07:00</lastmod>
     <priority>0.7</priority>
 </url>
 
@@ -117,8 +135,20 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/microwave/</loc>
+    <lastmod>2018-04-22 07:49:03-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/motion/</loc>
     <lastmod>2018-04-16 10:07:03-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/photo/</loc>
+    <lastmod>2018-04-22 07:45:05-07:00</lastmod>
     <priority>0.7</priority>
 </url>
 
@@ -141,6 +171,12 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/soil-water/</loc>
+    <lastmod>2018-04-22 08:02:12-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/sound/</loc>
     <lastmod>2018-04-14 21:04:57-07:00</lastmod>
     <priority>0.7</priority>
@@ -149,6 +185,12 @@
 <url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/speed/</loc>
     <lastmod>2018-04-21 11:10:31-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/temperature/</loc>
+    <lastmod>2018-04-22 06:59:56-07:00</lastmod>
     <priority>0.7</priority>
 </url>
 
@@ -171,6 +213,12 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/ultrasonic/</loc>
+    <lastmod>2018-04-22 07:40:45-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/vibration/</loc>
     <lastmod>2018-04-21 10:48:41-07:00</lastmod>
     <priority>0.7</priority>
@@ -179,6 +227,12 @@
 <url>
     <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/weather/</loc>
     <lastmod>2018-04-19 18:18:36-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/weigh/</loc>
+    <lastmod>2018-04-22 07:04:45-07:00</lastmod>
     <priority>0.7</priority>
 </url>
 

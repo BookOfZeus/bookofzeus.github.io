@@ -1,0 +1,2087 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+    <title>BookOfZeus RSS Feed</title>
+    <link>https://www.bookofzeus.com</link>
+    <description>An online community for articles, tutorials and source code on the latest technology</description>
+
+    
+    <item>
+        <title>Articles, Tutorials and Source Code</title>
+        <link>http://bookofzeus.com//</link>
+        <description>An online community for articles, tutorials and source code on the latest technology</description>
+    </item>
+    
+    <item>
+        <title>Arduino</title>
+        <link>http://bookofzeus.com/arduino/</link>
+        <description>Arduino articles, Arduino tips, Arduino cheatsheet, Arduino projects and other related Arduino articles</description>
+    </item>
+    
+    <item>
+        <title>Sensor and Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/</link>
+        <description>What is this sensor? What is this module? What this sensor do? What can I build with Arduino sensors and module?</description>
+    </item>
+    
+    <item>
+        <title>Accelerometer Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/accelerometer/</link>
+        <description>Learn more about Arduino Accelerometer Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Bio Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/bio/</link>
+        <description>Learn more about Arduino Bio Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Board Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/board/</link>
+        <description>Learn more about Arduino Board Module.</description>
+    </item>
+    
+    <item>
+        <title>Button Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/button/</link>
+        <description>Learn more about Arduino Button Module.</description>
+    </item>
+    
+    <item>
+        <title>Card Reader Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/card-reader/</link>
+        <description>Learn more about Arduino Card Reader Module.</description>
+    </item>
+    
+    <item>
+        <title>Collision Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/collision/</link>
+        <description>Learn more about Arduino Collision Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Color Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/color/</link>
+        <description>Learn more about Arduino Color Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Communication Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/communication/</link>
+        <description>Learn more about Arduino Communication Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Compass Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/compass/</link>
+        <description>Learn more about Arduino Compass Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Data Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/data/</link>
+        <description>Learn more about Arduino Data Module.</description>
+    </item>
+    
+    <item>
+        <title>Display and LCD Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/display/</link>
+        <description>Learn more about Arduino Display and LCD Modules.</description>
+    </item>
+    
+    <item>
+        <title>Gas Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/gas/</link>
+        <description>Learn more about Arduino Gas Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Infrared Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/infrared/</link>
+        <description>Learn more about Arduino Infrared Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Input/Output Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/input-output/</link>
+        <description>Learn more about Arduino Input/Output Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Joystick Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/joystick/</link>
+        <description>Learn more about Arduino Joystick Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Led Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/led/</link>
+        <description>Learn more about Arduino Led Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Light Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/light/</link>
+        <description>Learn more about Arduino Light Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Magnetic Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/magnetic/</link>
+        <description>Learn more about Arduino Magnetic Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Microwave Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/microwave/</link>
+        <description>Learn more about Arduino Microwave Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Motion Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/motion/</link>
+        <description>Learn more about Arduino Motion Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Photo Resistor / Interrupter Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/photo/</link>
+        <description>Learn more about Arduino Photo Resistor / Interrupter Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Potentiometer Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/potentiometer/</link>
+        <description>Learn more about Arduino Potentiometer Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Power Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/power/</link>
+        <description>Learn more about Arduino Power Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Shield Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/shield/</link>
+        <description>Learn more about Arudino Shield.</description>
+    </item>
+    
+    <item>
+        <title>Soil and Water Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/soil-water/</link>
+        <description>Learn more about Arduino Soil and Water Sensor.</description>
+    </item>
+    
+    <item>
+        <title>Sounds Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/sound/</link>
+        <description>Learn more about Arduino Sounds Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Speed Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/speed/</link>
+        <description>Learn more about Arduino Speed Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Temperature Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/temperature/</link>
+        <description>Learn more about Arduino Temperature Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Tilt Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/tilt/</link>
+        <description>Learn more about Arduino Tilt Modules.</description>
+    </item>
+    
+    <item>
+        <title>Time and Clock Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/time/</link>
+        <description>Learn more about Arduino Time and Clock Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Touch Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/touch/</link>
+        <description>Learn more about Arduino Touch Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Ultrasonic Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/ultrasonic/</link>
+        <description>Learn more about Arduino Ultrasonic Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Vibration Module Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/vibration/</link>
+        <description>Learn more about Arduino Vibration Modules.</description>
+    </item>
+    
+    <item>
+        <title>Weather Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/weather/</link>
+        <description>Learn more about Arduino Weather Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Weigh Sensor Cheat Sheet</title>
+        <link>http://bookofzeus.com/arduino/sensor-module-cheat-sheet/weigh/</link>
+        <description>Learn more about Arduino Weigh Sensors.</description>
+    </item>
+    
+    <item>
+        <title>Articles</title>
+        <link>http://bookofzeus.com/articles/</link>
+        <description>Book of Zeus articles: Android, PHP, MySQL, jQuery, CSS, Optimization and many more</description>
+    </item>
+    
+    <item>
+        <title>Android</title>
+        <link>http://bookofzeus.com/articles/android/</link>
+        <description>Android articles, Android tips and other related Android articles</description>
+    </item>
+    
+    <item>
+        <title>Build Android Application without Eclipse</title>
+        <link>http://bookofzeus.com/articles/android/build-android-application-without-eclipse/</link>
+        <description>Create, compile and run Android application without using eclipse in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Create an Android Virtual Device</title>
+        <link>http://bookofzeus.com/articles/android/create-an-android-virtual-device/</link>
+        <description>How to create and configure an Android Virtual Device</description>
+    </item>
+    
+    <item>
+        <title>Create an Android library project</title>
+        <link>http://bookofzeus.com/articles/android/create-android-library-project/</link>
+        <description>Create an Android library project (.JAR) and Test it with jUnit</description>
+    </item>
+    
+    <item>
+        <title>Import an Android Library Project in Android Studio</title>
+        <link>http://bookofzeus.com/articles/android/import-android-library-project-android-studio/</link>
+        <description>Import an Android Library Project (.JAR file) in Android Studio</description>
+    </item>
+    
+    <item>
+        <title>Setup Ubuntu for Android Development</title>
+        <link>http://bookofzeus.com/articles/android/setup-ubuntu-for-android-development/</link>
+        <description>Install and configure your Ubuntu and start building Android applications using Java</description>
+    </item>
+    
+    <item>
+        <title>Signing Your Android Applications</title>
+        <link>http://bookofzeus.com/articles/android/signing-your-android-applications/</link>
+        <description>How to sign your android application and release it to the Google Play store</description>
+    </item>
+    
+    <item>
+        <title>Apache</title>
+        <link>http://bookofzeus.com/articles/apache/</link>
+        <description>Apache articles, Apache tips and Apache server articles</description>
+    </item>
+    
+    <item>
+        <title>Apache redirecting to home directory using userdir module</title>
+        <link>http://bookofzeus.com/articles/apache/apache-redirecting-to-home-directory-using-userdir-module/</link>
+        <description>How to easily shortcut a user to its username directory in Apache</description>
+    </item>
+    
+    <item>
+        <title>Block Bad Bots and Spiders</title>
+        <link>http://bookofzeus.com/articles/apache/block-bad-bots-and-spiders/</link>
+        <description>Prevent bad bots and spiders to crawl your website</description>
+    </item>
+    
+    <item>
+        <title>Change apache default user</title>
+        <link>http://bookofzeus.com/articles/apache/change-apache-default-user/</link>
+        <description>Change the default www-data apache user to a custom one</description>
+    </item>
+    
+    <item>
+        <title>Fix permission denied on LAMP when saving files or creating folders</title>
+        <link>http://bookofzeus.com/articles/apache/fix-permission-denied-on-lamp-when-saving-files-or-creating-folders/</link>
+        <description>Quickly easy fix to fix the permissions denied on LAMP when saving files</description>
+    </item>
+    
+    <item>
+        <title>How to easily disable log in apache</title>
+        <link>http://bookofzeus.com/articles/apache/how-to-easily-disable-log-in-apache/</link>
+        <description>Disable log in apache to avoid excessive writes on local server</description>
+    </item>
+    
+    <item>
+        <title>How to Install mod_rewrite</title>
+        <link>http://bookofzeus.com/articles/apache/how-to-install-mod-rewrite/</link>
+        <description>Install and configure Mod Rewrite in Apache in Linux</description>
+    </item>
+    
+    <item>
+        <title>How to use Apache mod_rewrite</title>
+        <link>http://bookofzeus.com/articles/apache/how-to-use-apache-mod-rewrite/</link>
+        <description>Make all your URLs SEO friendly and maximize your Web Site usability</description>
+    </item>
+    
+    <item>
+        <title>.htaccess Security and Performances tips</title>
+        <link>http://bookofzeus.com/articles/apache/htaccess-security-and-performances-tips/</link>
+        <description>Learn how to improve your security and performance</description>
+    </item>
+    
+    <item>
+        <title>Setup Apache VirtualHost in Ubuntu</title>
+        <link>http://bookofzeus.com/articles/apache/setup-apache-virtualhost-in-ubuntu/</link>
+        <description>Setup multiple domains using the Apache VirtualHost in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Using SetEnvIf in .htaccess with sub-domain</title>
+        <link>http://bookofzeus.com/articles/apache/using-setenvif-in-htaccess-with-sub-domain/</link>
+        <description>Use SetEnvIf to simplify your .htaccess rules using multi sub-domain</description>
+    </item>
+    
+    <item>
+        <title>CSS</title>
+        <link>http://bookofzeus.com/articles/css/</link>
+        <description>CSS articles, CSS tips and CSS development articles</description>
+    </item>
+    
+    <item>
+        <title>Anchors CSS Attribute Selector</title>
+        <link>http://bookofzeus.com/articles/css/anchors-css-attribute-selector/</link>
+        <description>Use the CSS Attribute Selector to add an icon on your links</description>
+    </item>
+    
+    <item>
+        <title>Animate ellipsis using CSS3</title>
+        <link>http://bookofzeus.com/articles/css/animate-ellipsis-using-css3/</link>
+        <description>Create a simple ellipsis animation using CSS3 using keyframes</description>
+    </item>
+    
+    <item>
+        <title>CSS3 Text Animation</title>
+        <link>http://bookofzeus.com/articles/css/animate-text-with-css3/</link>
+        <description>Stop using flash to create text animation and start using CSS3 Animation</description>
+    </item>
+    
+    <item>
+        <title>Create a modal window in jQuery and CSS3</title>
+        <link>http://bookofzeus.com/articles/css/create-a-modal-window-in-jquery-and-css3/</link>
+        <description>Create an elegant way to show messages or confirmation dialog to the user</description>
+    </item>
+    
+    <item>
+        <title>Create a sticky note using CSS3</title>
+        <link>http://bookofzeus.com/articles/css/create-a-sticky-note-with-css3/</link>
+        <description>Create a realistic Sticky Note / Post-It with CSS3</description>
+    </item>
+    
+    <item>
+        <title>Create an easy box reflect with webkit</title>
+        <link>http://bookofzeus.com/articles/css/create-an-easy-box-reflect-with-webkit/</link>
+        <description>Create an neat box reflection using -webkit-box-reflect</description>
+    </item>
+    
+    <item>
+        <title>Create CSS arrows</title>
+        <link>http://bookofzeus.com/articles/css/create-css-arrows/</link>
+        <description>Create nice arrows in CSS without using any images</description>
+    </item>
+    
+    <item>
+        <title>Create Mac OSX Icon CSS3</title>
+        <link>http://bookofzeus.com/articles/css/create-mac-osx-icon-css3/</link>
+        <description>How to create a realistic MAC OSX Icon using CSS3</description>
+    </item>
+    
+    <item>
+        <title>Create a modal window without Javascript</title>
+        <link>http://bookofzeus.com/articles/css/create-modal-window-without-javascript/</link>
+        <description>Stop using Javascript to create simple modal window, start using CSS</description>
+    </item>
+    
+    <item>
+        <title>CSS @Font-Face: which website to choose?</title>
+        <link>http://bookofzeus.com/articles/css/css-font-face-which-website-to-choose/</link>
+        <description>Compare and choose which @Font-Face provider you use and find the best for you</description>
+    </item>
+    
+    <item>
+        <title>CSS Menu Separator</title>
+        <link>http://bookofzeus.com/articles/css/css-menu-separator/</link>
+        <description>Use CSS to display a menu separator between each menu items</description>
+    </item>
+    
+    <item>
+        <title>CSS Message Boxes With CSS3</title>
+        <link>http://bookofzeus.com/articles/css/css-message-boxes/</link>
+        <description>Create nice and easy CSS message boxes for your website with CSS3</description>
+    </item>
+    
+    <item>
+        <title>CSS Meter Bar</title>
+        <link>http://bookofzeus.com/articles/css/css-meter-bar/</link>
+        <description>Create a nice and slick Meter Bar using CSS only</description>
+    </item>
+    
+    <item>
+        <title>CSS Styling textarea to give a notebook/notepad look</title>
+        <link>http://bookofzeus.com/articles/css/css-styling-textarea-give-notebook-notepad-look/</link>
+        <description>Use CSS to change a boring textarea into a beautiful notebook/notepad</description>
+    </item>
+    
+    <item>
+        <title>CSS3 tooltip</title>
+        <link>http://bookofzeus.com/articles/css/css-tooltip/</link>
+        <description>Create fast and easy tooltips using Javascripts and CSS3</description>
+    </item>
+    
+    <item>
+        <title>CSS3 Animation</title>
+        <link>http://bookofzeus.com/articles/css/css3-animation/</link>
+        <description>Create neat animation using CSS3 and wihtout any help from Javascript</description>
+    </item>
+    
+    <item>
+        <title>CSS3 Forms with gradient and box-shadow properties</title>
+        <link>http://bookofzeus.com/articles/css/css3-forms-with-gradient-and-box-shadow-properties/</link>
+        <description>How to make all your forms neat and pretty using CSS3</description>
+    </item>
+    
+    <item>
+        <title>CSS3 Sliding Animations</title>
+        <link>http://bookofzeus.com/articles/css/css3-sliding-animations/</link>
+        <description>Create a slick sliding effect for your images using CSS3</description>
+    </item>
+    
+    <item>
+        <title>CSS3 Transition</title>
+        <link>http://bookofzeus.com/articles/css/css3-transition/</link>
+        <description>Give a smooth transition effect for your Mobile and Tablets websites</description>
+    </item>
+    
+    <item>
+        <title>Enhance your website with @font-face</title>
+        <link>http://bookofzeus.com/articles/css/enhance-your-website-with-font-face/</link>
+        <description>How to convert to Web Fonts and stop creating JPEG or Flash video to create labels</description>
+    </item>
+    
+    <item>
+        <title>How to fix wrapping text underneath an image</title>
+        <link>http://bookofzeus.com/articles/css/how-to-fix-wrapping-text-underneath-an-image/</link>
+        <description>Two easy ways to fix any text underneath any images</description>
+    </item>
+    
+    <item>
+        <title>How to use CSS Sprites</title>
+        <link>http://bookofzeus.com/articles/css/how-to-use-css-sprites/</link>
+        <description>Why CSS Sprites are important and why you should use them</description>
+    </item>
+    
+    <item>
+        <title>iPad 3 Media Query</title>
+        <link>http://bookofzeus.com/articles/css/ipad-3-media-query/</link>
+        <description>Layout your website for the iPad 3 using CSS Media Queries</description>
+    </item>
+    
+    <item>
+        <title>Layout Form using CSS</title>
+        <link>http://bookofzeus.com/articles/css/layout-form-using-css/</link>
+        <description>Create nice forms without using tables and only CSS</description>
+    </item>
+    
+    <item>
+        <title>Learn CSS basics</title>
+        <link>http://bookofzeus.com/articles/css/learn-css-basics/</link>
+        <description>Learn the basics of CSS selectors, declarations and shorthand declarations</description>
+    </item>
+    
+    <item>
+        <title>Learn CSS Media Queries</title>
+        <link>http://bookofzeus.com/articles/css/learn-css-media-queries/</link>
+        <description>Learn the basics of Media Queries and Responsive Design Layout</description>
+    </item>
+    
+    <item>
+        <title>Pacman CSS3 and jQuery Animation</title>
+        <link>http://bookofzeus.com/articles/css/pacman-css3-and-jquery-animation/</link>
+        <description>Create an easy and simple CSS3 and jQuery Pacman animation</description>
+    </item>
+    
+    <item>
+        <title>Page not found 404 CSS3</title>
+        <link>http://bookofzeus.com/articles/css/page-not-found-404-css3/</link>
+        <description>Make your 404 pages not found a little more funny and attractive</description>
+    </item>
+    
+    <item>
+        <title>Quick Tips: CSS Shorthand Properties</title>
+        <link>http://bookofzeus.com/articles/css/quick-tips-css-shorthand-properties/</link>
+        <description>Why you should write your CSS using the shorthand style</description>
+    </item>
+    
+    <item>
+        <title>reset.css StyleSheet</title>
+        <link>http://bookofzeus.com/articles/css/reset-css-stylesheet/</link>
+        <description>Avoid cross-browser and CSS issues by using a CSS reset stylesheet</description>
+    </item>
+    
+    <item>
+        <title>Styling HTML5 Placeholder using CSS</title>
+        <link>http://bookofzeus.com/articles/css/styling-html5-placeholder-using-css/</link>
+        <description>How to quickly style HTML5 placeholder to match your website design</description>
+    </item>
+    
+    <item>
+        <title>Use css icons without images</title>
+        <link>http://bookofzeus.com/articles/css/use-css-icons-without-images/</link>
+        <description>Stop using images and start using webfonts to replace your images</description>
+    </item>
+    
+    <item>
+        <title>Use custom @font-face in CSS3</title>
+        <link>http://bookofzeus.com/articles/css/use-custom-font-face-in-css3/</link>
+        <description>Use your face-font to your website without creating an image</description>
+    </item>
+    
+    <item>
+        <title>What is Specificity in CSS</title>
+        <link>http://bookofzeus.com/articles/css/what-is-specificity-in-css/</link>
+        <description>Weight of importance each selector/element carries when being applied</description>
+    </item>
+    
+    <item>
+        <title>Documentation</title>
+        <link>http://bookofzeus.com/articles/documentation/</link>
+        <description>Documentation, Tips, Cheatsheet and Reference articles</description>
+    </item>
+    
+    <item>
+        <title>Apache .htaccess Cheat Sheet</title>
+        <link>http://bookofzeus.com/articles/documentation/apache-htaccess-cheat-sheet/</link>
+        <description>List of Apache .htaccess Cheat Sheet you need to know</description>
+    </item>
+    
+    <item>
+        <title>CakePHP and Dreamweaver opening ctp files</title>
+        <link>http://bookofzeus.com/articles/documentation/cakephp-and-dreamweaver-opening-ctp-files/</link>
+        <description>How to open cakephp extension (.ctp) files with Dreamweaver</description>
+    </item>
+    
+    <item>
+        <title>Clean Development Series</title>
+        <link>http://bookofzeus.com/articles/documentation/clean-development-series/</link>
+        <description>Clean Development Series - Dirty Code and Rewrite dilemma</description>
+    </item>
+    
+    <item>
+        <title>Collection of cheat sheet</title>
+        <link>http://bookofzeus.com/articles/documentation/collections-of-cheat-sheet/</link>
+        <description>Download some very useful cheat sheets for all your projects</description>
+    </item>
+    
+    <item>
+        <title>CSS and HTML Best Practices</title>
+        <link>http://bookofzeus.com/articles/documentation/css-and-html-best-practices/</link>
+        <description>Learn the best practices of CSS and HTML coding and how to avoid the common errors</description>
+    </item>
+    
+    <item>
+        <title>Moving to a responsive design</title>
+        <link>http://bookofzeus.com/articles/documentation/moving-to-a-responsive-design/</link>
+        <description>What do you need to know about responsive design and how to apply to your site</description>
+    </item>
+    
+    <item>
+        <title>Git</title>
+        <link>http://bookofzeus.com/articles/git/</link>
+        <description>Git source control tips, documentation and how to!</description>
+    </item>
+    
+    <item>
+        <title>.gitignore Android App Cheatsheet</title>
+        <link>http://bookofzeus.com/articles/git/gitignore-android-app-cheatsheet/</link>
+        <description>Download .gitignore cheatsheet for Android Applications</description>
+    </item>
+    
+    <item>
+        <title>HTML</title>
+        <link>http://bookofzeus.com/articles/html/</link>
+        <description>HTML articles, HTML tips and all other XHTML/HTML articles</description>
+    </item>
+    
+    <item>
+        <title>Build a fancy countdown with HTML5</title>
+        <link>http://bookofzeus.com/articles/html/build-a-fancy-countdown-with-html5/</link>
+        <description>Stop nesting and over-using HTML tags to solve layout issues</description>
+    </item>
+    
+    <item>
+        <title>Geolocation Introduction with HTML5</title>
+        <link>http://bookofzeus.com/articles/html/geolocation-introduction-with-html5/</link>
+        <description>Get the latitude and the longitude with HTML5 using simple Javascript code</description>
+    </item>
+    
+    <item>
+        <title>How to build pages with minimal HTML</title>
+        <link>http://bookofzeus.com/articles/html/how-build-pages-minimal-html/</link>
+        <description>Stop nesting and over-using HTML tags to solve layout issues</description>
+    </item>
+    
+    <item>
+        <title>Live edit your content without form</title>
+        <link>http://bookofzeus.com/articles/html/live-edit-your-content-without-form/</link>
+        <description>Live edit your content without refreshing your web page and without using a form</description>
+    </item>
+    
+    <item>
+        <title>Quick Guide to Mobile Devices Meta Tags</title>
+        <link>http://bookofzeus.com/articles/html/quick-guide-to-mobile-devices-meta-tags/</link>
+        <description>Make your website compatible with the mobile meta tags</description>
+    </item>
+    
+    <item>
+        <title>Quick Guide to Mobile Devices Meta Tags</title>
+        <link>http://bookofzeus.com/articles/html/simple-image-carousel-using-css3-and-jquery/</link>
+        <description>Make your website compatible with the mobile meta tags</description>
+    </item>
+    
+    <item>
+        <title>Java</title>
+        <link>http://bookofzeus.com/articles/java/</link>
+        <description>Java articles, Java tips and Java development articles</description>
+    </item>
+    
+    <item>
+        <title>Create a new Java project using maven</title>
+        <link>http://bookofzeus.com/articles/java/create-new-java-project-using-maven/</link>
+        <description>How to easily create a new Java project using Maven</description>
+    </item>
+    
+    <item>
+        <title>Javascript</title>
+        <link>http://bookofzeus.com/articles/javascript/</link>
+        <description>Javascript articles, Javascript tips and Javascript development articles</description>
+    </item>
+    
+    <item>
+        <title>Create a modal window in Javascript and CSS</title>
+        <link>http://bookofzeus.com/articles/javascript/create-a-modal-window-in-javascript-and-css/</link>
+        <description>Simple code to implement a modal window using CSS and Javascript</description>
+    </item>
+    
+    <item>
+        <title>Create an alias to document getelementbyid in JavaScript</title>
+        <link>http://bookofzeus.com/articles/javascript/create-an-alias-to-document-getelementbyid-in-javascript/</link>
+        <description>Simple way to implement a redundant call to document.getElementById</description>
+    </item>
+    
+    <item>
+        <title>How to disabled the enter key in javascript in a web form</title>
+        <link>http://bookofzeus.com/articles/javascript/how-to-disabled-the-enter-key-in-javascript-in-a-web-form/</link>
+        <description>Prevent a form to be submitted using only the submit button</description>
+    </item>
+    
+    <item>
+        <title>Input Form Field Javascript Events</title>
+        <link>http://bookofzeus.com/articles/javascript/input-form-field-javascript-events/</link>
+        <description>Filtering data on input fields using oncopy, onpaste, oncut to prevent copy and paste</description>
+    </item>
+    
+    <item>
+        <title>iPhone, iPad, iPod Detection in Javascript</title>
+        <link>http://bookofzeus.com/articles/javascript/iphone-detection-in-javascript/</link>
+        <description>How to redirect iPhone, iPad or iPod using Javascript</description>
+    </item>
+    
+    <item>
+        <title>Short filename with extension using javascript</title>
+        <link>http://bookofzeus.com/articles/javascript/short-filename-with-extension-using-javascript/</link>
+        <description>Truncate the filename without losing the extension in JavaScript</description>
+    </item>
+    
+    <item>
+        <title>jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/</link>
+        <description>jQuery articles, jQuery tips and jQuery development articles</description>
+    </item>
+    
+    <item>
+        <title>Add content dynamically by Scrolling using jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/add-content-dynamically-by-scrolling-using-jquery/</link>
+        <description>Improve your loading time and user experience by loading your content dyncamically</description>
+    </item>
+    
+    <item>
+        <title>Ajax Response: JSON or XML?</title>
+        <link>http://bookofzeus.com/articles/jquery/ajax-response-json-or-xml/</link>
+        <description>Caching, performance, output, complexity: Stop using XML and start using jSon</description>
+    </item>
+    
+    <item>
+        <title>Build better forms with jQuery and CSS</title>
+        <link>http://bookofzeus.com/articles/jquery/build-better-forms-with-jquery-and-css/</link>
+        <description>Create smart forms using jQuery, jQuery Validator and CSS</description>
+    </item>
+    
+    <item>
+        <title>Building a basic website with pushstate and ajax</title>
+        <link>http://bookofzeus.com/articles/jquery/building-basic-website-pushstate-ajax/</link>
+        <description>How to build an easy website in LAMP with PHP, Ajax and pushstate</description>
+    </item>
+    
+    <item>
+        <title>Create an Ajax Login with jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/create-an-ajax-login-with-jquery/</link>
+        <description>Create a simple Ajax login form using jQuery without refreshing the page.</description>
+    </item>
+    
+    <item>
+        <title>Create better jQuery plugins</title>
+        <link>http://bookofzeus.com/articles/jquery/create-better-jquery-plugins/</link>
+        <description>Tips on how to create better, reliable and easy to use jQuery Plugins.</description>
+    </item>
+    
+    <item>
+        <title>Drag and Drop Upload files using Ajax</title>
+        <link>http://bookofzeus.com/articles/jquery/drag-and-drop-upload-files-using-ajax/</link>
+        <description>Quick and neat way to upload files by using drag and drop with Ajax.</description>
+    </item>
+    
+    <item>
+        <title>Dynamically shortened Text using jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/dynamically-shortened-text-using-jquery/</link>
+        <description>How can you shortened text or paragraph dynamically using jQuery.</description>
+    </item>
+    
+    <item>
+        <title>Extend your own jQuery code</title>
+        <link>http://bookofzeus.com/articles/jquery/extend-your-own-jquery-code/</link>
+        <description>Create custom JavaScript prototype functions with jQuery to simplify your build-in object calls.</description>
+    </item>
+    
+    <item>
+        <title>Font resizing with jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/font-resizing-with-jquery/</link>
+        <description>How to resize font with jQuery for visually impaired users or simply if the font is too small.</description>
+    </item>
+    
+    <item>
+        <title>Indent code in textarea using jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/indent-code-in-textarea-using-jquery/</link>
+        <description>Use a Tab or Spaces to indent your code in the textarea</description>
+    </item>
+    
+    <item>
+        <title>jQuery Validator: Adding a No Space validation</title>
+        <link>http://bookofzeus.com/articles/jquery/jquery-validator-adding-a-no-space-validation/</link>
+        <description>How to prevent entering white spaces in your form using jQuery Validation.</description>
+    </item>
+    
+    <item>
+        <title>jTextHighlighter : Highlight Text with jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/jtexthighlighter-highlight-text-jquery/</link>
+        <description>Highlight any text or word in a paragraph using the jTextHighlighter jQuery Plugin.</description>
+    </item>
+    
+    <item>
+        <title>Quick introduction to pushState with Ajax</title>
+        <link>http://bookofzeus.com/articles/jquery/quick-introduction-pushstate-with-ajax/</link>
+        <description>Learn how to use the pushState method and use it with Ajax content.</description>
+    </item>
+    
+    <item>
+        <title>Setting cookies with jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/setting-cookies-with-jquery/</link>
+        <description>How to create, set and delete Cookies in JavaScript using jQuery</description>
+    </item>
+    
+    <item>
+        <title>Simulate the anchor click with jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/simulate-the-anchor-click-with-jquery/</link>
+        <description>Quick tip on how to simulate anchor links using jQuery to help your SEO.</description>
+    </item>
+    
+    <item>
+        <title>Structure Expansion For tables and divs using jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/structure-expansion-for-tables-and-divs-using-jquery/</link>
+        <description>How to expand structures using jQuery in tables or divs.</description>
+    </item>
+    
+    <item>
+        <title>Top 5 jQuery tips for your site</title>
+        <link>http://bookofzeus.com/articles/jquery/top-5-jquery-tips-for-your-site/</link>
+        <description>Tips for your site that will help improve the way you use jQuery.</description>
+    </item>
+    
+    <item>
+        <title>Understanding the easing effect in jQuery</title>
+        <link>http://bookofzeus.com/articles/jquery/understanding-easing-effect-jquery/</link>
+        <description>What are the different easing effects in jQuery and how they animate.</description>
+    </item>
+    
+    <item>
+        <title>Linux</title>
+        <link>http://bookofzeus.com/articles/linux/</link>
+        <description>Linux articles, Linux tips and all other Linux distribution articles</description>
+    </item>
+    
+    <item>
+        <title>Bypass SSH login</title>
+        <link>http://bookofzeus.com/articles/linux/bypass-ssh-login/</link>
+        <description>Login to a development or a production server without entering a password</description>
+    </item>
+    
+    <item>
+        <title>Change the default crontab editor</title>
+        <link>http://bookofzeus.com/articles/linux/change-the-default-crontab-editor/</link>
+        <description>How to change the default editor if the one by default is not your favorite</description>
+    </item>
+    
+    <item>
+        <title>Customized folder and file list in Linux</title>
+        <link>http://bookofzeus.com/articles/linux/customized-folder-and-file-list-in-linux/</link>
+        <description>Customized the output of the folder and files list in linux</description>
+    </item>
+    
+    <item>
+        <title>Delete files securely in Linux</title>
+        <link>http://bookofzeus.com/articles/linux/delete-files-securely-in-linux/</link>
+        <description>How to delete files securely in linux using the shred command</description>
+    </item>
+    
+    <item>
+        <title>Diff files from two folders</title>
+        <link>http://bookofzeus.com/articles/linux/diff-files-from-two-folders/</link>
+        <description>Simple command to check the difference between two folders</description>
+    </item>
+    
+    <item>
+        <title>Disable overlay scrollbars in Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/disable-overlay-scrollbars-in-ubuntu/</link>
+        <description>How to revert back the classic scrollbars in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Find Hardware Specs in Linux</title>
+        <link>http://bookofzeus.com/articles/linux/find-hardware-specs-in-linux/</link>
+        <description>Find hardware such as CPU, Graphic, Network, Memory, Disk etc...</description>
+    </item>
+    
+    <item>
+        <title>Get SSL running on Apache in CentOS</title>
+        <link>http://bookofzeus.com/articles/linux/get-ssl-running-on-apache-centos/</link>
+        <description>Install SSL mod_ssl for Apache in CentOS with certificate</description>
+    </item>
+    
+    <item>
+        <title>Get your external IP Address on Command Line</title>
+        <link>http://bookofzeus.com/articles/linux/get-your-external-ip-address-from-command-line/</link>
+        <description>How to get your IP address from the linux shell or command line</description>
+    </item>
+    
+    <item>
+        <title>Hard disk usage from command line on Linux</title>
+        <link>http://bookofzeus.com/articles/linux/hard-disk-usage-from-command-line-on-linux/</link>
+        <description>Check how much space left on your disk using a simple linux command line</description>
+    </item>
+    
+    <item>
+        <title>How to Disable VIM matching parenthesis highlighting</title>
+        <link>http://bookofzeus.com/articles/linux/how-to-disable-vim-matching-parenthesis-highlighting/</link>
+        <description>How to remove the matching parenthesis highlighting in VI/VIM</description>
+    </item>
+    
+    <item>
+        <title>How to install a new drive in Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/how-to-install-a-new-drive-in-ubuntu/</link>
+        <description>Install, format and prepare a new drive via command line in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>HTML5 and CSS3 Syntax Color in VIM</title>
+        <link>http://bookofzeus.com/articles/linux/html5-and-css3-syntax-color-in-vim/</link>
+        <description>Fix the color syntax in VIM for HTML5 and CSS3 media queries</description>
+    </item>
+    
+    <item>
+        <title>Install a LAMP (Apache, PHP, Mysql) On Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/install-a-lamp-apache-php-mysql-on-ubuntu/</link>
+        <description>This guide will help you to install a local LAMP web server</description>
+    </item>
+    
+    <item>
+        <title>How to install Grive2 in Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/install-grive2-ubuntu/</link>
+        <description>How to install Grive2 in Ubuntu and automatically backup your file</description>
+    </item>
+    
+    <item>
+        <title>Install VNC Server and VNC Client on Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/install-vnc-server-and-vnc-client-on-ubuntu/</link>
+        <description>How to access a remote desktop or server using VNC on Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Installing RPM package in Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/installing-rpm-package-in-ubuntu/</link>
+        <description>Convert and install RPM package using alien in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Kill All Process in One Step in Linux</title>
+        <link>http://bookofzeus.com/articles/linux/kill-all-process-in-one-step-in-linux/</link>
+        <description>Simple way to kill all process in one step using grep and awk</description>
+    </item>
+    
+    <item>
+        <title>Linux backup using CRON to local directory</title>
+        <link>http://bookofzeus.com/articles/linux/linux-backup-using-cron-to-local-directory/</link>
+        <description>Backup your home local directory using a simple cronjob</description>
+    </item>
+    
+    <item>
+        <title>Make Cartoon Images with ImageMagick</title>
+        <link>http://bookofzeus.com/articles/linux/make-cartoon-images-with-imagemagick/</link>
+        <description>Create or convert any images into a cartoon using ImageMagick</description>
+    </item>
+    
+    <item>
+        <title>Read HFS on Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/mounting-hfs-on-ubuntu/</link>
+        <description>Read Mac OS HFS CD or DVD on Ubuntu using HFSPlus</description>
+    </item>
+    
+    <item>
+        <title>My .vimrc</title>
+        <link>http://bookofzeus.com/articles/linux/my-vimrc/</link>
+        <description>This is my .vimrc ... in case I forget it! It maybe sound ridiculous but it maybe be useful one day</description>
+    </item>
+    
+    <item>
+        <title>Send an Email in Linux from the Shell with Attachment</title>
+        <link>http://bookofzeus.com/articles/linux/send-an-email-in-linux-from-the-shell-with-attachment/</link>
+        <description>Simple way to send emails from the command line in Linux</description>
+    </item>
+    
+    <item>
+        <title>Slow SSH Connection</title>
+        <link>http://bookofzeus.com/articles/linux/slow-ssh-connection/</link>
+        <description>How to fix the slow connection to a remote server</description>
+    </item>
+    
+    <item>
+        <title>Verify if a dedicated server is really dedicated</title>
+        <link>http://bookofzeus.com/articles/linux/verify-if-a-dedicated-server-is-really-dedicated/</link>
+        <description>Quick tips you can check and command your can run to verify your server</description>
+    </item>
+    
+    <item>
+        <title>VPN into a Secure Environment in Ubuntu</title>
+        <link>http://bookofzeus.com/articles/linux/vpn-secure-environment-ubuntu/</link>
+        <description>How to establish a secure virtual point-to-point connection using Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Mobile</title>
+        <link>http://bookofzeus.com/articles/mobile/</link>
+        <description>Mobile articles, Mobile tips and Mobile development articles</description>
+    </item>
+    
+    <item>
+        <title>iPhone String (NSString) comparisons in objective-c</title>
+        <link>http://bookofzeus.com/articles/mobile/iphone-string-nsstring-comparisons-in-objective-c/</link>
+        <description>How to compare NSString using isEqualToString method, caseInsensitiveCompare and compare method</description>
+    </item>
+    
+    <item>
+        <title>Redirect iPhone or Android to a Mobile WebSite</title>
+        <link>http://bookofzeus.com/articles/mobile/redirect-iphone-or-android-to-a-mobile-website/</link>
+        <description>Redirect any Mobile device to another sub-domain</description>
+    </item>
+    
+    <item>
+        <title>Remove UIStatusBar in your iPhone Application</title>
+        <link>http://bookofzeus.com/articles/mobile/remove-uistatusbar-in-your-iphone-application/</link>
+        <description>Simple way to make your iPhone Application Full Screen</description>
+    </item>
+    
+    <item>
+        <title>Mongo</title>
+        <link>http://bookofzeus.com/articles/mongodb/</link>
+        <description>MongoDB articles, MongoDB tips and Mongodb development articles</description>
+    </item>
+    
+    <item>
+        <title>Install MongoDB on Ubuntu with PHP</title>
+        <link>http://bookofzeus.com/articles/mongodb/install-mongodb-on-ubuntu-with-php/</link>
+        <description>How to install and run MongoDB on an Ubuntu server with PHP</description>
+    </item>
+    
+    <item>
+        <title>MySQL</title>
+        <link>http://bookofzeus.com/articles/mysql/</link>
+        <description>MySQL articles, MySQL tips and MySQL development articles</description>
+    </item>
+    
+    <item>
+        <title>Calculating MySQL Database sizes in Linux</title>
+        <link>http://bookofzeus.com/articles/mysql/calculating-mysql-database-sizes-in-linux/</link>
+        <description>How to create a script that calculates folders and MySQL database sizes</description>
+    </item>
+    
+    <item>
+        <title>Count the number of occurrences of a char in MySQL</title>
+        <link>http://bookofzeus.com/articles/mysql/count-the-number-of-occurrences-of-a-char-in-mysql/</link>
+        <description>Simple SQL script to know the number of occurrences in MySQL</description>
+    </item>
+    
+    <item>
+        <title>How to Move MySQL Database Data Directory</title>
+        <link>http://bookofzeus.com/articles/mysql/how-to-move-mysql-database-data-directory/</link>
+        <description>Step by Step guide to move a MySQL data directory to another folder</description>
+    </item>
+    
+    <item>
+        <title>Joining MySQL tables</title>
+        <link>http://bookofzeus.com/articles/mysql/joining-mysql-tables/</link>
+        <description>What is a LEFT JOIN, INNER JOIN, CROSS JOIN and STRAIGHT_JOIN?</description>
+    </item>
+    
+    <item>
+        <title>MySQL Field Types</title>
+        <link>http://bookofzeus.com/articles/mysql/mysql-field-types/</link>
+        <description>List of MySQL column types and their characteristics</description>
+    </item>
+    
+    <item>
+        <title>MySQL load data infile error 1148</title>
+        <link>http://bookofzeus.com/articles/mysql/mysql-load-data-infile-error-1148/</link>
+        <description>How to import dta from a CSV file in MySQL without the ERROR 1148</description>
+    </item>
+    
+    <item>
+        <title>Replace MySQL with MariaDB</title>
+        <link>http://bookofzeus.com/articles/mysql/replace-mysql-with-mariadb/</link>
+        <description>Quick guide to replace MySQL and install MariaDB on linux</description>
+    </item>
+    
+    <item>
+        <title>Save Last MySQL Command</title>
+        <link>http://bookofzeus.com/articles/mysql/save-last-mysql-command/</link>
+        <description>How to save, and not overwrite, last executed MySQL command in VIM</description>
+    </item>
+    
+    <item>
+        <title>Secure your Website from SQL Injections</title>
+        <link>http://bookofzeus.com/articles/mysql/secure-your-website-from-sql-injections/</link>
+        <description>Learn how to sanitze and prevent SQL injections using PHP</description>
+    </item>
+    
+    <item>
+        <title>Select a portion from a MySQL Blob Field</title>
+        <link>http://bookofzeus.com/articles/mysql/select-a-portion-from-a-mysql-blob-field/</link>
+        <description>Select a part of a blob or text field instead of the full text</description>
+    </item>
+    
+    <item>
+        <title>Simple automated MySQL Backup databases script</title>
+        <link>http://bookofzeus.com/articles/mysql/simple-automated-mysql-backup-databases-script/</link>
+        <description>How to use the cronjob to backup MySQL databases and tables automaticly</description>
+    </item>
+    
+    <item>
+        <title>Using mysqldump with subqueries</title>
+        <link>http://bookofzeus.com/articles/mysql/using-mysqldump-with-subqueries/</link>
+        <description>How to export and import data from a mysqldump using a subquery with MySQL</description>
+    </item>
+    
+    <item>
+        <title>Optimization</title>
+        <link>http://bookofzeus.com/articles/optimization/</link>
+        <description>Optimization articles, Optimization tips and Optimization development articles</description>
+    </item>
+    
+    <item>
+        <title>How to install MemCached in Ubuntu</title>
+        <link>http://bookofzeus.com/articles/optimization/how-to-install-memcached-in-ubuntu/</link>
+        <description>Install MemCached and Memcached for PHP 5 in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Improve performance and optimize your Website</title>
+        <link>http://bookofzeus.com/articles/optimization/improve-performance-optimize-website/</link>
+        <description>Quick HTML, CSS, Javascript and Apache  tips on how optimize your website</description>
+    </item>
+    
+    <item>
+        <title>Install APC on RedHat RHEL 5</title>
+        <link>http://bookofzeus.com/articles/optimization/install-apc-on-redhat-rhel-5/</link>
+        <description>How to install alternative PHP cache on RedHat RHEL 5</description>
+    </item>
+    
+    <item>
+        <title>Install redis on Ubuntu with PHP</title>
+        <link>http://bookofzeus.com/articles/optimization/install-redis-on-ubuntu-with-php/</link>
+        <description>Guide to install redis server and client on Ubuntu with PHP</description>
+    </item>
+    
+    <item>
+        <title>Install SCache on Ubuntu with PHP</title>
+        <link>http://bookofzeus.com/articles/optimization/install-scache-on-ubuntu-with-php/</link>
+        <description>Install an alternate approach to PHP sessions on Ubuntu with PHP</description>
+    </item>
+    
+    <item>
+        <title>Memcached vs Redis</title>
+        <link>http://bookofzeus.com/articles/optimization/memcached-vs-redis/</link>
+        <description>Compare and see the difference between Memcached vs Redis</description>
+    </item>
+    
+    <item>
+        <title>PHP</title>
+        <link>http://bookofzeus.com/articles/php/</link>
+        <description>PHP articles, PHP tips and PHP development articles</description>
+    </item>
+    
+    <item>
+        <title>BitMasks: Emulate Unix Permissions in PHP</title>
+        <link>http://bookofzeus.com/articles/php/bitmasks-emulate-unix-permissions-in-php/</link>
+        <description>How to implement a nice PHP version of it</description>
+    </item>
+    
+    <item>
+        <title>Catching interruption in PHP cron jobs</title>
+        <link>http://bookofzeus.com/articles/php/catching-interruption-in-php-cron-jobs/</link>
+        <description>Use the PHP sig_handler function to log errors in case of a killed or failing cron job</description>
+    </item>
+    
+    <item>
+        <title>Clean Variables in PHP</title>
+        <link>http://bookofzeus.com/articles/php/clean-variables-php/</link>
+        <description>How to sanitize and clean $_POST and $_GET PHP variables</description>
+    </item>
+    
+    <item>
+        <title>Convert SimpleXML Object into PHP Array</title>
+        <link>http://bookofzeus.com/articles/php/convert-simplexml-object-into-php-array/</link>
+        <description>Simple and quick solution to convert an XML Object into a PHP Array</description>
+    </item>
+    
+    <item>
+        <title>Create a Postcard with PHP</title>
+        <link>http://bookofzeus.com/articles/php/create-a-postcard-with-php/</link>
+        <description>How to create a customized postcard with PHP and GD</description>
+    </item>
+    
+    <item>
+        <title>Create short urls for your website</title>
+        <link>http://bookofzeus.com/articles/php/create-short-urls-for-your-website/</link>
+        <description>How to create and redirect simple short url for your website</description>
+    </item>
+    
+    <item>
+        <title>Generate Guitar Chords with PHP</title>
+        <link>http://bookofzeus.com/articles/php/generate-guitar-chords-php/</link>
+        <description>Simple script to generate an image of a Chords/Tabs using PHP</description>
+    </item>
+    
+    <item>
+        <title>Get the color palette for an image using PHP</title>
+        <link>http://bookofzeus.com/articles/php/get-the-color-palette-for-an-image-using-php/</link>
+        <description>Get the top colors in an image using the GD library</description>
+    </item>
+    
+    <item>
+        <title>How to detect an AJAX request in PHP</title>
+        <link>http://bookofzeus.com/articles/php/how-to-detect-an-ajax-request-in-php/</link>
+        <description>How to increase AJAX request security in PHP with jQuery using HTTP_X_REQUESTED_WITH</description>
+    </item>
+    
+    <item>
+        <title>How to send files in PHP using CURL</title>
+        <link>http://bookofzeus.com/articles/php/how-to-send-files-in-php-using-curl/</link>
+        <description>Using PHP to upload and validate files send via CURL</description>
+    </item>
+    
+    <item>
+        <title>Multiple cron job using same php file</title>
+        <link>http://bookofzeus.com/articles/php/multiple-cron-job-using-same-php-file/</link>
+        <description>How to allow multiple cronjob to use the same PHP file</description>
+    </item>
+    
+    <item>
+        <title>PHP Comparison between double, triple equals with useful functions</title>
+        <link>http://bookofzeus.com/articles/php/php-comparison-between-double-triple-equals-with-useful-functions/</link>
+        <description>What you need to know about double, tripple equals</description>
+    </item>
+    
+    <item>
+        <title>PHP headers with AJAX</title>
+        <link>http://bookofzeus.com/articles/php/php-headers-with-ajax/</link>
+        <description>Using PHP headers with AJAX for jSon, PHP or HTML output</description>
+    </item>
+    
+    <item>
+        <title>PHP IP Filtering</title>
+        <link>http://bookofzeus.com/articles/php/php-ip-filtering/</link>
+        <description>Block or restrict traffic coming to your site or system using PHP</description>
+    </item>
+    
+    <item>
+        <title>PHP Regular Expression</title>
+        <link>http://bookofzeus.com/articles/php/php-regular-expression/</link>
+        <description>Learn how to use regular expression and how it works in PHP</description>
+    </item>
+    
+    <item>
+        <title>PHP Singleton 101</title>
+        <link>http://bookofzeus.com/articles/php/php-singleton-101/</link>
+        <description>Learn the basic, how does a singleton works and how it can be useful</description>
+    </item>
+    
+    <item>
+        <title>Pixelate Images using PHP</title>
+        <link>http://bookofzeus.com/articles/php/pixelate-images-using-php/</link>
+        <description>Convert images to a pixelated image using PHP</description>
+    </item>
+    
+    <item>
+        <title>Simple Facebook Authentication Class using cURL</title>
+        <link>http://bookofzeus.com/articles/php/simple-facebook-authentication-class-using-curl/</link>
+        <description>A fully functional PHP 5 Class for adding Facebook user Authentication to your website</description>
+    </item>
+    
+    <item>
+        <title>Smarty Modifier filesize</title>
+        <link>http://bookofzeus.com/articles/php/smarty-modifier-filesize/</link>
+        <description>Display a human readable filesize in Smarty by creating a simple modifier</description>
+    </item>
+    
+    <item>
+        <title>Validate and sanitize email address in PHP</title>
+        <link>http://bookofzeus.com/articles/php/validate-and-sanitize-email-address-in-php/</link>
+        <description>Simple way to validate email address using the PHP filter_var function</description>
+    </item>
+    
+    <item>
+        <title>Validate if an IP is banned using memcached</title>
+        <link>http://bookofzeus.com/articles/php/validate-if-an-ip-is-banned-using-memcached/</link>
+        <description>How to validate if an IP is banned in PHP using memcached</description>
+    </item>
+    
+    <item>
+        <title>Validate PHP File in linux</title>
+        <link>http://bookofzeus.com/articles/php/validate-php-file-in-linux/</link>
+        <description>Simple way to validate php file on ubuntu with svn repository</description>
+    </item>
+    
+    <item>
+        <title>Python</title>
+        <link>http://bookofzeus.com/articles/python/</link>
+        <description>Python articles, Python tips and Python development articles</description>
+    </item>
+    
+    <item>
+        <title>Open large CSV file</title>
+        <link>http://bookofzeus.com/articles/python/open-large-csv-file/</link>
+        <description>Use Python to open large CSV files using the csv.reader</description>
+    </item>
+    
+    <item>
+        <title>Sass</title>
+        <link>http://bookofzeus.com/articles/sass/</link>
+        <description>SASS articles, SASS tips and SASS development articles</description>
+    </item>
+    
+    <item>
+        <title>Introduction to SASS</title>
+        <link>http://bookofzeus.com/articles/sass/introduction-to-sass/</link>
+        <description>Quick introduction to learn SASS and install SASS in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Subversion</title>
+        <link>http://bookofzeus.com/articles/subversion/</link>
+        <description>SubVersion articles, SubVersion tips and SubVersion servers articles</description>
+    </item>
+    
+    <item>
+        <title>Create a SVN repository with Ubuntu and SubVersion</title>
+        <link>http://bookofzeus.com/articles/subversion/create-a-svn-repository-with-ubuntu-and-subversion/</link>
+        <description>Install and configure subversion, create a SVN repository, trunk and branches</description>
+    </item>
+    
+    <item>
+        <title>How to setup an SVN Repository on Apache (http) on Ubuntu</title>
+        <link>http://bookofzeus.com/articles/subversion/how-to-setup-an-svn-repository-on-apache-http-on-ubuntu/</link>
+        <description>Quick guide to in install and configure Subversion for Apache in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Ignore folder in SubVersion</title>
+        <link>http://bookofzeus.com/articles/subversion/ignore-folder-in-subversion/</link>
+        <description>How to ignore folders such as Smarty templates_c using SVN</description>
+    </item>
+    
+    <item>
+        <title>Organize your SVN repository</title>
+        <link>http://bookofzeus.com/articles/subversion/organize-your-svn-repository/</link>
+        <description>How to organize your trunk, branches, tags and releases following a naming convention</description>
+    </item>
+    
+    <item>
+        <title>Smart grep with SVN</title>
+        <link>http://bookofzeus.com/articles/subversion/smart-grep-with-svn/</link>
+        <description>Looking for some code in PHP files using grep finding the right information quickly</description>
+    </item>
+    
+    <item>
+        <title>SVN Merge branch with trunk</title>
+        <link>http://bookofzeus.com/articles/subversion/svn-merge-branch-with-trunk/</link>
+        <description>How to merge your current svn branch to your trunk</description>
+    </item>
+    
+    <item>
+        <title>Customize Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/</link>
+        <description>Enhance and build Ubuntu the way you like with your personal touch</description>
+    </item>
+    
+    <item>
+        <title>Editor</title>
+        <link>http://bookofzeus.com/customize-ubuntu/editor/</link>
+        <description>Customize your favorite Ubuntu Editor / GUI</description>
+    </item>
+    
+    <item>
+        <title>Adding a folding text icon in gEdit</title>
+        <link>http://bookofzeus.com/customize-ubuntu/editor/adding-folding-text-icon-gedit/</link>
+        <description>Adding a shortcut button to wrap/fold text in gEdit</description>
+    </item>
+    
+    <item>
+        <title>Environment</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/</link>
+        <description>Customize your desktop environment for Gnome, KDE and Unity</description>
+    </item>
+    
+    <item>
+        <title>Always show location in Nautilus</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/always-show-location-nautilus/</link>
+        <description>Quick way to enable the location in the address bar in Nautilus</description>
+    </item>
+    
+    <item>
+        <title>Create new launcher items in Unity</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/create-new-launcher-items-in-unity/</link>
+        <description>Simple way to add a custom application to the unity menu</description>
+    </item>
+    
+    <item>
+        <title>Creating a custom launcher in Unity</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/creating-a-custom-launcher-in-unity/</link>
+        <description>Creating a custom launcher menu in Unity</description>
+    </item>
+    
+    <item>
+        <title>Customize application menu and context menu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/customize-application-menu-and-context-menu/</link>
+        <description>How to modify and re-order items in menu and context menu</description>
+    </item>
+    
+    <item>
+        <title>Customized folder and file</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/customized-folder-and-file/</link>
+        <description>Customized the output of the folder and files list in linux</description>
+    </item>
+    
+    <item>
+        <title>Disable the drum beat sound in Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/disable-the-drum-beat-sound-ubuntu/</link>
+        <description>How to easily disable the Ubuntu drum beat sound</description>
+    </item>
+    
+    <item>
+        <title>Disable Unity Menu Bar</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/disable-unity-menu-bar/</link>
+        <description>How to disable the Global Menu Bar in Unity</description>
+    </item>
+    
+    <item>
+        <title>Remove Ubuntu Unity</title>
+        <link>http://bookofzeus.com/customize-ubuntu/environment/remove-ubuntu-unity/</link>
+        <description>Remove Ubuntu Unity and install Classic Gnome 3</description>
+    </item>
+    
+    <item>
+        <title>Flash Player</title>
+        <link>http://bookofzeus.com/customize-ubuntu/flash-player/</link>
+        <description>Tips on how to customize and install ubuntu flash player</description>
+    </item>
+    
+    <item>
+        <title>Fix Adobe flash player version is not supported</title>
+        <link>http://bookofzeus.com/customize-ubuntu/flash-player/fix-adobe-flash-player-version-is-not-supported/</link>
+        <description>Install the Adobe flash hardware abstraction layer in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Fonts</title>
+        <link>http://bookofzeus.com/customize-ubuntu/fonts/</link>
+        <description>Customize how Ubuntu look using custom fonts</description>
+    </item>
+    
+    <item>
+        <title>Change fonts and size in Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/fonts/change-fonts-and-size-ubuntu/</link>
+        <description>How to change system fonts in Ubuntu using MyUnity</description>
+    </item>
+    
+    <item>
+        <title>Install MAC OS fonts in Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/fonts/install-mac-os-fonts-in-ubuntu/</link>
+        <description>How to install MAC OS Fonts in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Install Microsoft fonts in Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/fonts/install-microsoft-fonts-ubuntu/</link>
+        <description>How to install Microsoft TTF Fonts in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Installing TrueType fonts in Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/fonts/installing-truetype-fonts-in-ubuntu/</link>
+        <description>How to install TrueType fonts for all or a specific user in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Icons</title>
+        <link>http://bookofzeus.com/customize-ubuntu/icons/</link>
+        <description>Install and customize Ubuntu icons</description>
+    </item>
+    
+    <item>
+        <title>Hide Ubuntu desktop icons</title>
+        <link>http://bookofzeus.com/customize-ubuntu/icons/hide-ubuntu-desktop-icons/</link>
+        <description>Hide the computer, home, network and trash desktop icons in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Indicator</title>
+        <link>http://bookofzeus.com/customize-ubuntu/indicator/</link>
+        <description>Access and manage your Application Indicators</description>
+    </item>
+    
+    <item>
+        <title>indicator-dropbox</title>
+        <link>http://bookofzeus.com/customize-ubuntu/indicator/indicator-dropbox/</link>
+        <description>Manage your dropbox account using the dropbox indicator</description>
+    </item>
+    
+    <item>
+        <title>indicator-multiload</title>
+        <link>http://bookofzeus.com/customize-ubuntu/indicator/indicator-multiload/</link>
+        <description>indicator-multiload is an indicator that gives you information about your CPU, Memory and many more</description>
+    </item>
+    
+    <item>
+        <title>indicator-sensors</title>
+        <link>http://bookofzeus.com/customize-ubuntu/indicator/indicator-sensors/</link>
+        <description>Hardware Sensors Indicator is an indicator that displays hardware informations</description>
+    </item>
+    
+    <item>
+        <title>indicator-stickynotes</title>
+        <link>http://bookofzeus.com/customize-ubuntu/indicator/indicator-stickynotes/</link>
+        <description>Indicator Stickynotes is an indicator to add Sticky Notes capability to Unity desktop</description>
+    </item>
+    
+    <item>
+        <title>indicator-weather</title>
+        <link>http://bookofzeus.com/customize-ubuntu/indicator/indicator-weather/</link>
+        <description>Display the current/extended weather for your favorite locations</description>
+    </item>
+    
+    <item>
+        <title>Install</title>
+        <link>http://bookofzeus.com/customize-ubuntu/install/</link>
+        <description>Install script you can customize to make your Ubuntu the way you like</description>
+    </item>
+    
+    <item>
+        <title>Post install scripts</title>
+        <link>http://bookofzeus.com/customize-ubuntu/install/post-install-scripts/</link>
+        <description>Run scripts, commands and modify applications once Ubuntu is installed</description>
+    </item>
+    
+    <item>
+        <title>Things to do after installing Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/install/things-to-do-after-installing-ubuntu/</link>
+        <description>The most-dos to make Ubuntu better, more efficient and more productive</description>
+    </item>
+    
+    <item>
+        <title>Keyboard Shortcuts</title>
+        <link>http://bookofzeus.com/customize-ubuntu/keyboard-shortcuts/</link>
+        <description>Customize Ubuntu keyboard shortcuts</description>
+    </item>
+    
+    <item>
+        <title>Disable the HUD when pressing the ALT key</title>
+        <link>http://bookofzeus.com/customize-ubuntu/keyboard-shortcuts/disable-hud-when-pressing-alt-key/</link>
+        <description>How to disable or not show the HUD when pressing the ALT key in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Live CD</title>
+        <link>http://bookofzeus.com/customize-ubuntu/live-cd/</link>
+        <description>Find out how and get the best tools to customize your own version of Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Tools to build your own Ubuntu distro</title>
+        <link>http://bookofzeus.com/customize-ubuntu/live-cd/tools-build-your-own-ubuntu-distro/</link>
+        <description>Tools that helps you build your own version of Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Ubuntu livecd/dvd</title>
+        <link>http://bookofzeus.com/customize-ubuntu/live-cd/ubuntu-livecd/</link>
+        <description>Customized and build your own Ubuntu Live CD/DVD</description>
+    </item>
+    
+    <item>
+        <title>Packages</title>
+        <link>http://bookofzeus.com/customize-ubuntu/packages/</link>
+        <description>Customize packages scripts from install scripts to application custom scripts</description>
+    </item>
+    
+    <item>
+        <title>Custom install scripts</title>
+        <link>http://bookofzeus.com/customize-ubuntu/packages/custom-install-scripts/</link>
+        <description>Add or remove Ubuntu packages using a customized script</description>
+    </item>
+    
+    <item>
+        <title>Privacy</title>
+        <link>http://bookofzeus.com/customize-ubuntu/privacy/</link>
+        <description>Customize Ubuntu to enforce your privacy by disabling surveillance tools</description>
+    </item>
+    
+    <item>
+        <title>Disabling privacy invasive Zeitgeist</title>
+        <link>http://bookofzeus.com/customize-ubuntu/privacy/disabling-privacy-invasive-zeitgeist/</link>
+        <description>Disable Ubuntu Zeitgeist and Geoclue logs the users's activities and events</description>
+    </item>
+    
+    <item>
+        <title>Settings</title>
+        <link>http://bookofzeus.com/customize-ubuntu/settings/</link>
+        <description>Customize Ubuntu settings and preferences settings for your desktop environment</description>
+    </item>
+    
+    <item>
+        <title>Enable numlock on Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/settings/enable-numlock-on-ubuntu/</link>
+        <description>How to enable the numeric pad when Ubuntu starts</description>
+    </item>
+    
+    <item>
+        <title>Set A Static IP On Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/settings/set-a-static-ip-on-ubuntu/</link>
+        <description>How to setup a Static IP in Ubuntu and remove the DHCP client service</description>
+    </item>
+    
+    <item>
+        <title>Themes</title>
+        <link>http://bookofzeus.com/customize-ubuntu/themes/</link>
+        <description>Install and customize Ubuntu themes</description>
+    </item>
+    
+    <item>
+        <title>Install Desktop Themes in Ubuntu 11.10</title>
+        <link>http://bookofzeus.com/customize-ubuntu/themes/install-desktop-themes-in-ubuntu-11-10/</link>
+        <description>Quick guide on how to install or change a new theme in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Window</title>
+        <link>http://bookofzeus.com/customize-ubuntu/window/</link>
+        <description>Change how your window looks, its actions button and its decoration</description>
+    </item>
+    
+    <item>
+        <title>Change or move the window buttons</title>
+        <link>http://bookofzeus.com/customize-ubuntu/window/change-or-move-the-window-buttons/</link>
+        <description>How to change or move the window buttons  to the right side of the window</description>
+    </item>
+    
+    <item>
+        <title>Disable overlay scrollbars in Ubuntu</title>
+        <link>http://bookofzeus.com/customize-ubuntu/window/disable-overlay-scrollbars-in-ubuntu/</link>
+        <description>Quick tip on how to get rid of the overlay scrollbars in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Harden Ubuntu</title>
+        <link>http://bookofzeus.com/harden-ubuntu/</link>
+        <description>A guide to secure your ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Backup</title>
+        <link>http://bookofzeus.com/harden-ubuntu/backup/</link>
+        <description>Backup! Do not forget about backup. This can save previous time!</description>
+    </item>
+    
+    <item>
+        <title>Setup Backup</title>
+        <link>http://bookofzeus.com/harden-ubuntu/backup/setup-backup/</link>
+        <description>Backup! Setup simple backup on your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Disabled Services</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/</link>
+        <description>Harden Ubuntu by disabling unnecessary services</description>
+    </item>
+    
+    <item>
+        <title>Disable Anacron</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-anacron/</link>
+        <description>Disable service anacron: How to disable anacron in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Apport</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-apport/</link>
+        <description>Disable service apport: How to disable apport in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable ATD</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-atd/</link>
+        <description>Disable service atd: How to disable ATD in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Autofs</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-autofs/</link>
+        <description>Disable service autofs: How to disable Autofs in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Avahi</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-avahi/</link>
+        <description>Disable service avahi: How to disable Avahi in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Bluetooth</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-bluetooth/</link>
+        <description>Disable service Bluetooth: How to disable Bluetooth in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Ctrl+Alt+Delete</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-ctrl-alt-delete/</link>
+        <description>Disable service Ctrl+Alt+Delete: How to disable Ctrl+Alt+Delete in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Cups</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-cups/</link>
+        <description>Disable service Cups: How to disable Cups in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Dovecot</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-dovecot/</link>
+        <description>Disable service Dovecot: How to disable Dovecot in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Modemmanager</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-modemmanager/</link>
+        <description>Disable service Modemmanager: How to disable Modemmanager in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable NFS</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-nfs/</link>
+        <description>Disable service NFS: How to disable NFS in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable SNMP Server</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-snmp-server/</link>
+        <description>Disable service SNMP Server: How to disable SNMP Server in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Telnet</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-telnet/</link>
+        <description>Disable service Telnet: How to disable Telnet in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Whoopsie</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-whoopsie/</link>
+        <description>Disable service Whoopsie: How to disable Whoopsie in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Wireless</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-wireless/</link>
+        <description>Disable service Wireless: How to disable Wireless in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Disable Zeitgeist</title>
+        <link>http://bookofzeus.com/harden-ubuntu/disable-services/disable-zeitgeist/</link>
+        <description>Disable service Zeitgeist: How to disable Zeitgeist in Ubuntu</description>
+    </item>
+    
+    <item>
+        <title>Hardening</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/</link>
+        <description>Hardening Ubuntu softwares and services</description>
+    </item>
+    
+    <item>
+        <title>Apache</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/apache/</link>
+        <description>Hardening Ubuntu by securing and optimizing Apache</description>
+    </item>
+    
+    <item>
+        <title>Apparmor</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/apparmor/</link>
+        <description>Hardening Ubuntu by securing and optimizing Apparmor</description>
+    </item>
+    
+    <item>
+        <title>Firewall</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/firewall/</link>
+        <description>Hardening Ubuntu by securing and setup a firewall</description>
+    </item>
+    
+    <item>
+        <title>Ip Spoofing</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/ip-spoofing/</link>
+        <description>Hardening Ubuntu by securing and avoid Ip Spoofing</description>
+    </item>
+    
+    <item>
+        <title>Mysql</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/mysql/</link>
+        <description>Hardening Ubuntu by securing and optimizing MySQL</description>
+    </item>
+    
+    <item>
+        <title>PHP</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/php/</link>
+        <description>Hardening Ubuntu by securing and optimizing PHP</description>
+    </item>
+    
+    <item>
+        <title>Protect Ddos Attacks</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/protect-ddos-attacks/</link>
+        <description>Hardening Ubuntu by protecting your server against ddos attacks</description>
+    </item>
+    
+    <item>
+        <title>Setup Iptables</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/setup-iptables/</link>
+        <description>Hardening Ubuntu by setting up rules in IP Tables</description>
+    </item>
+    
+    <item>
+        <title>Shellshock Bash Vulnerability</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/shellshock-bash-vulnerability/</link>
+        <description>Hardening Ubuntu by protecting your Server Against the Shellshock Bash Vulnerability</description>
+    </item>
+    
+    <item>
+        <title>SSH</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/ssh/</link>
+        <description>Hardening Ubuntu by setting up SSH rules and access</description>
+    </item>
+    
+    <item>
+        <title>Sysctl Conf</title>
+        <link>http://bookofzeus.com/harden-ubuntu/hardening/sysctl-conf/</link>
+        <description>Hardening Ubuntu by setting up sysctl.conf</description>
+    </item>
+    
+    <item>
+        <title>Initial Setup</title>
+        <link>http://bookofzeus.com/harden-ubuntu/initial-setup/</link>
+        <description>Hardening Ubuntu Initial Setup - What are the first steps</description>
+    </item>
+    
+    <item>
+        <title>Create New User</title>
+        <link>http://bookofzeus.com/harden-ubuntu/initial-setup/create-new-user/</link>
+        <description>Harden Ubuntu Create new user - Create your username to access your server</description>
+    </item>
+    
+    <item>
+        <title>Disable root account</title>
+        <link>http://bookofzeus.com/harden-ubuntu/initial-setup/disable-root-account/</link>
+        <description>Harden Ubuntu Disable Root Account - Secure your server by disabling the root account</description>
+    </item>
+    
+    <item>
+        <title>Disable Shell Accounts</title>
+        <link>http://bookofzeus.com/harden-ubuntu/initial-setup/disable-shell-accounts/</link>
+        <description>Harden Ubuntu Disable Shell Accounts - Disable unwanted accounts</description>
+    </item>
+    
+    <item>
+        <title>Install Tools</title>
+        <link>http://bookofzeus.com/harden-ubuntu/initial-setup/install-tools/</link>
+        <description>Harden Ubuntu Install Tools - Prepare your server with the tools you know and like</description>
+    </item>
+    
+    <item>
+        <title>System Updates</title>
+        <link>http://bookofzeus.com/harden-ubuntu/initial-setup/system-updates/</link>
+        <description>Harden Ubuntu System Updates - Keep your system safe with automatic updates</description>
+    </item>
+    
+    <item>
+        <title>Monitoring Tools</title>
+        <link>http://bookofzeus.com/harden-ubuntu/monitoring-tools/</link>
+        <description>Use monitoring tools to figure out if something or someone do something illegal on your server</description>
+    </item>
+    
+    <item>
+        <title>Analyse logs with LogWatch</title>
+        <link>http://bookofzeus.com/harden-ubuntu/monitoring-tools/analyze-logs-with-logwatch/</link>
+        <description>Analyse log with logwatch and see the activity on your server</description>
+    </item>
+    
+    <item>
+        <title>Audit security with Tiger</title>
+        <link>http://bookofzeus.com/harden-ubuntu/monitoring-tools/audit-security-with-tiger/</link>
+        <description>Audit security with Tiger and see the activity on your server</description>
+    </item>
+    
+    <item>
+        <title>Auditd</title>
+        <link>http://bookofzeus.com/harden-ubuntu/monitoring-tools/auditd/</link>
+        <description>Enable Auditd and see the activity on your server</description>
+    </item>
+    
+    <item>
+        <title>Check Integrity Using Aide</title>
+        <link>http://bookofzeus.com/harden-ubuntu/monitoring-tools/check-integrity-using-aide/</link>
+        <description>Install useful check integrity using aide to help harden your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Scan Open Ports</title>
+        <link>http://bookofzeus.com/harden-ubuntu/monitoring-tools/scan-open-ports/</link>
+        <description>Scan open ports on your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Watch Logs</title>
+        <link>http://bookofzeus.com/harden-ubuntu/monitoring-tools/watch-logs/</link>
+        <description>Watch Logs on your Ubuntu server and see the activity on your server</description>
+    </item>
+    
+    <item>
+        <title>Optimization</title>
+        <link>http://bookofzeus.com/harden-ubuntu/optimization/</link>
+        <description>Improve latency, optimize, speed up and improve number of request per seconds</description>
+    </item>
+    
+    <item>
+        <title>Apache</title>
+        <link>http://bookofzeus.com/harden-ubuntu/optimization/apache/</link>
+        <description>Optimize Apache on your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>APC</title>
+        <link>http://bookofzeus.com/harden-ubuntu/optimization/apc/</link>
+        <description>Optimize APC on your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Memcached</title>
+        <link>http://bookofzeus.com/harden-ubuntu/optimization/memcached/</link>
+        <description>Optimize Memcached on your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Mysql</title>
+        <link>http://bookofzeus.com/harden-ubuntu/optimization/mysql/</link>
+        <description>Optimize Mysql on your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Varnish</title>
+        <link>http://bookofzeus.com/harden-ubuntu/optimization/varnish/</link>
+        <description>Optimize Varnish on your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Server Setup</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/</link>
+        <description>Setup your Ubuntu Server - How to setup your server</description>
+    </item>
+    
+    <item>
+        <title>Add Swap</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/add-swap/</link>
+        <description>Harden Ubuntu Add Swap - Add a swap file to your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Disable Ipv6</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/disable-ipv6/</link>
+        <description>Disable IPv6 - Start to secure your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Disable IRQ Balance</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/disable-irqbalance/</link>
+        <description>Disable IRQ Balance - Start to secure your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Fix Openssl Heartbleed</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/fix-openssl-heartbleed/</link>
+        <description>Fix OpenSSL Heartbleed vulnerability</description>
+    </item>
+    
+    <item>
+        <title>Secure Console</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/secure-console/</link>
+        <description>Secure your Ubuntu server Console</description>
+    </item>
+    
+    <item>
+        <title>Secure Shared Memory</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/secure-shared-memory/</link>
+        <description>Secure Shared Memory - Start to secure your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Secure Tcp Wrapper</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/secure-tcp-wrapper/</link>
+        <description>Secure TCP Wrapper - Secure TCP connections</description>
+    </item>
+    
+    <item>
+        <title>Secure /tmp and /var/tmp</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/secure-tmp-var-tmp/</link>
+        <description>Secure /tmp and /var/tmp folders</description>
+    </item>
+    
+    <item>
+        <title>Server Stability</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/server-stability/</link>
+        <description>Server Stability - Stabilize your server from dangerous attacks</description>
+    </item>
+    
+    <item>
+        <title>Set your hostname and host file</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/set-hostname-and-host/</link>
+        <description>Set the hostname and host file of your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Set Security Limits</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/set-security-limits/</link>
+        <description>Set the security limits of your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Set Timezone</title>
+        <link>http://bookofzeus.com/harden-ubuntu/server-setup/set-timezone/</link>
+        <description>Set Timezone - Start to secure your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Software</title>
+        <link>http://bookofzeus.com/harden-ubuntu/software/</link>
+        <description>Software - Install useful software to help harden your Ubuntu server</description>
+    </item>
+    
+    <item>
+        <title>Disable Compilers</title>
+        <link>http://bookofzeus.com/harden-ubuntu/software/disable-compilers/</link>
+        <description>Disable Compilers to prevent unwanted user to compile malicious software</description>
+    </item>
+    
+    <item>
+        <title>Install Breach Detector</title>
+        <link>http://bookofzeus.com/harden-ubuntu/software/install-breach-detector/</link>
+        <description>Install a breach detector when a user login</description>
+    </item>
+    
+    <item>
+        <title>Install Fail2ban</title>
+        <link>http://bookofzeus.com/harden-ubuntu/software/install-fail2ban/</link>
+        <description>How to Install Fail2Ban on your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Install Psad Intrusion Detection</title>
+        <link>http://bookofzeus.com/harden-ubuntu/software/install-psad-intrusion-detection/</link>
+        <description>Install PSAD Intrusion Detection on your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Secure Postfix</title>
+        <link>http://bookofzeus.com/harden-ubuntu/software/secure-postfix/</link>
+        <description>Secure Postfix on your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Useful Commands</title>
+        <link>http://bookofzeus.com/harden-ubuntu/useful-commands/</link>
+        <description>Useful commands you can use on your server</description>
+    </item>
+    
+    <item>
+        <title>Mitigating (D)DOS</title>
+        <link>http://bookofzeus.com/harden-ubuntu/useful-commands/ddos/</link>
+        <description>Useful commands related to Mitigating (D)DOS</description>
+    </item>
+    
+    <item>
+        <title>Other tools</title>
+        <link>http://bookofzeus.com/harden-ubuntu/useful-commands/other-tools/</link>
+        <description>Other Useful tools and commands for your Ubuntu Server</description>
+    </item>
+    
+    <item>
+        <title>Commands for Process control</title>
+        <link>http://bookofzeus.com/harden-ubuntu/useful-commands/process-control/</link>
+        <description>Useful commands related to Process control</description>
+    </item>
+    
+    <item>
+        <title>System Information</title>
+        <link>http://bookofzeus.com/harden-ubuntu/useful-commands/system-information/</link>
+        <description>Useful commands related to Ubuntu System Information</description>
+    </item>
+    
+
+</channel>
+</rss>

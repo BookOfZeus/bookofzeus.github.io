@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get Started with Docker CE with example | Book Of Zeus</title>
+	<meta name="description" content="Understand what is Docker CE, install and start your first application" />
+	<meta name="author" content="Book Of Zeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="Book Of Zeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/favicon.ico" />
+	<link rel="icon" href="/media/favicon.ico" />
+
+
+	<link rel="image_src" href="/media/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/docker/get-started-with-docker-ce-with-example" />
+	<link rel="stylesheet" type="text/css" href="/media/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- rss -->
+
+<div id="rss">
+	<a href="/rss.xml"><img src="/media/rss.png" alt="rss feed"></a>
+	<a href="http://twitter.com/bookofzeus" target="_blank"><img src="/media/twitter.png" alt="Twitter Page"></a>
+	<a href="https://www.facebook.com/bookofzeus" target="_blank"><img src="/media/facebook.png" alt="Facebook Page"></a>
+	<a href="https://github.com/bookofzeus" target="_blank"><img src="/media/github.png" alt="Github Page"></a>
+	<a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank"><img src="/media/sof.png" alt="Stack Over Flow Page"></a>
+
+</div>
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/arduino/" title="Arduino" >Arduino</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/arduino/sensor-module-cheat-sheet/" title="Sensor and Module Cheat Sheet" >Sensor and Module Cheat Sheet</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/docker/" title="Docker" class="selected">Docker</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/git/" title="Git" >Git</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/java/" title="Java" >Java</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongodb/" title="Mongo" >Mongo</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/editor/" title="Editor" >Editor</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" >Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Server Setup" >Server Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+</aside>
+
+<!-- content -->
+<section>
+	<article class="breadcrumbs">
+	<a title="Book Of Zeus" href="/">Book Of Zeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="docker" href="/articles/docker/">docker</a>
+</article>
+
+<article>
+	<header>
+		<h1>Get Started with Docker CE with example</h1>
+		<h6>Posted on Sunday June 17, 2018 by Eric Potvin</h6>
+	</header>
+
+	<p>
+<a href="https://www.docker.com/" target="_blank">Docker</a> is an open platform for developers and sysadmins to build, ship, and run distributed applications.
+</p>
+
+<p>
+In other words, Docker allows you to create (almost) anything without starting from scratch.
+Instead of creating one (gigantic) virtual machine with all the applications we need, we create multiple tiny <a href="https://www.docker.com/what-container" target="_blank">containers</a>.
+These containers are pre-created and ready to use.
+</p>
+
+<p>
+For more information about Docker, see their <a href="https://www.docker.com/what-docker" target="_blank">what-docker</a> page.
+</p>
+
+<p>
+Let's get started!
+</p>
+
+<h2>Download Docker CE</h2>
+
+<p>
+First we need to download <a href="https://www.docker.com/community-edition" target="_blank">docker community edition</a>.
+</p>
+
+<p>
+Once docker is installed, you can verify the installed verison by running:
+</p>
+
+<pre>
+docker version
+</pre>
+
+<p>
+This will show something like:
+</p>
+
+<pre>
+Client:
+ Version:      18.05.0-ce
+ API version:  1.37
+ Go version:   go1.9.5
+ Git commit:   f150324
+ Built:        Wed May  9 22:17:48 2018
+ OS/Arch:      linux/amd64
+ Experimental: false
+ Orchestrator: swarm
+
+Server:
+ Engine:
+  Version:      18.05.0-ce
+  API version:  1.37 (minimum version 1.12)
+  Go version:   go1.9.5
+  Git commit:   f150324
+  Built:        Wed May  9 22:15:57 2018
+  OS/Arch:      linux/amd64
+  Experimental: false
+</pre>
+
+<p>
+    The hard part is over!
+</p>
+
+<h2>Quick example</h2>
+
+<p>Docker offers a <a href="https://hub.docker.com/" target="_blank">massive library</a> of applications, server applications and other tools you can get and start your project right away.</p>
+
+<p>
+    In this article, we will use <a href="https://hub.docker.com/_/nginx/" target="_blank">nginx</a> and build a web server.
+</p>
+
+<p>
+    To build the container we can either run it using the
+    <a href="https://docs.docker.com/engine/reference/commandline/docker/" target="_blank">docker command</a> or the
+    <a href="https://docs.docker.com/compose/reference/overview/" target="_blank">docker-compose command</a>.
+
+    <br/>
+    Both commands will eventually provide the same result. This all depends on how you want to orchestrate your environment.
+</p>
+
+<h3>docker command</h3>
+
+<p>
+    In order to use the docker command, you will need to provide all parameters required for docker to create the container.
+</p>
+<p>Example:</p>
+
+<pre>
+docker run --name my-nginx \
+    -h hostname.com
+    -l my-label
+    -p 8081:80
+    -v /my/path/to/nginx.conf:/etc/nginx/nginx.conf \
+    -v /my/path/to/html/:/usr/share/nginx/html \
+    -d nginx:latest
+</pre>
+
+
+<h3>docker-compose command</h3>
+<p>
+    The different with docker-compose is it requires a yaml file.
+</p>
+<pre>
+version: "3"
+
+services:
+  my-nginx:
+    image: nginx:latest
+    container_name: bookofzeus
+    labels:
+      name: "my-label"
+    hostname: "hostname.com"
+    ports:
+     - "8081:80"
+    volumes:
+      - /my/path/to/nginx.conf:/etc/nginx/nginx.conf
+      - /my/path/to/html/:/usr/share/nginx/html
+</pre>
+
+<p>Then to start the container, simply run:</p>
+<pre>
+docker-compose -f mynginx.yml up -d
+</pre>
+
+<h4>Understanding the variables</h4>
+<h5>Images</h5>
+<p>
+    A <a href="https://docs.docker.com/engine/reference/commandline/image/" target="_blank">images</a> is a file that is a snapshot of a container.
+    Images once created by the build command, they will produce a container.
+</p>
+<h5>Port</h5>
+<p>
+    What does the dual port mean? The first port is the port you need to use to connect to the container.
+    The second port is the container port where the service is running.
+    Read more about this <a href="https://docs.docker.com/config/containers/container-networking/" target="_blank">docker networking</a>.
+</p>
+<h5>Volumes</h5>
+<p>
+    <a href="https://docs.docker.com/storage/volumes/" target="_blank">Volumes</a> are the preferred mechanism for persisting data generated by and used by Docker containers.
+    In our case, we will have our local configurations and html pages in our host.
+</p>
+<p>
+    The important thing to know here is if the <quote>-d</quote> is not provided, the instance will start NOT detached.
+    This mean you will be able to see what's going on in the container. To close, use CTRL+C
+</p>
+
+<h3>Navigate to the website</h3>
+<p>
+    Before you go the web server, make sure you have HTML pages in your local volume (/my/path/to/html/).
+</p>
+<p>
+    Now that the web server is running, you can connect to the 0.0.0.0 to it using the port 8081
+</p>
+<pre>
+http://0.0.0.0:8081
+</pre>
+
+<h3>Teardown</h3>
+<p>
+    To stop the container, if the <quote>-d</quote> option was provided, you can run the following command:
+</p>
+<pre>
+docker-compose -f mynginx.yml stop
+</pre>
+
+	<br/><br/>
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2018 Book Of Zeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+</script>
+
+</body>
+</html>

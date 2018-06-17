@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
-    <title>BookOfZeus RSS Feed</title>
+    <title>Book Of Zeus RSS Feed</title>
     <link>https://www.bookofzeus.com</link>
     <description>An online community for articles, tutorials and source code on the latest technology</description>
 
@@ -556,6 +556,18 @@
         <title>What is Specificity in CSS</title>
         <link>http://bookofzeus.com/articles/css/what-is-specificity-in-css/</link>
         <description>Weight of importance each selector/element carries when being applied</description>
+    </item>
+    
+    <item>
+        <title>Docker</title>
+        <link>http://bookofzeus.com/articles/docker/</link>
+        <description>Docker tips, documentation, how to, build, ship, and run distributed applications.</description>
+    </item>
+    
+    <item>
+        <title>Get Started with Docker CE with example</title>
+        <link>http://bookofzeus.com/articles/docker/get-started-with-docker-ce-with-example/</link>
+        <description>Understand what is Docker CE, install and start your first application</description>
     </item>
     
     <item>

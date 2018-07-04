@@ -841,6 +841,24 @@
     </item>
     
     <item>
+        <title>Kubernetes</title>
+        <link>http://bookofzeus.com/articles/kubernetes/</link>
+        <description>Kubernetes articles, Kubernetes tips and all other Kubernetes articles</description>
+    </item>
+    
+    <item>
+        <title>Kubernetes 101</title>
+        <link>http://bookofzeus.com/articles/kubernetes/kubernetes-101/</link>
+        <description>What is Kubernetes? Learn Kubernetes features, how to's and how to host your application on Kubernetes</description>
+    </item>
+    
+    <item>
+        <title>Kubernetes Commands</title>
+        <link>http://bookofzeus.com/articles/kubernetes/kubernetes-commands/</link>
+        <description>Master the Kubernetes commands including Minikube commands and kubeclt commands.</description>
+    </item>
+    
+    <item>
         <title>Linux</title>
         <link>http://bookofzeus.com/articles/linux/</link>
         <description>Linux articles, Linux tips and all other Linux distribution articles</description>
@@ -1027,7 +1045,7 @@
     </item>
     
     <item>
-        <title>Mongo</title>
+        <title>MongoDB</title>
         <link>http://bookofzeus.com/articles/mongodb/</link>
         <description>MongoDB articles, MongoDB tips and Mongodb development articles</description>
     </item>

@@ -6,3 +6,4 @@ div#rss{top:-10px;right:10px;width:40px;height:210px;background:#fff; padding: 1
 div#rss img{padding-bottom:10px}
 @media all and (max-width: 650px){div#rss{position:absolute}}
 @media all and (min-width: 651px){div#rss{position:fixed}}
+.small{font-size:9px;}

@@ -849,6 +849,18 @@
 </url>
 
 <url>
+    <loc>http://bookofzeus.com/articles/kubernetes/getting-started-with-kubernetes/</loc>
+    <lastmod>2018-07-08 12:40:53-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
+    <loc>http://bookofzeus.com/articles/kubernetes/how-to-install-kubernetes/</loc>
+    <lastmod>2018-07-08 11:41:15-07:00</lastmod>
+    <priority>0.7</priority>
+</url>
+
+<url>
     <loc>http://bookofzeus.com/articles/kubernetes/kubernetes-101/</loc>
     <lastmod>2018-07-01 14:43:20-07:00</lastmod>
     <priority>0.7</priority>

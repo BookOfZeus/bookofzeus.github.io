@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>How to install kubernetes | Book Of Zeus</title>
+	<meta name="description" content="How to install the components to run kubernetes including Minikube and kubectl." />
+	<meta name="author" content="Book Of Zeus" />
+	<meta name="robots" content="index, follow" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<meta name="google-site-verification" content="5IAePxZxNggUiJp9G82ARb7Wfo7AOTEpa-WHjEiwt1g" />
+	<meta name="msvalidate.01" content="B5DFA066FA5291D9CB34785B1BC6675D" />
+	<meta name="alexaVerifyID" content="vQHSFVDphyxYyFdLXh_rjrFaCwc" />
+	<meta name="y_key" content="1541c56d97401c05" />	
+
+	<meta name="DC.Creator" content="Book Of Zeus" />
+	<meta name="DC.Language" content="en" />
+
+	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
+
+	<link rel="author" href="https://plus.google.com/109493568868519843460">
+	<link rel="shortcut icon" href="/media/v1/favicon.ico" />
+	<link rel="icon" href="/media/v1/favicon.ico" />
+
+	<link rel="image_src" href="/media/v1/logo.png" />
+
+	<link rel="canonical" href="http://bookofzeus.com/articles/kubernetes/how-to-install-kubernetes" />
+	<link rel="stylesheet" type="text/css" href="/media/v1/modern.css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23468853-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</head>
+<body id="body">
+
+<!-- rss -->
+
+<div id="rss">
+	<a href="/rss.xml"><img src="/media/v1/rss.png" alt="rss feed"></a>
+	<a href="http://twitter.com/bookofzeus" target="_blank"><img src="/media/v1/twitter.png" alt="Twitter Page"></a>
+	<a href="https://www.facebook.com/bookofzeus" target="_blank"><img src="/media/v1/facebook.png" alt="Facebook Page"></a>
+	<a href="https://github.com/bookofzeus" target="_blank"><img src="/media/v1/github.png" alt="Github Page"></a>
+	<a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank"><img src="/media/v1/sof.png" alt="Stack Over Flow Page"></a>
+
+</div>
+
+<!-- menu -->
+<div id="menu">
+	<img src="/media/v1/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
+	<div id="home2">
+		Book<span>Of</span>Zeus
+	</div>
+</div>
+
+<aside class="menu slide-menu-left">
+	<header id="home">
+		<div>
+			<img src="/media/v1/logo.png" alt="logo" width="57" height="57" />
+			Book<span>Of</span>Zeus
+		</div>
+		<span>Articles, Tutorials &amp; Source Code</span>
+	</header>
+
+	<nav>
+		<button class="close-menu">Close Menu</button>
+		<ul>
+
+	<li class="header"><a href="/arduino/" title="Arduino" >Arduino</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/arduino/sensor-module-cheat-sheet/" title="Sensor and Module Cheat Sheet" >Sensor and Module Cheat Sheet</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li class="item"><a href="/articles/docker/" title="Docker" >Docker</a></li>
+		
+			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li class="item"><a href="/articles/git/" title="Git" >Git</a></li>
+		
+			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li class="item"><a href="/articles/java/" title="Java" >Java</a></li>
+		
+			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li class="item"><a href="/articles/kubernetes/" title="Kubernetes" class="selected">Kubernetes</a></li>
+		
+			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li class="item"><a href="/articles/mongodb/" title="MongoDB" >MongoDB</a></li>
+		
+			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
+	
+	</li>
+
+	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/customize-ubuntu/editor/" title="Editor" >Editor</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
+
+	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" >Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Server Setup" >Server Setup</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
+
+</ul>
+	</nav>
+
+</aside>
+
+<!-- content -->
+<section>
+	<article class="breadcrumbs">
+	<a title="Book Of Zeus" href="/">Book Of Zeus</a> &gt; <a title="articles" href="/articles/">articles</a> &gt; <a title="kubernetes" href="/articles/kubernetes/">kubernetes</a>
+</article>
+
+<article>
+	<header>
+		<h1>How to install kubernetes</h1>
+		<h6>Posted on Sunday July 08, 2018 by Eric Potvin</h6>
+	</header>
+
+	<p class="note">
+    Before we start, please make sure you read the <a href="/articles/kubernetes/kubernetes-101/" title="kubernetes-101">kubernetes-101</a> first.
+    <br/>
+    This article will not cover installation on Windows system.
+</p>
+
+<!-- -->
+<h2>Verify virtualization</h2>
+<p>
+    Before you start, make sure that VT-x/AMD-v virtualization is enabled. Minikube requires it!
+    A simple check can help you figure out if virtualization is already enabled.
+</p>
+
+<h3>Linux</h3>
+<pre>
+cat /proc/cpuinfo | egrep 'vmx|svm' | wc -l
+</pre>
+
+<h3>OS X</h3>
+<pre>
+sysctl -a | grep machdep.cpu.features | grep VMX | wc -l
+</pre>
+
+<p>If the output number is greater than zero, you all set!</p>
+
+
+<h2>Install a Hypervisor</h2>
+<p>
+    A hypervisor is a program that would enable you to host virtual machines on a single hardware.
+    <br/>
+</p>
+<h3>Linux</h3>
+<p>
+    <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" title="VirtualBox">VirtualBox</a> or
+    <a href="https://www.linux-kvm.org/page/Main_Page" target="_blank" title="kvm">kvm</a>
+</p>
+
+<h3>OS X</h3>
+<p>
+    <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" title="VirtualBox">VirtualBox</a> or
+    <a href="https://github.com/moby/hyperkit" target="_blank" title="hyperkit">hyperkit</a>
+</p>
+
+
+<!-- -->
+<h2>Installing kubectl</h2>
+
+<h3>Linux (Debian)</h3>
+
+<pre>
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo touch /etc/apt/sources.list.d/kubernetes.list
+echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+</pre>
+
+<h3>Linux (RHEL)</h3>
+<pre>
+cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
+yum install -y kubectl
+</pre>
+
+<h3>OS X</h3>
+<pre>
+brew install kubernetes-cli
+</pre>
+
+<p class="note">
+    If links are broken, please see the official procedure at
+    <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">https://kubernetes.io/docs/tasks/tools/install-kubectl/</a>
+</p>
+
+<!-- -->
+<h2>Install minikube</h2>
+<p>
+First let's find out the newest version.
+</p>
+<pre>
+curl -q "https://github.com/kubernetes/minikube/releases/latest"
+</pre>
+<p>
+    This will output something like:
+</p>
+<pre>
+&lt;html&gt;&lt;body&gt;You are being &lt;a href="https://github.com/kubernetes/minikube/releases/tag/v0.28.0"&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;
+</pre>
+<p>
+    The latest (as of July 8th, 2018) version is v0.28.0.
+</p>
+
+<h3>Linux</h3>
+<pre>
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+#                                                                     ^--- make sure to change this if needed
+</pre>
+
+<h3>OS X</h3>
+<pre>
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.0/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+#                                                                     ^--- make sure to change this if needed
+</pre>
+
+
+
+<p>
+    Installation done! Now let's <a href="/articles/kubernetes/getting-started-with-kubernetes/"> get started with kubernetes</a>.
+</p>
+
+
+	<br/><br/>
+</article>
+
+	<footer> 
+
+		<h6>More links</h6>
+		<a href="/about/" title="About">About</a>
+		<a href="/codebase/" title="Codebase">CodeBase</a>
+		<a href="/contribute/" title="Contribute">Contribute</a>
+
+		<h6>NewsLetters</h6>
+		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
+		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
+		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+
+		<div>&copy; 2011-2018 Book Of Zeus</div>
+		<p>
+			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+			You cannot copy whole tutorials (unless permission is given), either translating to another language.
+			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+		</p>
+
+	</footer>
+
+</section>
+
+<!--
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+-->
+<script src="/media/main.js"></script>
+
+<script>
+
+document.getElementById("home").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+document.getElementById("home2").addEventListener("click", function(e) {
+	window.location.href = 'http://bookofzeus.com';
+	e.preventDefault();
+});
+
+var els = document.getElementsByTagName("a"), els_length = els.length;
+for (var i = 0, l = els_length; i < l; i++) {
+    var el = els[i];
+    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
+        el.className= "selected";
+    }
+}
+
+</script>
+
+</body>
+</html>

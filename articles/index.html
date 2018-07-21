@@ -16,17 +16,14 @@
 	<meta name="DC.Creator" content="Book Of Zeus" />
 	<meta name="DC.Language" content="en" />
 
-	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
-
-	<link rel="author" href="https://plus.google.com/109493568868519843460">
-	<link rel="shortcut icon" href="/media/v1/favicon.ico" />
-	<link rel="icon" href="/media/v1/favicon.ico" />
-
-	<link rel="image_src" href="/media/v1/logo.png" />
+	<link rel="shortcut icon" href="/media/v2/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="/media/v2/favicon.ico" type="image/x-icon" />
 
 	<link rel="canonical" href="http://bookofzeus.com/articles" />
-	<link rel="stylesheet" type="text/css" href="/media/v1/modern.css" media="all" />
-	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/media/v2/main.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/media/v2/light.css" media="all" id="theme"/>
+	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet">
 
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -40,484 +37,613 @@
 	</script>
 </head>
 <body id="body">
+<script type="text/javascript">
+function openNav() {
+    document.getElementById("slidingMenu").style.width = "300px";
+}
 
-<!-- rss -->
+function closeNav() {
+    document.getElementById("slidingMenu").style.width = "0";
+}
+</script>
+<div id="shade">
 
-<div id="rss">
-	<a href="/rss.xml"><img src="/media/v1/rss.png" alt="rss feed"></a>
-	<a href="http://twitter.com/bookofzeus" target="_blank"><img src="/media/v1/twitter.png" alt="Twitter Page"></a>
-	<a href="https://www.facebook.com/bookofzeus" target="_blank"><img src="/media/v1/facebook.png" alt="Facebook Page"></a>
-	<a href="https://github.com/bookofzeus" target="_blank"><img src="/media/v1/github.png" alt="Github Page"></a>
-	<a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank"><img src="/media/v1/sof.png" alt="Stack Over Flow Page"></a>
+    <!-- menu -->
+    <header>
+        <div>
 
-</div>
+            <!-- main menu -->
+            <section id="menu">
+                <span id="openMenu" onclick="openNav();">&#9776;</span>
 
-<!-- menu -->
-<div id="menu">
-	<img src="/media/v1/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
-	<div id="home2">
-		Book<span>Of</span>Zeus
-	</div>
-</div>
+                <div id="slidingMenu" class="sidenav">
+                    <a class="closebtn" onclick="closeNav()">&times;</a>
 
-<aside class="menu slide-menu-left">
-	<header id="home">
-		<div>
-			<img src="/media/v1/logo.png" alt="logo" width="57" height="57" />
-			Book<span>Of</span>Zeus
-		</div>
-		<span>Articles, Tutorials &amp; Source Code</span>
-	</header>
+                    <a href="/arduino/" title="Arduino">Arduino</a>
+                    <a href="/articles/" title="Articles">Articles</a>
+                    <a href="/customize-ubuntu/" title="Customize Ubuntu">Customize Ubuntu</a>
+                    <a href="/harden-ubuntu/" title="Harden Ubuntu">Harden Ubuntu</a>
 
-	<nav>
-		<button class="close-menu">Close Menu</button>
-		<ul>
+                    <br/>
+                    <br/>
 
-	<li class="header"><a href="/arduino/" title="Arduino" >Arduino</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/arduino/sensor-module-cheat-sheet/" title="Sensor and Module Cheat Sheet" >Sensor and Module Cheat Sheet</a></li>
-		
-		</ul>
-	
-	</li>
+                    <a href="/about/" title="About" class="small">About</a>
+                    <a href="/codebase/" title="CodeBase" class="small">CodeBase</a>
+                    <a href="/contribute/" title="Contribute" class="small">Contribute</a>
 
-	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
-		
-			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
-		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
-		
-			<li class="item"><a href="/articles/docker/" title="Docker" >Docker</a></li>
-		
-			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
-		
-			<li class="item"><a href="/articles/git/" title="Git" >Git</a></li>
-		
-			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
-		
-			<li class="item"><a href="/articles/java/" title="Java" >Java</a></li>
-		
-			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
-		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
-		
-			<li class="item"><a href="/articles/kubernetes/" title="Kubernetes" >Kubernetes</a></li>
-		
-			<li class="item"><a href="/articles/linux/" title="Linux" >Linux</a></li>
-		
-			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
-		
-			<li class="item"><a href="/articles/mongodb/" title="MongoDB" >MongoDB</a></li>
-		
-			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
-		
-			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
-		
-			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
-		
-			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
-		
-			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
-		
-			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
-		
-		</ul>
-	
-	</li>
 
-	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
-	
-	</li>
+                    <div id="menuSocial">
+                        <span>Social</span>
+                        <a href="/rss.xml" target="_blank" title="rss feed">RSS</a>
+                        <a href="http://twitter.com/bookofzeus" target="_blank" title="twitter page">Twitter</a>
+                        <a href="https://www.facebook.com/bookofzeus" target="_blank" title="Facebook Page">Facebook</a>
+                        <a href="https://github.com/bookofzeus" target="_blank" title="Github Page">Github</a>
+                        <a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank" title="Stack Overflow">Stack Overflow</a>
+                    </div>
 
-	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/customize-ubuntu/editor/" title="Editor" >Editor</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
-		
-		</ul>
-	
-	</li>
+                </div>
+            </section>
 
-	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" >Harden Ubuntu</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Server Setup" >Server Setup</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
-		
-		</ul>
-	
-	</li>
+            <!-- logo -->
+            <section id="logo">
+                <div id="title">
+                    <a href="/">Book<span>of</span>Zeus</a>
+                    <cite>Articles, Tutorials & Source Code</cite>
+                </div>
+            </section>
 
-</ul>
-	</nav>
+            <!-- social -->
+            <section id="social">
+                <a href="/rss.xml" target="_blank" title="rss feed" id="rss"></a>
+                <a href="http://twitter.com/bookofzeus" target="_blank" title="twitter page" id="twitter"></a>
+                <a href="https://www.facebook.com/bookofzeus" target="_blank" title="Facebook Page" id="facebook"></a>
+                <a href="https://github.com/bookofzeus" target="_blank" title="Github Page" id="github"></a>
+                <a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank" title="Stack Overflow" id="sof"></a>
+            </section>
+        </div>
 
-</aside>
+    </header>
 
-<!-- content -->
-<section>
-	<article>
+    <div class="clear"></div>
+
+    <section id="breadcrumb"  class="empty">
+    <div>
+        
+    </div>
+</section>
+
+    <section id="main">
+        <article>
 	<h1>Articles</h1>
 </article>
 
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/android/">Android</a>
-		</h2>
-	</header>
-	<p>Android articles, Android tips and other related Android articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 6</p>
-	</footer>
+      <div class="items">
+        <aside class="item android"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/android/">Android</a>
+            </h2>
+            <p>Android articles, Android tips and other related Android articles</p>
+            <p class="nb">[ 6 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/apache/">Apache</a>
-		</h2>
-	</header>
-	<p>Apache articles, Apache tips and Apache server articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 10</p>
-	</footer>
+      <div class="items">
+        <aside class="item apache"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/apache/">Apache</a>
+            </h2>
+            <p>Apache articles, Apache tips and Apache server articles</p>
+            <p class="nb">[ 10 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/css/">CSS</a>
-		</h2>
-	</header>
-	<p>CSS articles, CSS tips and CSS development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 34</p>
-	</footer>
+      <div class="items">
+        <aside class="item css"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/css/">CSS</a>
+            </h2>
+            <p>CSS articles, CSS tips and CSS development articles</p>
+            <p class="nb">[ 34 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/docker/">Docker</a>
-		</h2>
-	</header>
-	<p>Docker tips, documentation, how to, build, ship, and run distributed applications.</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 1</p>
-	</footer>
+      <div class="items">
+        <aside class="item docker"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/docker/">Docker</a>
+            </h2>
+            <p>Docker tips, documentation, how to, build, ship, and run distributed applications.</p>
+            <p class="nb">[ 1 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/documentation/">Documentation</a>
-		</h2>
-	</header>
-	<p>Documentation, Tips, Cheatsheet and Reference articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 6</p>
-	</footer>
+      <div class="items">
+        <aside class="item documentation"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/documentation/">Documentation</a>
+            </h2>
+            <p>Documentation, Tips, Cheatsheet and Reference articles</p>
+            <p class="nb">[ 6 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/git/">Git</a>
-		</h2>
-	</header>
-	<p>Git source control tips, documentation and how to!</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 1</p>
-	</footer>
+      <div class="items">
+        <aside class="item git"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/git/">Git</a>
+            </h2>
+            <p>Git source control tips, documentation and how to!</p>
+            <p class="nb">[ 1 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/html/">HTML</a>
-		</h2>
-	</header>
-	<p>HTML articles, HTML tips and all other XHTML/HTML articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 6</p>
-	</footer>
+      <div class="items">
+        <aside class="item html"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/html/">HTML</a>
+            </h2>
+            <p>HTML articles, HTML tips and all other XHTML/HTML articles</p>
+            <p class="nb">[ 6 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/java/">Java</a>
-		</h2>
-	</header>
-	<p>Java articles, Java tips and Java development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 1</p>
-	</footer>
+      <div class="items">
+        <aside class="item java"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/java/">Java</a>
+            </h2>
+            <p>Java articles, Java tips and Java development articles</p>
+            <p class="nb">[ 1 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/javascript/">Javascript</a>
-		</h2>
-	</header>
-	<p>Javascript articles, Javascript tips and Javascript development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 6</p>
-	</footer>
+      <div class="items">
+        <aside class="item javascript"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/javascript/">Javascript</a>
+            </h2>
+            <p>Javascript articles, Javascript tips and Javascript development articles</p>
+            <p class="nb">[ 6 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/jquery/">jQuery</a>
-		</h2>
-	</header>
-	<p>jQuery articles, jQuery tips and jQuery development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 19</p>
-	</footer>
+      <div class="items">
+        <aside class="item jquery"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/jquery/">jQuery</a>
+            </h2>
+            <p>jQuery articles, jQuery tips and jQuery development articles</p>
+            <p class="nb">[ 19 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/kubernetes/">Kubernetes</a>
-		</h2>
-	</header>
-	<p>Kubernetes articles, Kubernetes tips and all other Kubernetes articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 4</p>
-	</footer>
+      <div class="items">
+        <aside class="item kubernetes"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/kubernetes/">Kubernetes</a>
+            </h2>
+            <p>Kubernetes articles, Kubernetes tips and all other Kubernetes articles</p>
+            <p class="nb">[ 4 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/">Linux</a>
-		</h2>
-	</header>
-	<p>Linux articles, Linux tips and all other Linux distribution articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 26</p>
-	</footer>
+      <div class="items">
+        <aside class="item linux"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/linux/">Linux</a>
+            </h2>
+            <p>Linux articles, Linux tips and all other Linux distribution articles</p>
+            <p class="nb">[ 26 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/mobile/">Mobile</a>
-		</h2>
-	</header>
-	<p>Mobile articles, Mobile tips and Mobile development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 3</p>
-	</footer>
+      <div class="items">
+        <aside class="item mobile"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/mobile/">Mobile</a>
+            </h2>
+            <p>Mobile articles, Mobile tips and Mobile development articles</p>
+            <p class="nb">[ 3 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/mongodb/">MongoDB</a>
-		</h2>
-	</header>
-	<p>MongoDB articles, MongoDB tips and Mongodb development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 1</p>
-	</footer>
+      <div class="items">
+        <aside class="item mongodb"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/mongodb/">MongoDB</a>
+            </h2>
+            <p>MongoDB articles, MongoDB tips and Mongodb development articles</p>
+            <p class="nb">[ 1 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/mysql/">MySQL</a>
-		</h2>
-	</header>
-	<p>MySQL articles, MySQL tips and MySQL development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 12</p>
-	</footer>
+      <div class="items">
+        <aside class="item mysql"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/mysql/">MySQL</a>
+            </h2>
+            <p>MySQL articles, MySQL tips and MySQL development articles</p>
+            <p class="nb">[ 12 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/optimization/">Optimization</a>
-		</h2>
-	</header>
-	<p>Optimization articles, Optimization tips and Optimization development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 6</p>
-	</footer>
+      <div class="items">
+        <aside class="item optimization"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/optimization/">Optimization</a>
+            </h2>
+            <p>Optimization articles, Optimization tips and Optimization development articles</p>
+            <p class="nb">[ 6 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/php/">PHP</a>
-		</h2>
-	</header>
-	<p>PHP articles, PHP tips and PHP development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 22</p>
-	</footer>
+      <div class="items">
+        <aside class="item php"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/php/">PHP</a>
+            </h2>
+            <p>PHP articles, PHP tips and PHP development articles</p>
+            <p class="nb">[ 22 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/python/">Python</a>
-		</h2>
-	</header>
-	<p>Python articles, Python tips and Python development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 1</p>
-	</footer>
+      <div class="items">
+        <aside class="item python"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/python/">Python</a>
+            </h2>
+            <p>Python articles, Python tips and Python development articles</p>
+            <p class="nb">[ 1 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/sass/">Sass</a>
-		</h2>
-	</header>
-	<p>SASS articles, SASS tips and SASS development articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 1</p>
-	</footer>
+      <div class="items">
+        <aside class="item sass"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/sass/">Sass</a>
+            </h2>
+            <p>SASS articles, SASS tips and SASS development articles</p>
+            <p class="nb">[ 1 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/subversion/">Subversion</a>
-		</h2>
-	</header>
-	<p>SubVersion articles, SubVersion tips and SubVersion servers articles</p>
+<article id="itemList">
+    
 
-	<footer>
-		<p>Number of articles: 6</p>
-	</footer>
+      <div class="items">
+        <aside class="item subversion"></aside>
+        <aside>
+            <h2>
+                <a href="/articles/subversion/">Subversion</a>
+            </h2>
+            <p>SubVersion articles, SubVersion tips and SubVersion servers articles</p>
+            <p class="nb">[ 6 articles ]</p>
+        </aside>
+    </div>
+
+    
+
 </article>
 
 
-	<footer> 
 
-		<h6>More links</h6>
-		<a href="/about/" title="About">About</a>
-		<a href="/codebase/" title="Codebase">CodeBase</a>
-		<a href="/contribute/" title="Contribute">Contribute</a>
 
-		<h6>NewsLetters</h6>
-		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
-		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
-		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
 
-		<div>&copy; 2011-2018 Book Of Zeus</div>
-		<p>
-			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
-			You cannot copy whole tutorials (unless permission is given), either translating to another language.
-			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
-		</p>
+    </section>
 
-	</footer>
+    <footer>
+        <section id="footerMenu">
+            <ul>
+                
+	<li><a href="/arduino/" title="Arduino" >Arduino</a>
+	
+		<ul>
+		
+			<li><a href="/arduino/sensor-module-cheat-sheet/" title="Sensor and Module Cheat Sheet" >Sensor and Module Cheat Sheet</a></li>
+		
+		</ul>
+	
+	</li>
 
-</section>
+	<li><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li><a href="/articles/docker/" title="Docker" >Docker</a></li>
+		
+			<li><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li><a href="/articles/git/" title="Git" >Git</a></li>
+		
+			<li><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li><a href="/articles/java/" title="Java" >Java</a></li>
+		
+			<li><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li><a href="/articles/kubernetes/" title="Kubernetes" >Kubernetes</a></li>
+		
+			<li><a href="/articles/linux/" title="Linux" >Linux</a></li>
+		
+			<li><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li><a href="/articles/mongodb/" title="MongoDB" >MongoDB</a></li>
+		
+			<li><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
 
-<!--
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
--->
-<script src="/media/main.js"></script>
+	<li><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li><a href="/customize-ubuntu/editor/" title="Editor" >Editor</a></li>
+		
+			<li><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
 
-<script>
+	<li><a href="/harden-ubuntu/" title="Harden Ubuntu" >Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li><a href="/harden-ubuntu/server-setup/" title="Server Setup" >Server Setup</a></li>
+		
+			<li><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
 
-document.getElementById("home").addEventListener("click", function(e) {
-	window.location.href = 'http://bookofzeus.com';
-	e.preventDefault();
-});
-document.getElementById("home2").addEventListener("click", function(e) {
-	window.location.href = 'http://bookofzeus.com';
-	e.preventDefault();
-});
+                <li>
+                    <h6>Social</h6>
+                    <ul>
+                        <li><a href="/rss.xml" target="_blank" title="rss feed">RSS</a></li>
+                        <li><a href="http://twitter.com/bookofzeus" target="_blank" title="twitter page">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/bookofzeus" target="_blank" title="Facebook Page">Facebook</a></li>
+                        <li><a href="https://github.com/bookofzeus" target="_blank" title="Github Page">Github</a></li>
+                        <li><a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank" title="Stack Overflow">Stack Overflow</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>More links</h6>
+                    <ul>
+                        <li><a href="/about/" title="About">About</a></li>
+                        <li><a href="/codebase/" title="Codebase">CodeBase</a></li>
+                        <li><a href="/contribute/" title="Contribute">Contribute</a></li>
+                    </ul>
+                    <h6>Newsletter</h6>
+                    <a href="http://eepurl.com/nCBVX" target="_blank" class="powered">Powered by MailChimp</a>
+                    <ul>
+                        <li><a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a></li>
+                        <li><a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-var els = document.getElementsByTagName("a"), els_length = els.length;
-for (var i = 0, l = els_length; i < l; i++) {
-    var el = els[i];
-    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
-        el.className= "selected";
-    }
-}
+        <div>&copy; 2011-2018 Book Of Zeus</div>
+        <p>
+            All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+            You cannot copy whole tutorials (unless permission is given), either translating to another language.
+            By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+        </p>
 
-</script>
+    </footer>
 
+</div>
 </body>
 </html>

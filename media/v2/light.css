@@ -1,0 +1,249 @@
+#shade{
+    background:rgba(255,255,255,0.90);
+}
+a{
+    color:#F07512
+}
+a:hover{
+    color:#432B21;
+}
+a.readMore {
+    border: solid 1px #F07512;
+    background:#F07512;
+    color:#fff;
+}
+a.readMore:hover {
+    border: solid 1px #F07512;
+    background:#fff;
+    color:#F07512;
+}
+a.see {
+    border: solid 1px #F07512;
+    bottom:0;
+    color:#666;
+    display: block;
+    font-weight: bold;
+    padding: 12px 10px;
+    position: absolute;
+    right:0;
+    text-align: center;
+    width: 140px;
+}
+a.see:hover{
+    background:#F07512;
+    color:#fff;
+}
+body{
+    color:#333;
+}
+code {
+    color:#000;
+    font-family: 'Source Code Pro', monospace;
+}
+pre {
+    border-left:5px solid #F07512;
+    color:#000;
+    font-family: 'Source Code Pro', monospace;
+}
+mark {
+    background:#FF9C4C;
+}
+/**/
+header{
+    background:rgba(240,117,18,0.95);
+}
+section#breadcrumb{
+    background:rgba(40,40,40,0.5);
+}
+section#breadcrumb div a{
+    color: #fff;
+}
+section#main section#latest article div {
+    color:#999;
+}
+section#main article#page img {
+    border: double 3px #FFCDA9;
+}
+#openMenu {
+    color: #fff;
+}
+header#top div section#logo cite {
+    color:#fff;
+}
+.sidenav a:hover {
+    color: #FFB68C;
+}
+    article#page ul li{
+        color:#994E11;
+    }
+    article#page h2 {
+        border-bottom:2px solid #F07512;
+        border-top:2px solid #F07512;
+    }
+    article#page h3 {
+        border-bottom: 1px solid #999;
+        border-top: 1px solid #999;
+    }
+    article#page h4, article#page h5, article#page h6{
+        color:#D58032;
+    }
+#logo a {
+    color:#fff;
+}
+#logo span {
+    color:#631C00;
+}
+#logo cite {
+    color:#fff;
+}
+.note{
+    border-left:5px solid #F07512;
+    color:gray;
+    padding-left:10px
+}
+/* arduino */
+section#main article#itemList .items aside.sensor-and-module-cheat-sheet{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+/* articles */
+section#main article#itemList .items aside.android{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -100px 0;
+}
+section#main article#itemList .items aside.apache{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -200px 0;
+}
+section#main article#itemList .items aside.css{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -300px 0;
+}
+section#main article#itemList .items aside.docker{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 -100px;
+}
+section#main article#itemList .items aside.documentation{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -100px -100px;
+}
+section#main article#itemList .items aside.git{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -200px -100px;
+}
+section#main article#itemList .items aside.html{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -400px 0;
+}
+section#main article#itemList .items aside.java{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -300px -100px;
+}
+section#main article#itemList .items aside.javascript{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -600px -100px;
+}
+section#main article#itemList .items aside.jquery{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -500px 0;
+}
+section#main article#itemList .items aside.kubernetes{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -600px 0;
+}
+section#main article#itemList .items aside.linux{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -400px -100px;
+}
+section#main article#itemList .items aside.mobile{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 -200px;
+}
+section#main article#itemList .items aside.mongodb{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -300px -200px;
+}
+section#main article#itemList .items aside.mysql{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -100px -200px;
+}
+section#main article#itemList .items aside.optimization{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -200px -200px;
+}
+section#main article#itemList .items aside.php{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -500px -100px;
+}
+section#main article#itemList .items aside.python{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -400px -200px;
+}
+section#main article#itemList .items aside.sass{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -500px -200px;
+}
+section#main article#itemList .items aside.subversion{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat -600px -200px;
+}
+/* customize */
+section#main article#itemList .items aside.editor{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.environment{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.flash-player{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.fonts{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.icons{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.indicator{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.install{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.keyboard-shortcuts{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.live-cd{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.packages{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.privacy{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.settings{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.themes{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.window{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+/* harden */
+section#main article#itemList .items aside.backup{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.disabled-services{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.hardening{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.initial-setup{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.monitoring-tools{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.server-setup{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.software{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+section#main article#itemList .items aside.useful-commands{
+    background: url(/media/v2/tech-icons-gray.png) no-repeat 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

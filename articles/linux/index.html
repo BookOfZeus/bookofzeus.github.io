@@ -16,17 +16,14 @@
 	<meta name="DC.Creator" content="Book Of Zeus" />
 	<meta name="DC.Language" content="en" />
 
-	<link href="https://plus.google.com/109493568868519843460" rel="publisher" />
-
-	<link rel="author" href="https://plus.google.com/109493568868519843460">
-	<link rel="shortcut icon" href="/media/v1/favicon.ico" />
-	<link rel="icon" href="/media/v1/favicon.ico" />
-
-	<link rel="image_src" href="/media/v1/logo.png" />
+	<link rel="shortcut icon" href="/media/v2/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="/media/v2/favicon.ico" type="image/x-icon" />
 
 	<link rel="canonical" href="http://bookofzeus.com/articles/linux" />
-	<link rel="stylesheet" type="text/css" href="/media/v1/modern.css" media="all" />
-	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/media/v2/main.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/media/v2/light.css" media="all" id="theme"/>
+	<link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet">
 
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -40,510 +37,665 @@
 	</script>
 </head>
 <body id="body">
+<script type="text/javascript">
+function openNav() {
+    document.getElementById("slidingMenu").style.width = "300px";
+}
 
-<!-- rss -->
+function closeNav() {
+    document.getElementById("slidingMenu").style.width = "0";
+}
+</script>
+<div id="shade">
 
-<div id="rss">
-	<a href="/rss.xml"><img src="/media/v1/rss.png" alt="rss feed"></a>
-	<a href="http://twitter.com/bookofzeus" target="_blank"><img src="/media/v1/twitter.png" alt="Twitter Page"></a>
-	<a href="https://www.facebook.com/bookofzeus" target="_blank"><img src="/media/v1/facebook.png" alt="Facebook Page"></a>
-	<a href="https://github.com/bookofzeus" target="_blank"><img src="/media/v1/github.png" alt="Github Page"></a>
-	<a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank"><img src="/media/v1/sof.png" alt="Stack Over Flow Page"></a>
+    <!-- menu -->
+    <header>
+        <div>
 
-</div>
+            <!-- main menu -->
+            <section id="menu">
+                <span id="openMenu" onclick="openNav();">&#9776;</span>
 
-<!-- menu -->
-<div id="menu">
-	<img src="/media/v1/menu.png" class="nav-toggler toggle-slide-left" alt="show or hide menu" width="24" height="24" />
-	<div id="home2">
-		Book<span>Of</span>Zeus
-	</div>
-</div>
+                <div id="slidingMenu" class="sidenav">
+                    <a class="closebtn" onclick="closeNav()">&times;</a>
 
-<aside class="menu slide-menu-left">
-	<header id="home">
-		<div>
-			<img src="/media/v1/logo.png" alt="logo" width="57" height="57" />
-			Book<span>Of</span>Zeus
-		</div>
-		<span>Articles, Tutorials &amp; Source Code</span>
-	</header>
+                    <a href="/arduino/" title="Arduino">Arduino</a>
+                    <a href="/articles/" title="Articles">Articles</a>
+                    <a href="/customize-ubuntu/" title="Customize Ubuntu">Customize Ubuntu</a>
+                    <a href="/harden-ubuntu/" title="Harden Ubuntu">Harden Ubuntu</a>
 
-	<nav>
-		<button class="close-menu">Close Menu</button>
-		<ul>
+                    <br/>
+                    <br/>
 
-	<li class="header"><a href="/arduino/" title="Arduino" >Arduino</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/arduino/sensor-module-cheat-sheet/" title="Sensor and Module Cheat Sheet" >Sensor and Module Cheat Sheet</a></li>
-		
-		</ul>
-	
-	</li>
+                    <a href="/about/" title="About" class="small">About</a>
+                    <a href="/codebase/" title="CodeBase" class="small">CodeBase</a>
+                    <a href="/contribute/" title="Contribute" class="small">Contribute</a>
 
-	<li class="header"><a href="/articles/" title="Articles" class="selected">Articles</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/articles/android/" title="Android" >Android</a></li>
-		
-			<li class="item"><a href="/articles/apache/" title="Apache" >Apache</a></li>
-		
-			<li class="item"><a href="/articles/css/" title="CSS" >CSS</a></li>
-		
-			<li class="item"><a href="/articles/docker/" title="Docker" >Docker</a></li>
-		
-			<li class="item"><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
-		
-			<li class="item"><a href="/articles/git/" title="Git" >Git</a></li>
-		
-			<li class="item"><a href="/articles/html/" title="HTML" >HTML</a></li>
-		
-			<li class="item"><a href="/articles/java/" title="Java" >Java</a></li>
-		
-			<li class="item"><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
-		
-			<li class="item"><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
-		
-			<li class="item"><a href="/articles/kubernetes/" title="Kubernetes" >Kubernetes</a></li>
-		
-			<li class="item"><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
-		
-			<li class="item"><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
-		
-			<li class="item"><a href="/articles/mongodb/" title="MongoDB" >MongoDB</a></li>
-		
-			<li class="item"><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
-		
-			<li class="item"><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
-		
-			<li class="item"><a href="/articles/php/" title="PHP" >PHP</a></li>
-		
-			<li class="item"><a href="/articles/python/" title="Python" >Python</a></li>
-		
-			<li class="item"><a href="/articles/sass/" title="Sass" >Sass</a></li>
-		
-			<li class="item"><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
-		
-		</ul>
-	
-	</li>
 
-	<li class="header"><a href="/contribute/" title="Contribute" >Contribute</a>
-	
-	</li>
+                    <div id="menuSocial">
+                        <span>Social</span>
+                        <a href="/rss.xml" target="_blank" title="rss feed">RSS</a>
+                        <a href="http://twitter.com/bookofzeus" target="_blank" title="twitter page">Twitter</a>
+                        <a href="https://www.facebook.com/bookofzeus" target="_blank" title="Facebook Page">Facebook</a>
+                        <a href="https://github.com/bookofzeus" target="_blank" title="Github Page">Github</a>
+                        <a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank" title="Stack Overflow">Stack Overflow</a>
+                    </div>
 
-	<li class="header"><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/customize-ubuntu/editor/" title="Editor" >Editor</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
-		
-			<li class="item"><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
-		
-		</ul>
-	
-	</li>
+                </div>
+            </section>
 
-	<li class="header"><a href="/harden-ubuntu/" title="Harden Ubuntu" >Harden Ubuntu</a>
-	
-		<ul>
-		
-			<li class="item"><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/server-setup/" title="Server Setup" >Server Setup</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
-		
-			<li class="item"><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
-		
-		</ul>
-	
-	</li>
+            <!-- logo -->
+            <section id="logo">
+                <div id="title">
+                    <a href="/">Book<span>of</span>Zeus</a>
+                    <cite>Articles, Tutorials & Source Code</cite>
+                </div>
+            </section>
 
-</ul>
-	</nav>
+            <!-- social -->
+            <section id="social">
+                <a href="/rss.xml" target="_blank" title="rss feed" id="rss"></a>
+                <a href="http://twitter.com/bookofzeus" target="_blank" title="twitter page" id="twitter"></a>
+                <a href="https://www.facebook.com/bookofzeus" target="_blank" title="Facebook Page" id="facebook"></a>
+                <a href="https://github.com/bookofzeus" target="_blank" title="Github Page" id="github"></a>
+                <a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank" title="Stack Overflow" id="sof"></a>
+            </section>
+        </div>
 
-</aside>
+    </header>
 
-<!-- content -->
-<section>
-	<article>
+    <div class="clear"></div>
+
+    <section id="breadcrumb"  class="empty">
+    <div>
+        
+    </div>
+</section>
+
+    <section id="main">
+        <article>
 	<h1>Linux</h1>
 </article>
 
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/bypass-ssh-login/">Bypass SSH login</a>
-		</h2>
-		<h6>Posted on Friday December 02, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Login to a development or a production server without entering a password</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/bypass-ssh-login/">Bypass SSH login</a>
+        </h2>
+        <p>Login to a development or a production server without entering a password</p>
+        <h6>Posted on Friday December 02, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/bypass-ssh-login/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/change-the-default-crontab-editor/">Change the default crontab editor</a>
-		</h2>
-		<h6>Posted on Wednesday February 09, 2011 by Eric Potvin</h6>
-	</header>
-	<p>How to change the default editor if the one by default is not your favorite</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/change-the-default-crontab-editor/">Change the default crontab editor</a>
+        </h2>
+        <p>How to change the default editor if the one by default is not your favorite</p>
+        <h6>Posted on Wednesday February 09, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/change-the-default-crontab-editor/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/customized-folder-and-file-list-in-linux/">Customized folder and file list in Linux</a>
-		</h2>
-		<h6>Posted on Thursday July 07, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Customized the output of the folder and files list in linux</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/customized-folder-and-file-list-in-linux/">Customized folder and file list in Linux</a>
+        </h2>
+        <p>Customized the output of the folder and files list in linux</p>
+        <h6>Posted on Thursday July 07, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/customized-folder-and-file-list-in-linux/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/delete-files-securely-in-linux/">Delete files securely in Linux</a>
-		</h2>
-		<h6>Posted on Monday June 20, 2011 by Eric Potvin</h6>
-	</header>
-	<p>How to delete files securely in linux using the shred command</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/delete-files-securely-in-linux/">Delete files securely in Linux</a>
+        </h2>
+        <p>How to delete files securely in linux using the shred command</p>
+        <h6>Posted on Monday June 20, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/delete-files-securely-in-linux/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/diff-files-from-two-folders/">Diff files from two folders</a>
-		</h2>
-		<h6>Posted on Sunday February 13, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Simple command to check the difference between two folders</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/diff-files-from-two-folders/">Diff files from two folders</a>
+        </h2>
+        <p>Simple command to check the difference between two folders</p>
+        <h6>Posted on Sunday February 13, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/diff-files-from-two-folders/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/disable-overlay-scrollbars-in-ubuntu/">Disable overlay scrollbars in Ubuntu</a>
-		</h2>
-		<h6>Posted on Wednesday October 26, 2011 by Eric Potvin</h6>
-	</header>
-	<p>How to revert back the classic scrollbars in Ubuntu</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/disable-overlay-scrollbars-in-ubuntu/">Disable overlay scrollbars in Ubuntu</a>
+        </h2>
+        <p>How to revert back the classic scrollbars in Ubuntu</p>
+        <h6>Posted on Wednesday October 26, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/disable-overlay-scrollbars-in-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/find-hardware-specs-in-linux/">Find Hardware Specs in Linux</a>
-		</h2>
-		<h6>Posted on Saturday June 11, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Find hardware such as CPU, Graphic, Network, Memory, Disk etc...</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/find-hardware-specs-in-linux/">Find Hardware Specs in Linux</a>
+        </h2>
+        <p>Find hardware such as CPU, Graphic, Network, Memory, Disk etc...</p>
+        <h6>Posted on Saturday June 11, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/find-hardware-specs-in-linux/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/get-ssl-running-on-apache-centos/">Get SSL running on Apache in CentOS</a>
-		</h2>
-		<h6>Posted on Sunday August 07, 2011 by Adam Culp</h6>
-	</header>
-	<p>Install SSL mod_ssl for Apache in CentOS with certificate</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/get-ssl-running-on-apache-centos/">Get SSL running on Apache in CentOS</a>
+        </h2>
+        <p>Install SSL mod_ssl for Apache in CentOS with certificate</p>
+        <h6>Posted on Sunday August 07, 2011<br/>by Adam Culp</h6>
+        <a href="/articles/linux/get-ssl-running-on-apache-centos/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/get-your-external-ip-address-from-command-line/">Get your external IP Address on Command Line</a>
-		</h2>
-		<h6>Posted on Saturday November 15, 2014 by Eric Potvin</h6>
-	</header>
-	<p>How to get your IP address from the linux shell or command line</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/get-your-external-ip-address-from-command-line/">Get your external IP Address on Command Line</a>
+        </h2>
+        <p>How to get your IP address from the linux shell or command line</p>
+        <h6>Posted on Saturday November 15, 2014<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/get-your-external-ip-address-from-command-line/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/hard-disk-usage-from-command-line-on-linux/">Hard disk usage from command line on Linux</a>
-		</h2>
-		<h6>Posted on Wednesday September 28, 2011 by Adam Culp</h6>
-	</header>
-	<p>Check how much space left on your disk using a simple linux command line</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/hard-disk-usage-from-command-line-on-linux/">Hard disk usage from command line on Linux</a>
+        </h2>
+        <p>Check how much space left on your disk using a simple linux command line</p>
+        <h6>Posted on Wednesday September 28, 2011<br/>by Adam Culp</h6>
+        <a href="/articles/linux/hard-disk-usage-from-command-line-on-linux/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/how-to-disable-vim-matching-parenthesis-highlighting/">How to Disable VIM matching parenthesis highlighting</a>
-		</h2>
-		<h6>Posted on Monday May 30, 2011 by Eric Potvin</h6>
-	</header>
-	<p>How to remove the matching parenthesis highlighting in VI/VIM</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/how-to-disable-vim-matching-parenthesis-highlighting/">How to Disable VIM matching parenthesis highlighting</a>
+        </h2>
+        <p>How to remove the matching parenthesis highlighting in VI/VIM</p>
+        <h6>Posted on Monday May 30, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/how-to-disable-vim-matching-parenthesis-highlighting/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/how-to-install-a-new-drive-in-ubuntu/">How to install a new drive in Ubuntu</a>
-		</h2>
-		<h6>Posted on Monday July 18, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Install, format and prepare a new drive via command line in Ubuntu</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/how-to-install-a-new-drive-in-ubuntu/">How to install a new drive in Ubuntu</a>
+        </h2>
+        <p>Install, format and prepare a new drive via command line in Ubuntu</p>
+        <h6>Posted on Monday July 18, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/how-to-install-a-new-drive-in-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/html5-and-css3-syntax-color-in-vim/">HTML5 and CSS3 Syntax Color in VIM</a>
-		</h2>
-		<h6>Posted on Thursday February 02, 2012 by Eric Potvin</h6>
-	</header>
-	<p>Fix the color syntax in VIM for HTML5 and CSS3 media queries</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/html5-and-css3-syntax-color-in-vim/">HTML5 and CSS3 Syntax Color in VIM</a>
+        </h2>
+        <p>Fix the color syntax in VIM for HTML5 and CSS3 media queries</p>
+        <h6>Posted on Thursday February 02, 2012<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/html5-and-css3-syntax-color-in-vim/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/install-a-lamp-apache-php-mysql-on-ubuntu/">Install a LAMP (Apache, PHP, Mysql) On Ubuntu</a>
-		</h2>
-		<h6>Posted on Monday April 18, 2011 by Eric Potvin</h6>
-	</header>
-	<p>This guide will help you to install a local LAMP web server</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/install-a-lamp-apache-php-mysql-on-ubuntu/">Install a LAMP (Apache, PHP, Mysql) On Ubuntu</a>
+        </h2>
+        <p>This guide will help you to install a local LAMP web server</p>
+        <h6>Posted on Monday April 18, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/install-a-lamp-apache-php-mysql-on-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/install-grive2-ubuntu/">How to install Grive2 in Ubuntu</a>
-		</h2>
-		<h6>Posted on Saturday January 09, 2016 by Eric Potvin</h6>
-	</header>
-	<p>How to install Grive2 in Ubuntu and automatically backup your file</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/install-grive2-ubuntu/">How to install Grive2 in Ubuntu</a>
+        </h2>
+        <p>How to install Grive2 in Ubuntu and automatically backup your file</p>
+        <h6>Posted on Saturday January 09, 2016<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/install-grive2-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/install-vnc-server-and-vnc-client-on-ubuntu/">Install VNC Server and VNC Client on Ubuntu</a>
-		</h2>
-		<h6>Posted on Sunday February 26, 2012 by Eric Potvin</h6>
-	</header>
-	<p>How to access a remote desktop or server using VNC on Ubuntu</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/install-vnc-server-and-vnc-client-on-ubuntu/">Install VNC Server and VNC Client on Ubuntu</a>
+        </h2>
+        <p>How to access a remote desktop or server using VNC on Ubuntu</p>
+        <h6>Posted on Sunday February 26, 2012<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/install-vnc-server-and-vnc-client-on-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/installing-rpm-package-in-ubuntu/">Installing RPM package in Ubuntu</a>
-		</h2>
-		<h6>Posted on Tuesday March 01, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Convert and install RPM package using alien in Ubuntu</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/installing-rpm-package-in-ubuntu/">Installing RPM package in Ubuntu</a>
+        </h2>
+        <p>Convert and install RPM package using alien in Ubuntu</p>
+        <h6>Posted on Tuesday March 01, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/installing-rpm-package-in-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/kill-all-process-in-one-step-in-linux/">Kill All Process in One Step in Linux</a>
-		</h2>
-		<h6>Posted on Wednesday April 13, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Simple way to kill all process in one step using grep and awk</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/kill-all-process-in-one-step-in-linux/">Kill All Process in One Step in Linux</a>
+        </h2>
+        <p>Simple way to kill all process in one step using grep and awk</p>
+        <h6>Posted on Wednesday April 13, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/kill-all-process-in-one-step-in-linux/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/linux-backup-using-cron-to-local-directory/">Linux backup using CRON to local directory</a>
-		</h2>
-		<h6>Posted on Thursday December 29, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Backup your home local directory using a simple cronjob</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/linux-backup-using-cron-to-local-directory/">Linux backup using CRON to local directory</a>
+        </h2>
+        <p>Backup your home local directory using a simple cronjob</p>
+        <h6>Posted on Thursday December 29, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/linux-backup-using-cron-to-local-directory/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/make-cartoon-images-with-imagemagick/">Make Cartoon Images with ImageMagick</a>
-		</h2>
-		<h6>Posted on Monday January 30, 2012 by Eric Potvin</h6>
-	</header>
-	<p>Create or convert any images into a cartoon using ImageMagick</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/make-cartoon-images-with-imagemagick/">Make Cartoon Images with ImageMagick</a>
+        </h2>
+        <p>Create or convert any images into a cartoon using ImageMagick</p>
+        <h6>Posted on Monday January 30, 2012<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/make-cartoon-images-with-imagemagick/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/mounting-hfs-on-ubuntu/">Read HFS on Ubuntu</a>
-		</h2>
-		<h6>Posted on Saturday July 06, 2013 by Eric Potvin</h6>
-	</header>
-	<p>Read Mac OS HFS CD or DVD on Ubuntu using HFSPlus</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/mounting-hfs-on-ubuntu/">Read HFS on Ubuntu</a>
+        </h2>
+        <p>Read Mac OS HFS CD or DVD on Ubuntu using HFSPlus</p>
+        <h6>Posted on Saturday July 06, 2013<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/mounting-hfs-on-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/my-vimrc/">My .vimrc</a>
-		</h2>
-		<h6>Posted on Friday July 08, 2011 by Eric Potvin</h6>
-	</header>
-	<p>This is my .vimrc ... in case I forget it! It maybe sound ridiculous but it maybe be useful one day</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/my-vimrc/">My .vimrc</a>
+        </h2>
+        <p>This is my .vimrc ... in case I forget it! It maybe sound ridiculous but it maybe be useful one day</p>
+        <h6>Posted on Friday July 08, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/my-vimrc/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/send-an-email-in-linux-from-the-shell-with-attachment/">Send an Email in Linux from the Shell with Attachment</a>
-		</h2>
-		<h6>Posted on Tuesday September 06, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Simple way to send emails from the command line in Linux</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/send-an-email-in-linux-from-the-shell-with-attachment/">Send an Email in Linux from the Shell with Attachment</a>
+        </h2>
+        <p>Simple way to send emails from the command line in Linux</p>
+        <h6>Posted on Tuesday September 06, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/send-an-email-in-linux-from-the-shell-with-attachment/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/slow-ssh-connection/">Slow SSH Connection</a>
-		</h2>
-		<h6>Posted on Monday April 25, 2011 by Eric Potvin</h6>
-	</header>
-	<p>How to fix the slow connection to a remote server</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/slow-ssh-connection/">Slow SSH Connection</a>
+        </h2>
+        <p>How to fix the slow connection to a remote server</p>
+        <h6>Posted on Monday April 25, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/slow-ssh-connection/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/verify-if-a-dedicated-server-is-really-dedicated/">Verify if a dedicated server is really dedicated</a>
-		</h2>
-		<h6>Posted on Thursday November 24, 2011 by Eric Potvin</h6>
-	</header>
-	<p>Quick tips you can check and command your can run to verify your server</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/verify-if-a-dedicated-server-is-really-dedicated/">Verify if a dedicated server is really dedicated</a>
+        </h2>
+        <p>Quick tips you can check and command your can run to verify your server</p>
+        <h6>Posted on Thursday November 24, 2011<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/verify-if-a-dedicated-server-is-really-dedicated/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
-<article>
-	<header>
-		<h2>
-			<a href="/articles/linux/vpn-secure-environment-ubuntu/">VPN into a Secure Environment in Ubuntu</a>
-		</h2>
-		<h6>Posted on Saturday March 16, 2013 by Eric Potvin</h6>
-	</header>
-	<p>How to establish a secure virtual point-to-point connection using Ubuntu</p>
+<article id="articleList">
+
+
+    <div class="items">
+        <h2>
+            <a href="/articles/linux/vpn-secure-environment-ubuntu/">VPN into a Secure Environment in Ubuntu</a>
+        </h2>
+        <p>How to establish a secure virtual point-to-point connection using Ubuntu</p>
+        <h6>Posted on Saturday March 16, 2013<br/>by Eric Potvin</h6>
+        <a href="/articles/linux/vpn-secure-environment-ubuntu/" class="see">see article</a>
+    </div>
+
+    
 
 </article>
 
+    </section>
 
-	<footer> 
+    <footer>
+        <section id="footerMenu">
+            <ul>
+                
+	<li><a href="/arduino/" title="Arduino" >Arduino</a>
+	
+		<ul>
+		
+			<li><a href="/arduino/sensor-module-cheat-sheet/" title="Sensor and Module Cheat Sheet" >Sensor and Module Cheat Sheet</a></li>
+		
+		</ul>
+	
+	</li>
 
-		<h6>More links</h6>
-		<a href="/about/" title="About">About</a>
-		<a href="/codebase/" title="Codebase">CodeBase</a>
-		<a href="/contribute/" title="Contribute">Contribute</a>
+	<li><a href="/articles/" title="Articles" class="selected">Articles</a>
+	
+		<ul>
+		
+			<li><a href="/articles/android/" title="Android" >Android</a></li>
+		
+			<li><a href="/articles/apache/" title="Apache" >Apache</a></li>
+		
+			<li><a href="/articles/css/" title="CSS" >CSS</a></li>
+		
+			<li><a href="/articles/docker/" title="Docker" >Docker</a></li>
+		
+			<li><a href="/articles/documentation/" title="Documentation" >Documentation</a></li>
+		
+			<li><a href="/articles/git/" title="Git" >Git</a></li>
+		
+			<li><a href="/articles/html/" title="HTML" >HTML</a></li>
+		
+			<li><a href="/articles/java/" title="Java" >Java</a></li>
+		
+			<li><a href="/articles/javascript/" title="Javascript" >Javascript</a></li>
+		
+			<li><a href="/articles/jquery/" title="jQuery" >jQuery</a></li>
+		
+			<li><a href="/articles/kubernetes/" title="Kubernetes" >Kubernetes</a></li>
+		
+			<li><a href="/articles/linux/" title="Linux" class="selected">Linux</a></li>
+		
+			<li><a href="/articles/mobile/" title="Mobile" >Mobile</a></li>
+		
+			<li><a href="/articles/mongodb/" title="MongoDB" >MongoDB</a></li>
+		
+			<li><a href="/articles/mysql/" title="MySQL" >MySQL</a></li>
+		
+			<li><a href="/articles/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li><a href="/articles/php/" title="PHP" >PHP</a></li>
+		
+			<li><a href="/articles/python/" title="Python" >Python</a></li>
+		
+			<li><a href="/articles/sass/" title="Sass" >Sass</a></li>
+		
+			<li><a href="/articles/subversion/" title="Subversion" >Subversion</a></li>
+		
+		</ul>
+	
+	</li>
 
-		<h6>NewsLetters</h6>
-		<a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a>
-		<a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a>
-		<a href="http://eepurl.com/nCBVX" class="nw powered">Powered by MailChimp</a>
+	<li><a href="/customize-ubuntu/" title="Customize Ubuntu" >Customize Ubuntu</a>
+	
+		<ul>
+		
+			<li><a href="/customize-ubuntu/editor/" title="Editor" >Editor</a></li>
+		
+			<li><a href="/customize-ubuntu/environment/" title="Environment" >Environment</a></li>
+		
+			<li><a href="/customize-ubuntu/flash-player/" title="Flash Player" >Flash Player</a></li>
+		
+			<li><a href="/customize-ubuntu/fonts/" title="Fonts" >Fonts</a></li>
+		
+			<li><a href="/customize-ubuntu/icons/" title="Icons" >Icons</a></li>
+		
+			<li><a href="/customize-ubuntu/indicator/" title="Indicator" >Indicator</a></li>
+		
+			<li><a href="/customize-ubuntu/install/" title="Install" >Install</a></li>
+		
+			<li><a href="/customize-ubuntu/keyboard-shortcuts/" title="Keyboard Shortcuts" >Keyboard Shortcuts</a></li>
+		
+			<li><a href="/customize-ubuntu/live-cd/" title="Live CD" >Live CD</a></li>
+		
+			<li><a href="/customize-ubuntu/packages/" title="Packages" >Packages</a></li>
+		
+			<li><a href="/customize-ubuntu/privacy/" title="Privacy" >Privacy</a></li>
+		
+			<li><a href="/customize-ubuntu/settings/" title="Settings" >Settings</a></li>
+		
+			<li><a href="/customize-ubuntu/themes/" title="Themes" >Themes</a></li>
+		
+			<li><a href="/customize-ubuntu/window/" title="Window" >Window</a></li>
+		
+		</ul>
+	
+	</li>
 
-		<div>&copy; 2011-2018 Book Of Zeus</div>
-		<p>
-			All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
-			You cannot copy whole tutorials (unless permission is given), either translating to another language.
-			By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
-		</p>
+	<li><a href="/harden-ubuntu/" title="Harden Ubuntu" >Harden Ubuntu</a>
+	
+		<ul>
+		
+			<li><a href="/harden-ubuntu/initial-setup/" title="Initial Setup" >Initial Setup</a></li>
+		
+			<li><a href="/harden-ubuntu/server-setup/" title="Server Setup" >Server Setup</a></li>
+		
+			<li><a href="/harden-ubuntu/disable-services/" title="Disabled Services" >Disabled Services</a></li>
+		
+			<li><a href="/harden-ubuntu/hardening/" title="Hardening" >Hardening</a></li>
+		
+			<li><a href="/harden-ubuntu/monitoring-tools/" title="Monitoring Tools" >Monitoring Tools</a></li>
+		
+			<li><a href="/harden-ubuntu/optimization/" title="Optimization" >Optimization</a></li>
+		
+			<li><a href="/harden-ubuntu/software/" title="Software" >Software</a></li>
+		
+			<li><a href="/harden-ubuntu/useful-commands/" title="Useful Commands" >Useful Commands</a></li>
+		
+			<li><a href="/harden-ubuntu/backup/" title="Backup" >Backup</a></li>
+		
+		</ul>
+	
+	</li>
 
-	</footer>
+                <li>
+                    <h6>Social</h6>
+                    <ul>
+                        <li><a href="/rss.xml" target="_blank" title="rss feed">RSS</a></li>
+                        <li><a href="http://twitter.com/bookofzeus" target="_blank" title="twitter page">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/bookofzeus" target="_blank" title="Facebook Page">Facebook</a></li>
+                        <li><a href="https://github.com/bookofzeus" target="_blank" title="Github Page">Github</a></li>
+                        <li><a href="https://stackoverflow.com/users/905093/book-of-zeus" target="_blank" title="Stack Overflow">Stack Overflow</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>More links</h6>
+                    <ul>
+                        <li><a href="/about/" title="About">About</a></li>
+                        <li><a href="/codebase/" title="Codebase">CodeBase</a></li>
+                        <li><a href="/contribute/" title="Contribute">Contribute</a></li>
+                    </ul>
+                    <h6>Newsletter</h6>
+                    <a href="http://eepurl.com/nCBVX" target="_blank" class="powered">Powered by MailChimp</a>
+                    <ul>
+                        <li><a href="http://eepurl.com/nCBQb" class="nw signUp">Sign up for our free newsletter!</a></li>
+                        <li><a href="http://bookofzeus.us5.list-manage.com/unsubscribe?u=6d11dcc020299e18618aa63a0&amp;id=f144c95830" class="nw unsub">Unsubscribe from our newsletter</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
-</section>
+        <div>&copy; 2011-2018 Book Of Zeus</div>
+        <p>
+            All articles, code or tutorials listed on bookofzeus.com can be used as reference, links or as in a sharing matter without attribution.
+            You cannot copy whole tutorials (unless permission is given), either translating to another language.
+            By using and/or reading this site, you agree to our <a href="/privacy-policy/" title="Privacy Policy">privacy policy</a> and <a href="/terms-of-conditions" title="terms and conditions">terms and conditions</a>.
+        </p>
 
-<!--
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
--->
-<script src="/media/main.js"></script>
+    </footer>
 
-<script>
-
-document.getElementById("home").addEventListener("click", function(e) {
-	window.location.href = 'http://bookofzeus.com';
-	e.preventDefault();
-});
-document.getElementById("home2").addEventListener("click", function(e) {
-	window.location.href = 'http://bookofzeus.com';
-	e.preventDefault();
-});
-
-var els = document.getElementsByTagName("a"), els_length = els.length;
-for (var i = 0, l = els_length; i < l; i++) {
-    var el = els[i];
-    if (el.href.replace('http://bookofzeus.com','') == window.location.pathname) {
-        el.className= "selected";
-    }
-}
-
-</script>
-
+</div>
 </body>
 </html>
